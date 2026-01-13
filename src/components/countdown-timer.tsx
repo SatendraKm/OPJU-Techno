@@ -9,7 +9,7 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const eventDate = new Date(2025, 2, 20, 0, 0, 0).getTime();
+    const eventDate = new Date(2026, 1, 19, 0, 0, 0).getTime();
 
     const calculateTimeLeft = () => {
       const now = new Date().getTime();
