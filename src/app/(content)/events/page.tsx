@@ -26,6 +26,9 @@ const eventsData = {
     //{ imageUrl: "/techno-events-logo/gamefusion.png", link: "/events/game-fusion" },
     { imageUrl: "/testfile/YuvaSabha.png", link: "/events/yuva-sabha" },
     { imageUrl: "/testfile/Beat-Battle.png", link: "/events/beat-battle" },
+    { imageUrl: "/testfile/Start-up Business Plan 1.png", link: "/events/start-up-business-plan" },
+    { imageUrl: "/testfile/riywayat 2.0..png", link: "/events/riywayat" },
+    { imageUrl: "/testfile/AIMA’s 1.png", link: "/events/aima" },
   ],
 };
 
