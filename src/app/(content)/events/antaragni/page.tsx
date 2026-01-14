@@ -3,7 +3,7 @@ import React,{useEffect,useState} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
-import WhyParticipate from "@/components/sub-component/why-participate";
+
 import EventManagers from "@/components/sub-component/event-managers";
 import { FaMusic, FaFilm, FaMicrophone, FaRunning } from "react-icons/fa";
 import Image from "next/image";
@@ -23,15 +23,7 @@ const Antaragni = () => {
     "Participants must respect the event coordinators, judges, and fellow contestants at all times. Any misbehavior may lead to disqualification.",
   ];
 
-  const reasons = [
-    "Exciting prizes worth ₹20000",
-    "Funding opportunity for innovative artistic projects (as per OPJU Innovation Centre terms)",
-    "Recognition certificates for all participating universities",
-    "Participation certificates for all participants",
-    "Special category-wise winning prizes",
-    "Hands-on experience in creativity, performance, and storytelling",
-    "Reimbursement of one-way Sleeper class fare for outside participants",
-  ];
+  
 
   const managers = [
     { imageUrl: "/managers/Antaragini/Nikhil Singh.jpg", name: "Nikhil Singh Jatwar", contact: 9399907335 },
@@ -78,7 +70,7 @@ const Antaragni = () => {
           imageUrl="/techno-events-logo/antaragni.png"
           registrations={registrationCount}
           pricepool={20000}
-          description="This event is a vibrant platform for students to showcase their creative talents in a meaningful way. From dancing, singing, and rapping to short film-making and fusion performances, it brings together a variety of art forms on one stage. It is a celebration of passion, creativity, and cultural diversity, allowing students to express themselves through music, movement, and storytelling. Whether performing solo or in groups, participants get a chance to shine, entertain, and inspire."
+          description="ANTARAGNI is a vibrant platform for students to showcase their creative talents in a meaningful and expressive way. From dancing, mime, singing, and rapping to short film-making and fusion performances, the event brings together diverse art forms on one stage. It celebrates passion, creativity, and cultural diversity, giving students an opportunity to express themselves through music, movement, and storytelling. Whether performing solo or in groups, participants get a chance to shine, entertain, and inspire the audience."
           time="21-03-25 , 6:00 pm"
           venue="UNIVERSITY PLAYGROUND"
         />
@@ -87,15 +79,7 @@ const Antaragni = () => {
       Feel the beat, own the street
         </p>
 
-      {/* Theme Section */}
-      <section className="flex flex-col items-center text-center my-32 mx-auto max-w-4xl">
-        <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-['Poppins'] font-medium mb-4">
-          THEME
-        </h2>
-        <p className="text-2xl sm:text-3xl text-white font-['Poppins'] uppercase tracking-wide">
-          Fusion Fiesta
-        </p>
-      </section>
+
 
       {/* Sub-Events Section */}
       <section className="mx-auto max-w-5xl px-4">
@@ -110,22 +94,22 @@ const Antaragni = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <SubEventCard
             Icon={FaRunning}
-            title="DANCE COMPETITION"
+            title="Solo Dance / Group Dance"
             description="Unleash your passion for dance at Antaragni! Show off your moves, rhythm, and expression as you captivate the audience with your performance. Impress the judges with your energy, creativity, and stage presence!"
           />
           <SubEventCard
             Icon={FaMusic}
-            title="SINGING COMPETITION"
+            title="Solo Singing"
             description="Sing your heart out and mesmerize the audience with your voice. Showcase your vocal talent and emotional expression."
           />
           <SubEventCard
             Icon={FaFilm}
-            title="SHORT FILM PRESENTATION"
+            title="Short Film"
             description="Tell a compelling story through film. Create a short film that captivates, inspires, and leaves a lasting impression."
           />
           <SubEventCard
             Icon={FaMicrophone}
-            title="RAP BATTLE"
+            title="Rap / Beat-boxing"
             description="Battle it out with words and rhythm. Show off your lyrical prowess, flow, and stage presence in this electrifying rap battle."
           />
         </div>
@@ -136,7 +120,7 @@ const Antaragni = () => {
 
       {/* Bottom Section: Why Participate, Rules, and Event Managers */}
       
-        <WhyParticipate reasons={reasons} />
+        
         <RulesAndRegulation rules={rules} />
         <EventManagers managers={managers} />
   
