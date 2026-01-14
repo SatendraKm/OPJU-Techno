@@ -16,22 +16,24 @@ export default function Home() {
   return (
     <div className="relative w-full">
 
-      {/* 🔱 PILLAR ABOVE EVERYTHING — NOT FIXED, COVERS HERO → FOOTER */}
-      <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-10/12 z-20 pointer-events-none">
-        <div className="relative w-full h-full">
-          <Image
-            src="/testfile/pillar.svg"
-            alt="Divine Pillar"
-            fill
-            priority
-            className="object-contain"
-            style={{ objectPosition: "top center" }}
-          />
-        </div>
-      </div>
+{/* PILLAR – middle layer */}
+<div className="absolute inset-y-0 left-1/2 -ml-[40%] w-10/12 z-10 pointer-events-none">
 
-      {/* WRAPPER FOR ALL CONTENT */}
-      <div className="relative z-0">
+
+  <div className="relative w-full h-full">
+    <Image
+      src="/testfile/pillar.svg"
+      alt="Divine Pillar"
+      fill
+      priority
+      className="object-contain"
+      style={{ objectPosition: "top center" }}
+    />
+  </div>
+</div>
+
+      {/* ALL CONTENT ABOVE PILLAR */}
+      <div className="relative">
 
         {/* HERO SECTION */}
         <div className="w-full h-screen overflow-hidden">
@@ -56,10 +58,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* SCROLLING TEXT */}
+        {/* SCROLL TEXT */}
         <div className="w-full overflow-hidden bg-white py-8">
           <div className="whitespace-nowrap animate-marquee text-black text-6xl font-serif font-semibold tracking-wide">
-            THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THE DIVINE CORE
+            THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp; THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp; THE DIVINE CORE
           </div>
 
           <style jsx>{`
@@ -74,15 +76,19 @@ export default function Home() {
           `}</style>
         </div>
 
-        <section className="mt-28">
+        {/* EVENT SECTION */}
+<section className="relative mt-28">
+
           <EventSection />
         </section>
 
+        {/* ABOUT SECTION */}
         <section>
           <AboutSection />
         </section>
       </div>
 
+      {/* FOOTER */}
       <section>
         <Footer />
       </section>

@@ -5,14 +5,15 @@ import ButtonLanding from "@/components/sub-component/button-landing";
 
 const eventsData = {
   technical: [
-    { imageUrl: "/testfile/codigo.png", link: "/events/codigo" },
+    { imageUrl: "/testfile/codigo.png", link: "/events/codigo" },   
     { imageUrl: "/testfile/techlab.png", link: "/events/techlab" },  
     { imageUrl: "/testfile/robovation.png", link: "/events/robovation" },
     //{ imageUrl: "/testfile/Reverse Eng.png", link: "/events/hackathon" },
     //{ imageUrl: "/techno-events-logo/aerodrone.png", link: "/events/aerodrone" },
     { imageUrl: "/testfile/ideathon.png", link: "/events/ideathon" },
+    { imageUrl: "/testfile/ReverseEng.png", link: "/events/reverseEng" },
   ],
-  ///Users/aryanmishra/technorollix-2026/OPJU-Technorollix/public/testfile/Kalakriti .png
+  
   nonTechnical: [
     { imageUrl: "/testfile/Kalakriti .png", link: "/events/kalakriti" },
     //{ imageUrl: "/techno-events-logo/spotlightsaga.png", link: "/events/spotlight-saga" },
@@ -57,7 +58,7 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
               src={event.imageUrl}
               alt={event.link}
               fill
-              className="object-cover rounded-xl"
+              className="object-cover rounded-xl w-fit h-fit"
               priority
             />
           </div>
