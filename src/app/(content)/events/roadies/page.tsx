@@ -6,10 +6,56 @@ import Image from "next/image";
 import { getRegistrationCount } from "@/actions/event-actions";
 
 const Roadies = () => {
-  const managers = [
+  const studentmanagers = [
     {
       imageUrl: "/managers/Roadies/Pranjal.jpg",
-      name: "Pranjal Shrivastav",
+      name: "Ritika Sahu",
+      contact: 9078942095,
+    },{
+      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      name: "Sumit Rana",
+      contact: 9078942095,
+    },{
+      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      name: "Harpreet Singh",
+      contact: 9078942095,
+    },{
+      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      name: "Kumkum Kritika",
+      contact: 9078942095,
+    },{
+      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      name: "Parinita Bahera",
+      contact: 9078942095,
+    },
+  ];
+  const FacultyCoordinators = [
+    {
+      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      name: "Dr. Amit Paras",
+      contact: 7879610288,
+    },{
+      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      name: "Dr Akash Pandey",
+      contact: 9078942095,
+    },{
+      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      name: "Dr. Rahul Sharma",
+      contact: 9078942095,
+    },
+  ];
+  const StaffCoordinators = [
+    {
+      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      name: "y Santhosh",
+      contact: 7879610288,
+    },{
+      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      name: "Abhishek Thakur",
+      contact: 9078942095,
+    },{
+      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      name: "Jyoti Sahu",
       contact: 9078942095,
     },
   ];
@@ -37,11 +83,17 @@ const Roadies = () => {
       {/* Event Intro Section */}
       <EventIntro
         venue="Bus Parking Area"
-        time="20-03-25, 1:30 am"
+        time="19-02-26, 10:00 am"/* Event at 19-20-21 */
         imageUrl="/techno-events-logo/roadies.png"
         registrations={registrationCount}
         pricepool={10000}
-        description="Welcome to Roadies, the ultimate test of skill and endurance! Join us at the University for an adrenaline-packed event filled with sports-inspired challenges. From obstacle courses to team relays, Roadies promises to push your limits and ignite your competitive spirit. Are you ready to conquer the road ahead?"
+        description="Roadies is a flagship talent, innovation, and personality-based competition inspired by real-world problem solving, creativity, teamwork, and leadership. The event provides a platform for students to showcase their technical skills, innovative thinking, presentation ability, and competitive spirit through multiple engaging categories.
+The event is designed to promote:
+· Physical Strength
+· Practical learning and application
+· Teamwork and leadership qualities
+· Confidence, communication, and problem-solving skills
+"
       />
 
       {/* Theme Section */}
@@ -57,12 +109,14 @@ const Roadies = () => {
       {/* Rounds Section */}
       <section className="mt-20 mx-auto max-w-5xl px-4">
         <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-[poppins] text-center mb-8">
-          ROUNDS:
+          RULES:
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg">
           <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
-            <li>There will be 5 rounds</li>
-            <li>Tasks for each round will be declared on the spot.</li>
+            <li>1. Participants may participate individually</li>
+            <li>2. Each member must register before the deadline.</li>
+            <li>Participants must be present during the judging time; absence may lead to disqualification.</li>
+            <li>4. Participants must maintain discipline and decorum throughout the event.</li>
           </ul>
         </div>
       </section>
@@ -74,16 +128,14 @@ const Roadies = () => {
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg">
           <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
-            <li>Evaluation will be based on the following parameters:</li>
-            <li>Physical ability of the participant.</li>
-            <li>Adaptability to different challenges.</li>
+            <li>There is no judgement criteria</li>
           </ul>
         </div>
       </section>
 
       {/* Event Managers Section */}
       <section className="mx-auto max-w-5xl px-4">
-        <EventManagers managers={managers} />
+        <EventManagers managers={studentmanagers} />
       </section>
     </div>
   );
