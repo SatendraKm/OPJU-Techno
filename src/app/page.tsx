@@ -22,7 +22,7 @@ export default function Home() {
 
   <div className="relative w-full h-full">
     <Image
-      src="/testfile/pillar.svg"
+      src="/testfile/pillar.png"
       alt="Divine Pillar"
       fill
       priority

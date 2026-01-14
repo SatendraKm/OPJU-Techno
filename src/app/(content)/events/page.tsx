@@ -12,6 +12,8 @@ const eventsData = {
     //{ imageUrl: "/techno-events-logo/aerodrone.png", link: "/events/aerodrone" },
     { imageUrl: "/testfile/ideathon.png", link: "/events/ideathon" },
     { imageUrl: "/testfile/ReverseEng.png", link: "/events/reverseEng" },
+    { imageUrl: "/testfile/2Designathon.png", link: "/events/designathon" },
+   
   ],
   
   nonTechnical: [
@@ -22,6 +24,8 @@ const eventsData = {
     { imageUrl: "/testfile/Roadies .png", link: "/events/roadies" },
     { imageUrl: "/testfile/Antaragni 1.png", link: "/events/antaragni" },
     //{ imageUrl: "/techno-events-logo/gamefusion.png", link: "/events/game-fusion" },
+    { imageUrl: "/testfile/YuvaSabha.png", link: "/events/yuva-sabha" },
+    { imageUrl: "/testfile/Beat-Battle.png", link: "/events/beat-battle" },
   ],
 };
 
@@ -49,16 +53,16 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
       excitement for an unforgettable experience!
     </p>
     {/* Responsive grid: two columns by default, three columns on medium screens */}
-    <div className="mt-10 md:mt-28 grid grid-cols-2 md:grid-cols-3 gap-6 px-4 md:px-8 lg:px-16">
+    <div className="mt-10 md:mt-28 ml-20 grid grid-cols-2 md:grid-cols-3 gap-2 px-3 md:px-8 lg:px-16">
       {events.map((event, index) => (
         <Link key={index} href={event.link} className={`block w-full ${event.link === '/events/game-fusion' ? 'col-start-2' : ''}`}>
           {/* Image container with fixed aspect ratio */}
-          <div className="relative w-full aspect-[4/5]">
+          <div className="relative w-5/6 aspect-[4/5]">
             <Image
               src={event.imageUrl}
               alt={event.link}
               fill
-              className="object-cover rounded-xl w-fit h-fit"
+              className="object-fit rounded-xl w-fit h-fit"
               priority
             />
           </div>
