@@ -27,48 +27,12 @@ const Page = () => {
     },
     {
       imageUrl: "/managers/riwayat/priyasinghriwayat.jpg",
-      name: "Priya Singh",
+      name: "Priya Sing",
       contact: 9893723614,
     },
   ];
 
-  const reasons = [
-    {
-      title: "Skill Enhancement",
-      description:
-        "Engage in creative challenges that refine your design, modeling, and event coordination abilities.",
-    },
-    {
-      title: "Exposure and Recognition",
-      description:
-        "Showcase your talent to a broader audience, gaining visibility and potential accolades.",
-    },
-    {
-      title: "Networking Opportunities",
-      description:
-        "Connect with industry professionals, peers, and mentors, fostering valuable relationships.",
-    },
-    {
-      title: "Personal Growth",
-      description:
-        "Build confidence, resilience, and adaptability by stepping out of your comfort zone.",
-    },
-    {
-      title: "Career Advancement",
-      description:
-        "Achievements in such events can enhance your portfolio, making you stand out to potential employers or collaborators.",
-    },
-  ];
-  const rounds= [
-   { title:"Round-1",
-            description:"Introduction + Outfit Info"
-          
-  },{title:"Round-2",
-            description:"Introduction + Outfit Info + Task"
-         
-          },{            title:"Round-3",
-            description:"Ramp walk"}
-  ]
+ 
 
   // Registration Counter
   const [registrationCount, setRegistrationCount] = useState(0);
@@ -103,33 +67,16 @@ const Page = () => {
         />
       </section>
 
-      {/* Why Participate Section */}
-      <section className="space-y-8 mt-32">
-        <SectionTitle text="WHY PARTICIPATE" />
-        <ContentContainer>
-          <ul className="list-disc pl-5 text-base sm:text-xl md:text-2xl font-inter leading-relaxed tracking-wide text-white space-y-4">
-            {reasons.map((item, index) => (
-              <li key={index}>
-                <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
-                  {item.title}:
-                </b>{" "}
-                {item.description}
-              </li>
-            ))}
-          </ul>
-        </ContentContainer>
-      </section>
+     
 
       {/* Rounds Title */}
       <section className="text-center">
         <RoundSection rounds={rounds}/>
       </section>
 
-      {/* Sub-Events Cards Section */}
-      <section>
+     
         
         
-      </section>
 
       {/* Event Managers Section */}
       <section>
