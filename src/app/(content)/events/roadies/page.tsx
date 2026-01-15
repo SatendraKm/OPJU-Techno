@@ -1,5 +1,5 @@
 "use client";
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import Image from "next/image";
@@ -11,79 +11,83 @@ const Roadies = () => {
       imageUrl: "/managers/Roadies/Pranjal.jpg",
       name: "Ritika Sahu",
       contact: 9078942095,
-    },{
+    },
+    {
       imageUrl: "/managers/Roadies/Pranjal.jpg",
       name: "Sumit Rana",
       contact: 9078942095,
-    },{
+    },
+    {
       imageUrl: "/managers/Roadies/Pranjal.jpg",
       name: "Harpreet Singh",
       contact: 9078942095,
-    },{
+    },
+    {
       imageUrl: "/managers/Roadies/Pranjal.jpg",
       name: "Kumkum Kritika",
       contact: 9078942095,
-    },{
+    },
+    {
       imageUrl: "/managers/Roadies/Pranjal.jpg",
       name: "Parinita Bahera",
       contact: 9078942095,
     },
   ];
-  const FacultyCoordinators = [
-    {
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
-      name: "Dr. Amit Paras",
-      contact: 7879610288,
-    },{
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
-      name: "Dr Akash Pandey",
-      contact: 9078942095,
-    },{
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
-      name: "Dr. Rahul Sharma",
-      contact: 9078942095,
-    },
-  ];
-  const StaffCoordinators = [
-    {
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
-      name: "y Santhosh",
-      contact: 7879610288,
-    },{
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
-      name: "Abhishek Thakur",
-      contact: 9078942095,
-    },{
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
-      name: "Jyoti Sahu",
-      contact: 9078942095,
-    },
-  ];
+  // const FacultyCoordinators = [
+  //   {
+  //     imageUrl: "/managers/Roadies/Pranjal.jpg",
+  //     name: "Dr. Amit Paras",
+  //     contact: 7879610288,
+  //   },{
+  //     imageUrl: "/managers/Roadies/Pranjal.jpg",
+  //     name: "Dr Akash Pandey",
+  //     contact: 9078942095,
+  //   },{
+  //     imageUrl: "/managers/Roadies/Pranjal.jpg",
+  //     name: "Dr. Rahul Sharma",
+  //     contact: 9078942095,
+  //   },
+  // ];
+  // const StaffCoordinators = [
+  //   {
+  //     imageUrl: "/managers/Roadies/Pranjal.jpg",
+  //     name: "y Santhosh",
+  //     contact: 7879610288,
+  //   },{
+  //     imageUrl: "/managers/Roadies/Pranjal.jpg",
+  //     name: "Abhishek Thakur",
+  //     contact: 9078942095,
+  //   },{
+  //     imageUrl: "/managers/Roadies/Pranjal.jpg",
+  //     name: "Jyoti Sahu",
+  //     contact: 9078942095,
+  //   },
+  // ];
 
-  const [registrationCount, setRegistrationCount] = useState(0)
+  const [registrationCount, setRegistrationCount] = useState(0);
   useEffect(() => {
     getRegistrationCount("ROADIES").then((count) => {
-      setRegistrationCount(count)
-    })
-  }, [])
+      setRegistrationCount(count);
+    });
+  }, []);
 
   return (
     <div className="relative space-y-10 px-4 py-8">
       {/* Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-                  src="/background.svg"
-                  alt="Scrolling Background"
-                  width={500}
-                  height={500}
-                  className="w-full h-auto opacity-150"
-                />
+          src="/background.svg"
+          alt="Scrolling Background"
+          width={500}
+          height={500}
+          className="w-full h-auto opacity-150"
+        />
       </div>
 
       {/* Event Intro Section */}
       <EventIntro
         venue="Bus Parking Area"
-        time="19-02-26, 10:00 am"/* Event at 19-20-21 */
+        time="19-02-26, 10:00 am" /* Event at 19-20-21 */
         imageUrl="/techno-events-logo/roadies.png"
         registrations={registrationCount}
         pricepool={10000}
@@ -115,8 +119,14 @@ The event is designed to promote:
           <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
             <li>1. Participants may participate individually</li>
             <li>2. Each member must register before the deadline.</li>
-            <li>Participants must be present during the judging time; absence may lead to disqualification.</li>
-            <li>4. Participants must maintain discipline and decorum throughout the event.</li>
+            <li>
+              Participants must be present during the judging time; absence may
+              lead to disqualification.
+            </li>
+            <li>
+              4. Participants must maintain discipline and decorum throughout
+              the event.
+            </li>
           </ul>
         </div>
       </section>

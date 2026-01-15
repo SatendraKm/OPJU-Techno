@@ -4,15 +4,27 @@ import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import EventManagers from "@/components/sub-component/event-managers";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import { FaCode, FaPenNib } from "react-icons/fa6";
 import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
-    { imageUrl: "/managers/codigo/divakar.jpg", name: "Divakar Yadav", contact: 9691300315 },
-    { imageUrl: "/managers/codigo/swapnil.jpg", name: "Swapnil Chatterjee", contact: 8085934908 },
-    { imageUrl: "/managers/codigo/aniruddha.jpg", name: "Aniruddha Singh Gautam", contact: 6260225774 },
+    {
+      imageUrl: "/managers/codigo/divakar.jpg",
+      name: "Divakar Yadav",
+      contact: 9691300315,
+    },
+    {
+      imageUrl: "/managers/codigo/swapnil.jpg",
+      name: "Swapnil Chatterjee",
+      contact: 8085934908,
+    },
+    {
+      imageUrl: "/managers/codigo/aniruddha.jpg",
+      name: "Aniruddha Singh Gautam",
+      contact: 6260225774,
+    },
   ];
 
   const [registrationCount, setRegistrationCount] = useState(0);
@@ -84,7 +96,9 @@ const Page = () => {
 
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-8">
           <div>
-            <h3 className="text-2xl text-green-600 font-semibold">Round 1: Coding Quiz</h3>
+            <h3 className="text-2xl text-green-600 font-semibold">
+              Round 1: Coding Quiz
+            </h3>
             <ul className="list-disc pl-6 text-gray-300 text-lg">
               <li>Duration: 40 minutes</li>
               <li>30 MCQs</li>
@@ -93,7 +107,9 @@ const Page = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl text-green-600 font-semibold">Round 2: Real Coding Challenge</h3>
+            <h3 className="text-2xl text-green-600 font-semibold">
+              Round 2: Real Coding Challenge
+            </h3>
             <ul className="list-disc pl-6 text-gray-300 text-lg">
               <li>Duration: 60–90 minutes</li>
               <li>5 Coding Problems (Easy → Hard)</li>
@@ -110,7 +126,9 @@ const Page = () => {
 
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-8">
           <div>
-            <h3 className="text-2xl text-green-600 font-semibold">Round 1: UI/UX MCQ</h3>
+            <h3 className="text-2xl text-green-600 font-semibold">
+              Round 1: UI/UX MCQ
+            </h3>
             <ul className="list-disc pl-6 text-gray-300 text-lg">
               <li>30 Questions</li>
               <li>Passing Criteria: 60%</li>
@@ -122,7 +140,8 @@ const Page = () => {
               Round 2: High-Fidelity UI/UX Design
             </h3>
             <p className="text-gray-300 text-lg">
-              Themes will be provided on the spot. Judges’ decision will be final.
+              Themes will be provided on the spot. Judges’ decision will be
+              final.
             </p>
           </div>
         </div>
