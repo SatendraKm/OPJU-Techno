@@ -55,7 +55,7 @@ const Page = () => {
       {/* Event Intro Section */}
        <EventIntro
           venue="Cafeteria, Ground Floor"
-          time="21-03-25, 10:00 am"
+          time="20-02-26, 10:00 am"
           imageUrl="/techno-events-logo/masterchef.png"
           registrations={registrationCount}
           pricepool={9000}

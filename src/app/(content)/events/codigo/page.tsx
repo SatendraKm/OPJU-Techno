@@ -24,15 +24,17 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 flex flex-col relative">
-      {/* Background */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+    <div className="relative w-full">
+
+      {/* 🔥 FULL PAGE BACKGROUND (FIXED & SHARP) */}
+      <div className="fixed inset-0 -z-10">
         <Image
-          src="/background.svg"
-          alt="Background"
-          width={500}
-          height={500}
-          className="w-full h-auto opacity-100"
+          src="/testfile/eventbg.png"
+          alt="Event Background"
+          fill
+          priority
+          quality={100}
+          className="object-cover"
         />
       </div>
 
@@ -40,10 +42,10 @@ const Page = () => {
       <EventIntro
         imageUrl="/techno-events-logo/codigo.png"
         registrations={registrationCount}
-        pricepool={0} // ✅ FIXED (To Be Announced)
+        pricepool="20,000"
         description="Unlock your coding potential at our University’s premier Coding Event!! Participate in challenges, network with peers, and enhance your skills."
-        time="To Be Announced"
-        venue="To Be Announced"
+        time="19-02-2026,11:00 AM "
+        venue="TB-09"
       />
 
       {/* Theme */}
@@ -147,6 +149,7 @@ const Page = () => {
 
       {/* Event Managers */}
       <EventManagers managers={managers} />
+
     </div>
   );
 };

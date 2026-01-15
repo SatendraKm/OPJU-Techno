@@ -48,7 +48,7 @@ const Page = () => {
         time="20–21 Feb 2026"
         imageUrl="/techno-events-logo/robovation.png"
         registrations={registrationCount}
-        pricepool={36000}
+        pricepool={40000}
         description="ROBOVATION 2026 is an electrifying robotics competition where innovation meets combat, speed, and precision. Participants design, build, and control robots to compete in high-intensity challenges including Robo Soccer, Robo Race, Fast Line Follower, and Robo War."
       />
 
@@ -65,11 +65,13 @@ const Page = () => {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 max-w-7xl mx-auto">
-        <SubEventCard
-          Icon={IoFootballOutline}
-          title="ROBO SOCCER"
-          description="Teams compete with a single wireless robot to score maximum goals by pushing or kicking a ball into the opponent’s goal. The event tests maneuvering, control, flipping, and kicking skills across elimination and final rounds."
-        />
+       <SubEventCard
+  Icon={IoFootballOutline}
+  title="ROBO SOCCER"
+  description="Teams compete with a single wireless robot to score maximum goals by pushing or kicking a ball into the opponent’s goal. The event tests maneuvering, control, flipping, and kicking skills across elimination and final rounds."
+  time="10:00 AM"
+  venue="Babuji Chowk"
+/>
 
         <SubEventCard
           Icon={FaFlagCheckered}

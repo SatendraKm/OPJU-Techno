@@ -29,7 +29,7 @@ const Page = () => {
       <EventIntro
         imageUrl="/techno-events-logo/designathon.png"
         registrations={0}
-        pricepool={0} // 1st, 2nd, 3rd (no amount mentioned)
+        pricepool={10000} // 1st, 2nd, 3rd (no amount mentioned)
         description="Designathon – Creative Expression Challenge is a design-focused event where participants respond to a theme using visual storytelling and design thinking. The emphasis is on clarity of ideas, originality, and communication rather than software mastery."
         time="19th & 20th | 3:00 PM – 4:00 PM"
         venue="TB 07"

@@ -83,10 +83,10 @@ const Roadies = () => {
       {/* Event Intro Section */}
       <EventIntro
         venue="Bus Parking Area"
-        time="19-02-26, 10:00 am"/* Event at 19-20-21 */
+        time="19-02-26, 11:30 am"/* Event at 19-20-21 */
         imageUrl="/techno-events-logo/roadies.png"
         registrations={registrationCount}
-        pricepool={10000}
+        pricepool={12000}
         description="Roadies is a flagship talent, innovation, and personality-based competition inspired by real-world problem solving, creativity, teamwork, and leadership. The event provides a platform for students to showcase their technical skills, innovative thinking, presentation ability, and competitive spirit through multiple engaging categories.
 The event is designed to promote:
 · Physical Strength

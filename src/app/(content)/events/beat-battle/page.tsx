@@ -54,11 +54,11 @@ const Page = () => {
 
       {/* Event Intro Section */}
       <EventIntro
-        venue="Cafeteria, Ground Floor"
-        time="21-03-25, 10:00 am"
+        venue="Babuji Chowk"
+        time="20-02-26, 2:30 pm"
         imageUrl="/techno-events-logo/masterchef.png"
         registrations={registrationCount}
-        pricepool={9000}
+        pricepool={10000}
         description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste."
       />
 

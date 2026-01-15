@@ -54,10 +54,10 @@ const Page = () => {
       <EventIntro
         imageUrl="/techno-events-logo/spotlightsaga.png"
         registrations={registrationCount}
-        pricepool={6000}
+        pricepool={10000}
         description="A fun flagship event where participants showcase talents like singing, dancing, comedy, or magic while also predicting their own score. An exact match with the judges' score wins instantly, making it a unique test of skill, confidence, and self-awareness. Entertain, guess, and win."
-        time="22-03-25 , 10:30 am"
-        venue="EE SEMINAR HALL (FB-14)"
+        time="19-02-26 , 12:00 pm"
+        venue="MP HALL "
       />
 
       {/* How It Works Section */}
