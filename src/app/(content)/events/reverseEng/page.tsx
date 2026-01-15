@@ -1,5 +1,5 @@
 "use client";
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import RoundSection from "@/components/sub-component/RoundSection";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
@@ -10,105 +10,108 @@ import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const rules = [
-    "Arrive at the venue 15 minutes before the event starts.",
-    "Submit an abstract (max 400 words) summarizing the idea before the event.",
-    "The idea must be innovative and address existing problems.",
-    "Participants can compete individually or in teams.",
-    "Winners are determined based on points earned.",
-    "Presentations must be completed within 8 minutes.",
-    "A warning bell will ring at 6 minutes, signaling the last 2 minutes.",
-    "A 2-minute query round follows each presentation.",
+    "Teams must report at the venue at least 15 minutes before the event begins.",
+    "Only registered teams are allowed to participate.",
+    "The event consists of multiple rounds with eliminations.",
+    "Use of mobile phones, internet, books, or external resources is strictly prohibited.",
+    "All answers must be written or drawn on the sheets provided.",
+    "Any form of malpractice will result in immediate disqualification.",
+    "Judges' decisions shall be final and binding.",
   ];
-  const managers = [
-    {
-      imageUrl: "/managers/Ideathon/Aryan.jpg",
-      name: "Aryan Mishra",
-      contact: 7205993715,
-    },
-    {
-      imageUrl: "/managers/Ideathon/Ashutosh.jpg",
-      name: "Ashutosh Sahu",
-      contact: 9776565942,
-    },
-    {
-      imageUrl: "/managers/Ideathon/Kumkum.jpg",
-      name: "KumKum Singh",
-      contact: 8889702577,
-    },
-  ];
+
   const reasons = [
-    "Win ₹18,000 and gain recognition.",
-    "Boost skills in problem-solving, design thinking, and presentation.",
-    "Create real-world impact with innovative solutions.",
-    "Network with experts and like-minded innovators.",
-    "Enhance your resume with a standout achievement.",
-    "Challenge yourself to think creatively under pressure.",
+    "Enhance logical reasoning and system-level thinking skills.",
+    "Test your understanding of electronics without physical hardware.",
+    "Participate in a low-logistics, classroom-friendly technical event.",
+    "Open to students from diverse technical backgrounds.",
+    "Improve problem-solving and analytical reasoning abilities.",
+    "Gain experience in decoding real-world hardware logic.",
   ];
+
   const rounds = [
     {
-      title: "ROUND 1",
-      description: "There will be a single round.",
+      title: "ROUND 1: Component Logic",
+      description:
+        "Fundamentals round focused on identifying electronic components, understanding their functions, and predicting outputs using unlabeled circuit diagrams, component images, and input-output tables. Pen and paper based with quick elimination.",
+    },
+    {
+      title: "ROUND 2: Black-Box Reasoning",
+      description:
+        "System thinking round where teams decode the internal logic of an unknown hardware system using observed input-output behavior, timing tables, and system descriptions. Focus on logical inference and pattern recognition.",
+    },
+    {
+      title: "ROUND 3: Design Interpretation",
+      description:
+        "Advanced reasoning round involving analysis of partially decoded systems and simplified circuit flows. Teams identify logical flaws, suggest improvements, and justify them using basic electronics principles.",
     },
   ];
 
-    const [registrationCount, setRegistrationCount] = useState(0)
+  const managers = [
+    {
+      imageUrl: "/managers/common/user.png",
+      name: "To Be Announced",
+      contact: 0,
+    },
+  ];
+
+  const [registrationCount, setRegistrationCount] = useState(0);
+
   useEffect(() => {
-    getRegistrationCount("IDEATHON").then((count) => {
-      setRegistrationCount(count)
-    })
-  }, [])
+    getRegistrationCount("REVERSE_ENGINEERING").then((count) => {
+      setRegistrationCount(count);
+    }).catch(() => {
+      setRegistrationCount(0);
+    });
+  }, []);
 
   return (
     <>
-      {/* Background Image Optimized */}
+      {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
           width={500}
           height={500}
           src="/background.svg"
           className="w-full h-auto opacity-150"
-          alt="Scrolling Background"
+          alt="Background"
         />
       </div>
 
       {/* Event Introduction */}
       <EventIntro
-        imageUrl="/techno-events-logo/ideathon.png"
+        imageUrl="/techno-events-logo/reverse-engineering.png"
         registrations={registrationCount}
-        pricepool={18000}
-        description="Ideathon is an engaging brainstorming event where individuals collaborate to address pressing challenges through innovative solutions. Participants work in teams, utilizing design thinking to develop viable ideas across diverse subjects like marketing, philosophy, and science."
-        time="20-03-2025, 11:30 AM"
-        venue="EE Seminar Hall(FB-14)"
+        pricepool={0}
+        description="Reverse Engineering – Decode the Hardware is a logic-oriented technical event designed to evaluate participants’ ability to analyze, interpret, and reason about unknown hardware systems. The event emphasizes observation, deduction, and conceptual understanding rather than physical assembly or complex instrumentation."
+        time="19, 20 & 21 Feb | 1:00 PM – 5:30 PM"
+        venue="TB 01 & TB 07"
       />
 
       <div className="flex flex-col items-center">
         <div className="bg-transparent text-white p-6 md:p-12 space-y-32">
+          
           {/* Rounds Section */}
           <section className="px-4">
             <RoundSection rounds={rounds} />
           </section>
 
-          {/* Judging Criteria Section */}
+          {/* Judging Criteria */}
           <section>
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
               JUDGING CRITERIA
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <p className="mb-4 text-2xl ">
-                Each idea is evaluated on the following criteria, with a maximum
-                of 20 points per category (Total 100 points):
-              </p>
-              <ul className="list-disc pl-5 text-2xl space-y-2 ">
-                <li>Uniqueness of the idea</li>
-                <li>Feasibility of the proposed solution</li>
-                <li>Presentation style</li>
-                <li>Response to questions from judges</li>
-                <li>Scalability of the idea</li>
+              <ul className="list-disc pl-5 text-2xl space-y-2">
+                <li>Logical accuracy</li>
+                <li>Clarity of reasoning</li>
+                <li>Depth of understanding</li>
+                <li>Ability to clearly explain decisions</li>
+                <li>System-level interpretation skills</li>
               </ul>
             </div>
           </section>
 
-          {/* Event Managers Section */}
+          {/* Additional Sections */}
           <WhyParticipate reasons={reasons} />
           <RulesAndRegulation rules={rules} />
           <EventManagers managers={managers} />

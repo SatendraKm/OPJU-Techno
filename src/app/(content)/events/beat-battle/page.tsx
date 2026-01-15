@@ -1,5 +1,5 @@
 "use client";
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
@@ -8,36 +8,32 @@ import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
-    { imageUrl: "/managers/MasterChef/NITIN.jpg", name: "Nitin Goyal", contact: 9669464118 },
+    { imageUrl: "/managers/BeatBattle/Somya.jpg", name: "Somya Patel", contact: 9479218521 },
+    { imageUrl: "/managers/BeatBattle/Gaurav.jpg", name: "Gaurav Adhikari", contact: 8319915571 },
+    { imageUrl: "/managers/BeatBattle/Suraj.jpg", name: "Suraj Das", contact: 7974639663 },
   ];
 
   const rules = [
-    "Teams must register in groups of 4 members.",
-    "This is open to other Institutions outside OPJU.",
-    "Each team must distribute tasks among members.",
-    "Abusive, offensive, politically driven, gender-biased, or personal remarks will be dealt strictly.",
-    "Costumes should be suitable for the event.",
-    "Registration is mandatory.",
-    "No outside ingredients are allowed.",
-    "Teams must finish within the given time.",
-    "Points will be deducted for messy stations.",
-    "Participants must bring their own cooking vessels, utensils, cloths for handling heat and cleaning, and crockery.",
+    "Solo participation only (no duets or groups).",
+    "Participants must register before the deadline.",
+    "Props are not allowed unless provided by organizers.",
+    "No offensive or inappropriate moves; maintain event decorum.",
   ];
 
   const criterias = [
-    "Taste 40%",
-    "Creativity 30%",
-    "Presentation 20%",
-    "Cleanliness & Organization 10%",
-    "The judges' decision is final.",
-    "Winners will be declared on the same day.",
+    "Musicality & Rhythm 25%",
+    "Creativity & Originality 25%",
+    "Energy & Stage Presence 20%",
+    "Execution & Technique 20%",
+    "Overall Impact 10%",
   ];
-  const [registrationCount, setRegistrationCount] = useState(0)
+
+  const [registrationCount, setRegistrationCount] = useState(0);
   useEffect(() => {
-    getRegistrationCount("MASTERCHEF").then((count) => {
-      setRegistrationCount(count)
-    })
-  }, [])
+    getRegistrationCount("BEAT-BATTLE").then((count) => {
+      setRegistrationCount(count);
+    });
+  }, []);
 
   return (
     <div className="relative space-y-10 px-4 py-8">
@@ -54,66 +50,82 @@ const Page = () => {
 
       {/* Event Intro Section */}
       <EventIntro
-        venue="Cafeteria, Ground Floor"
-        time="21-03-25, 10:00 am"
-        imageUrl="/techno-events-logo/masterchef.png"
+        venue="Babuji Chowk, OPJU"
+        time="20 Feb 2026, 2:00 PM - 5:30 PM"
+        imageUrl="/techno-events-logo/beatbattle.png"
         registrations={registrationCount}
-        pricepool={9000}
-        description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste."
+        pricepool={0} // Can update prize if known
+        description="Step into a high-energy clash of rhythm, creativity, and raw talent at Beat Battle. Dancers face off in head-to-head rounds, trading explosive footwork, sharp musicality, and fearless improvisation. The crowd fuels the momentum, judges watch for originality and control, and every beat drop is a chance to shine."
       />
 
-      {/* Theme Section */}
-      <section className="my-32 text-center">
-        <h1 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
-          THEME
-        </h1>
-        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white max-w-4xl mx-auto">
-          Every dish is a chapter, every bite a sentence, and every flavor a memory waiting to be told.
-        </p>
-      </section>
-
-      {/* Competition Format Section */}
+      {/* Event Format Section */}
       <section className="my-32">
         <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
-          COMPETITION FORMAT
+          EVENT CATEGORIES
         </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
-            <li>Total Participants: 100 students</li>
-            <li>Teams: 25 teams (4 students per team)</li>
-            <li>Time & Number of Rounds: To be intimated later</li>
-            <li>Registration Fee: ₹100 per group</li>
-            <li>Eligibility: UG & PG students (Age: 18 - Below 30) from any college/university.</li>
-          </ul>
-        </div>
-      </section>
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-6 text-white text-xl sm:text-2xl">
+          <div>
+            <h3 className="font-bold mb-2">Prelims Round</h3>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>All participants perform a solo set (45 seconds each).</li>
+              <li>Music is randomly selected by the DJ.</li>
+              <li>Top 16 dancers advance.</li>
+            </ul>
+          </div>
 
-      {/* Judgement Criteria Section */}
-      <section className="mb-20">
-        <RulesAndRegulation rules={rules} />
-        <div className="text-white mt-10">
-          <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
-            Judgement Criteria
-          </h2>
-          <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-            <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
-              {criterias.map((criteria, index) => (
-                <li key={index}>{criteria}</li>
-              ))}
+          <div>
+            <h3 className="font-bold mb-2">Top 16 (1 vs 1)</h3>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Head-to-head battles; matchups selected by the community.</li>
+              <li>45 seconds per dancer to perform the same song.</li>
+              <li>Winners advance to Top 8.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold mb-2">Top 8 (1 vs 1)</h3>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Head-to-head battles; matchups selected by the community.</li>
+              <li>45 seconds per dancer to perform the same song.</li>
+              <li>Winners advance to Semi-Finals.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold mb-2">Semi-Finals (Top 4)</h3>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>1 vs 1 battles; matchups selected by the community.</li>
+              <li>Each dancer performs 2 rounds of 45 seconds each.</li>
+              <li>Two different songs randomly played by the DJ.</li>
+              <li>Winners advance to Finals.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold mb-2">Finals (Top 2)</h3>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>1 vs 1 face-off; matchup chosen by the community.</li>
+              <li>Each dancer performs 2 rounds (1 min per round).</li>
+              <li>Two different songs randomly played by the DJ.</li>
+              <li>Winner is crowned Event Champion; the other is Runner-Up.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* Prizes Section */}
+      {/* Rules Section */}
+      <RulesAndRegulation rules={rules} />
+
+      {/* Judgement Criteria Section */}
       <section className="mb-20">
-        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
-          PRIZES
+        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
+          Judgement Criteria
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
-            <li>First, Second, and Third Place Winners, Three Consolation Prizes</li>
-            <li>Certificate of Appreciation for All Participants</li>
+          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+            {criterias.map((criteria, index) => (
+              <li key={index}>{criteria}</li>
+            ))}
           </ul>
         </div>
       </section>

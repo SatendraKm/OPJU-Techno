@@ -88,7 +88,7 @@ const Page = () => {
       {/* 🌄 PAGE BACKGROUND */}
       <div className="fixed inset-0 -z-10">
         <Image
-          src="/testfile/bgevents.jpeg"
+          src="/testfile/bgevents1.jpeg"
           alt="Events Background"
           fill
           className="object-cover"

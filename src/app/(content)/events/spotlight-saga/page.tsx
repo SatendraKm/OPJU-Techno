@@ -1,5 +1,5 @@
 "use client";
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
@@ -9,33 +9,45 @@ import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const rules = [
-    "Time Limit – Each participant gets 2 minutes to perform; exceeding the limit may lead to deductions.",
-    "Self-Scoring Must Be Honest – Participants must rate themselves before knowing the judges' scores.",
-    "No Offensive Content – Jokes, acts, or performances must be respectful and appropriate for all audiences.",
-    "Judges’ Decision is Final – Scores and results cannot be disputed.",
-    "Winning Criteria Applies Strictly – An exact self-score match wins instantly; otherwise, the highest-scoring participant wins."
+    "Teams consist of 2–4 members per side (Affirmative & Opposition).",
+    "Speakers must strictly follow allotted speaking time for each round.",
+    "No interruptions except structured interjections or POIs.",
+    "Arguments must be logical, fact-based, and well-structured.",
+    "Offensive language, discrimination, or personal attacks are prohibited.",
+    "Rebuttals must focus on arguments, not individuals.",
+    "Evidence must be genuine; fabrication or misrepresentation is prohibited.",
+    "Judges’ decisions are final and binding.",
   ];
 
   const reasons = [
-    "Showcase Your Talent – Sing, dance, mimic, or perform anything unique!",
-    "Fun & Engaging Twist – Predict your own score for a chance to win instantly!",
-    "Boost Confidence – Test your self-awareness and stage presence.",
-    "Entertain & Enjoy – A lighthearted event filled with creativity and surprises.",
-    "Perform, predict, and prove your skills in this one-of-a-kind talent challenge!"
+    "Sharpen your critical thinking and public speaking skills.",
+    "Engage in high-energy debates on business, socio-political, and current issues.",
+    "Learn to defend ideas and counter arguments strategically.",
+    "Gain exposure to competitive debating formats.",
+    "Win exciting cash prizes and recognition.",
   ];
 
   const managers = [
-    { imageUrl: "/managers/OPJU Spotlight Saga/Aparajita.jpg", name: "Aparajita Pandey", contact: 9907401010 },
-    { imageUrl: "/managers/OPJU Spotlight Saga/Shashwat.jpg", name: "Kumar Shashwat", contact: 7488987171 },
-    { imageUrl: "/managers/OPJU Spotlight Saga/Arjun.jpg", name: "Arjun Agrawal", contact: 7538033333 }
+    { imageUrl: "/managers/common/user.png", name: "Anushree Maity", contact: 9685434119 },
+    { imageUrl: "/managers/common/user.png", name: "Shivam Arora", contact: 9109245599 },
+    { imageUrl: "/managers/common/user.png", name: "Shubham Sharma", contact: 6207360156 },
+    { imageUrl: "/managers/common/user.png", name: "Avinash Agrawal", contact: 9691846192 },
+    { imageUrl: "/managers/common/user.png", name: "Navin Giri", contact: 8889183669 },
+    { imageUrl: "/managers/common/user.png", name: "Aniket Dash", contact: 0 },
+    { imageUrl: "/managers/common/user.png", name: "Shakshyee Sharma", contact: 6371965128 },
+    { imageUrl: "/managers/common/user.png", name: "Shivani Rathore", contact: 9343973942 },
+    { imageUrl: "/managers/common/user.png", name: "Madhurima Sidar", contact: 9752941333 },
+    { imageUrl: "/managers/common/user.png", name: "Kirti Upadhyay", contact: 9752072299 },
+    { imageUrl: "/managers/common/user.png", name: "Sushma Yadav", contact: 8319946166 },
   ];
 
-  const [registrationCount, setRegistrationCount] = useState(0)
+  const [registrationCount, setRegistrationCount] = useState(0);
+
   useEffect(() => {
-    getRegistrationCount("OPJU-SPOTLIGHT-SAGA").then((count) => {
-      setRegistrationCount(count)
-    })
-  }, [])
+    getRegistrationCount("VOICE-OF-YOUTH")
+      .then((count) => setRegistrationCount(count))
+      .catch(() => setRegistrationCount(0));
+  }, []);
 
   return (
     <div className="relative space-y-10 px-4 py-8">
@@ -52,50 +64,52 @@ const Page = () => {
 
       {/* Event Intro Section */}
       <EventIntro
-        imageUrl="/techno-events-logo/spotlightsaga.png"
+        imageUrl="/techno-events-logo/voice-of-youth.png"
         registrations={registrationCount}
-        pricepool={6000}
-        description="A fun flagship event where participants showcase talents like singing, dancing, comedy, or magic while also predicting their own score. An exact match with the judges' score wins instantly, making it a unique test of skill, confidence, and self-awareness. Entertain, guess, and win."
-        time="22-03-25 , 10:30 am"
-        venue="EE SEMINAR HALL (FB-14)"
+        pricepool={15000}
+        description="Voice of Youth is a high-energy debate competition where logic meets leadership. Participants debate on business trends, corporate ethics, financial strategies, socio-political issues, and current affairs. The event tests critical thinking, persuasive communication, and strategic rebuttals."
+        time="19th & 20th Feb 2026 | 11:00 AM onwards"
+        venue="MP Hall"
       />
 
-      {/* How It Works Section */}
+      {/* About / How It Works */}
       <section className="flex flex-col items-center px-4 my-10">
         <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
-          HOW IT WORKS
+          ABOUT THE EVENT
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl w-full">
-          <ul className="list-disc pl-5 text-xl sm:text-2xl space-y-4 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
-            <li>
-              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
-                Performance Round:
-              </span>{" "}
-              Each participant gets 2 minutes to perform any talent—singing, dancing, mimicry, magic tricks, comedy, or anything unique.
-            </li>
-            <li>
-              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
-                Self-Scoring Challenge:
-              </span>{" "}
-              After performing, the participant rates their own performance out of 10. Judges also give their own score without knowing the participant’s rating.
-            </li>
-            <li>
-              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
-                Winning Criteria:
-              </span>{" "}
-              If a participant’s self-score exactly matches the judges’ average score, they instantly win the event! Otherwise, the highest-scoring participant wins.
-            </li>
+          <p className="text-xl sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+            Step into the intellectual battlefield where arguments shape innovation.
+            Voice of Youth challenges aspiring managers, entrepreneurs, and thinkers
+            to present bold perspectives, defend ideas, and counter opponents through
+            structured debates on real-world issues.
+          </p>
+        </div>
+      </section>
+
+      {/* Judging Criteria */}
+      <section className="flex flex-col items-center px-4 my-10">
+        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
+          JUDGING CRITERIA
+        </h2>
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl w-full">
+          <ul className="list-disc pl-5 text-xl sm:text-2xl space-y-3 font-['Inter'] tracking-[3.75px] text-white">
+            <li>Content quality & relevance</li>
+            <li>Delivery & articulation</li>
+            <li>Rebuttal effectiveness</li>
+            <li>Structure & logical flow</li>
+            <li>Audience engagement (tie-breaker)</li>
           </ul>
         </div>
       </section>
 
-      {/* Why Participate Section */}
+      {/* Why Participate */}
       <WhyParticipate reasons={reasons} />
 
-      {/* Rules Section */}
+      {/* Rules */}
       <RulesAndRegulation rules={rules} />
 
-      {/* Event Managers Section */}
+      {/* Student Coordinators */}
       <EventManagers managers={managers} />
     </div>
   );

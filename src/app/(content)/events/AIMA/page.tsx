@@ -1,5 +1,5 @@
 "use client";
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
@@ -8,36 +8,33 @@ import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
-    { imageUrl: "/managers/MasterChef/NITIN.jpg", name: "Nitin Goyal", contact: 9669464118 },
+    { imageUrl: "/managers/SMQ/Bhoomika.jpg", name: "Bhoomika Agrawal", contact: 7580827172 },
+    { imageUrl: "/managers/SMQ/Bhoomi.jpg", name: "Bhoomi Chandra", contact: 8103501661 },
+    { imageUrl: "/managers/SMQ/Rimjhim.jpg", name: "Rimjhim Sahu", contact: 9303394225 },
   ];
 
   const rules = [
-    "Teams must register in groups of 4 members.",
-    "This is open to other Institutions outside OPJU.",
-    "Each team must distribute tasks among members.",
-    "Abusive, offensive, politically driven, gender-biased, or personal remarks will be dealt strictly.",
-    "Costumes should be suitable for the event.",
-    "Registration is mandatory.",
-    "No outside ingredients are allowed.",
-    "Teams must finish within the given time.",
-    "Points will be deducted for messy stations.",
-    "Participants must bring their own cooking vessels, utensils, cloths for handling heat and cleaning, and crockery.",
+    "Any School, UG and PG student who is interested in learning more about the business world and testing their knowledge of various aspects of it.",
+    "Team of 2 Students, No bar on Number of teams participating from an institute.",
+    "Questions are crafted to mirror real-world business scenarios.",
+    "Expect a blend of multiple-choice and true or false questions covering a spectrum of topics such as renowned brands, effective marketing strategies, HR methodologies, financial intricacies, significant business occurrences, and prominent personalities making headlines.",
   ];
 
   const criterias = [
-    "Taste 40%",
-    "Creativity 30%",
-    "Presentation 20%",
-    "Cleanliness & Organization 10%",
-    "The judges' decision is final.",
-    "Winners will be declared on the same day.",
+    "Regional Prelim (Mobile based on mentimeter) 11:00 to 12:00 hrs",
+    "Regional Qualifier (Paper based MCQ) 12:00 to 13:00 hrs",
+    "Result Announcement: Post Lunch",
+    "Regional Semi finale 1(On Stage) 14:00 to 14:30 hrs",
+    "Regional Semi finale 2 (On Stage) 14:45 to 15:15 hrs",
+    "Regional finale (On Stage) 15:30 to 16:00 hrs",
   ];
-  const [registrationCount, setRegistrationCount] = useState(0)
+
+  const [registrationCount, setRegistrationCount] = useState(0);
   useEffect(() => {
-    getRegistrationCount("MASTERCHEF").then((count) => {
-      setRegistrationCount(count)
-    })
-  }, [])
+    getRegistrationCount("SMQ-2025-26").then((count) => {
+      setRegistrationCount(count);
+    });
+  }, []);
 
   return (
     <div className="relative space-y-10 px-4 py-8">
@@ -54,54 +51,38 @@ const Page = () => {
 
       {/* Event Intro Section */}
       <EventIntro
-        venue="Cafeteria, Ground Floor"
-        time="21-03-25, 10:00 am"
-        imageUrl="/techno-events-logo/masterchef.png"
+        venue="Multipurpose Hall, O.P. Jindal University, Raigarh"
+        time="21 February, 2026 | 09:00 AM - 05:00 PM"
+        imageUrl="/techno-events-logo/smq.png"
         registrations={registrationCount}
-        pricepool={9000}
-        description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste."
+        pricepool={10000}
+        description="The Student Management Quiz (SMQ) offers an engaging and innovative platform to assess students’ understanding across diverse business domains, including branding, marketing, HR, finance, and prominent business leaders. Compete, learn, and win exciting rewards."
       />
 
-      {/* Theme Section */}
+      {/* Event Category Section */}
       <section className="my-32 text-center">
         <h1 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
-          THEME
+          EVENT CATEGORY
         </h1>
         <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white max-w-4xl mx-auto">
-          Every dish is a chapter, every bite a sentence, and every flavor a memory waiting to be told.
+          Management Quiz
         </p>
       </section>
 
-      {/* Competition Format Section */}
-      <section className="my-32">
-        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
-          COMPETITION FORMAT
+      {/* Rules Section */}
+      <RulesAndRegulation rules={rules} />
+
+      {/* Judgement Criteria / Schedule Section */}
+      <section className="mb-20">
+        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
+          Schedule & Judgement Criteria
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
-            <li>Total Participants: 100 students</li>
-            <li>Teams: 25 teams (4 students per team)</li>
-            <li>Time & Number of Rounds: To be intimated later</li>
-            <li>Registration Fee: ₹100 per group</li>
-            <li>Eligibility: UG & PG students (Age: 18 - Below 30) from any college/university.</li>
+          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+            {criterias.map((criteria, index) => (
+              <li key={index}>{criteria}</li>
+            ))}
           </ul>
-        </div>
-      </section>
-
-      {/* Judgement Criteria Section */}
-      <section className="mb-20">
-        <RulesAndRegulation rules={rules} />
-        <div className="text-white mt-10">
-          <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
-            Judgement Criteria
-          </h2>
-          <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-            <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
-              {criterias.map((criteria, index) => (
-                <li key={index}>{criteria}</li>
-              ))}
-            </ul>
-          </div>
         </div>
       </section>
 
@@ -112,14 +93,25 @@ const Page = () => {
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
           <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
-            <li>First, Second, and Third Place Winners, Three Consolation Prizes</li>
-            <li>Certificate of Appreciation for All Participants</li>
+            <li>Exciting prizes for the winner worth ₹10,000</li>
+            <li>Certificate of Participation for all participants</li>
           </ul>
         </div>
       </section>
 
       {/* Event Managers Section */}
       <EventManagers managers={managers} />
+
+      {/* Faculty Coordinators Section */}
+      <section className="mb-20">
+        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
+          Faculty Coordinators
+        </h2>
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed">
+          <p>Dr. Himanshu Vaishnaw: +91 97138 63587</p>
+          <p>Dr. Saurabh Gupta: +91 97958 48506</p>
+        </div>
+      </section>
     </div>
   );
 };

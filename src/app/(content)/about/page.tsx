@@ -8,8 +8,8 @@ const About = () => {
     <div className=" w-full">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-        width={500}
-        height={500}
+          width={500}
+          height={500}
           src="/aboutpagebackground.svg"
           className="w-full h-auto opacity-150"
           alt="Scrolling Background"
@@ -56,7 +56,7 @@ const About = () => {
         <div className="flex flex-col md:flex-row mt-36 items-center backdrop-blur-sm">
           <div className="text-left order-2 md:order-1">
             <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium ">
-              TECHNOROLLIX 2025
+              TECHNO AIMBIATION 2026
             </h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
               Technorollix is Central India&apos;s biggest techno-cultural
@@ -84,8 +84,8 @@ const About = () => {
         <div className="flex flex-col md:flex-row mt-36 items-center">
           <div className="mr-0 md:mr-20 mb-10 md:mb-0">
             <Image
-            width={500}
-            height={500}
+              width={500}
+              height={500}
               src="/junoonlogo.png"
               alt="junoon logo"
               className="w-full max-w-[600px] h-auto"
@@ -129,8 +129,8 @@ const About = () => {
 
           <div className="ml-0 md:ml-20 mb-10 md:mb-0 order-1 md:order-2">
             <Image
-            width={500}
-            height={500}
+              width={500}
+              height={500}
               src="/ambiation.svg"
               alt="aimbiation logo"
               className="w-full max-w-[600px] h-auto"
