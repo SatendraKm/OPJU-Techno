@@ -57,11 +57,13 @@ const Page = () => {
   const [registrationCount, setRegistrationCount] = useState(0);
 
   useEffect(() => {
-    getRegistrationCount("REVERSE_ENGINEERING").then((count) => {
-      setRegistrationCount(count);
-    }).catch(() => {
-      setRegistrationCount(0);
-    });
+    getRegistrationCount("REVERSE_ENGINEERING")
+      .then((count) => {
+        setRegistrationCount(count);
+      })
+      .catch(() => {
+        setRegistrationCount(0);
+      });
   }, []);
 
   return (
@@ -79,7 +81,7 @@ const Page = () => {
 
       {/* Event Introduction */}
       <EventIntro
-        imageUrl="/techno-events-logo/reverse-engineering.png"
+        imageUrl="/testfile/ReverseEng.png"
         registrations={registrationCount}
         pricepool={0}
         description="Reverse Engineering – Decode the Hardware is a logic-oriented technical event designed to evaluate participants’ ability to analyze, interpret, and reason about unknown hardware systems. The event emphasizes observation, deduction, and conceptual understanding rather than physical assembly or complex instrumentation."
@@ -89,7 +91,6 @@ const Page = () => {
 
       <div className="flex flex-col items-center">
         <div className="bg-transparent text-white p-6 md:p-12 space-y-32">
-          
           {/* Rounds Section */}
           <section className="px-4">
             <RoundSection rounds={rounds} />

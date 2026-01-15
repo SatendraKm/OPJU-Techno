@@ -8,10 +8,26 @@ import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
-    { imageUrl: "/managers/Startup/Sonali.jpg", name: "Sonali Pradhan", contact: 8260226364 },
-    { imageUrl: "/managers/Startup/Palak.jpg", name: "Palak Agrawal", contact: 6264671771 },
-    { imageUrl: "/managers/Startup/Ankita.jpg", name: "R. Ankita", contact: 7024089882 },
-    { imageUrl: "/managers/Startup/Manish.jpg", name: "Manish Yadav", contact: 9109892675 },
+    {
+      imageUrl: "/managers/Startup/Sonali.jpg",
+      name: "Sonali Pradhan",
+      contact: 8260226364,
+    },
+    {
+      imageUrl: "/managers/Startup/Palak.jpg",
+      name: "Palak Agrawal",
+      contact: 6264671771,
+    },
+    {
+      imageUrl: "/managers/Startup/Ankita.jpg",
+      name: "R. Ankita",
+      contact: 7024089882,
+    },
+    {
+      imageUrl: "/managers/Startup/Manish.jpg",
+      name: "Manish Yadav",
+      contact: 9109892675,
+    },
     // Add other student coordinators if you want images
   ];
 
@@ -20,13 +36,13 @@ const Page = () => {
     "Team representation: Only registered team members are allowed to pitch and respond during the Q&A session.",
     "Originality of idea: The idea presented must be original and owned by the pitching team. Plagiarism or copied concepts will result in immediate disqualification.",
     "Presentation format compliance: Participants must follow the prescribed format (PPT/PDF, slide limit, font size, etc.) as communicated by the organizers.",
-    "Judges’ decision is final: The evaluation and results declared by the jury are final and binding on all participants."
+    "Judges’ decision is final: The evaluation and results declared by the jury are final and binding on all participants.",
   ];
 
   const criterias = [
     "Innovation & Problem Relevance",
     "Feasibility & Business Potential",
-    "Presentation & Team Capability"
+    "Presentation & Team Capability",
   ];
 
   const [registrationCount, setRegistrationCount] = useState(0);
@@ -53,7 +69,7 @@ const Page = () => {
       <EventIntro
         venue="Live Classroom"
         time="20 Feb 2026, 10:00 AM Onwards"
-        imageUrl="/techno-events-logo/startup.png"
+        imageUrl="/testfile/Startup.png"
         registrations={registrationCount}
         pricepool={0} // update if known
         description="The Startup Pitching Event provides early-stage innovators and entrepreneurs a platform to present ideas to a panel of experts, investors, and industry leaders. Showcase innovative solutions, demonstrate business viability, and receive constructive feedback to refine concepts."

@@ -8,14 +8,42 @@ import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
-    { imageUrl: "/managers/Riwayat/Karishma.jpg", name: "Karishma Mehra", contact: 8720845925 },
-    { imageUrl: "/managers/Riwayat/Ayush.jpg", name: "Ayush Raj Singh", contact: 9981065247 },
-    { imageUrl: "/managers/Riwayat/Sakshi.jpg", name: "Sakshi Sinha", contact: 0 },
+    {
+      imageUrl: "/managers/Riwayat/Karishma.jpg",
+      name: "Karishma Mehra",
+      contact: 8720845925,
+    },
+    {
+      imageUrl: "/managers/Riwayat/Ayush.jpg",
+      name: "Ayush Raj Singh",
+      contact: 9981065247,
+    },
+    {
+      imageUrl: "/managers/Riwayat/Sakshi.jpg",
+      name: "Sakshi Sinha",
+      contact: 0,
+    },
     { imageUrl: "/managers/Riwayat/Arti.jpg", name: "Arti Yadav", contact: 0 },
-    { imageUrl: "/managers/Riwayat/Vanshika.jpg", name: "Vanshika Narwani", contact: 0 },
-    { imageUrl: "/managers/Riwayat/Prachi.jpg", name: "Prachi Sharma", contact: 0 },
-    { imageUrl: "/managers/Riwayat/Aastha.jpg", name: "Aastha Sahu", contact: 0 },
-    { imageUrl: "/managers/Riwayat/Pranjal.jpg", name: "Pranjal Sinha", contact: 0 },
+    {
+      imageUrl: "/managers/Riwayat/Vanshika.jpg",
+      name: "Vanshika Narwani",
+      contact: 0,
+    },
+    {
+      imageUrl: "/managers/Riwayat/Prachi.jpg",
+      name: "Prachi Sharma",
+      contact: 0,
+    },
+    {
+      imageUrl: "/managers/Riwayat/Aastha.jpg",
+      name: "Aastha Sahu",
+      contact: 0,
+    },
+    {
+      imageUrl: "/managers/Riwayat/Pranjal.jpg",
+      name: "Pranjal Sinha",
+      contact: 0,
+    },
     { imageUrl: "/managers/Riwayat/Praneet.jpg", name: "Praneet", contact: 0 },
   ];
 
@@ -57,7 +85,7 @@ const Page = () => {
       <EventIntro
         venue="Babuji Chowk & Football Ground Stage"
         time="11-19 Feb 2026"
-        imageUrl="/techno-events-logo/riwayat.png"
+        imageUrl="/testfile/Riywayat.png"
         registrations={registrationCount}
         pricepool={18000}
         description="An inter-college fashion show hosted by OP Jindal University, designed to promote creativity, confidence, and personality through structured rounds, workshops, and inclusive participation."

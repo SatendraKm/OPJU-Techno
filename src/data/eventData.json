@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Codigo",
+    "image": null,
+    "teamSize": 4,
+    "prizeMoney": 50000
+  },
+  {
+    "name": "Hackathon",
+    "image": null,
+    "teamSize": 2,
+    "prizeMoney": 20000
+  },
+  {
+    "name": "Quiz",
+    "image": null,
+    "teamSize": 1,
+    "prizeMoney": 10000
+  }
+]

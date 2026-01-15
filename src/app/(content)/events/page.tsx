@@ -30,7 +30,7 @@ const eventsData = {
       link: "/events/start-up-business-plan",
     },
     { imageUrl: "/testfile/riywayat.png", link: "/events/riywayat" },
-    { imageUrl: "/testfile/AIMA’s 1.png", link: "/events/aima" },
+    { imageUrl: "/testfile/AIMA’s 1.png", link: "/events/AIMA" },
   ],
 };
 

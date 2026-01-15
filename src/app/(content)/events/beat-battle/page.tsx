@@ -8,9 +8,21 @@ import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
-    { imageUrl: "/managers/BeatBattle/Somya.jpg", name: "Somya Patel", contact: 9479218521 },
-    { imageUrl: "/managers/BeatBattle/Gaurav.jpg", name: "Gaurav Adhikari", contact: 8319915571 },
-    { imageUrl: "/managers/BeatBattle/Suraj.jpg", name: "Suraj Das", contact: 7974639663 },
+    {
+      imageUrl: "/managers/BeatBattle/Somya.jpg",
+      name: "Somya Patel",
+      contact: 9479218521,
+    },
+    {
+      imageUrl: "/managers/BeatBattle/Gaurav.jpg",
+      name: "Gaurav Adhikari",
+      contact: 8319915571,
+    },
+    {
+      imageUrl: "/managers/BeatBattle/Suraj.jpg",
+      name: "Suraj Das",
+      contact: 7974639663,
+    },
   ];
 
   const rules = [
@@ -52,7 +64,7 @@ const Page = () => {
       <EventIntro
         venue="Babuji Chowk, OPJU"
         time="20 Feb 2026, 2:00 PM - 5:30 PM"
-        imageUrl="/techno-events-logo/beatbattle.png"
+        imageUrl="/testfile/BeatBattle.png"
         registrations={registrationCount}
         pricepool={0} // Can update prize if known
         description="Step into a high-energy clash of rhythm, creativity, and raw talent at Beat Battle. Dancers face off in head-to-head rounds, trading explosive footwork, sharp musicality, and fearless improvisation. The crowd fuels the momentum, judges watch for originality and control, and every beat drop is a chance to shine."

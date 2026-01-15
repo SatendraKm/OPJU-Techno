@@ -37,10 +37,26 @@ const Page = () => {
   ];
 
   const managers = [
-    { imageUrl: "/managers/designathon/priya.jpg", name: "Priya Kumari", contact: 9234531358 },
-    { imageUrl: "/managers/designathon/shruti.jpg", name: "Shruti Niwas", contact: 7024120039 },
-    { imageUrl: "/managers/designathon/aashta.jpg", name: "Aashta Choudhary", contact: 7898260105 },
-    { imageUrl: "/managers/designathon/pooja.jpg", name: "Pooja Mahto", contact: 9693397426 },
+    {
+      imageUrl: "/managers/designathon/priya.jpg",
+      name: "Priya Kumari",
+      contact: 9234531358,
+    },
+    {
+      imageUrl: "/managers/designathon/shruti.jpg",
+      name: "Shruti Niwas",
+      contact: 7024120039,
+    },
+    {
+      imageUrl: "/managers/designathon/aashta.jpg",
+      name: "Aashta Choudhary",
+      contact: 7898260105,
+    },
+    {
+      imageUrl: "/managers/designathon/pooja.jpg",
+      name: "Pooja Mahto",
+      contact: 9693397426,
+    },
   ];
 
   return (
@@ -59,7 +75,7 @@ const Page = () => {
       {/* Event Intro */}
       <section>
         <EventIntro
-          imageUrl="/techno-events-logo/designathon.png"
+          imageUrl="/testfile/designathon.png"
           registrations={registrationCount}
           pricepool={0}
           description="Designathon – Creative Expression Challenge is a creative design event where participants respond to a given theme or problem statement through visual design. The event focuses on idea clarity, visual storytelling, and design thinking rather than advanced software mastery."
@@ -72,9 +88,10 @@ const Page = () => {
       <section className="px-4 mx-auto mb-32">
         <div className="flex flex-col items-center justify-center mt-20">
           <div className="w-full max-w-3xl text-center text-white text-base sm:text-2xl font-normal font-['Inter'] tracking-[3px]">
-            Designathon is a creative design event where participants respond to a
-            theme or problem statement through visual design. The focus is on idea
-            clarity, originality, storytelling, and justification of design choices.
+            Designathon is a creative design event where participants respond to
+            a theme or problem statement through visual design. The focus is on
+            idea clarity, originality, storytelling, and justification of design
+            choices.
           </div>
         </div>
       </section>

@@ -8,9 +8,21 @@ import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
-    { imageUrl: "/managers/SMQ/Bhoomika.jpg", name: "Bhoomika Agrawal", contact: 7580827172 },
-    { imageUrl: "/managers/SMQ/Bhoomi.jpg", name: "Bhoomi Chandra", contact: 8103501661 },
-    { imageUrl: "/managers/SMQ/Rimjhim.jpg", name: "Rimjhim Sahu", contact: 9303394225 },
+    {
+      imageUrl: "/managers/SMQ/Bhoomika.jpg",
+      name: "Bhoomika Agrawal",
+      contact: 7580827172,
+    },
+    {
+      imageUrl: "/managers/SMQ/Bhoomi.jpg",
+      name: "Bhoomi Chandra",
+      contact: 8103501661,
+    },
+    {
+      imageUrl: "/managers/SMQ/Rimjhim.jpg",
+      name: "Rimjhim Sahu",
+      contact: 9303394225,
+    },
   ];
 
   const rules = [
@@ -53,7 +65,7 @@ const Page = () => {
       <EventIntro
         venue="Multipurpose Hall, O.P. Jindal University, Raigarh"
         time="21 February, 2026 | 09:00 AM - 05:00 PM"
-        imageUrl="/techno-events-logo/smq.png"
+        imageUrl="/testfile/AIMAS.png"
         registrations={registrationCount}
         pricepool={10000}
         description="The Student Management Quiz (SMQ) offers an engaging and innovative platform to assess students’ understanding across diverse business domains, including branding, marketing, HR, finance, and prominent business leaders. Compete, learn, and win exciting rewards."
