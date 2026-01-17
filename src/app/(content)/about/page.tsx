@@ -56,7 +56,7 @@ const About = () => {
         <div className="flex flex-col md:flex-row mt-36 items-center backdrop-blur-sm">
           <div className="text-left order-2 md:order-1">
             <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium ">
-              TECHNOROLLIX 2025
+              TECHNOAIMBIATION 2026
             </h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
               Technorollix is Central India&apos;s biggest techno-cultural
@@ -70,13 +70,15 @@ const About = () => {
           </div>
 
           <div className="ml-0 md:ml-20 mb-10 md:mb-0 order-1 md:order-2">
-            <Image
-              src="/technorollixlogo.png"
-              alt="techno logo"
-              width={500}
-              height={500}
-              className="w-full max-w-[700px] h-auto"
-            />
+  <Image
+  src="/testfile/technoambiation.png"
+  alt="Techno Ambition"
+  width={500}
+  height={500}
+  className="w-full max-w-[600px] max-h-[60vh] object-contain"
+/>
+
+
           </div>
         </div>
 
@@ -107,36 +109,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Fourth Event */}
-        <div className="flex flex-col md:flex-row mt-36 items-center">
-          <div className="text-left order-2 md:order-1">
-            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
-              aiMBiAtion{" "}
-            </h5>
-            <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
-              aiMBiAtion 2025, hosted by OP Jindal University, is more than a
-              management fest—it&apos;s a hub of innovation, creativity, and
-              competition. It brings together dreamers and doers to test their
-              skills in business, marketing, and debate while also celebrating
-              culture with fashion, music, and drama. From startup challenges to
-              trading battles, ad campaigns to treasure hunts, every event
-              pushes participants to think, act, and innovate. With a perfect
-              blend of strategy and spontaneity, aiMBiAtion promises an
-              unforgettable experience where talents shine, stories unfold, and
-              memories are made. Compete. Create. Celebrate.
-            </p>
-          </div>
-
-          <div className="ml-0 md:ml-20 mb-10 md:mb-0 order-1 md:order-2">
-            <Image
-            width={500}
-            height={500}
-              src="/ambiation.svg"
-              alt="aimbiation logo"
-              className="w-full max-w-[600px] h-auto"
-            />
-          </div>
-        </div>
+        
         <br />
         <br />
         <br />
