@@ -17,7 +17,7 @@ export async function sendWelcomeEmail(
   const mailOptions = {
     from: process.env.NEXT_PUBLIC_SMTP_USER_EMAIL,
     to: recipientEmail, // List of recipients
-    subject: "Welcome to Technorollix-2025!", // Subject line
+    subject: "Welcome to Techno-2026!", // Subject line
     html: `
       <!DOCTYPE html>
       <html>
@@ -69,7 +69,7 @@ export async function sendResetPasswordEmail(
   const mailOptions = {
     from: process.env.NEXT_PUBLIC_SMTP_USER_EMAIL,
     to: recipientEmail,
-    subject: "Reset Your Password - Technorollix-2025",
+    subject: "Reset Your Password - Technorollix-2026",
     html: `
       <!DOCTYPE html>
       <html>
