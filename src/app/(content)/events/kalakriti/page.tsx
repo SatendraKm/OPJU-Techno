@@ -174,7 +174,7 @@ const KalaKriti = () => {
       {/* Event Intro Section */}
       <section>
         <EventIntro
-          imageUrl="/techno-events-logo/kalakriti.png"
+          imageUrl="/testfile/kalakritinew.svg"
           registrations={registrationCount}
           pricepool={23000}
           description="Craft is the vehicle for expressing your vision. Craft is the visible edge of Art. Here we are with 'Kalakriti,' which is a unique event driven by our artists' ideas, the context of space, season, and the vibes of the region. You will perceive Fiction turning into Reality. You are going to witness a different field of abstract painting, fine arts photography, sculpture, and many more."
