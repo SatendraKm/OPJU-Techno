@@ -66,7 +66,7 @@ const Page = () => {
         time="20 Feb 2026, 2:00 PM - 5:30 PM"
         imageUrl="/testfile/BeatBattle.png"
         registrations={registrationCount}
-        pricepool={0} // Can update prize if known
+        pricepool={10000} // Can update prize if known
         description="Step into a high-energy clash of rhythm, creativity, and raw talent at Beat Battle. Dancers face off in head-to-head rounds, trading explosive footwork, sharp musicality, and fearless improvisation. The crowd fuels the momentum, judges watch for originality and control, and every beat drop is a chance to shine."
       />
 
