@@ -41,62 +41,49 @@ export const logout = async (): Promise<void> => {
 };
 
 
-export const getMergedEvents = (participatingTeamsData: any[], userEmail: string) => {
-	const leadingTeamsWithOutsiders = participatingTeamsData.filter(
-		(team: any) => team.leader.email === userEmail && team.members.some((member: any) => member.isOutsider)
+export const getMergedEvents = (
+	participatingTeamsData: any[],
+	userEmail: string
+  ) => {
+  
+	// 1. Filter only teams where current user is LEADER
+	const leaderTeams = participatingTeamsData.filter(
+	  (team: any) =>
+		team.leader?.email?.toLowerCase().trim() ===
+		userEmail?.toLowerCase().trim()
 	);
-	const eventIds = leadingTeamsWithOutsiders.map((team) => team.event._id);
-	const eventNames: any = [];
-
-	eventSubEventData.events.forEach((event) => {
-		if (eventIds.includes(event.event)) {
-			eventNames.push(event.eventName);
-		} else {
-			event.subEvents.forEach((subEvent) => {
-				if (eventIds.includes(subEvent.subEvent)) {
-					eventNames.push(event.eventName);
-				}
-			});
-		}
+  
+	console.log("LEADER TEAMS:", leaderTeams);
+  
+	// 2. Merge teams by EVENT NAME (from DB directly)
+	const mergedMap: any = {};
+  
+	leaderTeams.forEach((team) => {
+	  const eventName = team.event.name; // direct DB value
+  
+	  if (!mergedMap[eventName]) {
+		mergedMap[eventName] = {
+		  teams: [],
+		  individualSchema: true,
+		};
+	  }
+  
+	  mergedMap[eventName].teams.push(team);
+  
+	  // if any team has size > 1 => team schema
+	  if (team.size !== 1) {
+		mergedMap[eventName].individualSchema = false;
+	  }
 	});
-
-	// Merge teams in subevents of the same event as one
-	const mergedTeamsArray: any[] = [];
-	const mergedTeams: any = {};
-
-	leadingTeamsWithOutsiders.forEach((team) => {
-		const eventId = team.event._id;
-		const eventName = eventNames.find((name: any) =>
-			eventSubEventData.events.some(
-				(event) =>
-					event.eventName === name &&
-					(event.event === eventId ||
-						event.subEvents.some(
-							(subEvent) => subEvent.subEvent === eventId
-						))
-			)
-		);
-
-		if (eventName) {
-			if (!mergedTeams[eventName]) {
-				mergedTeams[eventName] = {
-					teams: [],
-					individualSchema: true,
-				};
-			}
-			mergedTeams[eventName].teams.push(team);
-			if (team.individualSchema === false) {
-				mergedTeams[eventName].individualSchema = false;
-			}
-		}
-	});
-
-	for (const eventName in mergedTeams) {
-		mergedTeamsArray.push({
-			eventName,
-			...mergedTeams[eventName],
-		});
-	}
-
+  
+	// 3. Convert object to array
+	const mergedTeamsArray = Object.keys(mergedMap).map((key) => ({
+	  eventName: key,
+	  ...mergedMap[key],
+	}));
+  
+	console.log("MERGED FINAL FIXED:", mergedTeamsArray);
+  
 	return mergedTeamsArray;
-};
+  };
+  
