@@ -39,12 +39,13 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
     <h2 className="text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-center mt-40">
       {title}
     </h2>
-    <p className="mt-4 md:mt-10 w-full md:w-[943px] text-center text-white text-lg md:text-xl font-medium font-['Poppins'] uppercase mx-auto">
-      Our fest offers a diverse range of technical and non-technical events,
-      ensuring there&apos;s something for everyone. From innovative tech
-      showcases to fun and engaging activities, we bring together creativity,
-      skills, and excitement for an unforgettable experience!
-    </p>
+   <p className="mt-4 md:mt-10 w-full md:w-[943px] text-center text-black text-lg md:text-xl font-medium font-['Poppins'] uppercase mx-auto">
+  Our fest offers a diverse range of technical and non-technical events,
+  ensuring there&apos;s something for everyone. From innovative tech
+  showcases to fun and engaging activities, we bring together creativity,
+  skills, and excitement for an unforgettable experience!
+</p>
+
 
     <div className="mt-10 md:mt-28 ml-20 grid grid-cols-2 md:grid-cols-3 gap-2 px-3 md:px-8 lg:px-16">
       {events.map((event, index) => (
