@@ -13,7 +13,7 @@ const eventsData = {
   ],
 
   nonTechnical: [
-    { imageUrl: "/testfile/kalakriti.svg", link: "/events/kalakriti" },
+    { imageUrl: "/testfile/kalakritinew.svg", link: "/events/kalakriti" },
     { imageUrl: "/testfile/master.svg", link: "/events/master_chef" },
     { imageUrl: "/testfile/roadies.svg", link: "/events/roadies" },
     { imageUrl: "/testfile/antaragini.svg", link: "/events/antaragni" },
