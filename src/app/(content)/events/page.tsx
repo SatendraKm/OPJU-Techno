@@ -1,36 +1,36 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ButtonLanding from "@/components/sub-component/button-landing";
+
 
 const eventsData = {
   technical: [
-    { imageUrl: "/testfile/codigo.png", link: "/events/codigo" },
-    { imageUrl: "/testfile/techlab.png", link: "/events/techlab" },
-    { imageUrl: "/testfile/robovation.png", link: "/events/robovation" },
+    { imageUrl: "/testfile/codigo.svg", link: "/events/codigo" },
+    { imageUrl: "/testfile/techlab.svg", link: "/events/techlab" },
+    { imageUrl: "/testfile/robo.svg", link: "/events/robovation" },
     //{ imageUrl: "/testfile/Reverse Eng.png", link: "/events/hackathon" },
     //{ imageUrl: "/techno-events-logo/aerodrone.png", link: "/events/aerodrone" },
-    { imageUrl: "/testfile/ideathon.png", link: "/events/ideathon" },
-    { imageUrl: "/testfile/ReverseEng.png", link: "/events/reverseEng" },
-    { imageUrl: "/testfile/2Designathon.png", link: "/events/designathon" },
+    { imageUrl: "/testfile/rev.svg", link: "/events/ideathon" },
+    { imageUrl: "/testfile/rev.svg", link: "/events/reverseEng" },
+    { imageUrl: "/testfile/design.svg", link: "/events/designathon" },
   ],
 
   nonTechnical: [
-    { imageUrl: "/testfile/Kalakriti .png", link: "/events/kalakriti" },
+    { imageUrl: "/testfile/kalakriti.svg", link: "/events/kalakriti" },
     //{ imageUrl: "/techno-events-logo/spotlightsaga.png", link: "/events/spotlight-saga" },
     // { imageUrl: "/techno-events-logo/amongus.png", link: "/events/among-us" },
-    { imageUrl: "/testfile/Masterchef .png", link: "/events/master_chef" },
-    { imageUrl: "/testfile/Roadies .png", link: "/events/roadies" },
-    { imageUrl: "/testfile/Antaragni 1.png", link: "/events/antaragni" },
+    { imageUrl: "/testfile/master.svg", link: "/events/master_chef" },
+    { imageUrl: "/testfile/roadies.svg", link: "/events/roadies" },
+    { imageUrl: "/testfile/antaragini.svg", link: "/events/antaragni" },
     //{ imageUrl: "/techno-events-logo/gamefusion.png", link: "/events/game-fusion" },
-    { imageUrl: "/testfile/Voice of Youth .png", link: "/events/yuva-sabha" },
-    { imageUrl: "/testfile/Beat Battle.png", link: "/events/beat-battle" },
+    { imageUrl: "/testfile/voice.svg", link: "/events/yuva-sabha" },
+    { imageUrl: "/testfile/beat.svg", link: "/events/beat-battle" },
     {
-      imageUrl: "/testfile/Start-up.png",
+      imageUrl: "/testfile/startup.svg",
       link: "/events/start-up-business-plan",
     },
-    { imageUrl: "/testfile/riywayat.png", link: "/events/riywayat" },
-    { imageUrl: "/testfile/AIMA’s 1.png", link: "/events/aima" },
+    { imageUrl: "/testfile/riwayat.svg", link: "/events/riywayat" },
+    { imageUrl: "/testfile/aima.svg", link: "/events/aima" },
   ],
 };
 
@@ -78,7 +78,21 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
         </Link>
       ))}
     </div>
-    <ButtonLanding label="Register" link="/dashboard" />
+    <Link href="/dashboard">
+  <div className="flex justify-center mt-10">
+  <Link href="/dashboard">
+    <Image
+      src="/testfile/register1.svg"
+      alt="Register Button"
+      width={300}
+      height={80}
+      priority
+      className="hover:scale-105 transition-transform"
+    />
+  </Link>
+</div>
+
+</Link>
     </div>
   </>
 );

@@ -40,7 +40,7 @@ const Page = () => {
 
       {/* Event Intro */}
       <EventIntro
-        imageUrl="/techno-events-logo/codigo.png"
+        imageUrl="/testfile/codigo.svg"
         registrations={registrationCount}
         pricepool="20,000"
         description="Unlock your coding potential at our University’s premier Coding Event!! Participate in challenges, network with peers, and enhance your skills."
