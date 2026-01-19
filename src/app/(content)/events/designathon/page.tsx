@@ -75,7 +75,7 @@ const Page = () => {
       {/* Event Intro */}
       <EventIntro
         imageUrl="/techno-events-logo/designathon.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={10000} // 1st, 2nd, 3rd (no amount mentioned)
         description="Designathon – Creative Expression Challenge is a design-focused event where participants respond to a theme using visual storytelling and design thinking. The emphasis is on clarity of ideas, originality, and communication rather than software mastery."
         time="19th & 20th | 3:00 PM – 4:00 PM"
@@ -86,16 +86,19 @@ const Page = () => {
       <section className="my-32 text-center">
         <h2 className="section-heading">ABOUT THE EVENT</h2>
         <p className="section-text">
-          Designathon encourages creative thinkers to translate ideas into visuals.
-          Participants showcase originality, storytelling, and design rationale
-          through posters, UI screens, illustrations, or social creatives.
+          Designathon encourages creative thinkers to translate ideas into
+          visuals. Participants showcase originality, storytelling, and design
+          rationale through posters, UI screens, illustrations, or social
+          creatives.
         </p>
       </section>
 
       {/* Team Structure */}
       <section className="my-32 text-center">
         <h2 className="section-heading">TEAM STRUCTURE</h2>
-        <p className="section-text">Individual participation or teams of up to 2 members.</p>
+        <p className="section-text">
+          Individual participation or teams of up to 2 members.
+        </p>
       </section>
 
       {/* Rounds */}
@@ -106,7 +109,10 @@ const Page = () => {
           <h3 className="round-title">Round 1: Concept to Canvas</h3>
           <p className="round-theme">Theme: New Age India</p>
           <ul className="list">
-            <li>Create one design output (poster, UI screen, illustration, or social media creative)</li>
+            <li>
+              Create one design output (poster, UI screen, illustration, or
+              social media creative)
+            </li>
             <li>Submit a short written explanation of concept and intent</li>
           </ul>
         </div>
