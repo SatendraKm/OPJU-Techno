@@ -46,7 +46,7 @@ const Page = () => {
       <EventIntro
         venue="BABUJI CHOWK (OPJU)"
         time="20–21 Feb 2026"
-        imageUrl="/techno-events-logo/robovation.png"
+        imageUrl="/testfile/robo.svg"
         registrations={registrationCount}
         pricepool={40000}
         description="ROBOVATION 2026 is an electrifying robotics competition where innovation meets combat, speed, and precision. Participants design, build, and control robots to compete in high-intensity challenges including Robo Soccer, Robo Race, Fast Line Follower, and Robo War."
