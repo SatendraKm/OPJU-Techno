@@ -3,7 +3,8 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className=" w-full">
+    <div className="w-full">
+      {/* BACKGROUND */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
           width={500}
@@ -55,8 +56,8 @@ const About = () => {
         {/* Second Event */}
         <div className="flex flex-col md:flex-row mt-36 items-center backdrop-blur-sm">
           <div className="text-left order-2 md:order-1">
-            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium ">
-              TECHNO AMBITION 2026
+            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
+              TECHNOAIMBIATION 2026
             </h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
               Technorollix is Central India&apos;s biggest techno-cultural
@@ -101,8 +102,7 @@ const About = () => {
               Jindal University (OPJU) in Chhattisgarh, India. This vibrant event
               showcases the diverse talents of people across various domains
               including music and dance. In 2018, We had Shirley Setia. In 2020, we
-              had Jubin Nautiyal and Sunburn and in the year 2023, we had DJ
-              Perisha.
+              had Jubin Nautiyal and Sunburn and in 2023, we had DJ Perisha.
             </p>
           </div>
         </div>

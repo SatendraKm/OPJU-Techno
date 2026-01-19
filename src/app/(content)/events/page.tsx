@@ -1,36 +1,27 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ButtonLanding from "@/components/sub-component/button-landing";
 
 const eventsData = {
   technical: [
-    { imageUrl: "/testfile/codigo.png", link: "/events/codigo" },
-    { imageUrl: "/testfile/techlab.png", link: "/events/techlab" },
-    { imageUrl: "/testfile/robovation.png", link: "/events/robovation" },
-    //{ imageUrl: "/testfile/Reverse Eng.png", link: "/events/hackathon" },
-    //{ imageUrl: "/techno-events-logo/aerodrone.png", link: "/events/aerodrone" },
-    { imageUrl: "/testfile/ideathon.png", link: "/events/ideathon" },
-    { imageUrl: "/testfile/ReverseEng.png", link: "/events/reverseEng" },
-    { imageUrl: "/testfile/2Designathon.png", link: "/events/designathon" },
+    { imageUrl: "/testfile/codigo.svg", link: "/events/codigo" },
+    { imageUrl: "/testfile/techlab.svg", link: "/events/techlab" },
+    { imageUrl: "/testfile/robo.svg", link: "/events/robovation" },
+    { imageUrl: "/testfile/rev.svg", link: "/events/ideathon" },
+    { imageUrl: "/testfile/rev.svg", link: "/events/reverseEng" },
+    { imageUrl: "/testfile/design.svg", link: "/events/designathon" },
   ],
 
   nonTechnical: [
-    { imageUrl: "/testfile/Kalakriti .png", link: "/events/kalakriti" },
-    //{ imageUrl: "/techno-events-logo/spotlightsaga.png", link: "/events/spotlight-saga" },
-    // { imageUrl: "/techno-events-logo/amongus.png", link: "/events/among-us" },
-    { imageUrl: "/testfile/Masterchef .png", link: "/events/master_chef" },
-    { imageUrl: "/testfile/Roadies .png", link: "/events/roadies" },
-    { imageUrl: "/testfile/Antaragni 1.png", link: "/events/antaragni" },
-    //{ imageUrl: "/techno-events-logo/gamefusion.png", link: "/events/game-fusion" },
-    { imageUrl: "/testfile/VoiceOfYouth.png", link: "/events/yuva-sabha" },
-    { imageUrl: "/testfile/BeatBattle.png", link: "/events/beat-battle" },
-    {
-      imageUrl: "/testfile/Start-up.png",
-      link: "/events/start-up-business-plan",
-    },
-    { imageUrl: "/testfile/riywayat.png", link: "/events/riywayat" },
-    { imageUrl: "/testfile/AIMA’s 1.png", link: "/events/AIMA" },
+    { imageUrl: "/testfile/kalakriti.svg", link: "/events/kalakriti" },
+    { imageUrl: "/testfile/master.svg", link: "/events/master_chef" },
+    { imageUrl: "/testfile/roadies.svg", link: "/events/roadies" },
+    { imageUrl: "/testfile/antaragini.svg", link: "/events/antaragni" },
+    { imageUrl: "/testfile/voice.svg", link: "/events/yuva-sabha" },
+    { imageUrl: "/testfile/beat.svg", link: "/events/beat-battle" },
+    { imageUrl: "/testfile/startup.svg", link: "/events/start-up-business-plan" },
+    { imageUrl: "/testfile/riwayat.svg", link: "/events/riywayat" },
+    { imageUrl: "/testfile/aima.svg", link: "/events/aima" },
   ],
 };
 
@@ -40,7 +31,6 @@ interface EventSectionProps {
 }
 
 const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
-  <>
   <div className="pb-32">
     <div
       className="absolute top-0 left-0 w-full pointer-events-none -z-10"
@@ -55,17 +45,10 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
       showcases to fun and engaging activities, we bring together creativity,
       skills, and excitement for an unforgettable experience!
     </p>
-    {/* Responsive grid: two columns by default, three columns on medium screens */}
+
     <div className="mt-10 md:mt-28 ml-20 grid grid-cols-2 md:grid-cols-3 gap-2 px-3 md:px-8 lg:px-16">
       {events.map((event, index) => (
-        <Link
-          key={index}
-          href={event.link}
-          className={`block w-full ${
-            event.link === "/events/game-fusion" ? "col-start-2" : ""
-          }`}
-        >
-          {/* Image container with fixed aspect ratio */}
+        <Link key={index} href={event.link} className="block w-full">
           <div className="relative w-5/6 aspect-[4/5]">
             <Image
               src={event.imageUrl}
@@ -78,9 +61,20 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
         </Link>
       ))}
     </div>
-    <ButtonLanding label="Register" link="/dashboard" />
+
+    <div className="flex justify-center mt-10">
+      <Link href="/dashboard">
+        <Image
+          src="/testfile/register1.svg"
+          alt="Register Button"
+          width={300}
+          height={80}
+          priority
+          className="hover:scale-105 transition-transform"
+        />
+      </Link>
     </div>
-  </>
+  </div>
 );
 
 const Page = () => {
@@ -94,7 +88,7 @@ const Page = () => {
       />
 
       {/* 🧱 CONTENT FLOATING ABOVE BACKGROUND */}
-<div className="absolute top-0 left-0 w-full h-full z-10 flex flex-col justify-between">
+      <div className="absolute top-0 left-0 w-full h-full z-10 flex flex-col justify-between">
         <div className="events mt-10 md:mt-28 px-4 md:px-0">
           <EventSection title="TECHNICAL EVENTS" events={eventsData.technical} />
           <EventSection
