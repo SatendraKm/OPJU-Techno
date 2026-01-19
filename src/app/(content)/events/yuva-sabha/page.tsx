@@ -106,10 +106,10 @@ const Page = () => {
       <EventIntro
         imageUrl="/testfile/VoiceOfYouth.png"
         registrations={registrationCount}
-        pricepool={15000}
-        description="Voice of Youth is a high-energy debate competition where logic meets leadership. Participants debate on business trends, corporate ethics, financial strategies, socio-political issues, and current affairs. The event tests critical thinking, persuasive communication, and strategic rebuttals."
-        time="19th & 20th Feb 2026 | 11:00 AM onwards"
-        venue="MP Hall"
+        pricepool={10000}
+        description="A fun flagship event where participants showcase talents like singing, dancing, comedy, or magic while also predicting their own score. An exact match with the judges' score wins instantly, making it a unique test of skill, confidence, and self-awareness. Entertain, guess, and win."
+        time="19-02-26 , 12:00 pm"
+        venue="MP HALL "
       />
 
       {/* About / How It Works */}

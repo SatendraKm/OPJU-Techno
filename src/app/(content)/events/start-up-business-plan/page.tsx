@@ -68,11 +68,11 @@ const Page = () => {
       {/* Event Intro Section */}
       <EventIntro
         venue="Live Classroom"
-        time="20 Feb 2026, 10:00 AM Onwards"
-        imageUrl="/testfile/Startup.png"
+        time="20-02-26, 10:30 am"
+        imageUrl="/techno-events-logo/masterchef.png"
         registrations={registrationCount}
-        pricepool={0} // update if known
-        description="The Startup Pitching Event provides early-stage innovators and entrepreneurs a platform to present ideas to a panel of experts, investors, and industry leaders. Showcase innovative solutions, demonstrate business viability, and receive constructive feedback to refine concepts."
+        pricepool={18000}
+        description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste."
       />
 
       {/* Event Category Section */}

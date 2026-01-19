@@ -13,10 +13,26 @@ import { getRegistrationCount } from "@/actions/event-actions";
 const Page = () => {
   /* ===================== MANAGERS ===================== */
   const managers = [
-    { imageUrl: "/managers/Robovation/Harsh tiwari.jpg", name: "Harsh Tiwari", contact: 8815612698 },
-    { imageUrl: "/managers/Robovation/Nikhil Prasad.jpg", name: "Nikhil Prasad", contact: 7488057104 },
-    { imageUrl: "/managers/Robovation/Kushal Kumar.jpg", name: "Kushal Kumar Barsiwal", contact: 7987829224 },
-    { imageUrl: "/managers/Robovation/udit vardhan.jpg", name: "Udit Vardhan Singh", contact: 8298558875 },
+    {
+      imageUrl: "/managers/Robovation/Harsh tiwari.jpg",
+      name: "Harsh Tiwari",
+      contact: 8815612698,
+    },
+    {
+      imageUrl: "/managers/Robovation/Nikhil Prasad.jpg",
+      name: "Nikhil Prasad",
+      contact: 7488057104,
+    },
+    {
+      imageUrl: "/managers/Robovation/Kushal Kumar.jpg",
+      name: "Kushal Kumar Barsiwal",
+      contact: 7987829224,
+    },
+    {
+      imageUrl: "/managers/Robovation/udit vardhan.jpg",
+      name: "Udit Vardhan Singh",
+      contact: 8298558875,
+    },
   ];
 
   /* ===================== RULEBOOK ===================== */
@@ -48,7 +64,7 @@ const Page = () => {
         time="20–21 Feb 2026"
         imageUrl="/techno-events-logo/robovation.png"
         registrations={registrationCount}
-        pricepool={36000}
+        pricepool={40000}
         description="ROBOVATION 2026 is an electrifying robotics competition where innovation meets combat, speed, and precision. Participants design, build, and control robots to compete in high-intensity challenges including Robo Soccer, Robo Race, Fast Line Follower, and Robo War."
       />
 
@@ -69,6 +85,8 @@ const Page = () => {
           Icon={IoFootballOutline}
           title="ROBO SOCCER"
           description="Teams compete with a single wireless robot to score maximum goals by pushing or kicking a ball into the opponent’s goal. The event tests maneuvering, control, flipping, and kicking skills across elimination and final rounds."
+          // time="10:00 AM"
+          // venue="Babuji Chowk"
         />
 
         <SubEventCard
@@ -99,7 +117,8 @@ const Page = () => {
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
           <p className="text-2xl mb-6">
             Download the official ROBOVATION 2026 rulebook for complete event
-            rules, robot specifications, evaluation criteria, prizes, and schedules.
+            rules, robot specifications, evaluation criteria, prizes, and
+            schedules.
           </p>
 
           <a

@@ -25,7 +25,7 @@ const KalaKriti = () => {
       ],
       about:
         "Imagine what life would have been without colors, art, and aesthetics—boring, right? And what would Techno be without an art exhibition? But don't worry, we would not give you a millisecond of it. So, to dazzle your eyes, we have 'Pradarshini', an art exhibition by Kalakriti, to quench the thirst of your imagination and take you on a bewildering journey worth remembering. Get yourself a pair of sunglasses and come engulf yourself in the art and aesthetics.",
-      venue: "OPJU Library",
+      venue: "CENTRAL LIBRARY,OPJU Library",
       rounds: ["1 Round"],
       judgementCriteria: ["No Grading"],
     },
@@ -80,7 +80,7 @@ const KalaKriti = () => {
       ],
       about:
         "Rangoli is a very popular folk art that has several connotations across India. It is a spiritual distribution of colors, representing the happiness, positivity, and liveliness of a household. It is intended to welcome the goddess of wealth and prosperity.",
-      venue: "In front of Chemistry Lab",
+      venue: "In front of Chemistry Lab,10:00 am",
       rounds: ["1 Round"],
       judgementCriteria: ["Judges’ marks"],
     },
