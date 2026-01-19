@@ -69,7 +69,7 @@ const Page = () => {
       <EventIntro
         venue="Live Classroom"
         time="20-02-26, 10:30 am"
-        imageUrl="/techno-events-logo/masterchef.png"
+        imageUrl="/testfile/startup.svg"
         registrations={registrationCount}
         pricepool={18000}
         description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste."
