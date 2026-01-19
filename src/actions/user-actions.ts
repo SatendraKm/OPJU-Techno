@@ -15,6 +15,7 @@ interface UserData {
 	isOutsider: boolean;
 }
 
+// ===================== SIGNUP =====================
 export const userSignup = async (userData: UserData): Promise<IUser> => {
 	await connectToDatabase();
 
@@ -29,15 +30,16 @@ export const userSignup = async (userData: UserData): Promise<IUser> => {
 		isOutsider
 	} = userData;
 
-	// Check if user already exists with email
-	const existingUser = await User.findOne({ email });
+	const normalizedEmail = email.toLowerCase().trim();
+
+	// Check if user already exists
+	const existingUser = await User.findOne({ email: normalizedEmail });
 	if (existingUser) {
 		throw new Error("User already exists with this email");
 	}
 
-	// Create a new user
 	const newUser = new User({
-		email,
+		email: normalizedEmail,
 		password,
 		fullName,
 		branch,
@@ -52,6 +54,7 @@ export const userSignup = async (userData: UserData): Promise<IUser> => {
 	return JSON.parse(JSON.stringify(newUser));
 };
 
+// ===================== LOGIN =====================
 interface LoginData {
 	email: string;
 	password: string;
@@ -62,22 +65,22 @@ export const userLogin = async (
 ): Promise<{ user: IUser; token: string }> => {
 	await connectToDatabase();
 
-	const { email, password } = loginData;
+	const normalizedEmail = loginData.email.toLowerCase().trim();
 
-	// Check if user exists with email
-	const existingUser = await User.findOne({ email });
+	const existingUser = await User.findOne({ email: normalizedEmail });
 	if (!existingUser) {
 		throw new Error("User does not exist with this email");
 	}
 
-	// Check if password matches
-	if (existingUser.password !== password) {
+	if (existingUser.password !== loginData.password) {
 		throw new Error("Invalid password");
 	}
 
-	// Generate JWT token
 	const token = jwt.sign(
-		{ userId: existingUser._id, email: existingUser.email },
+		{
+			userId: existingUser._id,
+			email: normalizedEmail,
+		},
 		process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret",
 		{ expiresIn: "1h" }
 	);
@@ -90,12 +93,14 @@ export const userLogin = async (
 	);
 };
 
+// ===================== RESET PASSWORD =====================
 export const resetPassword = async (email: string, newPassword: string) => {
 	try {
 		await connectToDatabase();
 
-		// Find user by email
-		const user = await User.findOne({ email });
+		const normalizedEmail = email.toLowerCase().trim();
+
+		const user = await User.findOne({ email: normalizedEmail });
 
 		if (!user) {
 			throw new Error("User not found");
@@ -114,6 +119,7 @@ export const resetPassword = async (email: string, newPassword: string) => {
 	}
 };
 
+// ===================== GET USER FROM TOKEN =====================
 export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
 	await connectToDatabase();
 
@@ -126,9 +132,12 @@ export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
 			token,
 			process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret"
 		) as { userId: string; email: string };
-		const userId = decoded.userId;
 
-		const user = await User.findById(userId);
+		const user = await User.findOne({
+			_id: decoded.userId,
+			email: decoded.email.toLowerCase(),
+		});
+
 		if (!user) {
 			throw new Error("User not found");
 		}
@@ -140,6 +149,7 @@ export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
 	}
 };
 
+// ===================== GET CURRENT USER =====================
 export async function getUser() {
 	await connectToDatabase();
 
@@ -151,26 +161,34 @@ export async function getUser() {
 			authToken,
 			process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret"
 		) as { userId: string; email: string };
+
 		const user = await User.findOne({
 			_id: decoded.userId,
-			email: decoded.email,
+			email: decoded.email.toLowerCase(),
 		});
 
 		return JSON.parse(JSON.stringify(user));
 	} catch (error) {
 		console.error("Error verifying token or finding user:", error);
-		return null; // Invalid token
+		return null;
 	}
 }
 
+// ===================== GET USERS BY EMAILS =====================
 export async function getUsersByEmails(
 	emails: string[]
 ): Promise<(IUser & { createdAt: Date })[]> {
 	try {
 		await connectToDatabase();
-		const users = await User.find({ email: { $in: emails } })
-			// .select("email fullName branch year enrollmentNumber address mobile createdAt")
-			.lean();
+
+		const normalizedEmails = emails.map((e) =>
+			e.toLowerCase().trim()
+		);
+
+		const users = await User.find({
+			email: { $in: normalizedEmails },
+		}).lean();
+
 		return JSON.parse(JSON.stringify(users));
 	} catch (error) {
 		if (error instanceof Error) {
@@ -181,6 +199,7 @@ export async function getUsersByEmails(
 	}
 }
 
+// ===================== GET OUTSIDERS =====================
 export async function getOutsiderUsers(): Promise<IUser[]> {
 	await connectToDatabase();
 
