@@ -101,7 +101,7 @@ receiving expert feedback and recognition.
 
       {/* Event Intro */}
       <EventIntro
-        imageUrl="/techno-events-logo/ideathon.png"
+        imageUrl="/testfile/ideathon.svg"
         registrations={registrationCount}
         pricepool={18000}
         description={eventDescription}

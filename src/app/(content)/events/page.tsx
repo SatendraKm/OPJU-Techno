@@ -7,7 +7,7 @@ const eventsData = {
     { imageUrl: "/testfile/codigo.svg", link: "/events/codigo" },
     { imageUrl: "/testfile/techlab.svg", link: "/events/techlab" },
     { imageUrl: "/testfile/robo.svg", link: "/events/robovation" },
-    { imageUrl: "/testfile/rev.svg", link: "/events/ideathon" },
+    { imageUrl: "/testfile/ideathon.svg", link: "/events/ideathon" },
     { imageUrl: "/testfile/rev.svg", link: "/events/reverseEng" },
     { imageUrl: "/testfile/design.svg", link: "/events/designathon" },
   ],
