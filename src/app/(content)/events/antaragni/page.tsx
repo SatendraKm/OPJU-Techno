@@ -67,7 +67,7 @@ const Antaragni = () => {
       {/* Event Intro Section */}
       <section>
         <EventIntro
-          imageUrl="/techno-events-logo/antaragni.png"
+          imageUrl="/testfile/antaragini.svg"
           registrations={registrationCount}
           pricepool={21500}
           description="ANTARAGNI is a vibrant platform for students to showcase their creative talents in a meaningful and expressive way. From dancing, mime, singing, and rapping to short film-making and fusion performances, the event brings together diverse art forms on one stage. It celebrates passion, creativity, and cultural diversity, giving students an opportunity to express themselves through music, movement, and storytelling. Whether performing solo or in groups, participants get a chance to shine, entertain, and inspire the audience."
