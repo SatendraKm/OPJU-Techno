@@ -45,24 +45,6 @@ export default function Home() {
           />
         </div>
 
-        {/* CONTINUOUS MARQUEE */}
-        <div className="w-full overflow-hidden bg-white py-6 sm:py-8">
-          <div className="marquee-wrapper">
-            <div className="marquee-track text-black text-3xl sm:text-4xl lg:text-6xl font-serif font-semibold tracking-wide">
-              <span>
-                THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;
-                THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;
-                THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;
-              </span>
-              <span>
-                THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;
-                THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;
-                THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;
-              </span>
-            </div>
-          </div>
-        </div>
-
         {/* ========== REGISTER (ABOVE CLOUD 2) ========== */}
         <div className="absolute right-24 bottom-[10%] z-[80]">
           <button className="px-12 py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition shadow-xl">
