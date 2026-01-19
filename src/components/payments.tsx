@@ -51,13 +51,17 @@ const Payments = ({
 	}, [userEmail]);
 
 	useEffect(() => {
-		setTotalRecievedAmount(
-			transactionFetchData?.reduce(
-				(acc, transaction) => acc + transaction.amountAtAdmin,
-				0
-			) || 0
-		);
-	}, [transactionFetchData]);
+ setTotalRecievedAmount(
+  transactionFetchData?.reduce(
+   (acc, transaction) =>
+    acc +
+    (transaction.acknowledgementByAdmin
+      ? transaction.amountAtAdmin
+      : 0),
+   0
+  ) || 0
+ );
+}, [transactionFetchData]);
 
 	const handlePay = () => {
 		setIsPayModalOpen(true);
@@ -104,7 +108,7 @@ const Payments = ({
 								? 0
 								: payAmount - totalRecievedAmount}
 						</p>
-						<Button onClick={handlePay} disabled={true}>
+						<Button onClick={handlePay} disabled={payAmount - totalRecievedAmount <= 0}>
 							Pay or Add Transaction
 						</Button>
 
