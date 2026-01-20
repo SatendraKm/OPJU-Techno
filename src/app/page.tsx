@@ -29,33 +29,29 @@ export default function Home() {
         </div>
 
         {/* ========== LEFT TEXT CONTENT ========== */}
-        <div className="absolute left-16 bottom-[40%] z-[75] max-w-md">
-          <p className="text-white text-2xl md:text-2xl font-semibold opacity-95">
-            Central India's Biggest Annual Techno-Cultural Management Fest
-          </p>
-        </div>
+       {/* ========== LEFT CONTENT STACK (TEXT + LOGO + BUTTON) ========== */}
+<div className="absolute left-6 md:left-16 bottom-[14%] z-[80] flex flex-col items-start gap-6 max-w-[90%] md:max-w-md">
 
-        {/* ========== LOGO (ABOVE CLOUD 1) ========== */}
-        <div className="absolute left-16 bottom-[12%] z-[70]">
-          <Image
-            src="/testfile/newlogo.png"
-            alt="Techno Ambition Logo"
-            width={500}
-            height={150}
-            priority
-            className="object-contain"
-          />
-        </div>
+  <p className="text-white text-lg md:text-2xl font-semibold opacity-95 leading-snug">
+    Central India's Biggest Annual Techno-Cultural Management Fest
+  </p>
 
-        {/* ========== REGISTER (ABOVE CLOUD 2) ========== */}
-        <div className="absolute right-24 bottom-[10%] z-[80]">
-         <Link href="/dashboard">
-  <button className="px-12 py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition shadow-xl">
-    Register
-  </button>
-</Link>
+  <Image
+    src="/testfile/newlogo.png"
+    alt="Techno Ambition Logo"
+    width={400}
+    height={120}
+    priority
+    className="object-contain w-[260px] md:w-[400px]"
+  />
 
-        </div>
+  <Link href="/dashboard">
+    <button className="px-10 py-3 md:px-12 md:py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition shadow-xl">
+      Register
+    </button>
+  </Link>
+
+</div>
 
         {/* ========== CLOUD LAYERS ========== */}
         <div className="absolute bottom-0 left-0 w-full pointer-events-none z-50">
