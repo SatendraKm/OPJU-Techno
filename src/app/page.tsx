@@ -4,6 +4,8 @@ import Image from "next/image";
 import AboutSection from "@/components/aboutSection";
 import EventSection from "@/components/eventsSection";
 import Footer from "@/components/footer";
+import Link from "next/link";
+
 
 export default function Home() {
   return (
@@ -47,9 +49,12 @@ export default function Home() {
 
         {/* ========== REGISTER (ABOVE CLOUD 2) ========== */}
         <div className="absolute right-24 bottom-[10%] z-[80]">
-          <button className="px-12 py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition shadow-xl">
-            Register
-          </button>
+         <Link href="/dashboard">
+  <button className="px-12 py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition shadow-xl">
+    Register
+  </button>
+</Link>
+
         </div>
 
         {/* ========== CLOUD LAYERS ========== */}
