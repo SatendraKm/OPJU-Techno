@@ -19,7 +19,7 @@ interface UserData {
 export const userSignup = async (userData: UserData): Promise<IUser> => {
 	await connectToDatabase();
 
-	const {
+	let {
 		email,
 		password,
 		fullName,
@@ -31,6 +31,11 @@ export const userSignup = async (userData: UserData): Promise<IUser> => {
 	} = userData;
 
 	const normalizedEmail = email.toLowerCase().trim();
+
+	// 🔥 FREE REGISTRATION LOGIC
+	if (normalizedEmail.endsWith("@opju.ac.in")) {
+		isOutsider = false; // OPJU students = FREE
+	}
 
 	// Check if user already exists
 	const existingUser = await User.findOne({ email: normalizedEmail });
