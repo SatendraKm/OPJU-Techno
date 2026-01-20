@@ -53,7 +53,7 @@ export default function LoginForm() {
 		if (userLoginError) {
 			toast({
 				title: "Error",
-				description: userLoginError.message,
+				description: "Account not found, please sign up",
 				variant: "destructive",
 			});
 			return;
