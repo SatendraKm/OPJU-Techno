@@ -1,22 +1,70 @@
 "use client";
-import React, { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useState, useRef, useEffect } from "react";
+import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 const cards = [
-  { title: "Hackathon", desc: "24-hour coding battle" },
-  { title: "Tech Talk", desc: "Industry expert session" },
-  { title: "Design Sprint", desc: "UI/UX challenge" },
+  {
+    title: "Riwayat",
+    desc: "Cultural Showcase",
+    video: "/testfile/riwayat.mp4",
+  },
+  {
+    title: "Antaragni",
+    desc: "Dance & Performance",
+    video: "/testfile/antaraginni.mp4",
+  },
+  {
+    title: "Junoon",
+    desc: "Music & Energy",
+    video: "/testfile/event.mp4",
+  },
 ];
 
 const EventsSection = () => {
   const [active, setActive] = useState(0);
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  const prev = () => setActive((p) => (p - 1 + cards.length) % cards.length);
-  const next = () => setActive((p) => (p + 1) % cards.length);
+  const prev = () => {
+    setActive((p) => (p - 1 + cards.length) % cards.length);
+    stopAll();
+  };
 
-  const getPosition = (
-    index: number
-  ): "center" | "left" | "right" | "hidden" => {
+  const next = () => {
+    setActive((p) => (p + 1) % cards.length);
+    stopAll();
+  };
+
+  const stopAll = () => {
+    videoRefs.current.forEach((video) => {
+      if (!video) return;
+      video.pause();
+      video.currentTime = 0;
+    });
+    setPlayingIndex(null);
+  };
+
+  const handlePlay = (index: number) => {
+    videoRefs.current.forEach((video, i) => {
+      if (!video) return;
+
+      if (i === index) {
+        if (playingIndex === index) {
+          video.pause();
+          setPlayingIndex(null);
+        } else {
+          video.currentTime = 0;
+          video.play();
+          setPlayingIndex(index);
+        }
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  };
+
+  const getPosition = (index: number) => {
     const total = cards.length;
     if (index === active) return "center";
     if (index === (active - 1 + total) % total) return "left";
@@ -26,114 +74,80 @@ const EventsSection = () => {
 
   return (
     <section className="relative w-full min-h-screen bg-black text-white px-6 sm:px-10 lg:px-16 py-14 lg:py-20 overflow-hidden">
-      {/* TOP TEXT */}
+      {/* HEADER */}
       <div className="max-w-xl space-y-4">
         <h1 className="text-3xl sm:text-4xl font-bold">Events</h1>
-        <p className="text-gray-400 text-sm sm:text-base">
-          From innovative tech showcases to fun and engaging activities, we
-          bring together creativity, skills, and excitement for an unforgettable
-          experience!
+        <p className="text-gray-400">
+          Experience culture, music and performance at TechnoAmbition.
         </p>
       </div>
 
       {/* SLIDER */}
-      <div className="relative mt-16 sm:mt-24 w-full h-[320px] sm:h-96 flex items-center justify-center">
-        {/* LEFT BUTTON */}
+      <div className="relative mt-24 w-full h-[340px] flex items-center justify-center">
+        {/* LEFT */}
         <button
           onClick={prev}
-          className="absolute left-2 sm:left-6 z-50 bg-white/10 hover:bg-white/20 backdrop-blur p-2 sm:p-3 rounded-full"
+          className="absolute left-6 z-50 bg-white/10 hover:bg-white/20 p-3 rounded-full"
         >
-          <ChevronLeft size={24} className="sm:hidden" />
-          <ChevronLeft size={32} className="hidden sm:block" />
+          <ChevronLeft size={28} />
         </button>
 
-        {/* RIGHT BUTTON */}
+        {/* RIGHT */}
         <button
           onClick={next}
-          className="absolute right-2 sm:right-6 z-50 bg-white/10 hover:bg-white/20 backdrop-blur p-2 sm:p-3 rounded-full"
+          className="absolute right-6 z-50 bg-white/10 hover:bg-white/20 p-3 rounded-full"
         >
-          <ChevronRight size={24} className="sm:hidden" />
-          <ChevronRight size={32} className="hidden sm:block" />
+          <ChevronRight size={28} />
         </button>
 
-        {/* CARD STAGE */}
+        {/* CARDS */}
         <div className="relative w-full h-full flex items-center justify-center">
           {cards.map((card, i) => {
             const pos = getPosition(i);
+            const isCenter = pos === "center";
 
             return (
               <div
                 key={i}
                 className={`
                   absolute transition-all duration-700 ease-in-out
-
-                  ${
-                    pos === "center" &&
-                    `
-                      z-50
-                      scale-110 sm:scale-125
-                      -translate-y-4 sm:-translate-y-6
-                      opacity-100
-                    `
-                  }
-
-                  ${
-                    pos === "left" &&
-                    `
-                      z-20
-                      -translate-x-44 sm:-translate-x-72
-                      scale-95
-                      opacity-60
-                    `
-                  }
-
-                  ${
-                    pos === "right" &&
-                    `
-                      z-20
-                      translate-x-44 sm:translate-x-72
-                      scale-95
-                      opacity-60
-                    `
-                  }
-
+                  ${pos === "center" && "z-50 scale-125"}
+                  ${pos === "left" && "z-20 -translate-x-72 scale-95"}
+                  ${pos === "right" && "z-20 translate-x-72 scale-95"}
                   ${pos === "hidden" && "opacity-0"}
                 `}
               >
                 {/* CARD */}
                 <div
-                  className={`
-                    relative transition-all duration-700 rounded-2xl overflow-hidden
-
-                    ${
-                      pos === "center"
-                        ? `
-                            w-[260px] h-[170px]
-                            sm:w-[380px] sm:h-[240px]
-                            bg-gray-900/60
-                            border-4 border-yellow-500/30
-                            shadow-2xl
-                          `
-                        : `
-                            w-[220px] h-[150px]
-                            sm:w-[300px] sm:h-[190px]
-                            bg-gray-700/40
-                            border border-white/10
-                          `
-                    }
-                  `}
+                  onClick={() => isCenter && handlePlay(i)}
+                  className="relative cursor-pointer w-[380px] h-[240px] rounded-2xl overflow-hidden border border-yellow-400/50 shadow-xl bg-black"
                 >
-                  {/* overlay */}
-                  <div className="absolute inset-0 bg-black/30" />
+                  {/* VIDEO */}
+                  <video
+                    ref={(el) => (videoRefs.current[i] = el)}
+                    src={card.video}
+                    poster="/testfile/event.jpg"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    playsInline
+                    loop
+                  />
+
+                  {/* DARK GRADIENT */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+
+                  {/* PLAY BUTTON */}
+                  {isCenter && playingIndex !== i && (
+                    <div className="absolute inset-0 z-20 flex items-center justify-center">
+                      <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center hover:scale-110 transition">
+                        <Play className="text-black ml-1" size={40} />
+                      </div>
+                    </div>
+                  )}
 
                   {/* TEXT */}
-                  <div className="relative z-10 p-4 sm:p-6 flex flex-col justify-end h-full">
-                    <h2 className="text-lg sm:text-2xl font-bold">
-                      {card.title}
-                    </h2>
-                    <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-gray-300">
-                      {card.desc}
-                    </p>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                    <h2 className="text-xl font-bold">{card.title}</h2>
+                    <p className="text-sm text-gray-300">{card.desc}</p>
                   </div>
                 </div>
               </div>
