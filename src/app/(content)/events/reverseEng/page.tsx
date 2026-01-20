@@ -73,7 +73,7 @@ const Page = () => {
         <Image
           width={500}
           height={500}
-          src="/background.svg"
+          src="/testfile/singleeventbg.svg"
           className="w-full h-auto opacity-150"
           alt="Background"
         />
