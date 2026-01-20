@@ -138,22 +138,33 @@ const DashboardPage = () => {
   const [payAmount, setPayAmount] = useState(0);
 
   useEffect(() => {
-    if (participatingTeamsData) {
-      const mergedTeamsArray = getMergedEvents(
-        participatingTeamsData,
-        userData.email
-      );
-      setPayAmount(
-        calculatePayAmount(
-          mergedTeamsArray?.filter((event: any) => event.individualSchema)
-            .length,
-          mergedTeamsArray?.filter((event: any) => !event.individualSchema)
-            .length
-        )
-      );
-      setMergedLeadingEvents(mergedTeamsArray);
-    }
-  }, [participatingTeamsData]);
+  if (participatingTeamsData) {
+    const mergedTeamsArray = getMergedEvents(
+      participatingTeamsData,
+      userData.email
+    );
+
+    const individualCount =
+      mergedTeamsArray?.filter((event: any) => event.individualSchema).length;
+
+    const teamCount =
+      mergedTeamsArray?.filter((event: any) => !event.individualSchema).length;
+
+    console.log("==== PAYMENT DEBUG ====");
+    console.log("Merged Events:", mergedTeamsArray);
+    console.log("Individual Count:", individualCount);
+    console.log("Team Count:", teamCount);
+    console.log("ALL TEAMS:", participatingTeamsData);
+
+
+    const amount = calculatePayAmount(individualCount, teamCount);
+    console.log("Calculated Pay Amount:", amount);
+
+    setPayAmount(amount);
+    setMergedLeadingEvents(mergedTeamsArray);
+  }
+}, [participatingTeamsData]);
+
 
   useEffect(() => {
     if (acceptInvitationError) {
@@ -611,6 +622,7 @@ const DashboardPage = () => {
         </DialogContent>
       </Dialog>
     </div>
+    
   );
 };
 

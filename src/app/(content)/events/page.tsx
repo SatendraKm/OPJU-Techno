@@ -91,7 +91,10 @@ const Page = () => {
       {/* 🧱 CONTENT FLOATING ABOVE BACKGROUND */}
       <div className="absolute top-0 left-0 w-full h-full z-10 flex flex-col justify-between">
         <div className="events mt-10 md:mt-28 px-4 md:px-0">
-          <EventSection title="TECHNICAL EVENTS" events={eventsData.technical} />
+          <EventSection
+            title="TECHNICAL EVENTS"
+            events={eventsData.technical}
+          />
           <EventSection
             title="NON-TECHNICAL EVENTS"
             events={eventsData.nonTechnical}

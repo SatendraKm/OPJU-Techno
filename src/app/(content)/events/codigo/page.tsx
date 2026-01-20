@@ -37,7 +37,6 @@ const Page = () => {
 
   return (
     <div className="relative w-full">
-
       {/* 🔥 FULL PAGE BACKGROUND (FIXED & SHARP) */}
       <div className="fixed inset-0 -z-10">
         <Image
@@ -54,7 +53,7 @@ const Page = () => {
       <EventIntro
         imageUrl="/testfile/codigo.svg"
         registrations={registrationCount}
-        pricepool="20,000"
+        pricepool={20000}
         description="Unlock your coding potential at our University’s premier Coding Event!! Participate in challenges, network with peers, and enhance your skills."
         time="19-02-2026,11:00 AM "
         venue="TB-09"
@@ -168,7 +167,6 @@ const Page = () => {
 
       {/* Event Managers */}
       <EventManagers managers={managers} />
-
     </div>
   );
 };
