@@ -94,7 +94,7 @@ const Page = () => {
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-          src="/background.svg"
+          src="/testfile/singleeventbg.svg"
           alt="Scrolling Background"
           width={500}
           height={500}
