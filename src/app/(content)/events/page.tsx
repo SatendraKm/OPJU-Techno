@@ -31,75 +31,71 @@ interface EventSectionProps {
 }
 
 const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
-  <div className="pb-32">
-    <div
-      className="absolute top-0 left-0 w-full pointer-events-none -z-10"
-      id="bg-container"
-    ></div>
-    <h2 className="text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-center mt-40">
+  <div className="pb-24 px-4 md:px-12">
+
+    <h2 className="text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-center mt-24 md:mt-40">
       {title}
     </h2>
-   <p className="mt-4 md:mt-10 w-full md:w-[943px] text-center text-black text-lg md:text-xl font-medium font-['Poppins'] uppercase mx-auto">
-  Our fest offers a diverse range of technical and non-technical events,
-  ensuring there&apos;s something for everyone. From innovative tech
-  showcases to fun and engaging activities, we bring together creativity,
-  skills, and excitement for an unforgettable experience!
-</p>
 
+    <p className="mt-4 md:mt-10 max-w-[943px] text-center text-black text-base md:text-xl font-medium font-['Poppins'] uppercase mx-auto px-2">
+      Our fest offers a diverse range of technical and non-technical events,
+      ensuring there&apos;s something for everyone. From innovative tech
+      showcases to fun and engaging activities, we bring together creativity,
+      skills, and excitement for an unforgettable experience!
+    </p>
 
-    <div className="mt-10 md:mt-28 ml-20 grid grid-cols-2 md:grid-cols-3 gap-2 px-3 md:px-8 lg:px-16">
+    {/* ✅ RESPONSIVE GRID */}
+    <div className="mt-10 md:mt-20 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
+
       {events.map((event, index) => (
         <Link key={index} href={event.link} className="block w-full">
-          <div className="relative w-5/6 aspect-[4/5]">
+          <div className="relative w-full aspect-[4/5]">
             <Image
               src={event.imageUrl}
               alt={event.link}
               fill
-              className="object-fit rounded-xl w-fit h-fit"
+              className="object-contain rounded-xl hover:scale-105 transition-transform"
               priority
             />
           </div>
         </Link>
       ))}
+
     </div>
 
-    <div className="flex justify-center mt-10">
+    {/* REGISTER BUTTON */}
+    <div className="flex justify-center mt-12">
       <Link href="/dashboard">
         <Image
           src="/testfile/register1.svg"
           alt="Register Button"
-          width={300}
-          height={80}
+          width={260}
+          height={70}
           priority
           className="hover:scale-105 transition-transform"
         />
       </Link>
     </div>
+
   </div>
 );
 
 const Page = () => {
   return (
-    <div className="relative w-full">
-      {/* 🌄 BACKGROUND IMAGE THAT DEFINES PAGE HEIGHT */}
-      <img
-        src="/testfile/newevent.png"
-        alt="Background"
-        className="w-full h-auto block"
-      />
+   <div
+  className="w-full min-h-screen pt-24 md:pt-28 bg-no-repeat bg-top bg-cover"
+  style={{ backgroundImage: "url('/testfile/newevent.png')" }}
+>
 
-      {/* 🧱 CONTENT FLOATING ABOVE BACKGROUND */}
-      <div className="absolute top-0 left-0 w-full h-full z-10 flex flex-col justify-between">
-        <div className="events mt-10 md:mt-28 px-4 md:px-0">
-          <EventSection
-            title="TECHNICAL EVENTS"
-            events={eventsData.technical}
-          />
-          <EventSection
-            title="NON-TECHNICAL EVENTS"
-            events={eventsData.nonTechnical}
-          />
-        </div>
+      <div className="w-full">
+        <EventSection
+          title="TECHNICAL EVENTS"
+          events={eventsData.technical}
+        />
+        <EventSection
+          title="NON-TECHNICAL EVENTS"
+          events={eventsData.nonTechnical}
+        />
       </div>
     </div>
   );
