@@ -24,7 +24,7 @@ const AboutSection = () => {
 
           {/* CONTENT */}
           <p className="text-gray-700 text-base sm:text-lg lg:text-2xl leading-relaxed max-w-xl">
-            Technorollix is Central India’s biggest techno-cultural
+            Technoaimbiation is Central India’s biggest techno-cultural
             extravaganza, bringing together innovation, creativity, and
             entertainment on a grand scale.
           </p>
