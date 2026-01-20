@@ -50,7 +50,7 @@ const Page = () => {
       {/* Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-          src="/background.svg"
+          src="/testfile/singleeventbg.svg"
           width={500}
           height={500}
           className="w-full h-auto opacity-100"
@@ -62,7 +62,7 @@ const Page = () => {
       <EventIntro
         venue="BABUJI CHOWK (OPJU)"
         time="20–21 Feb 2026"
-        imageUrl="/techno-events-logo/robovation.png"
+        imageUrl="/testfile/robo.svg"
         registrations={registrationCount}
         pricepool={40000}
         description="ROBOVATION 2026 is an electrifying robotics competition where innovation meets combat, speed, and precision. Participants design, build, and control robots to compete in high-intensity challenges including Robo Soccer, Robo Race, Fast Line Follower, and Robo War."
@@ -75,7 +75,7 @@ const Page = () => {
         SUB EVENTS
       </h1>
 
-      <p className="text-2xl tracking-[3.75px] text-white text-center max-w-5xl mx-auto mb-20 px-4">
+      <p className="text-2xl tracking-[3.75px] text-black text-center max-w-5xl mx-auto mb-20 px-4">
         Robovation consists of four competitive robotics challenges designed to
         test engineering skills, control, speed, strategy, and innovation.
       </p>

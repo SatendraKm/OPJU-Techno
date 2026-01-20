@@ -73,7 +73,7 @@ const Page = () => {
       {/* Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-          src="/background.svg"
+          src="/testfile/singleeventbg2.svg"
           alt="Scrolling Background"
           width={500}
           height={500}
@@ -85,7 +85,7 @@ const Page = () => {
       <EventIntro
         venue="Babuji Chowk & Football Ground Stage"
         time="11-19 Feb 2026"
-        imageUrl="/testfile/Riywayat.png"
+        imageUrl="/testfile/riwayat.svg"
         registrations={registrationCount}
         pricepool={18000}
         description="An inter-college fashion show hosted by OP Jindal University, designed to promote creativity, confidence, and personality through structured rounds, workshops, and inclusive participation."
@@ -96,7 +96,7 @@ const Page = () => {
         <h1 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
           EVENT CATEGORY
         </h1>
-        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white max-w-4xl mx-auto">
+        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-black max-w-4xl mx-auto">
           Fashion Show
         </p>
       </section>
@@ -110,7 +110,7 @@ const Page = () => {
           Judgement Criteria
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
             {criterias.map((criteria, index) => (
               <li key={index}>{criteria}</li>
             ))}
@@ -124,7 +124,7 @@ const Page = () => {
           PRIZES
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
             <li>1st: Miss ₹4000, Mr ₹4000</li>
             <li>2nd: Miss ₹3000, Mr ₹3000</li>
             <li>3rd: Miss ₹2000, Mr ₹2000</li>
@@ -138,7 +138,7 @@ const Page = () => {
         <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
           EVENT ROUNDS
         </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white text-2xl sm:text-3xl space-y-4 font-['Inter'] leading-relaxed">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-black text-2xl sm:text-3xl space-y-4 font-['Inter'] leading-relaxed">
           <div>
             <h3 className="font-semibold text-3xl mb-2">1st Round</h3>
             <p>Venue: Babuji Chowk</p>
@@ -168,7 +168,7 @@ const Page = () => {
         <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
           Faculty Coordinators
         </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-black text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed">
           <p>Namrata Ojha (7974108328)</p>
           <p>Ms. Khushboo Patel</p>
           <p>Dr. Hemant Naik</p>

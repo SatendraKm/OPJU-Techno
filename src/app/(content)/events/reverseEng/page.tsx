@@ -73,7 +73,7 @@ const Page = () => {
         <Image
           width={500}
           height={500}
-          src="/background.svg"
+          src="/testfile/singleeventbg.svg"
           className="w-full h-auto opacity-150"
           alt="Background"
         />
@@ -81,9 +81,9 @@ const Page = () => {
 
       {/* Event Introduction */}
       <EventIntro
-        imageUrl="/testfile/ReverseEng.png"
+        imageUrl="/testfile/rev.svg"
         registrations={registrationCount}
-        pricepool={0}
+        pricepool={11000}
         description="Reverse Engineering – Decode the Hardware is a logic-oriented technical event designed to evaluate participants’ ability to analyze, interpret, and reason about unknown hardware systems. The event emphasizes observation, deduction, and conceptual understanding rather than physical assembly or complex instrumentation."
         time="19, 20 & 21 Feb | 1:00 PM – 5:30 PM"
         venue="TB 01 & TB 07"
@@ -98,19 +98,20 @@ const Page = () => {
 
           {/* Judging Criteria */}
           <section>
-            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
-              JUDGING CRITERIA
-            </h2>
-            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2">
-                <li>Logical accuracy</li>
-                <li>Clarity of reasoning</li>
-                <li>Depth of understanding</li>
-                <li>Ability to clearly explain decisions</li>
-                <li>System-level interpretation skills</li>
-              </ul>
-            </div>
-          </section>
+  <h2 className="text-5xl text-black font-medium text-center mb-12">
+    JUDGING CRITERIA
+  </h2>
+  <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-black">
+    <ul className="list-disc pl-5 text-2xl space-y-2">
+      <li>Logical accuracy</li>
+      <li>Clarity of reasoning</li>
+      <li>Depth of understanding</li>
+      <li>Ability to clearly explain decisions</li>
+      <li>System-level interpretation skills</li>
+    </ul>
+  </div>
+</section>
+
 
           {/* Additional Sections */}
           <WhyParticipate reasons={reasons} />

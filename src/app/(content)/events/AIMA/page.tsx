@@ -53,7 +53,7 @@ const Page = () => {
       {/* Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-          src="/background.svg"
+          src="/testfile/singleeventbg.svg"
           alt="Scrolling Background"
           width={500}
           height={500}
@@ -65,7 +65,7 @@ const Page = () => {
       <EventIntro
         venue="Multipurpose Hall, O.P. Jindal University, Raigarh"
         time="21 February, 2026 | 09:00 AM - 05:00 PM"
-        imageUrl="/testfile/AIMAS.png"
+        imageUrl="/testfile/aima.svg"
         registrations={registrationCount}
         pricepool={10000}
         description="The Student Management Quiz (SMQ) offers an engaging and innovative platform to assess students’ understanding across diverse business domains, including branding, marketing, HR, finance, and prominent business leaders. Compete, learn, and win exciting rewards."
@@ -76,7 +76,7 @@ const Page = () => {
         <h1 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
           EVENT CATEGORY
         </h1>
-        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white max-w-4xl mx-auto">
+        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-black max-w-4xl mx-auto">
           Management Quiz
         </p>
       </section>
@@ -90,7 +90,7 @@ const Page = () => {
           Schedule & Judgement Criteria
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
             {criterias.map((criteria, index) => (
               <li key={index}>{criteria}</li>
             ))}
@@ -104,7 +104,7 @@ const Page = () => {
           PRIZES
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
             <li>Exciting prizes for the winner worth ₹10,000</li>
             <li>Certificate of Participation for all participants</li>
           </ul>
@@ -119,7 +119,7 @@ const Page = () => {
         <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
           Faculty Coordinators
         </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-black text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed">
           <p>Dr. Himanshu Vaishnaw: +91 97138 63587</p>
           <p>Dr. Saurabh Gupta: +91 97958 48506</p>
         </div>

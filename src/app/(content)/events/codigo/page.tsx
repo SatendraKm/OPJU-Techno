@@ -36,22 +36,21 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full text-black">
       {/* 🔥 FULL PAGE BACKGROUND (FIXED & SHARP) */}
-      <div className="fixed inset-0 -z-10">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-          src="/testfile/eventbg.png"
-          alt="Event Background"
-          fill
-          priority
-          quality={100}
-          className="object-cover"
+          src="/testfile/singleeventbg.svg"
+          alt="Scrolling Background"
+          width={500}
+          height={500}
+          className="w-full h-auto opacity-150"
         />
       </div>
 
       {/* Event Intro */}
       <EventIntro
-        imageUrl="/techno-events-logo/codigo.png"
+        imageUrl="/testfile/codigo.svg"
         registrations={registrationCount}
         pricepool={20000}
         description="Unlock your coding potential at our University’s premier Coding Event!! Participate in challenges, network with peers, and enhance your skills."
@@ -61,17 +60,17 @@ const Page = () => {
 
       {/* Theme */}
       <section className="my-32 text-center">
-        <h2 className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl md:text-5xl font-medium mb-10">
+        <h2 className="text-black text-4xl md:text-5xl font-medium mb-10">
           THEME
         </h2>
-        <p className="text-white text-xl md:text-2xl tracking-wide">
+        <p className="text-black text-xl md:text-2xl tracking-wide">
           Dream your Fantasy, Code it in your Reality!!!
         </p>
       </section>
 
       {/* Sub Events */}
       <section className="my-32">
-        <h2 className="text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl md:text-5xl font-medium mb-10">
+        <h2 className="text-center text-black text-4xl md:text-5xl font-medium mb-10">
           SUB EVENTS
         </h2>
 
@@ -91,16 +90,16 @@ const Page = () => {
 
       {/* Event 1 */}
       <section className="my-32">
-        <h2 className="text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl md:text-5xl font-medium mb-16">
+        <h2 className="text-center text-black text-4xl md:text-5xl font-medium mb-16">
           Event 1: Coding Challenge
         </h2>
 
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-8">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-8 text-black">
           <div>
-            <h3 className="text-2xl text-green-600 font-semibold">
+            <h3 className="text-2xl text-black font-semibold">
               Round 1: Coding Quiz
             </h3>
-            <ul className="list-disc pl-6 text-gray-300 text-lg">
+            <ul className="list-disc pl-6 text-black text-lg">
               <li>Duration: 40 minutes</li>
               <li>30 MCQs</li>
               <li>Output-based & Error-finding questions</li>
@@ -108,10 +107,10 @@ const Page = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl text-green-600 font-semibold">
+            <h3 className="text-2xl text-black font-semibold">
               Round 2: Real Coding Challenge
             </h3>
-            <ul className="list-disc pl-6 text-gray-300 text-lg">
+            <ul className="list-disc pl-6 text-black text-lg">
               <li>Duration: 60–90 minutes</li>
               <li>5 Coding Problems (Easy → Hard)</li>
             </ul>
@@ -121,26 +120,26 @@ const Page = () => {
 
       {/* Event 2 */}
       <section className="my-32">
-        <h2 className="text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl md:text-5xl font-medium mb-16">
+        <h2 className="text-center text-black text-4xl md:text-5xl font-medium mb-16">
           Event 2: Design Master
         </h2>
 
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-8">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-8 text-black">
           <div>
-            <h3 className="text-2xl text-green-600 font-semibold">
+            <h3 className="text-2xl text-black font-semibold">
               Round 1: UI/UX MCQ
             </h3>
-            <ul className="list-disc pl-6 text-gray-300 text-lg">
+            <ul className="list-disc pl-6 text-black text-lg">
               <li>30 Questions</li>
               <li>Passing Criteria: 60%</li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-2xl text-green-600 font-semibold">
+            <h3 className="text-2xl text-black font-semibold">
               Round 2: High-Fidelity UI/UX Design
             </h3>
-            <p className="text-gray-300 text-lg">
+            <p className="text-black text-lg">
               Themes will be provided on the spot. Judges’ decision will be
               final.
             </p>
@@ -150,12 +149,12 @@ const Page = () => {
 
       {/* Judging Criteria */}
       <section className="my-32">
-        <h2 className="text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl md:text-5xl font-medium mb-12">
+        <h2 className="text-center text-black text-4xl md:text-5xl font-medium mb-12">
           Judging Criteria
         </h2>
 
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-6 text-gray-300 text-lg space-y-2">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-black">
+          <ul className="list-disc pl-6 text-black text-lg space-y-2">
             <li>Correct Output</li>
             <li>Test Cases Passed</li>
             <li>Time & Efficiency</li>
@@ -172,3 +171,4 @@ const Page = () => {
 };
 
 export default Page;
+

@@ -1,120 +1,110 @@
 "use client";
 
+import Image from "next/image";
 import AboutSection from "@/components/aboutSection";
 import EventSection from "@/components/eventsSection";
 import Footer from "@/components/footer";
-import Image from "next/image";
+import Link from "next/link";
+
 
 export default function Home() {
-  const heroImages = [
-    "/testfile/Hero1.png",
-    "/testfile/Hero2.png",
-    "/testfile/Hero3.png",
-    "/testfile/Hero4.png",
-  ];
-
   return (
     <div className="relative w-full overflow-hidden">
-      {/* PILLAR */}
-      <div className="absolute top-0 left-0 right-0 h-full pointer-events-none z-10">
-        <div
-          className="
-            absolute 
-            top-[-8%] sm:top-[-10%] lg:top-[-12%]
-            left-1/2 
-            w-[130%] sm:w-[95%] lg:w-[85%] xl:w-[75%]
-            h-[300%] sm:h-[120%] lg:h-[125%]
-            -translate-x-[19%]
-            sm:-translate-x-[30%]
-            md:-translate-x-[30%]
-            xl:-translate-x-[19%]
-            lg:-translate-x-[19%]
-          "
-        >
+
+      {/* ================= HERO SECTION ================= */}
+      <section className="relative w-full min-h-screen overflow-hidden isolate">
+
+        {/* BACKGROUND */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#021a3a] via-[#053b6f] to-[#0a5c8f]" />
+
+        {/* ========== HUGE CENTER PILLAR ========== */}
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 pointer-events-none z-30 w-[420px] md:w-[520px] lg:w-[620px] h-[260vh]">
           <Image
-            src="/testfile/pillar.png"
+            src="/testfile/torch2.png"
             alt="Divine Pillar"
             fill
             priority
-            className="object-contain object-top"
+            className="object-contain object-bottom translate-y-[6%]"
           />
         </div>
-      </div>
 
-      {/* TEXT OVERLAY */}
-      <div className="absolute top-0 left-0 right-0 h-full pointer-events-none z-20">
-        <div className="relative w-full h-screen flex items-center justify-center">
-          <p
-            className="
-            text-white text-center font-serif font-semibold
-            text-2xl sm:text-sm md:text-base lg:text-lg xl:text-xl
-            px-4 max-w-lg sm:max-w-lg lg:max-w-xl
-            leading-relaxed tracking-wide
-            absolute
-            top-[45%] sm:top-[38%] md:top-[40%] lg:top-[20%]
-            left-1/2 -translate-x-1/2
-          "
-          >
-            Central India&apos;s Biggest Annual Techno-Cultural Management Fest
-          </p>
-        </div>
-      </div>
+        {/* ========== LEFT TEXT CONTENT ========== */}
+       {/* ========== LEFT CONTENT STACK (TEXT + LOGO + BUTTON) ========== */}
+<div className="absolute left-6 md:left-16 bottom-[14%] z-[80] flex flex-col items-start gap-6 max-w-[90%] md:max-w-md">
 
-      {/* CONTENT */}
-      <div className="relative">
-        {/* HERO */}
-        <div className="w-full min-h-[100svh] overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full min-h-[100svh]">
-            {heroImages.map((src, i) => (
-              <div
-                key={i}
-                className={`relative w-full h-full overflow-hidden ${
-                  i > 0 ? "hidden md:block" : ""
-                } ${i > 1 ? "hidden lg:block" : ""}`}
-              >
-                <Image
-                  src={src}
-                  alt={`Hero ${i + 1}`}
-                  fill
-                  priority
-                  unoptimized
-                  className="object-cover"
-                />
-              </div>
-            ))}
+  <p className="text-white text-lg md:text-2xl font-semibold opacity-95 leading-snug">
+    Central India's Biggest Annual Techno-Cultural Management Fest
+  </p>
+
+  <Image
+    src="/testfile/newlogo.png"
+    alt="Techno Ambition Logo"
+    width={400}
+    height={120}
+    priority
+    className="object-contain w-[260px] md:w-[400px]"
+  />
+
+  <Link href="/dashboard">
+    <button className="px-10 py-3 md:px-12 md:py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition shadow-xl">
+      Register
+    </button>
+  </Link>
+
+</div>
+
+        {/* ========== CLOUD LAYERS ========== */}
+        <div className="absolute bottom-0 left-0 w-full pointer-events-none z-50">
+
+          {/* cloud.svg */}
+          <div className="absolute left-0 bottom-0">
+            <Image
+              src="/testfile/cloud.svg"
+              alt="Cloud Left"
+              width={900}
+              height={300}
+              priority
+              className="opacity-80"
+            />
           </div>
-        </div>
 
-        {/* CONTINUOUS MARQUEE */}
-        <div className="w-full overflow-hidden bg-white py-6 sm:py-8">
-          <div className="marquee-wrapper">
-            <div className="marquee-track text-black text-3xl sm:text-4xl lg:text-6xl font-serif font-semibold tracking-wide">
-              
-              <span>
-                THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;
-                THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;
-                THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;
-              </span>
-
-              <span>
-                THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;
-                THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;
-                THE DIVINE CORE &nbsp;&nbsp;&nbsp;&nbsp;
-              </span>
-
-            </div>
+          {/* cloud2.svg */}
+          <div className="absolute right-0 bottom-0">
+            <Image
+              src="/testfile/cloud2.svg"
+              alt="Cloud Right"
+              width={900}
+              height={300}
+              priority
+              className="opacity-95"
+            />
           </div>
+
+          {/* cloud3.svg NEW */}
+          <div className="absolute left-1/3 bottom-6">
+            <Image
+              src="/testfile/cloud3.svg"
+              alt="Cloud Center"
+              width={800}
+              height={280}
+              priority
+              className="opacity-85"
+            />
+          </div>
+
         </div>
 
-        {/* SECTIONS */}
-        <section className="relative mt-20 sm:mt-28">
-          <EventSection />
-        </section>
+      </section>
 
-        <section>
-          <AboutSection />
-        </section>
-      </div>
+      {/* ================= REST OF SITE ================= */}
+
+      <section className="relative mt-20">
+        <EventSection />
+      </section>
+
+      <section>
+        <AboutSection />
+      </section>
 
       <Footer />
 
@@ -124,26 +114,20 @@ export default function Home() {
           width: 100%;
           overflow: hidden;
         }
-
         .marquee-track {
           display: flex;
           width: max-content;
           animation: marquee 16s linear infinite;
         }
-
         .marquee-track span {
           white-space: nowrap;
         }
-
         @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
       `}</style>
+
     </div>
   );
 }

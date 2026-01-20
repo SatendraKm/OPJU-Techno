@@ -33,7 +33,7 @@ const RoundSection: React.FC<RoundSectionProps> = ({ rounds }) => {
       <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[3.75px] mb-8">
         Rounds
       </h2>
-      <p className="text-white text-2xl font-normal font-['Inter'] tracking-[3.75px] text-center mb-10">
+      <p className="text-black text-2xl font-normal font-['Inter'] tracking-[3.75px] text-center mb-10">
         Following are the details for this event. Read the details carefully about the rounds this event has. Don&apos;t miss your chance to participate and showcase your skills!
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

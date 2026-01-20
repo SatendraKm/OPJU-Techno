@@ -28,7 +28,6 @@ const Page = () => {
       name: "Manish Yadav",
       contact: 9109892675,
     },
-    // Add other student coordinators if you want images
   ];
 
   const rules = [
@@ -57,7 +56,7 @@ const Page = () => {
       {/* Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-          src="/background.svg"
+          src="/testfile/singleeventbg.svg"
           alt="Scrolling Background"
           width={500}
           height={500}
@@ -69,7 +68,7 @@ const Page = () => {
       <EventIntro
         venue="Live Classroom"
         time="20-02-26, 10:30 am"
-        imageUrl="/techno-events-logo/masterchef.png"
+        imageUrl="/testfile/startup.svg"
         registrations={registrationCount}
         pricepool={18000}
         description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste."
@@ -80,7 +79,7 @@ const Page = () => {
         <h1 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
           EVENT CATEGORY
         </h1>
-        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white max-w-4xl mx-auto">
+        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-black max-w-4xl mx-auto">
           Poster Point Presentations for Working and Non-Working models
         </p>
       </section>
@@ -94,7 +93,7 @@ const Page = () => {
           Judgement Criteria
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
             {criterias.map((criteria, index) => (
               <li key={index}>{criteria}</li>
             ))}
@@ -108,7 +107,7 @@ const Page = () => {
           PRIZES
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
             <li>1st, 2nd, and 3rd Place Winners</li>
           </ul>
         </div>
@@ -117,29 +116,7 @@ const Page = () => {
       {/* Event Managers Section */}
       <EventManagers managers={managers} />
 
-      {/* Faculty Coordinators Section */}
-      <section className="mb-20">
-        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
-          Faculty Coordinators
-        </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed">
-          <p>Dr. Gopal Krishna Rathore (9893929950)</p>
-          <p>Dr. Nandlal Acharji</p>
-          <p>Dr. Deepak Patel</p>
-          <p>Prof. Deepak Kushwah</p>
-        </div>
-      </section>
 
-      {/* Staff Co-Coordinators Section */}
-      <section className="mb-20">
-        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
-          Staff Coordinators
-        </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed">
-          <p>Mr. Gyanesh Bhatta</p>
-          <p>Mr. Dukhishyam</p>
-        </div>
-      </section>
     </div>
   );
 };

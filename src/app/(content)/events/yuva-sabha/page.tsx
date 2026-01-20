@@ -94,7 +94,7 @@ const Page = () => {
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-          src="/background.svg"
+          src="/testfile/singleeventbg2.svg"
           alt="Scrolling Background"
           width={500}
           height={500}
@@ -104,7 +104,7 @@ const Page = () => {
 
       {/* Event Intro Section */}
       <EventIntro
-        imageUrl="/testfile/VoiceOfYouth.png"
+        imageUrl="/testfile/voice.svg"
         registrations={registrationCount}
         pricepool={10000}
         description="A fun flagship event where participants showcase talents like singing, dancing, comedy, or magic while also predicting their own score. An exact match with the judges' score wins instantly, making it a unique test of skill, confidence, and self-awareness. Entertain, guess, and win."
@@ -118,7 +118,7 @@ const Page = () => {
           ABOUT THE EVENT
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl w-full">
-          <p className="text-xl sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+          <p className="text-xl sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
             Step into the intellectual battlefield where arguments shape
             innovation. Voice of Youth challenges aspiring managers,
             entrepreneurs, and thinkers to present bold perspectives, defend
@@ -134,7 +134,7 @@ const Page = () => {
           JUDGING CRITERIA
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl w-full">
-          <ul className="list-disc pl-5 text-xl sm:text-2xl space-y-3 font-['Inter'] tracking-[3.75px] text-white">
+          <ul className="list-disc pl-5 text-xl sm:text-2xl space-y-3 font-['Inter'] tracking-[3.75px] text-black">
             <li>Content quality & relevance</li>
             <li>Delivery & articulation</li>
             <li>Rebuttal effectiveness</li>

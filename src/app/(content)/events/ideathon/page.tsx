@@ -91,7 +91,7 @@ receiving expert feedback and recognition.
       {/* Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-          src="/background.svg"
+          src="/testfile/singleeventbg.svg"
           width={500}
           height={500}
           className="w-full h-auto opacity-150"
@@ -101,7 +101,7 @@ receiving expert feedback and recognition.
 
       {/* Event Intro */}
       <EventIntro
-        imageUrl="/techno-events-logo/ideathon.png"
+        imageUrl="/testfile/ideathon.svg"
         registrations={registrationCount}
         pricepool={18000}
         description={eventDescription}
@@ -110,7 +110,7 @@ receiving expert feedback and recognition.
       />
 
       <div className="flex flex-col items-center">
-        <div className="bg-transparent text-white p-6 md:p-12 space-y-32">
+        <div className="bg-transparent text-black p-6 md:p-12 space-y-32">
           {/* Rounds */}
           <section className="px-4">
             <RoundSection rounds={rounds} />

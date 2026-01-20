@@ -56,7 +56,7 @@ const Antaragni = () => {
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-                  src="/background.svg"
+                  src="/testfile/singleeventbg2.svg"
                   alt="Scrolling Background"
                   width={500}
                   height={500}
@@ -67,7 +67,7 @@ const Antaragni = () => {
       {/* Event Intro Section */}
       <section>
         <EventIntro
-          imageUrl="/techno-events-logo/antaragni.png"
+          imageUrl="/testfile/antaragini.svg"
           registrations={registrationCount}
           pricepool={21500}
           description="ANTARAGNI is a vibrant platform for students to showcase their creative talents in a meaningful and expressive way. From dancing, mime, singing, and rapping to short film-making and fusion performances, the event brings together diverse art forms on one stage. It celebrates passion, creativity, and cultural diversity, giving students an opportunity to express themselves through music, movement, and storytelling. Whether performing solo or in groups, participants get a chance to shine, entertain, and inspire the audience."
@@ -75,7 +75,7 @@ const Antaragni = () => {
           venue="UNIVERSITY PLAYGROUND"
         />
       </section>
-      <p className="mt-20 text-2xl md:text-4xl font-protest-revolution text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-400 tracking-[0.15em] text-center">
+      <p className="mt-20 text-2xl md:text-4xl font-protest-revolution text-black bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-400 tracking-[0.15em] text-center">
       Feel the beat, own the street
         </p>
 
@@ -87,7 +87,7 @@ const Antaragni = () => {
           <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-['Poppins'] font-medium uppercase tracking-wide mb-4">
             Sub-events
           </h2>
-          <p className="text-xl sm:text-2xl text-white font-normal tracking-wide">
+          <p className="text-xl sm:text-2xl text-black font-normal tracking-wide">
             Following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don&apos;t miss your chance to participate and showcase your skills!
           </p>
         </div>
