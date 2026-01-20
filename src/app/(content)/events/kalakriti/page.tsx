@@ -163,7 +163,7 @@ const KalaKriti = () => {
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-          src="/background.svg"
+          src="/testfile/singleeventbg2.svg"
           className="w-full h-auto opacity-150"
           alt="Scrolling Background"
           width={500}

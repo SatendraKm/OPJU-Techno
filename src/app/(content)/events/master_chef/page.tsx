@@ -44,7 +44,7 @@ const Page = () => {
       {/* Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-          src="/background.svg"
+          src="/testfile/singleeventbg2.svg"
           alt="Scrolling Background"
           width={500}
           height={500}
@@ -56,7 +56,7 @@ const Page = () => {
        <EventIntro
           venue="Cafeteria, Ground Floor"
           time="20-02-26, 10:00 am"
-          imageUrl="/testfile/masterchef.svg"
+          imageUrl="/testfile/master.svg"
           registrations={registrationCount}
           pricepool={9000}
           description="MASTERCHEF 2026 is OPJU’s most exciting culinary showdown where talent meets taste and passion meets presentation. Participants transform simple ingredients into unforgettable stories, proving that great food isn’t just cooked — it’s created."

@@ -91,7 +91,7 @@ receiving expert feedback and recognition.
       {/* Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-          src="/background.svg"
+          src="/testfile/singleeventbg.svg"
           width={500}
           height={500}
           className="w-full h-auto opacity-150"
