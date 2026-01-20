@@ -1,29 +1,33 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 
 const About = () => {
   return (
-    <div className="w-full">
+    <div className="w-full relative">
       {/* BACKGROUND */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
           width={500}
           height={500}
-          src="/aboutpagebackground.svg"
+          src="/testfile/singleeventbg.svg"
           className="w-full h-auto opacity-150"
           alt="Scrolling Background"
         />
       </div>
 
-      <div className="text-white flex flex-col mt-36 text-center items-center min-h-screen px-4 md:px-0">
+      <div className="text-black flex flex-col mt-36 text-center items-center min-h-screen px-4 md:px-0">
         <h2 className="text-7xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
           ABOUT
         </h2>
 
-        <p className="w-full max-w-[943px] pt-10 text-xl uppercase">
-          A fusion of technology, culture, and fun-filled activities, crafted to
-          inspire and engage every participant!
-        </p>
+        {/* Intro Text */}
+        <div className="glass-bg-dark p-6 mt-10 max-w-[943px] text-center rounded-xl">
+          <p className="text-xl uppercase text-white">
+            A fusion of technology, culture, and fun-filled activities, crafted to
+            inspire and engage every participant!
+          </p>
+        </div>
 
         {/* First Event */}
         <div className="flex flex-col md:flex-row mt-20 items-center">
@@ -33,15 +37,15 @@ const About = () => {
               alt="opju campus"
               width={500}
               height={500}
-              className="w-full max-w-[700px] h-auto"
+              className="w-full max-w-[700px] h-auto rounded-xl"
             />
           </div>
 
-          <div className="text-left">
+          <div className="glass-bg-dark p-6 rounded-xl max-w-[578px] text-left">
             <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
               OPJU
             </h5>
-            <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
+            <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
               OPJU was founded by the Jindal Education and Welfare Society, OP
               Jindal University (OPJU) was set up to bring high quality education
               to its students based on a world class curriculum, the latest
@@ -54,12 +58,12 @@ const About = () => {
         </div>
 
         {/* Second Event */}
-        <div className="flex flex-col md:flex-row mt-36 items-center backdrop-blur-sm">
-          <div className="text-left order-2 md:order-1">
+        <div className="flex flex-col md:flex-row mt-36 items-center">
+          <div className="glass-bg-dark p-6 rounded-xl max-w-[578px] text-left order-2 md:order-1">
             <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
               TECHNOAIMBIATION 2026
             </h5>
-            <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
+            <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
               Technorollix is Central India&apos;s biggest techno-cultural
               extravaganza, bringing together innovation, creativity, and
               entertainment on a grand scale. With a diverse mix of technical
@@ -76,7 +80,7 @@ const About = () => {
               alt="Techno Ambition"
               width={500}
               height={500}
-              className="w-full max-w-[600px] max-h-[60vh] object-contain"
+              className="w-full max-w-[600px] max-h-[60vh] object-contain rounded-xl"
             />
           </div>
         </div>
@@ -89,15 +93,15 @@ const About = () => {
               height={500}
               src="/junoonlogo.png"
               alt="junoon logo"
-              className="w-full max-w-[600px] h-auto"
+              className="w-full max-w-[600px] h-auto rounded-xl"
             />
           </div>
 
-          <div className="text-left">
+          <div className="glass-bg-dark p-6 rounded-xl max-w-[578px] text-left">
             <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
               JUNOON
             </h5>
-            <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
+            <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
               OPJU Junoon is an annual cultural extravaganza hosted by the O.P.
               Jindal University (OPJU) in Chhattisgarh, India. This vibrant event
               showcases the diverse talents of people across various domains
@@ -109,11 +113,11 @@ const About = () => {
 
         {/* Fourth Event */}
         <div className="flex flex-col md:flex-row mt-36 items-center">
-          <div className="text-left order-2 md:order-1">
+          <div className="glass-bg-dark p-6 rounded-xl max-w-[578px] text-left order-2 md:order-1">
             <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
               aiMBiAtion
             </h5>
-            <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
+            <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
               aiMBiAtion 2025, hosted by OP Jindal University, is more than a
               management fest—it&apos;s a hub of innovation, creativity, and
               competition. It brings together dreamers and doers to test their
@@ -133,13 +137,23 @@ const About = () => {
               height={500}
               src="/ambiation.svg"
               alt="aimbiation logo"
-              className="w-full max-w-[600px] h-auto"
+              className="w-full max-w-[600px] h-auto rounded-xl"
             />
           </div>
         </div>
 
         <div className="h-[300px]" />
       </div>
+
+      {/* Dark Glassmorphism Style */}
+      <style jsx>{`
+        .glass-bg-dark {
+          background: rgba(0, 0, 0, 0.4); /* Darker tint */
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-radius: 1rem;
+        }
+      `}</style>
     </div>
   );
 };
