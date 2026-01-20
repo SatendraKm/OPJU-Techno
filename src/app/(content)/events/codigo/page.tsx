@@ -38,16 +38,15 @@ const Page = () => {
   return (
     <div className="relative w-full">
       {/* 🔥 FULL PAGE BACKGROUND (FIXED & SHARP) */}
-      <div className="fixed inset-0 -z-10">
-        <Image
-          src="/testfile/eventbg.png"
-          alt="Event Background"
-          fill
-          priority
-          quality={100}
-          className="object-cover"
-        />
-      </div>
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+             <Image
+               src="/testfile/singleeventbg.svg"
+               alt="Scrolling Background"
+               width={500}
+               height={500}
+               className="w-full h-auto opacity-150"
+             />
+           </div>
 
       {/* Event Intro */}
       <EventIntro
