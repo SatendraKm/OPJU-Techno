@@ -110,7 +110,7 @@ receiving expert feedback and recognition.
       />
 
       <div className="flex flex-col items-center">
-        <div className="bg-transparent text-white p-6 md:p-12 space-y-32">
+        <div className="bg-transparent text-black p-6 md:p-12 space-y-32">
           {/* Rounds */}
           <section className="px-4">
             <RoundSection rounds={rounds} />

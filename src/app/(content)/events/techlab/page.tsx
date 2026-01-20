@@ -67,7 +67,7 @@ const Page = () => {
         <Image
           width={500}
           height={500}
-          src="/testfile/singleeventbg.svg"
+          src="/testfile/singleeventbg2.svg"
           className="w-full h-auto opacity-100"
           alt="Scrolling Background"
         />
@@ -91,7 +91,7 @@ const Page = () => {
           <div className="w-full max-w-md h-16 sm:h-20 text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl sm:text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px]">
             sub-events
           </div>
-          <div className="w-full max-w-4xl mt-4 text-center text-white text-base sm:text-2xl font-normal font-['Inter'] tracking-[3.75px]">
+          <div className="w-full max-w-4xl mt-4 text-center text-black text-base sm:text-2xl font-normal font-['Inter'] tracking-[3.75px]">
             The following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don&apos;t miss your chance to participate and showcase your skills!
           </div>
         </div>

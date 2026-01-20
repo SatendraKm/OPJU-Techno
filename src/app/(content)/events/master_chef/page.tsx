@@ -75,11 +75,11 @@ const Page = () => {
       ROUND 1 – HOME CHEF CHALLENGE
     </h3>
 
-    <p className="text-xl text-white mb-4">
+    <p className="text-xl text-black mb-4">
       Bring your signature style straight from your kitchen!
     </p>
 
-    <ul className="list-disc pl-5 text-xl sm:text-2xl space-y-2 text-white">
+    <ul className="list-disc pl-5 text-xl sm:text-2xl space-y-2 text-black">
       <li>Prepare a millet-based dish at home</li>
       <li>Dish must represent a specific cuisine</li>
       <li>Record a short cooking video (maximum 1 minute)</li>
@@ -90,7 +90,7 @@ const Page = () => {
       Judged on: Taste • Presentation • Creativity
     </p>
 
-    <p className="mt-2 text-white italic">
+    <p className="mt-2 text-black italic">
       This round focuses on plating perfection and first impressions.
     </p>
   </div>
@@ -101,11 +101,11 @@ const Page = () => {
       ROUND 2 – FLAMELESS COOKING CHALLENGE
     </h3>
 
-    <p className="text-xl text-white mb-4">
+    <p className="text-xl text-black mb-4">
       Think smart. Cook smarter.
     </p>
 
-    <ul className="list-disc pl-5 text-xl sm:text-2xl space-y-2 text-white">
+    <ul className="list-disc pl-5 text-xl sm:text-2xl space-y-2 text-black">
       <li>Live cooking on campus</li>
       <li>Flameless cooking only</li>
       <li>Ingredients will be provided by the University</li>
@@ -123,12 +123,12 @@ const Page = () => {
       {/* Judgement Criteria Section */}
       <section className="mb-20">
         <RulesAndRegulation rules={rules} />
-        <div className="text-white mt-10">
+        <div className="text-black mt-10">
           <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
             Judgement Criteria
           </h2>
           <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-            <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+            <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
               {criterias.map((criteria, index) => (
                 <li key={index}>{criteria}</li>
               ))}
@@ -143,7 +143,7 @@ const Page = () => {
           PRIZES
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
             <li>First, Second, and Third Place Winners, Three Consolation Prizes</li>
             <li>Certificate of Appreciation for All Participants</li>
           </ul>

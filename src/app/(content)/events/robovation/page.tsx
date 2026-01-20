@@ -75,7 +75,7 @@ const Page = () => {
         SUB EVENTS
       </h1>
 
-      <p className="text-2xl tracking-[3.75px] text-white text-center max-w-5xl mx-auto mb-20 px-4">
+      <p className="text-2xl tracking-[3.75px] text-black text-center max-w-5xl mx-auto mb-20 px-4">
         Robovation consists of four competitive robotics challenges designed to
         test engineering skills, control, speed, strategy, and innovation.
       </p>

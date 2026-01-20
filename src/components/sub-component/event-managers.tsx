@@ -21,7 +21,7 @@ const EventManagers: React.FC<EventManagersProps> = ({ managers }) => {
       </div>
 
       {/* Description */}
-      <div className="w-full max-w-4xl px-2 text-center text-white text-lg sm:text-2xl font-normal font-['Inter'] md:tracking-[3.75px] mt-4">
+      <div className="w-full max-w-4xl px-2 text-center text-black text-lg sm:text-2xl font-normal font-['Inter'] md:tracking-[3.75px] mt-4">
         For any queries regarding the event, feel free to reach out to any of
         the managers listed below. They are here to help and ensure a smooth
         experience for you!

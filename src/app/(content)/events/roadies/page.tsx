@@ -33,36 +33,6 @@ const Roadies = () => {
       contact: 9078942095,
     },
   ];
-  // const FacultyCoordinators = [
-  //   {
-  //     imageUrl: "/managers/Roadies/Pranjal.jpg",
-  //     name: "Dr. Amit Paras",
-  //     contact: 7879610288,
-  //   },{
-  //     imageUrl: "/managers/Roadies/Pranjal.jpg",
-  //     name: "Dr Akash Pandey",
-  //     contact: 9078942095,
-  //   },{
-  //     imageUrl: "/managers/Roadies/Pranjal.jpg",
-  //     name: "Dr. Rahul Sharma",
-  //     contact: 9078942095,
-  //   },
-  // ];
-  // const StaffCoordinators = [
-  //   {
-  //     imageUrl: "/managers/Roadies/Pranjal.jpg",
-  //     name: "y Santhosh",
-  //     contact: 7879610288,
-  //   },{
-  //     imageUrl: "/managers/Roadies/Pranjal.jpg",
-  //     name: "Abhishek Thakur",
-  //     contact: 9078942095,
-  //   },{
-  //     imageUrl: "/managers/Roadies/Pranjal.jpg",
-  //     name: "Jyoti Sahu",
-  //     contact: 9078942095,
-  //   },
-  // ];
 
   const [registrationCount, setRegistrationCount] = useState(0);
   useEffect(() => {
@@ -87,7 +57,7 @@ const Roadies = () => {
       {/* Event Intro Section */}
       <EventIntro
         venue="Bus Parking Area"
-        time="19-02-26, 11:30 am"/* Event at 19-20-21 */
+        time="19-02-26, 11:30 am" /* Event at 19-20-21 */
         imageUrl="/testfile/roadies.svg"
         registrations={registrationCount}
         pricepool={12000}
@@ -105,7 +75,7 @@ The event is designed to promote:
         <h1 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-[poppins] mb-8">
           THEME
         </h1>
-        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
           Adventure / Survival
         </p>
       </section>
@@ -116,7 +86,7 @@ The event is designed to promote:
           RULES:
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
             <li>1. Participants may participate individually</li>
             <li>2. Each member must register before the deadline.</li>
             <li>
@@ -137,7 +107,7 @@ The event is designed to promote:
           JUDGEMENT CRITERIA:
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
             <li>There is no judgement criteria</li>
           </ul>
         </div>
