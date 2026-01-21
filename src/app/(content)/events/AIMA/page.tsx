@@ -42,6 +42,7 @@ const Page = () => {
   ];
 
   const [registrationCount, setRegistrationCount] = useState(0);
+
   useEffect(() => {
     getRegistrationCount("SMQ-2025-26").then((count) => {
       setRegistrationCount(count);
@@ -51,15 +52,8 @@ const Page = () => {
   return (
     <div className="relative space-y-10 px-4 py-8">
       {/* Background */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          src="/testfile/singleeventbg.svg"
-          alt="Scrolling Background"
-          width={500}
-          height={500}
-          className="w-full h-auto opacity-150"
-        />
-      </div>
+     <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
+
 
       {/* Event Intro Section */}
       <EventIntro
@@ -84,7 +78,7 @@ const Page = () => {
       {/* Rules Section */}
       <RulesAndRegulation rules={rules} />
 
-      {/* Judgement Criteria / Schedule Section */}
+      {/* Schedule Section */}
       <section className="mb-20">
         <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
           Schedule & Judgement Criteria
@@ -111,10 +105,10 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Event Managers Section */}
+      {/* Event Managers */}
       <EventManagers managers={managers} />
 
-      {/* Faculty Coordinators Section */}
+      {/* Faculty Coordinators */}
       <section className="mb-20">
         <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
           Faculty Coordinators

@@ -6,7 +6,7 @@ interface WhyParticipateProps {
 
 const WhyParticipate: React.FC<WhyParticipateProps> = ({ reasons }) => {
   return (
-    <div className="text-black px-4">
+    <div className="text-white px-4">
       <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center font-['Poppins'] uppercase tracking-[3.75px] mb-10 sm:mb-14">
         WHY PARTICIPATE
       </h2>

@@ -1,12 +1,10 @@
 "use client";
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
-
 import EventManagers from "@/components/sub-component/event-managers";
 import { FaMusic, FaFilm, FaMicrophone, FaRunning } from "react-icons/fa";
-import Image from "next/image";
 import RoundSection from "@/components/sub-component/RoundSection";
 import { getRegistrationCount } from "@/actions/event-actions";
 
@@ -23,8 +21,6 @@ const Antaragni = () => {
     "Participants must respect the event coordinators, judges, and fellow contestants at all times. Any misbehavior may lead to disqualification.",
   ];
 
-  
-
   const managers = [
     { imageUrl: "/managers/Antaragini/Nikhil Singh.jpg", name: "Nikhil Singh Jatwar", contact: 9399907335 },
     { imageUrl: "/managers/Antaragini/Pallavi.jpg", name: "Pallavi Singh", contact: 9201046402 },
@@ -32,37 +28,24 @@ const Antaragni = () => {
   ];
 
   const rounds = [
-    {
-      title: "ROUND 1",
-      description: "AUDITION - 1 (INTERNAL)",
-    },
-    {
-      title: "ROUND 2",
-      description: "AUDITION - 2 (OUTSIDERS)",
-    },
+    { title: "ROUND 1", description: "AUDITION - 1 (INTERNAL)" },
+    { title: "ROUND 2", description: "AUDITION - 2 (OUTSIDERS)" },
     { title: "ROUND 3", description: "SCREENING" },
     { title: "ROUND 4", description: "FINAL DEMO" },
   ];
 
-  const [registrationCount, setRegistrationCount] = useState(0)
+  const [registrationCount, setRegistrationCount] = useState(0);
+
   useEffect(() => {
     getRegistrationCount("ANTARAGNI").then((count) => {
-      setRegistrationCount(count)
-    })
-  }, [])
+      setRegistrationCount(count);
+    });
+  }, []);
 
   return (
-    <div className="">
-      {/* Background Image */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-                  src="/testfile/singleeventbg2.svg"
-                  alt="Scrolling Background"
-                  width={500}
-                  height={500}
-                  className="w-full h-auto opacity-150"
-                />
-      </div>
+    <div className="relative">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
       <section>
@@ -70,60 +53,41 @@ const Antaragni = () => {
           imageUrl="/testfile/antaragini.svg"
           registrations={registrationCount}
           pricepool={21500}
-          description="ANTARAGNI is a vibrant platform for students to showcase their creative talents in a meaningful and expressive way. From dancing, mime, singing, and rapping to short film-making and fusion performances, the event brings together diverse art forms on one stage. It celebrates passion, creativity, and cultural diversity, giving students an opportunity to express themselves through music, movement, and storytelling. Whether performing solo or in groups, participants get a chance to shine, entertain, and inspire the audience."
+          description="ANTARAGNI is a vibrant platform for students to showcase their creative talents..."
           time="19-02-26 , 7:30 pm"
           venue="UNIVERSITY PLAYGROUND"
         />
       </section>
-      <p className="mt-20 text-2xl md:text-4xl font-protest-revolution text-black bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-400 tracking-[0.15em] text-center">
-      Feel the beat, own the street
-        </p>
 
-
+      <p className="mt-20 text-2xl md:text-4xl font-protest-revolution text-white tracking-[0.15em] text-center">
+        Feel the beat, own the street
+      </p>
 
       {/* Sub-Events Section */}
-      <section className="mx-auto max-w-5xl px-4">
+      <section className="mx-auto max-w-5xl px-4 mt-24">
         <div className="flex flex-col items-center text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-['Poppins'] font-medium uppercase tracking-wide mb-4">
+          <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase tracking-wide mb-4">
             Sub-events
           </h2>
-          <p className="text-xl sm:text-2xl text-black font-normal tracking-wide">
-            Following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don&apos;t miss your chance to participate and showcase your skills!
+          <p className="text-xl sm:text-2xl text-gray-200 font-normal tracking-wide">
+            Following are the sub-events of this main event...
           </p>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <SubEventCard
-            Icon={FaRunning}
-            title="Solo Dance / Group Dance"
-            description="Unleash your passion for dance at Antaragni! Show off your moves, rhythm, and expression as you captivate the audience with your performance. Impress the judges with your energy, creativity, and stage presence!"
-          />
-          <SubEventCard
-            Icon={FaMusic}
-            title="Solo Singing"
-            description="Sing your heart out and mesmerize the audience with your voice. Showcase your vocal talent and emotional expression."
-          />
-          <SubEventCard
-            Icon={FaFilm}
-            title="Short Film"
-            description="Tell a compelling story through film. Create a short film that captivates, inspires, and leaves a lasting impression."
-          />
-          <SubEventCard
-            Icon={FaMicrophone}
-            title="Rap / Beat-boxing"
-            description="Battle it out with words and rhythm. Show off your lyrical prowess, flow, and stage presence in this electrifying rap battle."
-          />
+          <SubEventCard Icon={FaRunning} title="Solo Dance / Group Dance" description="Unleash your passion for dance..." />
+          <SubEventCard Icon={FaMusic} title="Solo Singing" description="Sing your heart out..." />
+          <SubEventCard Icon={FaFilm} title="Short Film" description="Tell a compelling story..." />
+          <SubEventCard Icon={FaMicrophone} title="Rap / Beat-boxing" description="Battle it out with words and rhythm..." />
         </div>
       </section>
 
-      {/* Rounds Section (Using RoundSection Component) */}
+      {/* Rounds Section */}
       <RoundSection rounds={rounds} />
 
-      {/* Bottom Section: Why Participate, Rules, and Event Managers */}
-      
-        
-        <RulesAndRegulation rules={rules} />
-        <EventManagers managers={managers} />
-  
+      {/* Rules & Managers */}
+      <RulesAndRegulation rules={rules} />
+      <EventManagers managers={managers} />
     </div>
   );
 };

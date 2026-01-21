@@ -64,7 +64,7 @@ const About = () => {
               TECHNOAIMBIATION 2026
             </h5>
             <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              Technorollix is Central India&apos;s biggest techno-cultural
+              Technoaimbiation is Central India&apos;s biggest techno-cultural
               extravaganza, bringing together innovation, creativity, and
               entertainment on a grand scale. With a diverse mix of technical
               competitions, cultural performances, and engaging workshops, it’s a
