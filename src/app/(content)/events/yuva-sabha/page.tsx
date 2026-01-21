@@ -42,42 +42,8 @@ const Page = () => {
       name: "Shubham Sharma",
       contact: 6207360156,
     },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Avinash Agrawal",
-      contact: 9691846192,
-    },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Navin Giri",
-      contact: 8889183669,
-    },
-    { imageUrl: "/managers/common/user.png", name: "Aniket Dash", contact: 0 },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Shakshyee Sharma",
-      contact: 6371965128,
-    },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Shivani Rathore",
-      contact: 9343973942,
-    },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Madhurima Sidar",
-      contact: 9752941333,
-    },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Kirti Upadhyay",
-      contact: 9752072299,
-    },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Sushma Yadav",
-      contact: 8319946166,
-    },
+   
+    
   ];
 
   const [registrationCount, setRegistrationCount] = useState(0);
@@ -110,11 +76,9 @@ const Page = () => {
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl w-full">
           <p className="text-xl sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
-            Step into the intellectual battlefield where arguments shape
-            innovation. Voice of Youth challenges aspiring managers,
-            entrepreneurs, and thinkers to present bold perspectives, defend
-            ideas, and counter opponents through structured debates on
-            real-world issues.
+           Step into the intellectual battlefield of tarkash, where logic meets leadership, and arguments shape innovation. This high-energy debate competition is designed for aspiring managers, entrepreneurs, and business enthusiasts as well as others to challenge conventional wisdom and present ground breaking perspectives.
+Participants will engage in thought-provoking debates on current business trends, corporate ethics, financial strategies, and emerging market dynamics, Socio political matters and also current happening. Whether you're defending or opposing, your ability to think critically, articulate persuasively, and counter strategically will determine your victory.
+
           </p>
         </div>
       </section>
@@ -136,10 +100,10 @@ const Page = () => {
       </section>
 
       {/* Why Participate */}
-      <WhyParticipate reasons={reasons} textClassName="text-white" />
+      <WhyParticipate reasons={reasons} />
 
       {/* Rules */}
-      <RulesAndRegulation rules={rules} textClassName="text-white" />
+      <RulesAndRegulation rules={rules} />
 
       {/* Student Coordinators */}
       <EventManagers managers={managers} />

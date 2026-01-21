@@ -51,8 +51,28 @@ const Page = () => {
         imageUrl="/testfile/master.svg"
         registrations={registrationCount}
         pricepool={9000}
-        description="MASTERCHEF 2026 is OPJU’s most exciting culinary showdown where talent meets taste and passion meets presentation. Participants transform simple ingredients into unforgettable stories, proving that great food isn’t just cooked — it’s created."
+        description="Because great food isn’t just cooked — it’s created.
+Get ready for OPJU’s most exciting culinary showdown! MASTERCHEF is where talent meets taste, presentation meets passion, and students turn ingredients into unforgettable stories.
+If you think your dish can speak for itself — this is your stage.
+"
       />
+
+      {/* Who Can Participate */}
+<section className="mb-20">
+  <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
+    WHO CAN PARTICIPATE?
+  </h2>
+
+  <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+    <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-gray-200">
+      <li>UG / PG / Diploma and Equivalent Students (18–30 Years)</li>
+      <li>Teams of 3 Members</li>
+      <li>Open to All Colleges & Universities</li>
+      <li>Registration Fee: ₹100 per Team</li>
+    </ul>
+  </div>
+</section>
+
 
       {/* Competition Format */}
       <section className="my-32">
@@ -142,6 +162,28 @@ const Page = () => {
           </ul>
         </div>
       </section>
+
+      {/* Tagline */}
+<section className="mb-20">
+  <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
+    TAGLINE
+  </h2>
+
+  <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-5xl mx-auto text-center">
+    <p className="text-2xl sm:text-3xl font-['Inter'] leading-relaxed tracking-[3.75px] text-gray-200 mb-6">
+      Great flavors. Great memories. Let your taste tell the tale.
+    </p>
+
+    <p className="text-2xl sm:text-3xl font-semibold italic text-gray-100 mb-2">
+      “Think you can cook?”
+    </p>
+
+    <p className="text-2xl sm:text-3xl font-semibold italic text-gray-100">
+      “Not just cook… compete.”
+    </p>
+  </div>
+</section>
+
 
       {/* Event Managers */}
       <EventManagers managers={managers} />

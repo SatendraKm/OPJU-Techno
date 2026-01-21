@@ -10,20 +10,54 @@ import { FaAppStore } from "react-icons/fa";
 import EventManagers from "@/components/sub-component/event-managers";
 import { getRegistrationCount } from "@/actions/event-actions";
 
+// Evaluation Process Component (Styled like Why Participate)
+const EvaluationProcess = () => {
+  const evaluationPoints = [
+    "Innovation and originality",
+    "Technical understanding and implementation",
+    "Practical application and feasibility",
+    "Presentation and explanation skills",
+    "Social, industrial or environmental relevance",
+  ];
+
+  return (
+    <section className="px-4 mx-auto my-16 max-w-4xl">
+      {/* Heading */}
+      <h2 className="text-4xl sm:text-5xl font-medium uppercase text-center text-[#FFD188] mb-8 tracking-widest">
+        Evaluation Process
+      </h2>
+
+      {/* List Container */}
+      <div className="bg-[#2a1414] p-8 rounded-lg">
+        <ol className="list-decimal list-inside space-y-4 text-white text-lg font-serif">
+          {evaluationPoints.map((point, index) => (
+            <li key={index}>{point}</li>
+          ))}
+        </ol>
+        <p className="mt-6 text-white font-serif">
+          The judge's decision will be final and binding.
+        </p>
+      </div>
+    </section>
+  );
+};
+
 const Page = () => {
   const rules = [
-    "All the exhibits must reach the venue one hour before the prescribed time to install all the necessary components for their model.",
-    "A maximum of 4 participants are allowed in each team.",
-    "The exhibit should be a creation of the student, which either illustrates or demonstrates a novel cause.",
-    "Robo cars or drones should perform some task or exhibit some innovation to be included in the technical model presentation.",
-    "Exhibits must be confined to an area. Tables and Electricity connection will be provided.",
-    "No exhibits should be dismantled or removed till the end of the competition.",
-    "Highly flammable and toxic substances are not allowed, if so, the application must be submitted prior.",
-    "Every participant must maintain the decorum of the event.",
-    "External and Internal judges panel will take the final call.",
+    "All exhibits must reach the venue at least one hour before the scheduled time to install all necessary components of the model.",
+    "A maximum of four participants are allowed in each team.",
+    "The exhibit must be a student-created project that illustrates or demonstrates a novel idea or concept.",
+    "Robo cars or drones must perform a specific task or demonstrate innovation to be included in the technical model presentation and to be eligible for reimbursement (for internal participants).",
+    "Internal participants opting for model reimbursement must carry the reimbursement form (if required) with the item list and GST bills on the day of the event.",
+    "Exhibits must be confined to the allotted area. Tables and electricity connections will be provided.",
+    "No exhibit should be dismantled or removed until the end of the competition.",
+    "Highly flammable or toxic substances are not allowed unless prior approval has been obtained.",
+    "All participants must maintain the decorum of the event at all times.",
+    "The decision of the internal and external judges’ panel will be final and binding.",
   ];
+
   const reasons = [
-    "Exciting prizes for the winners worth ₹45,000.",
+    "Exciting prizes for the winners worth ₹50,000.",
     "Funding opportunity for innovative prototypes.",
     "Recognition certificates for all participating Universities from OPJU innovation centre.",
     "Participation Certificates will be given to all the participants.",
@@ -35,33 +69,32 @@ const Page = () => {
 
   const managers = [
     {
-      imageUrl: "/managers/Techlab/Priya Kumari (Tech Lab).jpg",
-      name: "Priya kumari",
-      contact: 9234531358,
+      imageUrl: "",
+      name: "",
+      contact: 123,
     },
     {
-      imageUrl: "/managers/Techlab/Shruti Kumari (Tech lab).jpg",
-      name: "Shruti kumari",
-      contact: 9165245727,
+      imageUrl: "",
+      name: "",
+      contact: 91657,
     },
     {
-      imageUrl: "/managers/Techlab/Ankit Kumar Sah (TechLab).JPG",
-      name: "Ankit kumar sah ",
-      contact: 8825365939,
+      imageUrl: "",
+      name: "",
+      contact: 88239,
     },
   ];
 
-  const [registrationCount, setRegistrationCount] = useState(0)
+  const [registrationCount, setRegistrationCount] = useState(0);
   useEffect(() => {
     getRegistrationCount("TECHLAB").then((count) => {
-      setRegistrationCount(count)
-    })
-  }, [])
-  
+      setRegistrationCount(count);
+    });
+  }, []);
 
   return (
     <div className="relative flex flex-col">
-      {/* Background Image */}
+      {/* Background */}
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
@@ -87,39 +120,38 @@ const Page = () => {
           </div>
         </div>
 
-        {/* Sub-Events Cards Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 py-8">
           <SubEventCard
             Icon={GiTargetPoster}
             title="POSTER PRESENTATION"
             description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
-            textClassName="text-white"
           />
           <SubEventCard
             Icon={GiRobotLeg}
             title="WORKING MODEL PRESENTATION"
             description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
-            textClassName="text-white"
+          
           />
           <SubEventCard
             Icon={PiPathBold}
             title="PROTOTYPE PRESENTATION"
             description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
-            textClassName="text-white"
+          
           />
           <SubEventCard
             Icon={FaAppStore}
-            title="Codex (App and Web development)"
+            title=" App Making"
             description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
-            textClassName="text-white"
+          
           />
         </div>
       </section>
 
       {/* Additional Sections */}
       <section>
-        <WhyParticipate reasons={reasons} textClassName="text-white" />
-        <RulesAndRegulation rules={rules} textClassName="text-white" />
+        <WhyParticipate reasons={reasons} />
+        <RulesAndRegulation rules={rules}  />
+        <EvaluationProcess /> {/* Updated Section */}
         <EventManagers managers={managers} />
       </section>
     </div>

@@ -8,7 +8,6 @@ import WhyParticipate from "@/components/sub-component/why-participate";
 
 const Page = () => {
   const studentManagers = [
-    { imageUrl: "/managers/designathon/priya.jpg", name: "Priya Kumari", contact: 9234531358 },
     { imageUrl: "/managers/designathon/shruti.jpg", name: "Shruti Niwas", contact: 7024120039 },
     { imageUrl: "/managers/designathon/aashta.jpg", name: "Aashta Choudhary", contact: 7898260105 },
     { imageUrl: "/managers/designathon/pooja.jpg", name: "Pooja Mahto", contact: 9693397426 },
@@ -57,7 +56,7 @@ const Page = () => {
         imageUrl="/testfile/design.svg"
         registrations={0}
         pricepool={10000}
-        description="Designathon – Creative Expression Challenge is a design-focused event where participants respond to a theme using visual storytelling and design thinking. The emphasis is on clarity of ideas, originality, and communication rather than software mastery."
+        description="Designathon – Creative Expression Challenge is a creative design event where participants respond to a given theme or problem statement through visual design. The event focuses on idea clarity, visual storytelling, and design thinking, rather than advanced software mastery."
         time="19th & 20th | 3:00 PM – 4:00 PM"
         venue="TB 07"
       />
@@ -114,20 +113,7 @@ const Page = () => {
           {/* Rules */}
           <RulesAndRegulation rules={rules} />
 
-          {/* Faculty Coordinators */}
-          <section>
-            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
-              FACULTY COORDINATORS
-            </h2>
-            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2 text-gray-200">
-                <li>Dr. Pradeep Kumar Shriwas – CSE (9770112039)</li>
-                <li>Dr. Deepankar Sharma – SOS (7084519954)</li>
-                <li>Dr. Bharat Verma – META (7383918079)</li>
-                <li>Dr. Anand Kumar Shrivastava – SOM (9302239922)</li>
-              </ul>
-            </div>
-          </section>
+          
 
           {/* Student Coordinators */}
           <EventManagers managers={studentManagers} />

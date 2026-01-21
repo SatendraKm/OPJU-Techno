@@ -9,13 +9,7 @@ const Page = () => {
   const managers = [
     { imageUrl: "/managers/Riwayat/Karishma.jpg", name: "Karishma Mehra", contact: 8720845925 },
     { imageUrl: "/managers/Riwayat/Ayush.jpg", name: "Ayush Raj Singh", contact: 9981065247 },
-    { imageUrl: "/managers/Riwayat/Sakshi.jpg", name: "Sakshi Sinha", contact: 0 },
-    { imageUrl: "/managers/Riwayat/Arti.jpg", name: "Arti Yadav", contact: 0 },
-    { imageUrl: "/managers/Riwayat/Vanshika.jpg", name: "Vanshika Narwani", contact: 0 },
-    { imageUrl: "/managers/Riwayat/Prachi.jpg", name: "Prachi Sharma", contact: 0 },
-    { imageUrl: "/managers/Riwayat/Aastha.jpg", name: "Aastha Sahu", contact: 0 },
-    { imageUrl: "/managers/Riwayat/Pranjal.jpg", name: "Pranjal Sinha", contact: 0 },
-    { imageUrl: "/managers/Riwayat/Praneet.jpg", name: "Praneet", contact: 0 },
+    { imageUrl: "/managers/Riwayat/Prachi.jpg", name: "Prachi Sharma", contact: 8103179203 },
   ];
 
   const rules = [
@@ -126,21 +120,6 @@ const Page = () => {
 
       {/* Event Managers Section */}
       <EventManagers managers={managers} />
-
-      {/* Faculty Coordinators Section */}
-      <section className="mb-20">
-        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
-          Faculty Coordinators
-        </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed">
-          <p>Namrata Ojha (7974108328)</p>
-          <p>Ms. Khushboo Patel</p>
-          <p>Dr. Hemant Naik</p>
-          <p>Dr. Shivam Pandey</p>
-          <p>Mrs. Uma Yadav</p>
-          <p>Mrs. Soma Sangotra</p>
-        </div>
-      </section>
 
     </div>
   );
