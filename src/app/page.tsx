@@ -27,12 +27,14 @@ export default function Home() {
           />
         </div>
 
-        {/* ========== LEFT TEXT + LOGO ========== */}
+        {/* ========== LEFT TEXT + LOGO + MOBILE BUTTON ========== */}
         <div className="absolute left-6 md:left-16 bottom-[14%] z-[80] flex flex-col items-start gap-6 max-w-[90%] md:max-w-md">
 
-          <p className="text-white text-lg md:text-2xl font-semibold opacity-95 leading-snug">
-            Central India's Biggest Annual Techno-Cultural Management Fest
-          </p>
+<p className="text-white text-sm sm:text-base md:text-2xl font-light opacity-95 leading-snug max-w-[240px] sm:max-w-[320px] md:max-w-md">
+  Central India's Biggest Annual Techno-Cultural Management Fest
+</p>
+
+
 
           <Image
             src="/testfile/newlogo.png"
@@ -42,19 +44,37 @@ export default function Home() {
             priority
             className="object-contain w-[260px] md:w-[400px]"
           />
+
+          {/* MOBILE REGISTER BUTTON */}
+          <Link href="/dashboard" className="md:hidden">
+  <button className="mt-2 px-6 py-2 rounded-full bg-white text-black font-semibold shadow-xl text-center active:scale-95 transition">
+    Register
+  </button>
+</Link>
+
         </div>
 
-        {/* ========== RIGHT REGISTER BUTTON ========== */}
-        <div className="absolute right-6 md:right-16 bottom-[14%] z-[80]">
+        {/* ========== RIGHT REGISTER BUTTON (DESKTOP ONLY) ========== */}
+        <div className="hidden md:block absolute right-6 md:right-16 bottom-[14%] z-[80]">
           <Link href="/dashboard">
-            <button className="px-10 py-3 md:px-12 md:py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition shadow-xl">
-              Register
-            </button>
+            <button className="
+  px-5 py-2
+  sm:px-7 sm:py-2.5
+  md:px-10 md:py-3
+  lg:px-12 lg:py-4
+  rounded-full bg-white text-black font-semibold
+  text-sm sm:text-base md:text-lg
+  hover:scale-105 active:scale-95
+  transition shadow-xl
+">
+  Register
+</button>
+
           </Link>
         </div>
 
         {/* ========== CLOUD SECTION ========== */}
-        <div className="absolute bottom-0 left-0 w-full pointer-events-none z-50 h-[700px] md:h-[900px] w-[100%]">
+        <div className="absolute bottom-0 left-0 w-full pointer-events-none z-50 h-[700px] md:h-[900px]">
           <Image
             src="/testfile/cloudnew4.svg"
             alt="Cloud Layer"
