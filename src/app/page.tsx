@@ -17,7 +17,7 @@ export default function Home() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#021a3a] via-[#053b6f] to-[#0a5c8f]" />
 
         {/* ========== HUGE CENTER PILLAR ========== */}
-        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 pointer-events-none z-30 w-[420px] md:w-[520px] lg:w-[600px] h-[260vh]">
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 pointer-events-none z-30 w-[420px] md:w-[520px] lg:w-[550px] h-[380vh]">
           <Image
             src="/testfile/torch3.svg"
             alt="Divine Pillar"
