@@ -84,6 +84,7 @@ const DashboardPage = () => {
       const team = merged.filter((e: any) => !e.individualSchema).length;
 
       setPayAmount(calculatePayAmount(ind, team));
+  
     }
   }, [participatingTeamsData, userData]);
 

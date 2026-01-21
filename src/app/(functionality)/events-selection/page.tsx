@@ -62,7 +62,7 @@ export default function EventsSelection() {
     fetchAllEventsFn();
     fetchRegisteredEventsFn();
     fetchPendingInvitesFn();
-  }, [fetchAllEventsFn, fetchRegisteredEventsFn, fetchPendingInvitesFn]);
+  }, []);
 
   useEffect(() => {
     if (allEventsData) setAllEvents(allEventsData.events);
@@ -71,12 +71,12 @@ export default function EventsSelection() {
   }, [allEventsData, registeredData, invitesData]);
 
   useEffect(() => {
-    if (submitData) {
+    if (submitData?.success) {
       toast({
         title: "Success",
         description: "Successfully registered",
       });
-      router.push("/dashboard");
+      setTimeout(() => router.push("/dashboard"), 500);
     }
 
     if (submitError) {
