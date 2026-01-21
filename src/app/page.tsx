@@ -33,8 +33,8 @@ export default function Home() {
 <div className="absolute left-6 md:left-16 bottom-[14%] z-[80] flex flex-col items-start gap-6 max-w-[90%] md:max-w-md">
 
   <p className="text-white text-lg md:text-2xl font-semibold opacity-95 leading-snug">
-    Central India's Biggest Annual Techno-Cultural Management Fest
-  </p>
+  {"Central India's Biggest Annual Techno-Cultural Management Fest"}
+</p>
 
   <Image
     src="/testfile/newlogo.png"

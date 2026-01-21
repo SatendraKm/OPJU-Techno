@@ -51,7 +51,6 @@ const DashboardPage = () => {
 
   const { fn: rejectInvitationFn } = useFetch(rejectInviteAction);
 
-  const [MergedleadingEvents, setMergedLeadingEvents] = useState<any[]>([]);
   const [payAmount, setPayAmount] = useState(0);
 
   // ---------- SUB EVENT COUNT ----------
@@ -85,7 +84,6 @@ const DashboardPage = () => {
       const team = merged.filter((e: any) => !e.individualSchema).length;
 
       setPayAmount(calculatePayAmount(ind, team));
-      setMergedLeadingEvents(merged);
     }
   }, [participatingTeamsData, userData]);
 

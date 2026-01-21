@@ -12,17 +12,32 @@ import {
   getRegisteredEventsAction,
   submitEventsAction,
 } from "@/actions/event-actions";
-import { IEvent } from "@/models/event.model";
 import { useRouter } from "next/navigation";
 
-const MAX_SECTIONS = 4;   // main events
-const MAX_SUBEVENTS = 7;  // sub events
+/* ---------- TYPES ---------- */
+type EventDTO = {
+  _id: string;
+  name: string;
+  image: string;
+  teamSize: number;
+  prizeMoney: number;
+};
+
+type GroupedEvents = {
+  [mainEvent: string]: (EventDTO & {
+    mainEvent: string;
+    subName: string;
+  })[];
+};
+
+const MAX_SECTIONS = 4;
+const MAX_SUBEVENTS = 7;
 
 export default function EventsSelection() {
   const [selectedEvents, setSelectedEvents] = useState<string[]>([]);
   const [registeredEvents, setRegisteredEvents] = useState<string[]>([]);
   const [pendingInvites, setPendingInvites] = useState<string[]>([]);
-  const [allEvents, setAllEvents] = useState<IEvent[]>([]);
+  const [allEvents, setAllEvents] = useState<EventDTO[]>([]);
 
   const router = useRouter();
 
@@ -42,11 +57,12 @@ export default function EventsSelection() {
     fn: submitEventsFn,
   } = useFetch(submitEventsAction);
 
+  /* ---------- FETCH DATA ---------- */
   useEffect(() => {
     fetchAllEventsFn();
     fetchRegisteredEventsFn();
     fetchPendingInvitesFn();
-  }, []);
+  }, [fetchAllEventsFn, fetchRegisteredEventsFn, fetchPendingInvitesFn]);
 
   useEffect(() => {
     if (allEventsData) setAllEvents(allEventsData.events);
@@ -70,10 +86,32 @@ export default function EventsSelection() {
         variant: "destructive",
       });
     }
-  }, [submitData, submitError]);
+  }, [submitData, submitError, router]);
 
-  // ---------------- GROUP EVENTS ----------------
-  const groupedEvents = allEvents.reduce((acc: any, event) => {
+  /* ---------- HELPERS ---------- */
+  const getMainEventName = (eventId: string) => {
+    const ev = allEvents.find((e) => e._id === eventId);
+    return ev ? ev.name.split(" – ")[0] : null;
+  };
+
+  const getTotalMainSections = () => {
+    const set = new Set<string>();
+
+    registeredEvents.forEach((id) => {
+      const main = getMainEventName(id);
+      if (main) set.add(main);
+    });
+
+    selectedEvents.forEach((id) => {
+      const main = getMainEventName(id);
+      if (main) set.add(main);
+    });
+
+    return Array.from(set);
+  };
+
+  /* ---------- GROUP EVENTS ---------- */
+  const groupedEvents = allEvents.reduce<GroupedEvents>((acc, event) => {
     const [mainEvent, subEvent] = event.name.split(" – ");
 
     if (!acc[mainEvent]) acc[mainEvent] = [];
@@ -87,49 +125,36 @@ export default function EventsSelection() {
     return acc;
   }, {});
 
-  // -------- FIXED MAIN EVENT COUNTER --------
-  const getSelectedMainSections = () => {
-    const set = new Set<string>();
-
-    selectedEvents.forEach((id) => {
-      const ev = allEvents.find((e) => e._id.toString() === id);
-      if (ev) {
-        const main = ev.name.split(" – ")[0];
-        set.add(main);
-      }
-    });
-
-    return Array.from(set);
-  };
-
-  // ---------------- LOGIC ----------------
+  /* ---------- SELECTION LOGIC ---------- */
   const toggleEventSelection = (eventId: string, mainEvent: string) => {
     if (registeredEvents.includes(eventId)) return;
 
     const alreadySelected = selectedEvents.includes(eventId);
-    const selectedMainSections = getSelectedMainSections();
 
-    // ADDING NEW
     if (!alreadySelected) {
+      /* ---- SUB-EVENT LIMIT ---- */
+      const totalSubEvents =
+        registeredEvents.length + selectedEvents.length;
 
-      // SUB EVENT LIMIT (7)
-      if (selectedEvents.length >= MAX_SUBEVENTS) {
+      if (totalSubEvents >= MAX_SUBEVENTS) {
         toast({
           title: "Limit reached",
-          description: "You can select only 7 sub-events",
+          description: "You can select only 7 sub-events in total",
           variant: "destructive",
         });
         return;
       }
 
-      // MAIN EVENT LIMIT (4)
+      /* ---- MAIN EVENT LIMIT (FIXED) ---- */
+      const totalMainSections = getTotalMainSections();
+
       if (
-        !selectedMainSections.includes(mainEvent) &&
-        selectedMainSections.length >= MAX_SECTIONS
+        !totalMainSections.includes(mainEvent) &&
+        totalMainSections.length >= MAX_SECTIONS
       ) {
         toast({
           title: "Section limit",
-          description: "You can choose only 4 main events",
+          description: "You can choose only 4 main events in total",
           variant: "destructive",
         });
         return;
@@ -163,6 +188,7 @@ export default function EventsSelection() {
     return "available";
   };
 
+  /* ---------- UI ---------- */
   return (
     <div className="max-w-6xl mx-auto p-6">
       <h1 className="text-2xl font-bold text-center mb-4">
@@ -170,26 +196,23 @@ export default function EventsSelection() {
       </h1>
 
       <p className="text-center text-sm text-gray-400 mb-2">
-        Sections selected: {getSelectedMainSections().length} / 4
+        Sections selected: {getTotalMainSections().length} / 4
       </p>
 
       <p className="text-center text-sm text-gray-400 mb-6">
-        Sub-events selected: {selectedEvents.length} / 7
+        Sub-events selected:{" "}
+        {registeredEvents.length + selectedEvents.length} / 7
       </p>
 
-      {/* MAIN EVENT LOOP */}
       {Object.keys(groupedEvents).map((mainEvent) => (
         <div key={mainEvent} className="mb-10">
-
           <h2 className="text-xl font-semibold mb-4 border-b pb-1">
             {mainEvent}
           </h2>
 
-          {/* SUB EVENTS */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-
-            {groupedEvents[mainEvent].map((event: any) => {
-              const status = getStatus(event._id.toString());
+            {groupedEvents[mainEvent].map((event) => {
+              const status = getStatus(event._id);
 
               return (
                 <Card
@@ -203,7 +226,7 @@ export default function EventsSelection() {
                         : "hover:bg-gray-50"
                     }`}
                   onClick={() =>
-                    toggleEventSelection(event._id.toString(), mainEvent)
+                    toggleEventSelection(event._id, mainEvent)
                   }
                 >
                   <CardHeader>
@@ -226,8 +249,7 @@ export default function EventsSelection() {
 
                   <CardContent>
                     <p>
-                      <strong>Team Size:</strong>{" "}
-                      {event.teamSize}
+                      <strong>Team Size:</strong> {event.teamSize}
                     </p>
                     <p>
                       <strong>Prize Pool:</strong> ₹
@@ -241,14 +263,10 @@ export default function EventsSelection() {
         </div>
       ))}
 
-      {/* SUBMIT */}
       <div className="flex justify-center mt-6">
         <Button
           onClick={handleSubmit}
-          disabled={
-            submitLoading ||
-            selectedEvents.length === 0
-          }
+          disabled={submitLoading || selectedEvents.length === 0}
           className="w-full max-w-md"
         >
           {submitLoading

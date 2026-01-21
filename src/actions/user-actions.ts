@@ -19,16 +19,18 @@ interface UserData {
 export const userSignup = async (userData: UserData): Promise<IUser> => {
 	await connectToDatabase();
 
-	let {
-		email,
-		password,
-		fullName,
-		branch,
-		enrollmentNumber,
-		mobileNumber,
-		address,
-		isOutsider
-	} = userData;
+	const {
+	email,
+	password,
+	fullName,
+	branch,
+	enrollmentNumber,
+	mobileNumber,
+	address,
+} = userData;
+
+let { isOutsider } = userData;
+
 
 	const normalizedEmail = email.toLowerCase().trim();
 
