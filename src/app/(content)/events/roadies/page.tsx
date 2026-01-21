@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
-import Image from "next/image";
 import { getRegistrationCount } from "@/actions/event-actions";
 
 const Roadies = () => {
@@ -44,15 +43,7 @@ const Roadies = () => {
   return (
     <div className="relative space-y-10 px-4 py-8">
       {/* Background */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          src="/testfile/singleeventbg.svg"
-          alt="Scrolling Background"
-          width={500}
-          height={500}
-          className="w-full h-auto opacity-150"
-        />
-      </div>
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
       <EventIntro
@@ -75,7 +66,7 @@ The event is designed to promote:
         <h1 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-[poppins] mb-8">
           THEME
         </h1>
-        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
+        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
           Adventure / Survival
         </p>
       </section>
@@ -86,7 +77,7 @@ The event is designed to promote:
           RULES:
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
+          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
             <li>1. Participants may participate individually</li>
             <li>2. Each member must register before the deadline.</li>
             <li>
@@ -107,7 +98,7 @@ The event is designed to promote:
           JUDGEMENT CRITERIA:
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
+          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
             <li>There is no judgement criteria</li>
           </ul>
         </div>

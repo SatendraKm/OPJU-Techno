@@ -5,7 +5,6 @@ import RoundSection from "@/components/sub-component/RoundSection";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
 import WhyParticipate from "@/components/sub-component/why-participate";
-import Image from "next/image";
 
 const Page = () => {
   const studentManagers = [
@@ -50,16 +49,8 @@ const Page = () => {
 
   return (
     <>
-      {/* Background Image */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          width={500}
-          height={500}
-          src="/testfile/singleeventbg2.svg"
-          className="w-full h-auto opacity-150"
-          alt="Background"
-        />
-      </div>
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Introduction */}
       <EventIntro
@@ -72,14 +63,14 @@ const Page = () => {
       />
 
       <div className="flex flex-col items-center">
-        <div className="bg-transparent text-black p-6 md:p-12 space-y-32">
+        <div className="bg-transparent text-white p-6 md:p-12 space-y-32">
 
           {/* About */}
           <section className="text-center max-w-5xl mx-auto">
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
               ABOUT THE EVENT
             </h2>
-            <p className="text-2xl text-black/90">
+            <p className="text-2xl text-gray-200">
               Designathon encourages creative thinkers to translate ideas into visuals.
               Participants showcase originality, storytelling, and design rationale through
               posters, UI screens, illustrations, or social creatives.
@@ -91,7 +82,7 @@ const Page = () => {
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
               TEAM STRUCTURE
             </h2>
-            <p className="text-2xl text-black/90">
+            <p className="text-2xl text-gray-200">
               Individual participation or teams of up to 2 members.
             </p>
           </section>
@@ -107,7 +98,7 @@ const Page = () => {
               JUDGING CRITERIA
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2">
+              <ul className="list-disc pl-5 text-2xl space-y-2 text-gray-200">
                 <li>Originality of concept</li>
                 <li>Relevance to the theme</li>
                 <li>Visual aesthetics</li>
@@ -129,7 +120,7 @@ const Page = () => {
               FACULTY COORDINATORS
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2">
+              <ul className="list-disc pl-5 text-2xl space-y-2 text-gray-200">
                 <li>Dr. Pradeep Kumar Shriwas – CSE (9770112039)</li>
                 <li>Dr. Deepankar Sharma – SOS (7084519954)</li>
                 <li>Dr. Bharat Verma – META (7383918079)</li>

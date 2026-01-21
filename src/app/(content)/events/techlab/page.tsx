@@ -8,7 +8,6 @@ import { GiTargetPoster, GiRobotLeg } from "react-icons/gi";
 import { PiPathBold } from "react-icons/pi";
 import { FaAppStore } from "react-icons/fa";
 import EventManagers from "@/components/sub-component/event-managers";
-import Image from "next/image";
 import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
@@ -63,15 +62,7 @@ const Page = () => {
   return (
     <div className="relative flex flex-col">
       {/* Background Image */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          width={500}
-          height={500}
-          src="/testfile/singleeventbg2.svg"
-          className="w-full h-auto opacity-100"
-          alt="Scrolling Background"
-        />
-      </div>
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
       <section>
@@ -91,40 +82,44 @@ const Page = () => {
           <div className="w-full max-w-md h-16 sm:h-20 text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl sm:text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px]">
             sub-events
           </div>
-          <div className="w-full max-w-4xl mt-4 text-center text-black text-base sm:text-2xl font-normal font-['Inter'] tracking-[3.75px]">
+          <div className="w-full max-w-4xl mt-4 text-center text-white text-base sm:text-2xl font-normal font-['Inter'] tracking-[3.75px]">
             The following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don&apos;t miss your chance to participate and showcase your skills!
           </div>
         </div>
 
         {/* Sub-Events Cards Section */}
-        <div className="grid grid-cols-1  md:grid-cols-2 gap-8 px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 py-8">
           <SubEventCard
             Icon={GiTargetPoster}
             title="POSTER PRESENTATION"
             description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
+            textClassName="text-white"
           />
           <SubEventCard
             Icon={GiRobotLeg}
             title="WORKING MODEL PRESENTATION"
             description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
+            textClassName="text-white"
           />
           <SubEventCard
             Icon={PiPathBold}
             title="PROTOTYPE PRESENTATION"
             description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
+            textClassName="text-white"
           />
           <SubEventCard
             Icon={FaAppStore}
             title="Codex (App and Web development)"
             description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
+            textClassName="text-white"
           />
         </div>
       </section>
 
       {/* Additional Sections */}
       <section>
-        <WhyParticipate reasons={reasons} />
-        <RulesAndRegulation rules={rules} />
+        <WhyParticipate reasons={reasons} textClassName="text-white" />
+        <RulesAndRegulation rules={rules} textClassName="text-white" />
         <EventManagers managers={managers} />
       </section>
     </div>

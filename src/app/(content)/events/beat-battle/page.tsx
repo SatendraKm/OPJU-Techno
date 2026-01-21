@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
-import Image from "next/image";
 import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
