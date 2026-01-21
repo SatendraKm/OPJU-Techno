@@ -54,7 +54,7 @@ export default function Home() {
         </div>
 
         {/* ========== CLOUD SECTION ========== */}
-        <div className="absolute bottom-0 left-0 w-full pointer-events-none z-50 h-[700px] md:h-[900px]">
+        <div className="absolute bottom-0 left-0 w-full pointer-events-none z-50 h-[700px] md:h-[900px] w-[100%]">
           <Image
             src="/testfile/cloudnew4.svg"
             alt="Cloud Layer"
@@ -68,7 +68,7 @@ export default function Home() {
 
       {/* ================= REST OF SITE ================= */}
 
-      <section className="relative mt-20">
+      <section className="relative mt-0">
         <EventSection />
       </section>
 

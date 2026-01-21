@@ -70,7 +70,7 @@ const Page = () => {
           imageUrl="/testfile/techlabnew.svg"
           registrations={registrationCount}
           pricepool={50000}
-          description="Tech lab is the flagship event of the biggest tech festival in central India, TECHNOROLLIX. It’s a vibrant showcase of innovation and ingenuity, where the brightest minds from various universities unleash their creative potential through their self-developed models. Creating a technical model presentation involves effectively communicating the details, functionality, and significance of a technical model to a diverse audience, which may include technical and non-technical stakeholders. This platform also opens doors to better funding opportunities for these innovative minds, paving the way to a future breakthrough"
+          description="Tech lab is the flagship event of the biggest tech festival in central India, TECHNOAIMBIATIONFF. It’s a vibrant showcase of innovation and ingenuity, where the brightest minds from various universities unleash their creative potential through their self-developed models. Creating a technical model presentation involves effectively communicating the details, functionality, and significance of a technical model to a diverse audience, which may include technical and non-technical stakeholders. This platform also opens doors to better funding opportunities for these innovative minds, paving the way to a future breakthrough"
           time="19-02-26 ,10:00 am"
           venue="BABUJI CHOWK"
         />

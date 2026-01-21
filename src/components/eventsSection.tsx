@@ -73,11 +73,15 @@ const EventsSection = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-black text-white px-6 sm:px-10 lg:px-16 py-14 lg:py-20 overflow-hidden">
+    <section className="relative w-full min-h-screen px-6 sm:px-10 lg:px-16 py-14 lg:py-20 overflow-hidden">
+      {/* Gradient Background */}
+     <div className="absolute inset-0 -z-10 bg-[#376080]" />
+
+
       {/* HEADER */}
       <div className="max-w-xl space-y-4">
-        <h1 className="text-3xl sm:text-4xl font-bold">Events</h1>
-        <p className="text-gray-400">
+        <h1 className="text-3xl sm:text-4xl font-bold text-white">Events</h1>
+        <p className="text-gray-300">
           Experience culture, music and performance at TechnoAmbition.
         </p>
       </div>
@@ -146,7 +150,7 @@ const EventsSection = () => {
 
                   {/* TEXT */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
-                    <h2 className="text-xl font-bold">{card.title}</h2>
+                    <h2 className="text-xl font-bold text-white">{card.title}</h2>
                     <p className="text-sm text-gray-300">{card.desc}</p>
                   </div>
                 </div>

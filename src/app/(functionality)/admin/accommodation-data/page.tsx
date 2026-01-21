@@ -27,12 +27,9 @@ export default function AccommodationDataPage() {
   } = useFetch(getAllAccommodationsWithUsers);
 
   useEffect(() => {
-    const fetchData = async () => {
-      await accommodationsFetchFn();
-    };
+  accommodationsFetchFn();
+}, [accommodationsFetchFn]);
 
-    fetchData();
-  }, []);
 
   useEffect(() => {
     if (accommodationsFetchError) {
