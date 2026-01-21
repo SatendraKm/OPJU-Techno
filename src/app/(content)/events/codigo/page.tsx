@@ -38,15 +38,7 @@ const Page = () => {
   return (
     <div className="relative w-full text-black">
       {/* 🔥 FULL PAGE BACKGROUND (FIXED & SHARP) */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          src="/testfile/singleeventbg.svg"
-          alt="Scrolling Background"
-          width={500}
-          height={500}
-          className="w-full h-auto opacity-150"
-        />
-      </div>
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro */}
       <EventIntro
@@ -60,17 +52,17 @@ const Page = () => {
 
       {/* Theme */}
       <section className="my-32 text-center">
-        <h2 className="text-black text-4xl md:text-5xl font-medium mb-10">
+        <h2 className="text-white text-4xl md:text-5xl font-medium mb-10">
           THEME
         </h2>
-        <p className="text-black text-xl md:text-2xl tracking-wide">
+        <p className="text-white text-xl md:text-2xl tracking-wide">
           Dream your Fantasy, Code it in your Reality!!!
         </p>
       </section>
 
       {/* Sub Events */}
       <section className="my-32">
-        <h2 className="text-center text-black text-4xl md:text-5xl font-medium mb-10">
+        <h2 className="text-center text-white text-4xl md:text-5xl font-medium mb-10">
           SUB EVENTS
         </h2>
 
@@ -90,16 +82,16 @@ const Page = () => {
 
       {/* Event 1 */}
       <section className="my-32">
-        <h2 className="text-center text-black text-4xl md:text-5xl font-medium mb-16">
+        <h2 className="text-center text-white text-4xl md:text-5xl font-medium mb-16">
           Event 1: Coding Challenge
         </h2>
 
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-8 text-black">
           <div>
-            <h3 className="text-2xl text-black font-semibold">
+            <h3 className="text-2xl text-white font-semibold">
               Round 1: Coding Quiz
             </h3>
-            <ul className="list-disc pl-6 text-black text-lg">
+            <ul className="list-disc pl-6 text-white text-lg">
               <li>Duration: 40 minutes</li>
               <li>30 MCQs</li>
               <li>Output-based & Error-finding questions</li>
@@ -107,10 +99,10 @@ const Page = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl text-black font-semibold">
+            <h3 className="text-2xl text-white font-semibold">
               Round 2: Real Coding Challenge
             </h3>
-            <ul className="list-disc pl-6 text-black text-lg">
+            <ul className="list-disc pl-6 text-white text-lg">
               <li>Duration: 60–90 minutes</li>
               <li>5 Coding Problems (Easy → Hard)</li>
             </ul>
@@ -120,26 +112,26 @@ const Page = () => {
 
       {/* Event 2 */}
       <section className="my-32">
-        <h2 className="text-center text-black text-4xl md:text-5xl font-medium mb-16">
+        <h2 className="text-center text-white text-4xl md:text-5xl font-medium mb-16">
           Event 2: Design Master
         </h2>
 
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-8 text-black">
           <div>
-            <h3 className="text-2xl text-black font-semibold">
+            <h3 className="text-2xl text-white font-semibold">
               Round 1: UI/UX MCQ
             </h3>
-            <ul className="list-disc pl-6 text-black text-lg">
+            <ul className="list-disc pl-6 text-white text-lg">
               <li>30 Questions</li>
               <li>Passing Criteria: 60%</li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-2xl text-black font-semibold">
+            <h3 className="text-2xl text-white font-semibold">
               Round 2: High-Fidelity UI/UX Design
             </h3>
-            <p className="text-black text-lg">
+            <p className="text-white text-lg">
               Themes will be provided on the spot. Judges’ decision will be
               final.
             </p>
@@ -149,12 +141,12 @@ const Page = () => {
 
       {/* Judging Criteria */}
       <section className="my-32">
-        <h2 className="text-center text-black text-4xl md:text-5xl font-medium mb-12">
+        <h2 className="text-center text-white text-4xl md:text-5xl font-medium mb-12">
           Judging Criteria
         </h2>
 
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-black">
-          <ul className="list-disc pl-6 text-black text-lg space-y-2">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white">
+          <ul className="list-disc pl-6 text-white text-lg space-y-2">
             <li>Correct Output</li>
             <li>Test Cases Passed</li>
             <li>Time & Efficiency</li>

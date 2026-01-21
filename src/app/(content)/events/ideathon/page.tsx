@@ -6,7 +6,6 @@ import RoundSection from "@/components/sub-component/RoundSection";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
 import WhyParticipate from "@/components/sub-component/why-participate";
-import Image from "next/image";
 import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
@@ -89,15 +88,8 @@ receiving expert feedback and recognition.
   return (
     <>
       {/* Background */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          src="/testfile/singleeventbg.svg"
-          width={500}
-          height={500}
-          className="w-full h-auto opacity-150"
-          alt="Background"
-        />
-      </div>
+       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
+
 
       {/* Event Intro */}
       <EventIntro
@@ -109,8 +101,9 @@ receiving expert feedback and recognition.
         venue="EE Seminar Hall (FB-14)"
       />
 
-      <div className="flex flex-col items-center">
-        <div className="bg-transparent text-black p-6 md:p-12 space-y-32">
+      <div className="flex flex-col items-center text-white">
+  <div className="bg-transparent p-6 md:p-12 space-y-32">
+
           {/* Rounds */}
           <section className="px-4">
             <RoundSection rounds={rounds} />

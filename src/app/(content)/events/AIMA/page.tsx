@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
-import Image from "next/image";
 import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
@@ -42,6 +41,7 @@ const Page = () => {
   ];
 
   const [registrationCount, setRegistrationCount] = useState(0);
+
   useEffect(() => {
     getRegistrationCount("SMQ-2025-26").then((count) => {
       setRegistrationCount(count);
@@ -51,15 +51,7 @@ const Page = () => {
   return (
     <div className="relative space-y-10 px-4 py-8">
       {/* Background */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          src="/testfile/singleeventbg.svg"
-          alt="Scrolling Background"
-          width={500}
-          height={500}
-          className="w-full h-auto opacity-150"
-        />
-      </div>
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
       <EventIntro
@@ -76,21 +68,21 @@ const Page = () => {
         <h1 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
           EVENT CATEGORY
         </h1>
-        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-black max-w-4xl mx-auto">
+        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white max-w-4xl mx-auto">
           Management Quiz
         </p>
       </section>
 
       {/* Rules Section */}
-      <RulesAndRegulation rules={rules} />
+      <RulesAndRegulation rules={rules} textClassName="text-white" />
 
-      {/* Judgement Criteria / Schedule Section */}
+      {/* Schedule Section */}
       <section className="mb-20">
         <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
           Schedule & Judgement Criteria
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
+          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
             {criterias.map((criteria, index) => (
               <li key={index}>{criteria}</li>
             ))}
@@ -104,22 +96,22 @@ const Page = () => {
           PRIZES
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
+          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
             <li>Exciting prizes for the winner worth ₹10,000</li>
             <li>Certificate of Participation for all participants</li>
           </ul>
         </div>
       </section>
 
-      {/* Event Managers Section */}
+      {/* Event Managers */}
       <EventManagers managers={managers} />
 
-      {/* Faculty Coordinators Section */}
+      {/* Faculty Coordinators */}
       <section className="mb-20">
         <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
           Faculty Coordinators
         </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-black text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed">
           <p>Dr. Himanshu Vaishnaw: +91 97138 63587</p>
           <p>Dr. Saurabh Gupta: +91 97958 48506</p>
         </div>

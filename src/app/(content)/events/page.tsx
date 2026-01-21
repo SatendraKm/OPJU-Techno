@@ -37,7 +37,7 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
       {title}
     </h2>
 
-    <p className="mt-4 md:mt-10 max-w-[943px] text-center text-black text-base md:text-xl font-medium font-['Poppins'] uppercase mx-auto px-2">
+    <p className="mt-4 md:mt-10 max-w-[943px] text-center text-white text-base md:text-xl font-medium font-['Poppins'] uppercase mx-auto px-2">
       Our fest offers a diverse range of technical and non-technical events,
       ensuring there&apos;s something for everyone. From innovative tech
       showcases to fun and engaging activities, we bring together creativity,
@@ -84,7 +84,7 @@ const Page = () => {
   return (
    <div
   className="w-full min-h-screen pt-24 md:pt-28 bg-no-repeat bg-top bg-cover"
-  style={{ backgroundImage: "url('/testfile/newevent.png')" }}
+  style={{ backgroundImage: "url('/testfile/eventsnewbg2.png')" }}
 >
 
       <div className="w-full">

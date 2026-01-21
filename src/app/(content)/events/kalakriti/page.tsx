@@ -29,7 +29,7 @@ type Manager = {
   name: string;
   role: string;
   imageUrl: string;
-  contact: number; // ✅ MUST BE number
+  contact: number;
 };
 
 const KalaKriti = () => {
@@ -50,19 +50,9 @@ const KalaKriti = () => {
   }, []);
 
   return (
-    <div className="">
-      {/* Background Image */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          src="/testfile/singleeventbg2.svg"
-          className="w-full h-auto opacity-150"
-          alt="Scrolling Background"
-          width={500}
-          height={500}
-        />
-      </div>
+    <div className="text-white">
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
-      {/* Event Intro Section */}
       <section>
         <EventIntro
           imageUrl="/testfile/kalakritinew.svg"
@@ -74,17 +64,15 @@ const KalaKriti = () => {
         />
       </section>
 
-      {/* Sub-Events Header */}
       <section className="text-center mx-auto max-w-6xl mt-32 mb-16">
         <h2 className="w-full max-w-md mx-auto text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium uppercase tracking-[3.75px] mb-8">
           Sub-events
         </h2>
-        <p className="text-black text-2xl tracking-[3.75px]">
+        <p className="text-white text-2xl font-normal font-['Inter'] tracking-[3.75px]">
           KalaKriti brings you a vibrant celebration of art and creativity!
         </p>
       </section>
 
-      {/* Sub-Event Cards */}
       <section className="px-4 mb-32">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <SubEventCard Icon={GiOverInfinity} title="Pradarshini" description="Art exhibition." />
@@ -96,12 +84,19 @@ const KalaKriti = () => {
         </div>
       </section>
 
-      {/* Rounds */}
       <section>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[3.75px] mb-8">
+          Rounds
+        </h2>
+        <p className="text-white max-w-4xl mx-auto text-xl sm:text-2xl font-normal font-['Inter'] tracking-[3px] text-center mb-6">
+          The following are the details for this event. Read the details
+          carefully about the rounds this event has. Don&apos;t miss your chance
+          to participate and showcase your skills!
+        </p>
+
         <KalakritiSubEvent events={eventsData} />
       </section>
 
-      {/* Event Managers */}
       <EventManagers managers={managers} />
     </div>
   );

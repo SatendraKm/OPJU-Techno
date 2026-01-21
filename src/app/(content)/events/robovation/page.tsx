@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import SubEventCard from "@/components/sub-component/sub-event-card";
-import Image from "next/image";
 import { BsRobot } from "react-icons/bs";
 import { FaFlagCheckered } from "react-icons/fa";
 import { IoFootballOutline } from "react-icons/io5";
@@ -48,15 +47,7 @@ const Page = () => {
   return (
     <div className="relative flex flex-col">
       {/* Background */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          src="/testfile/singleeventbg.svg"
-          width={500}
-          height={500}
-          className="w-full h-auto opacity-100"
-          alt="Background"
-        />
-      </div>
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* ===================== EVENT INTRO ===================== */}
       <EventIntro
@@ -75,7 +66,7 @@ const Page = () => {
         SUB EVENTS
       </h1>
 
-      <p className="text-2xl tracking-[3.75px] text-black text-center max-w-5xl mx-auto mb-20 px-4">
+      <p className="text-2xl tracking-[3.75px] text-white text-center max-w-5xl mx-auto mb-20 px-4">
         Robovation consists of four competitive robotics challenges designed to
         test engineering skills, control, speed, strategy, and innovation.
       </p>
@@ -85,8 +76,6 @@ const Page = () => {
           Icon={IoFootballOutline}
           title="ROBO SOCCER"
           description="Teams compete with a single wireless robot to score maximum goals by pushing or kicking a ball into the opponent’s goal. The event tests maneuvering, control, flipping, and kicking skills across elimination and final rounds."
-          // time="10:00 AM"
-          // venue="Babuji Chowk"
         />
 
         <SubEventCard
@@ -115,7 +104,7 @@ const Page = () => {
         </h2>
 
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <p className="text-2xl mb-6">
+          <p className="text-2xl mb-6 text-white">
             Download the official ROBOVATION 2026 rulebook for complete event
             rules, robot specifications, evaluation criteria, prizes, and
             schedules.

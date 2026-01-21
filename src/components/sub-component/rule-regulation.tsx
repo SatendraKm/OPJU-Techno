@@ -6,7 +6,7 @@ interface RulesAndRegulationProps {
 
 const RulesAndRegulation: React.FC<RulesAndRegulationProps> = ({ rules }) => {
   return (
-    <div className="text-black my-20 sm:my-40 px-4">
+    <div className="text-white my-20 sm:my-40 px-4">
       <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[3.75px] text-center mb-10 sm:mb-14">
         RULES & REGULATIONS
       </h2>

@@ -4,7 +4,6 @@ import EventIntro from "@/components/sub-component/event-intro";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import EventManagers from "@/components/sub-component/event-managers";
-import Image from "next/image";
 import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
@@ -92,15 +91,7 @@ const Page = () => {
   return (
     <div className="relative space-y-10 px-4 py-8">
       {/* Background Image */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          src="/testfile/singleeventbg2.svg"
-          alt="Scrolling Background"
-          width={500}
-          height={500}
-          className="w-full h-auto opacity-150"
-        />
-      </div>
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
       <EventIntro
@@ -118,7 +109,7 @@ const Page = () => {
           ABOUT THE EVENT
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl w-full">
-          <p className="text-xl sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
+          <p className="text-xl sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
             Step into the intellectual battlefield where arguments shape
             innovation. Voice of Youth challenges aspiring managers,
             entrepreneurs, and thinkers to present bold perspectives, defend
@@ -134,7 +125,7 @@ const Page = () => {
           JUDGING CRITERIA
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl w-full">
-          <ul className="list-disc pl-5 text-xl sm:text-2xl space-y-3 font-['Inter'] tracking-[3.75px] text-black">
+          <ul className="list-disc pl-5 text-xl sm:text-2xl space-y-3 font-['Inter'] tracking-[3.75px] text-white">
             <li>Content quality & relevance</li>
             <li>Delivery & articulation</li>
             <li>Rebuttal effectiveness</li>
@@ -145,10 +136,10 @@ const Page = () => {
       </section>
 
       {/* Why Participate */}
-      <WhyParticipate reasons={reasons} />
+      <WhyParticipate reasons={reasons} textClassName="text-white" />
 
       {/* Rules */}
-      <RulesAndRegulation rules={rules} />
+      <RulesAndRegulation rules={rules} textClassName="text-white" />
 
       {/* Student Coordinators */}
       <EventManagers managers={managers} />

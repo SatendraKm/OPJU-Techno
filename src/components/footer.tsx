@@ -11,13 +11,6 @@ const FooterSection = () => {
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
         {/* LEFT CONTENT */}
         <div className="flex flex-col gap-8">
-          {/* TEXT LINKS */}
-          <div className="space-y-2 text-gray-400 text-sm sm:text-base">
-            <p className="hover:text-white cursor-pointer">EVENTS</p>
-            <p className="hover:text-white cursor-pointer">SCHEDULE</p>
-            <p className="hover:text-white cursor-pointer">ABOUT US</p>
-            <p className="hover:text-white cursor-pointer">JUNOON</p>
-          </div>
 
           {/* NAV LINKS */}
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm sm:text-base">
@@ -61,15 +54,16 @@ const FooterSection = () => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="w-36 sm:w-44 lg:w-[200px] self-start lg:self-auto">
-          <Image
-            src="/testfile/techno footer.png"
-            alt="Techno Footer"
-            width={300}
-            height={300}
-            className="object-contain w-full"
-          />
-        </div>
+       <div className="w-full sm:w-44 lg:w-[50%] self-start lg:self-auto">
+  <Image
+    src="/testfile/technoambiation.png"
+    alt="Techno Footer"
+    width={300}
+    height={300}
+    className="object-contain w-full"
+  />
+</div>
+
       </div>
 
       {/* BOTTOM BAR */}

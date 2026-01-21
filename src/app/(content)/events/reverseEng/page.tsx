@@ -5,7 +5,6 @@ import RoundSection from "@/components/sub-component/RoundSection";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
 import WhyParticipate from "@/components/sub-component/why-participate";
-import Image from "next/image";
 import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
@@ -68,16 +67,8 @@ const Page = () => {
 
   return (
     <>
-      {/* Background Image */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          width={500}
-          height={500}
-          src="/testfile/singleeventbg.svg"
-          className="w-full h-auto opacity-150"
-          alt="Background"
-        />
-      </div>
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Introduction */}
       <EventIntro
@@ -90,7 +81,8 @@ const Page = () => {
       />
 
       <div className="flex flex-col items-center">
-        <div className="bg-transparent text-white p-6 md:p-12 space-y-32">
+        <div className="bg-transparent text-white p-6 md:p-12 space-y-32 w-full">
+
           {/* Rounds Section */}
           <section className="px-4">
             <RoundSection rounds={rounds} />
@@ -98,25 +90,26 @@ const Page = () => {
 
           {/* Judging Criteria */}
           <section>
-  <h2 className="text-5xl text-black font-medium text-center mb-12">
-    JUDGING CRITERIA
-  </h2>
-  <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-black">
-    <ul className="list-disc pl-5 text-2xl space-y-2">
-      <li>Logical accuracy</li>
-      <li>Clarity of reasoning</li>
-      <li>Depth of understanding</li>
-      <li>Ability to clearly explain decisions</li>
-      <li>System-level interpretation skills</li>
-    </ul>
-  </div>
-</section>
+            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
+              JUDGING CRITERIA
+            </h2>
 
+            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white">
+              <ul className="list-disc pl-5 text-2xl space-y-2">
+                <li>Logical accuracy</li>
+                <li>Clarity of reasoning</li>
+                <li>Depth of understanding</li>
+                <li>Ability to clearly explain decisions</li>
+                <li>System-level interpretation skills</li>
+              </ul>
+            </div>
+          </section>
 
           {/* Additional Sections */}
           <WhyParticipate reasons={reasons} />
           <RulesAndRegulation rules={rules} />
           <EventManagers managers={managers} />
+
         </div>
       </div>
     </>

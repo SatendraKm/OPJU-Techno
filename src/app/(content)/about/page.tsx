@@ -10,7 +10,7 @@ const About = () => {
         <Image
           width={500}
           height={500}
-          src="/testfile/singleeventbg.svg"
+          src="/testfile/eventsnewbg2.png"
           className="w-full h-auto opacity-150"
           alt="Scrolling Background"
         />
@@ -64,7 +64,7 @@ const About = () => {
               TECHNOAIMBIATION 2026
             </h5>
             <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              Technorollix is Central India&apos;s biggest techno-cultural
+              Technoaimbiation is Central India&apos;s biggest techno-cultural
               extravaganza, bringing together innovation, creativity, and
               entertainment on a grand scale. With a diverse mix of technical
               competitions, cultural performances, and engaging workshops, it’s a
@@ -112,36 +112,6 @@ const About = () => {
         </div>
 
         {/* Fourth Event */}
-        <div className="flex flex-col md:flex-row mt-36 items-center">
-          <div className="glass-bg-dark p-6 rounded-xl max-w-[578px] text-left order-2 md:order-1">
-            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
-              aiMBiAtion
-            </h5>
-            <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              aiMBiAtion 2025, hosted by OP Jindal University, is more than a
-              management fest—it&apos;s a hub of innovation, creativity, and
-              competition. It brings together dreamers and doers to test their
-              skills in business, marketing, and debate while also celebrating
-              culture with fashion, music, and drama. From startup challenges to
-              trading battles, ad campaigns to treasure hunts, every event pushes
-              participants to think, act, and innovate. With a perfect blend of
-              strategy and spontaneity, aiMBiAtion promises an unforgettable
-              experience where talents shine, stories unfold, and memories are
-              made. Compete. Create. Celebrate.
-            </p>
-          </div>
-
-          <div className="ml-0 md:ml-20 mb-10 md:mb-0 order-1 md:order-2">
-            <Image
-              width={500}
-              height={500}
-              src="/ambiation.svg"
-              alt="aimbiation logo"
-              className="w-full max-w-[600px] h-auto rounded-xl"
-            />
-          </div>
-        </div>
-
         <div className="h-[300px]" />
       </div>
 

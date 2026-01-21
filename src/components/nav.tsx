@@ -95,6 +95,15 @@ const Navbar = () => {
           >
             Junoon
           </Link>
+          <Link
+  href="/team"
+  className={
+    pathname === "/team" ? "text-[#FFCF67]" : "hover:text-[#FFCF67]"
+  }
+>
+  Our Team
+</Link>
+
         </div>
 
         {/* Login Button */}
@@ -118,6 +127,9 @@ const Navbar = () => {
           </Link>
           <Link href="/junoon" className="block hover:text-[#FFCF67]">
             Junoon
+          </Link>
+          <Link href="/team" className="block hover:text-[#FFCF67]">
+            Our team
           </Link>
 
           {/* Login Button */}

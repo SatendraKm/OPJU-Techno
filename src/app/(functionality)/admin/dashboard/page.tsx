@@ -43,22 +43,24 @@ export default function AdminDashboard() {
   } = useFetch(getManagedEventsAction);
 
   useEffect(() => {
-    const fetchData = async () => {
-      await userFetchFn();
-    };
+  const fetchData = async () => {
+    await userFetchFn();
+  };
 
-    fetchData();
-  }, []);
+  fetchData();
+}, [userFetchFn]);
 
-  useEffect(() => {
-    if (userFetchData) {
-      if (userFetchData.permissions.isManager) {
-        managedEventsFetchFn(userFetchData.permissions.managedEvents);
-      } else {
-        eventsFetchFn();
-      }
+
+ useEffect(() => {
+  if (userFetchData) {
+    if (userFetchData.permissions.isManager) {
+      managedEventsFetchFn(userFetchData.permissions.managedEvents);
+    } else {
+      eventsFetchFn();
     }
-  }, [userFetchData]);
+  }
+}, [userFetchData, managedEventsFetchFn, eventsFetchFn]);
+
 
   useEffect(() => {
     if (eventsFetchData) {
