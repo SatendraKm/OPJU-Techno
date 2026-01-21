@@ -6,7 +6,6 @@ import SubEventCard from "@/components/sub-component/sub-event-card";
 import { IoIosCamera } from "react-icons/io";
 import EventManagers from "@/components/sub-component/event-managers";
 import { GiOverInfinity, GiBowTieRibbon } from "react-icons/gi";
-import Image from "next/image";
 import { PiFlowerBold } from "react-icons/pi";
 import { FaFlipboard } from "react-icons/fa6";
 import { TbBottleFilled } from "react-icons/tb";

@@ -136,7 +136,7 @@ const Page = () => {
       </section>
 
       {/* Why Participate */}
-      <WhyParticipate reasons={reasons} textClassName="text-white" />
+      <WhyParticipate reasons={reasons} />
 
       {/* Rules */}
       <RulesAndRegulation rules={rules} textClassName="text-white" />

@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import EventManagers from "@/components/sub-component/event-managers";
-import Image from "next/image";
 // import Link from "next/link";
 import { FaCode, FaPenNib } from "react-icons/fa6";
 import { getRegistrationCount } from "@/actions/event-actions";

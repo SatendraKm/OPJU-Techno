@@ -118,7 +118,7 @@ const Page = () => {
 
       {/* Additional Sections */}
       <section>
-        <WhyParticipate reasons={reasons} textClassName="text-white" />
+        <WhyParticipate reasons={reasons} />
         <RulesAndRegulation rules={rules} textClassName="text-white" />
         <EventManagers managers={managers} />
       </section>
