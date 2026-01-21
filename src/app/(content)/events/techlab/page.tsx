@@ -149,9 +149,8 @@ const Page = () => {
 
       {/* Additional Sections */}
       <section>
-        <WhyParticipate reasons={reasons} />
-        <RulesAndRegulation rules={rules}  />
-        <EvaluationProcess /> {/* Updated Section */}
+        <WhyParticipate reasons={reasons} textClassName="text-white" />
+        <RulesAndRegulation rules={rules} textClassName="text-white" />
         <EventManagers managers={managers} />
       </section>
     </div>

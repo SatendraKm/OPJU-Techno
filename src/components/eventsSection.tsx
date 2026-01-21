@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, } from "react";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 const cards = [
@@ -43,6 +43,8 @@ const EventsSection = () => {
     });
     setPlayingIndex(null);
   };
+
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const handlePlay = (index: number) => {
     videoRefs.current.forEach((video, i) => {
@@ -128,7 +130,10 @@ const EventsSection = () => {
                 >
                   {/* VIDEO */}
                   <video
-                    ref={(el) => (videoRefs.current[i] = el)}
+                    ref={(el) => {
+  videoRef.current = el;
+}}
+
                     src={card.video}
                     poster="/testfile/event.jpg"
                     className="absolute inset-0 w-full h-full object-cover"

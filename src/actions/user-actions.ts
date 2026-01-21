@@ -20,17 +20,24 @@ export const userSignup = async (userData: UserData): Promise<IUser> => {
 	await connectToDatabase();
 
 	const {
-		email,
-		password,
-		fullName,
-		branch,
-		enrollmentNumber,
-		mobileNumber,
-		address,
-		isOutsider
-	} = userData;
+	email,
+	password,
+	fullName,
+	branch,
+	enrollmentNumber,
+	mobileNumber,
+	address,
+} = userData;
+
+let { isOutsider } = userData;
+
 
 	const normalizedEmail = email.toLowerCase().trim();
+
+	// 🔥 FREE REGISTRATION LOGIC
+	if (normalizedEmail.endsWith("@opju.ac.in")) {
+		isOutsider = false; // OPJU students = FREE
+	}
 
 	// Check if user already exists
 	const existingUser = await User.findOne({ email: normalizedEmail });

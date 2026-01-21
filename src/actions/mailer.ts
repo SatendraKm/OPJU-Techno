@@ -23,7 +23,7 @@ export async function sendWelcomeEmail(
       <html>
       <head>
           <meta charset="UTF-8">
-          <title>Welcome to Technorollix-2025!</title>
+          <title>Welcome to Techno-aiMBiAtion 2026 !</title>
           <style>
               body { font-family: Arial, sans-serif; line-height: 1.6; }
               .container { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9; }

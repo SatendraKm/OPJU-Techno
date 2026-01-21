@@ -7,6 +7,9 @@ import { FaFacebookF, FaWhatsapp, FaInstagram } from "react-icons/fa";
 const FooterSection = () => {
   return (
     <footer className="w-full bg-black text-white px-6 sm:px-10 lg:px-16 py-14 lg:py-20">
+      {/* TOP SEPARATOR LINE */}
+  <div className="w-full h-px bg-white/20"></div>
+
       {/* MAIN WRAPPER */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
         {/* LEFT CONTENT */}
@@ -54,12 +57,12 @@ const FooterSection = () => {
         </div>
 
         {/* RIGHT IMAGE */}
-       <div className="w-full sm:w-44 lg:w-[50%] self-start lg:self-auto">
+       <div className="w-full sm:w-44 lg:w-[40%] self-start lg:self-auto">
   <Image
     src="/testfile/technoambiation.png"
     alt="Techno Footer"
     width={300}
-    height={300}
+    height={400}
     className="object-contain w-full"
   />
 </div>
