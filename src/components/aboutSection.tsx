@@ -13,10 +13,10 @@ const AboutSection = () => {
             About
           </h1>
 
-          {/* ⭐ STAR IMAGE */}
+         {/* logo */}
           <Image
-            src="/testfile/star.png"
-            alt="star"
+            src="/testfile/newlogo2.png"
+            alt="logo"
             width={260}
             height={260}
             className="w-28 sm:w-36 lg:w-[260px]"
@@ -33,7 +33,7 @@ const AboutSection = () => {
         {/* RIGHT IMAGE */}
         <div className="w-full lg:w-[45%] h-64 sm:h-80 lg:h-[500px] overflow-hidden rounded-xl">
           <Image
-            src="/testfile/about me.png"
+            src="/testfile/newpic2.png"
             width={600}
             height={600}
             alt="about"

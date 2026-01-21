@@ -61,9 +61,9 @@ const FooterSection = () => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="w-36 sm:w-44 lg:w-[200px] self-start lg:self-auto">
+        <div className="w-36 sm:w-44 lg:w-[50%] self-start lg:self-auto">
           <Image
-            src="/testfile/techno footer.png"
+            src="/testfile/technoambiation.png"
             alt="Techno Footer"
             width={300}
             height={300}
