@@ -29,21 +29,20 @@ export default function Junoon() {
     {
   name: "Rishi Singh",
   role: "Celeb - Rishi Singh",
-  image: "/junoon/rishisingh.png",
+  image: "/junoon/rishinew.svg",
   description: `Rishi Singh is one of India’s most promising young vocalists, widely recognized as the winner of Indian Idol Season 13. Rooted deeply in classical music, his singing blends technical excellence with heartfelt emotion, creating performances that resonate across generations.
 Known for his romantic melodies, soulful expressions, and flawless sur control, Rishi Singh brings a calm yet captivating presence to the stage. His journey on Indian Idol was marked by consistency, discipline, and an ability to transform every song into an emotional experience. Whether it’s a soft romantic number or a powerful classical-based rendition, his voice connects instantly with the audience.
-At Junoon, Rishi Singh promises an evening filled with pure musical passion, timeless Bollywood classics, and soul-stirring performances, making the night truly unforgettable`,
+At Junoon, Rishi Singh promises an evening filled with pure musical passion, timeless Bollywood classics, and soul-stirring performances, making the night truly unforgettable.`,
   imageOnRight: true,
 },
 
     {
       name: "Rishi Singh & Band",
-      role: "Music - rishi singh & band",
-      image: "/junoon/band.png",
-       description: `Rishi Singh is one of India’s most promising young vocalists, widely recognized as the winner of Indian Idol Season 13. Rooted deeply in classical music, his singing blends technical excellence with heartfelt emotion, creating performances that resonate across generations.
-Known for his romantic melodies, soulful expressions, and flawless sur control, Rishi Singh brings a calm yet captivating presence to the stage. His journey on Indian Idol was marked by consistency, discipline, and an ability to transform every song into an emotional experience. Whether it’s a soft romantic number or a powerful classical-based rendition, his voice connects instantly with the audience.
-At Junoon, Rishi Singh promises an evening filled with pure musical passion, timeless Bollywood classics, and soul-stirring performances, making the night truly unforgettable`,
-      imageOnRight: true,
+      role: "Music - Rishi Singh & Band",
+      image: "/junoon/bandnew.svg",
+       description: `Led by Rishi Singh, this power-packed musical act brings together soulful vocals and dynamic live instrumentation to create an unforgettable concert experience. Known for winning Indian Idol Season 13, Rishi Singh’s performances beautifully blend classical depth, romantic melodies, and contemporary Bollywood energy.
+Accompanied by his talented band, the act delivers high-energy live arrangements, emotional ballads, and crowd-engaging performances that transform the stage into a musical celebration. From timeless classics to modern chartbusters, Rishi Singh & Band promise a night filled with passion, rhythm, and pure musical magic at OPJU Junoon.`,
+      imageOnRight: false,
       largerImage: true,
     },
   ];

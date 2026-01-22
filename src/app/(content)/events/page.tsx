@@ -4,12 +4,12 @@ import Link from "next/link";
 
 const eventsData = {
   technical: [
-    { imageUrl: "/testfile/codigo.svg", link: "/events/codigo" },
-    { imageUrl: "/testfile/techlabnew.svg", link: "/events/techlab" },
-    { imageUrl: "/testfile/robo.svg", link: "/events/robovation" },
-    { imageUrl: "/testfile/ideathon.svg", link: "/events/ideathon" },
-    { imageUrl: "/testfile/rev.svg", link: "/events/reverseEng" },
-    { imageUrl: "/testfile/design.svg", link: "/events/designathon" },
+    { imageUrl: "/testfile/codigo3.svg", link: "/events/codigo" },
+    { imageUrl: "/testfile/techlab3.svg", link: "/events/techlab" },
+    { imageUrl: "/testfile/robovation3.svg", link: "/events/robovation" },
+    { imageUrl: "/testfile/ideathon3.svg", link: "/events/ideathon" },
+    { imageUrl: "/testfile/backtrace.svg", link: "/events/reverseEng" },
+    { imageUrl: "/testfile/Designathon3.svg", link: "/events/designathon" },
   ],
 
   nonTechnical: [
