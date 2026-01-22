@@ -45,6 +45,7 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
+      <a href="/dashboard">
       <EventIntro
         venue="Cafeteria, Ground Floor"
         time="20-02-26, 10:00 am"
@@ -52,7 +53,7 @@ const Page = () => {
         registrations={registrationCount}
         pricepool={9000}
         description="MASTERCHEF 2026 is OPJU’s most exciting culinary showdown where talent meets taste and passion meets presentation. Participants transform simple ingredients into unforgettable stories, proving that great food isn’t just cooked — it’s created."
-      />
+      /></a>
 
       {/* Competition Format */}
       <section className="my-32">

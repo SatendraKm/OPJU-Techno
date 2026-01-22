@@ -53,6 +53,7 @@ const KalaKriti = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       <section>
+        <a href="/dashboard">
         <EventIntro
           imageUrl="/testfile/kalakritinew.svg"
           registrations={registrationCount}
@@ -60,7 +61,7 @@ const KalaKriti = () => {
           description="Craft is the vehicle for expressing your vision. Craft is the visible edge of Art..."
           time="21-03-25 , 11:00 am"
           venue="LIBRARY, LAWN, OPPOSITE TO CHEMISTRY LAB"
-        />
+        /></a>
       </section>
 
       <section className="text-center mx-auto max-w-6xl mt-32 mb-16">

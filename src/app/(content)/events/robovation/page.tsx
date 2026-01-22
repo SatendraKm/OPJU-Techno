@@ -50,6 +50,7 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* ===================== EVENT INTRO ===================== */}
+      <a href="/dashboard">
       <EventIntro
         venue="BABUJI CHOWK (OPJU)"
         time="20–21 Feb 2026"
@@ -57,7 +58,7 @@ const Page = () => {
         registrations={registrationCount}
         pricepool={40000}
         description="ROBOVATION 2026 is an electrifying robotics competition where innovation meets combat, speed, and precision. Participants design, build, and control robots to compete in high-intensity challenges including Robo Soccer, Robo Race, Fast Line Follower, and Robo War."
-      />
+      /></a>
 
       <div className="my-16" />
 

@@ -92,6 +92,7 @@ receiving expert feedback and recognition.
 
 
       {/* Event Intro */}
+      <a href="/dashboard">
       <EventIntro
         imageUrl="/testfile/ideathon.svg"
         registrations={registrationCount}
@@ -99,7 +100,7 @@ receiving expert feedback and recognition.
         description={eventDescription}
         time="19-02-2026, 11:30 AM"
         venue="EE Seminar Hall (FB-14)"
-      />
+      /></a>
 
       <div className="flex flex-col items-center text-white">
   <div className="bg-transparent p-6 md:p-12 space-y-32">

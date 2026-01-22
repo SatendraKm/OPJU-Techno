@@ -49,6 +49,7 @@ const Antaragni = () => {
 
       {/* Event Intro Section */}
       <section>
+        <a href="/dashboard">
         <EventIntro
           imageUrl="/testfile/antaragini.svg"
           registrations={registrationCount}
@@ -57,6 +58,7 @@ const Antaragni = () => {
           time="19-02-26 , 7:30 pm"
           venue="UNIVERSITY PLAYGROUND"
         />
+        </a>
       </section>
 
       <p className="mt-20 text-2xl md:text-4xl font-protest-revolution text-white tracking-[0.15em] text-center">

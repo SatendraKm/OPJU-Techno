@@ -52,6 +52,7 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
+      <a href="/dashboard">
       <EventIntro
         venue="Babuji Chowk, OPJU"
         time="20 Feb 2026, 2:00 PM - 5:30 PM"
@@ -59,7 +60,7 @@ const Page = () => {
         registrations={registrationCount}
         pricepool={10000}
         description="Step into a high-energy clash of rhythm, creativity, and raw talent at Beat Battle. Dancers face off in head-to-head rounds, trading explosive footwork, sharp musicality, and fearless improvisation. The crowd fuels the momentum, judges watch for originality and control, and every beat drop is a chance to shine."
-      />
+      /></a>
 
       {/* Event Format Section */}
       <section className="my-32">
