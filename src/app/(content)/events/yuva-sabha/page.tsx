@@ -78,7 +78,7 @@ const Page = () => {
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl w-full">
           <p className="text-xl sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
            Step into the intellectual battlefield of tarkash, where logic meets leadership, and arguments shape innovation. This high-energy debate competition is designed for aspiring managers, entrepreneurs, and business enthusiasts as well as others to challenge conventional wisdom and present ground breaking perspectives.
-Participants will engage in thought-provoking debates on current business trends, corporate ethics, financial strategies, and emerging market dynamics, Socio political matters and also current happening. Whether you're defending or opposing, your ability to think critically, articulate persuasively, and counter strategically will determine your victory.
+Participants will engage in thought-provoking debates on current business trends, corporate ethics, financial strategies, and emerging market dynamics, Socio political matters and also current happening. Whether you&apos;re defending or opposing, your ability to think critically, articulate persuasively, and counter strategically will determine your victory.
 
           </p>
         </div>

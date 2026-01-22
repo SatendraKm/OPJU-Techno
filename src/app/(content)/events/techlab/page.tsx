@@ -10,7 +10,7 @@ import { FaAppStore } from "react-icons/fa";
 import EventManagers from "@/components/sub-component/event-managers";
 import { getRegistrationCount } from "@/actions/event-actions";
 
-// Evaluation Process Component (Styled like Why Participate)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const EvaluationProcess = () => {
   const evaluationPoints = [
     "Innovation and originality",
@@ -35,7 +35,7 @@ const EvaluationProcess = () => {
           ))}
         </ol>
         <p className="mt-6 text-white font-serif">
-          The judge's decision will be final and binding.
+          The judge&apos;s decision will be final and binding.
         </p>
       </div>
     </section>

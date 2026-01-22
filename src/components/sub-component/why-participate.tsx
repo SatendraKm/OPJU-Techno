@@ -2,6 +2,7 @@ import React from 'react'
 
 interface WhyParticipateProps {
   reasons: string[];
+  textClassName?: string;
 }
 
 const WhyParticipate: React.FC<WhyParticipateProps> = ({ reasons }) => {

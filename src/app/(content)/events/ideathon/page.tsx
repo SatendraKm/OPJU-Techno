@@ -10,11 +10,6 @@ import { getRegistrationCount } from "@/actions/event-actions";
 const Page = () => {
   /* ===================== EVENT DATA ===================== */
 
-  const eventDescription = `
-IDEATHON 2026 is an inspiring innovation-driven event where curiosity fuels creativity
-and real-world challenges spark impactful, sustainable solutions.
-`;
-
   const rounds = [
     {
       title: "1) Presentation Round",
@@ -78,43 +73,43 @@ and real-world challenges spark impactful, sustainable solutions.
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
-
       {/* Event Intro */}
       <a href="/dashboard">
-      <EventIntro
-        imageUrl="/testfile/ideathon.svg"
-        registrations={registrationCount}
-        pricepool={50000}
-        description="​“Building Solutions Through Innovation..”
-​Welcome to IDEATHON—an inspiring platform where curiosity fuels creativity and real-world challenges spark innovative solutions. Be a part of a dynamic community of bold thinkers and change-makers who challenge conventions and create the remarkable.
-​�� The Objective
-​Ideathon is a collaborative, innovation-driven journey designed to empower creative minds to think beyond boundaries.
-​· Ideate & Innovate: Collaborate to generate creative solutions for real-world challenges.
-· Connect & Collaborate: Engage with students and innovators from diverse backgrounds and perspectives.
-· Refine & Elevate: Present your ideas to experts, gain valuable feedback, and transform them into impactful, sustainable solutions.
-· Learn & Lead: Strengthen your leadership abilities, build confidence, and cultivate an entrepreneurial mindset.
-"
-        time="19-02-2026, 11:30 AM"
-        venue="EE Seminar Hall (FB-14)"
-      /></a>
+        <EventIntro
+          imageUrl="/testfile/ideathon.svg"
+          registrations={registrationCount}
+          pricepool={50000}
+          description={`“Building Solutions Through Innovation..”
+Welcome to IDEATHON—an inspiring platform where curiosity fuels creativity and real-world challenges spark innovative solutions. Be a part of a dynamic community of bold thinkers and change-makers who challenge conventions and create the remarkable.
+
+The Objective:
+Ideathon is a collaborative, innovation-driven journey designed to empower creative minds to think beyond boundaries.
+
+• Ideate & Innovate: Collaborate to generate creative solutions for real-world challenges.
+• Connect & Collaborate: Engage with students and innovators from diverse backgrounds.
+• Refine & Elevate: Present your ideas to experts, gain valuable feedback.
+• Learn & Lead: Strengthen leadership and entrepreneurial mindset.`}
+          time="19-02-2026, 11:30 AM"
+          venue="EE Seminar Hall (FB-14)"
+        />
+      </a>
 
       <div className="flex flex-col items-center text-white">
         <div className="bg-transparent p-6 md:p-12 space-y-32">
 
-          {/* Theme (CENTER-ALIGNED – SAME FORMAT AS ROUNDS) */}
-<section className="px-4 flex flex-col items-center space-y-12">
-  <div className="text-center max-w-2xl bg-[#33010140] p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-    <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
-      THEME
-    </h2>
-    <p className="text-xl text-white">
-      From Crisis to Conservation: Ideating a Sustainable Future
-    </p>
-  </div>
-</section>
+          {/* Theme */}
+          <section className="px-4 flex flex-col items-center space-y-12">
+            <div className="text-center max-w-2xl bg-[#33010140] p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+              <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
+                THEME
+              </h2>
+              <p className="text-xl text-white">
+                From Crisis to Conservation: Ideating a Sustainable Future
+              </p>
+            </div>
+          </section>
 
-
-          {/* Rounds (CENTER-ALIGNED) */}
+          {/* Rounds */}
           <section className="px-4 flex flex-col items-center space-y-12">
             {rounds.map((round, index) => (
               <div
@@ -129,64 +124,6 @@ and real-world challenges spark impactful, sustainable solutions.
             ))}
           </section>
 
-          {/* Presentation Guidelines */}
-<section>
-  <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
-    PRESENTATION GUIDELINES
-  </h2>
-
-  <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-    <ul className="list-disc pl-5 text-2xl space-y-2">
-      <li>Total Time: 10 minutes for your presentation.</li>
-      <li>Warning Bell: A bell will ring at 08 minutes, giving you 2 minutes to summarize and conclude.</li>
-      <li>Q&A: A 2-minute query round will follow each presentation.</li>
-    </ul>
-  </div>
-</section>
-
-
-          {/* Judging Criteria */}
-          <section>
-            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
-              JUDGING CRITERIA
-            </h2>
-
-            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <p className="mb-4 text-2xl">
-                Each idea is evaluated on five parameters (20 points each, total 100 points):
-              </p>
-
-              <ul className="list-disc pl-5 text-2xl space-y-2">
-                <li>Uniqueness of the idea</li>
-                <li>Feasibility of the solution</li>
-                <li>Quality of presentation</li>
-                <li>Response during Q&A</li>
-                <li>Scalability of the concept</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Available Awards */}
-<section>
-  <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
-    AVAILABLE AWARDS
-  </h2>
-
-  <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-    <p className="mb-4 text-2xl">
-      There are six prizes to be won:
-    </p>
-
-    <ul className="list-disc pl-5 text-2xl space-y-2">
-      <li>First, Second, & Third Prize.</li>
-      <li>Best Feasible Idea.</li>
-      <li>Best Innovative Idea (Unique & Original).</li>
-      <li>Best Presentation.</li>
-    </ul>
-  </div>
-</section>
-
-
           {/* Why Participate */}
           <WhyParticipate reasons={reasons} />
 
@@ -195,7 +132,6 @@ and real-world challenges spark impactful, sustainable solutions.
 
           {/* Event Managers */}
           <EventManagers managers={managers} />
-
         </div>
       </div>
     </>
