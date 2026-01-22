@@ -74,7 +74,7 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
     <div className="flex justify-center mt-12 md:mt-16">
       <Link href="/dashboard">
         <Image
-          src="/testfile/register1.svg"
+          src="/testfile/register2.svg"
           alt="Register Button"
           width={260}
           height={70}

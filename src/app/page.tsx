@@ -6,7 +6,6 @@ import EventSection from "@/components/eventsSection";
 import Footer from "@/components/footer";
 import Link from "next/link";
 
-
 export default function Home() {
   return (
     <div className="relative w-full overflow-hidden">
@@ -18,9 +17,9 @@ export default function Home() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#021a3a] via-[#053b6f] to-[#0a5c8f]" />
 
         {/* ========== HUGE CENTER PILLAR ========== */}
-        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 pointer-events-none z-30 w-[420px] md:w-[520px] lg:w-[620px] h-[260vh]">
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 pointer-events-none z-30 w-[420px] md:w-[520px] lg:w-[600px] h-[80vh]">
           <Image
-            src="/testfile/torch2.png"
+            src="/testfile/torch3.svg"
             alt="Divine Pillar"
             fill
             priority
@@ -28,77 +27,58 @@ export default function Home() {
           />
         </div>
 
-        {/* ========== LEFT TEXT CONTENT ========== */}
-       {/* ========== LEFT CONTENT STACK (TEXT + LOGO + BUTTON) ========== */}
-<div className="absolute left-6 md:left-16 bottom-[14%] z-[80] flex flex-col items-start gap-6 max-w-[90%] md:max-w-md">
+        {/* ========== LEFT TEXT + LOGO + MOBILE BUTTON ========== */}
+        <div className="absolute left-6 md:left-16 bottom-[14%] z-[80] flex flex-col items-start gap-6 max-w-[90%] md:max-w-md">
 
- <p className="text-white text-lg md:text-2xl font-semibold opacity-95 leading-snug">
-  Central India&apos;s Biggest Annual Techno-Cultural Management Fest
+       <p className="text-white text-xs sm:text-sm md:text-xl font-light opacity-95 leading-snug max-w-[220px] sm:max-w-[300px] md:max-w-md">
+  Central India's Biggest Annual Techno-Cultural Management Fest
 </p>
 
-  <Image
-    src="/testfile/newlogo.png"
-    alt="Techno Ambition Logo"
-    width={400}
-    height={120}
-    priority
-    className="object-contain w-[260px] md:w-[400px]"
-  />
 
-  <Link href="/dashboard">
-    <button className="px-10 py-3 md:px-12 md:py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition shadow-xl">
-      Register
-    </button>
-  </Link>
 
-</div>
+          <Image
+            src="/testfile/newlogo.png"
+            alt="Techno Ambition Logo"
+            width={400}
+            height={120}
+            priority
+            className="object-contain w-[260px] md:w-[400px]"
+          />
 
-        {/* ========== CLOUD LAYERS ========== */}
-        <div className="absolute bottom-0 left-0 w-full pointer-events-none z-50">
+          {/* MOBILE REGISTER BUTTON */}
+          <Link href="/dashboard" className="md:hidden">
+  <button className="mt-2 px-6 py-2 rounded-full bg-white text-black font-semibold shadow-xl text-center active:scale-95 transition">
+    Register
+  </button>
+</Link>
 
-          {/* cloud.svg */}
-          <div className="absolute left-0 bottom-0">
-            <Image
-              src="/testfile/cloud.svg"
-              alt="Cloud Left"
-              width={900}
-              height={300}
-              priority
-              className="opacity-80"
-            />
-          </div>
+        </div>
 
-          {/* cloud2.svg */}
-          <div className="absolute right-0 bottom-0">
-            <Image
-              src="/testfile/cloud2.svg"
-              alt="Cloud Right"
-              width={900}
-              height={300}
-              priority
-              className="opacity-95"
-            />
-          </div>
+        {/* ========== RIGHT REGISTER BUTTON (DESKTOP ONLY) ========== */}
+        <div className="hidden md:block absolute right-6 md:right-16 bottom-[14%] z-[80]">
+          <Link href="/dashboard">
+            <button className="px-10 py-3 md:px-12 md:py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition shadow-xl">
+              Register
+            </button>
+          </Link>
+        </div>
 
-          {/* cloud3.svg NEW */}
-          <div className="absolute left-1/3 bottom-6">
-            <Image
-              src="/testfile/cloud3.svg"
-              alt="Cloud Center"
-              width={800}
-              height={280}
-              priority
-              className="opacity-85"
-            />
-          </div>
-
+        {/* ========== CLOUD SECTION ========== */}
+        <div className="absolute bottom-0 left-0 w-full pointer-events-none z-50 h-[700px] md:h-[900px]">
+          <Image
+            src="/testfile/cloudnew4.svg"
+            alt="Cloud Layer"
+            fill
+            priority
+            className="object-contain object-bottom"
+          />
         </div>
 
       </section>
 
       {/* ================= REST OF SITE ================= */}
 
-      <section className="relative ">
+      <section className="relative mt-0">
         <EventSection />
       </section>
 

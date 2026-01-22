@@ -139,9 +139,9 @@ const EventsSection = () => {
                 key={i}
                 className={`
                   absolute transition-all duration-700 ease-in-out
-                  ${pos === "center" && "z-50 scale-110 sm:scale-125"}
-                  ${pos === "left" && "z-20 -translate-x-44 sm:-translate-x-72 scale-95"}
-                  ${pos === "right" && "z-20 translate-x-44 sm:translate-x-72 scale-95"}
+                  ${pos === "center" && "z-20 scale-110 sm:scale-125"}
+                  ${pos === "left" && "z-10 -translate-x-44 sm:-translate-x-72 scale-95"}
+                  ${pos === "right" && "z-10 translate-x-44 sm:translate-x-72 scale-95"}
                   ${pos === "hidden" && "opacity-0"}
                 `}
               >

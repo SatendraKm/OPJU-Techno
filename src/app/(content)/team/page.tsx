@@ -26,7 +26,7 @@ const teamSections = [
       },
       {
         name: "Navya Tiwari",
-        contact: "+91 9999999999",
+        contact: "+91 9430160416",
         image: "/placeholder-pic.jpeg",
       },
     ],
@@ -35,8 +35,8 @@ const teamSections = [
     title: "Registration & Reception",
     members: [
       {
-        name: "saniya Thakur",
-        contact: "+91 9343489230",
+        name: "Saniya Thakur",
+        contact: "+919343489230",
         image: "/placeholder-pic.jpeg",
       },
       {
@@ -72,7 +72,7 @@ const teamSections = [
       {
         name: "Ayush Gupta",
         contact: "+91 7869108678",
-        image:  "/placeholder-pic.jpeg",
+        image: "/placeholder-pic.jpeg",
       },
     ],
   },
@@ -85,7 +85,7 @@ const teamSections = [
         image: "/placeholder-pic.jpeg",
       },
       {
-        name: "Shusree Srutirupa Pradhan",
+        name: "Sushree Srutirupa Pradhan",
         contact: "+91 7847891954",
         image: "/placeholder-pic.jpeg",
       },
@@ -102,7 +102,7 @@ const teamSections = [
       {
         name: "Garima Mishra",
         contact: "+91 7047039028",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/hospitality/garima.png",
       },
     ],
   },
@@ -110,12 +110,12 @@ const teamSections = [
     title: "Transportation",
     members: [
       {
-        name: "Himes Raj Barik",
+        name: "Himesh Raj Barik",
         contact: "+91 9907740054",
         image: "/placeholder-pic.jpeg",
       },
       {
-        name: "Preeti Behra",
+        name: "Preeti Behera",
         contact: "+91 8984329966",
         image: "/placeholder-pic.jpeg",
       },
@@ -130,7 +130,7 @@ const teamSections = [
         image: "/placeholder-pic.jpeg",
       },
       {
-        name: "Preeti Behra",
+        name: "Garima Vastarkar",
         contact: "+91 9981285475",
         image: "/placeholder-pic.jpeg",
       },
@@ -160,7 +160,7 @@ const teamSections = [
         image: "/teams/certificate-prize/shivam.png",
       },
       {
-        name: "Prataham Panchal",
+        name: "Pratham Panchal",
         contact: "+91 8109771525",
         image: "/placeholder-pic.jpeg",
       },
@@ -185,12 +185,12 @@ const teamSections = [
     title: "Stationery & Logistics",
     members: [
       {
-        name: "Shyam Sahu",
+        name: "RShyam Sahu",
         contact: "+91 7501758622",
         image: "/placeholder-pic.jpeg",
       },
       {
-        name: "Vivek Verma",
+        name: "Vivek Sharma",
         contact: "+91 9031714978",
         image: "/placeholder-pic.jpeg",
       },
@@ -201,11 +201,11 @@ const teamSections = [
     members: [
       {
         name: "Vishnu Kumar Gupta",
-        contact: "+91 7544000243",
+        contact: "+91 754000243",
         image: "/placeholder-pic.jpeg",
       },
       {
-        name: "Naina Meghani",
+        name: "Swasti Behra",
         contact: "+91 9522893333",
         image: "/placeholder-pic.jpeg",
       },

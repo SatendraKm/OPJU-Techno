@@ -27,28 +27,22 @@ export default function Junoon() {
 
   const guests = [
     {
-      name: "Vaibhav Gupta",
-      role: "Celeb - VAIBHAV GUPTA",
-      image: "/junoon/vaibhavgupta.svg",
-      description:
-        "We are thrilled to announce that Vaibhav Gupta , the illustrious winner of Indian Idol Season 14, will be gracing Junoon 2025 with his presence. Hailing from Kanpur, Vaibhav's musical journey began at a young age, leading him to triumph in the 2024 season of the renowned singing reality show. His soulful voice and captivating performances have garnered him accolades from industry stalwarts and a dedicated fanbase nationwide. Beyond his Indian Idol victory, Vaibhav has achieved significant milestones, including winning 'Kanpur Got Talent' in 2017 and 'Radiocity Super Singer' in 2022. His commitment to reviving the essence of '90s music and his aspirations for Bollywood playback singing reflect his passion and dedication to the art. We eagerly anticipate the magic Vaibhav Gupta will bring to the Junoon 2025 stage.",
-      imageOnRight: true,
-    },
+  name: "Rishi Singh",
+  role: "Celeb - Rishi Singh",
+  image: "/junoon/rishisingh.png",
+  description: `Rishi Singh is one of India’s most promising young vocalists, widely recognized as the winner of Indian Idol Season 13. Rooted deeply in classical music, his singing blends technical excellence with heartfelt emotion, creating performances that resonate across generations.
+Known for his romantic melodies, soulful expressions, and flawless sur control, Rishi Singh brings a calm yet captivating presence to the stage. His journey on Indian Idol was marked by consistency, discipline, and an ability to transform every song into an emotional experience. Whether it’s a soft romantic number or a powerful classical-based rendition, his voice connects instantly with the audience.
+At Junoon, Rishi Singh promises an evening filled with pure musical passion, timeless Bollywood classics, and soul-stirring performances, making the night truly unforgettable`,
+  imageOnRight: true,
+},
+
     {
-      name: "Aman Sahu",
-      role: "Anchor - Aman Sahu",
-      image: "/junoon/amansahu.svg",
-      description:
-        "Aman Sahu is a Raipur-based award-winning TV and event anchor/presenter. He has an enthusiastic, lively personality filled with a fine mix of confidence, wit, warmth, and talent. He has hosted for brands like Samsung, JSW, Sunburn, etc., and collaborated with Atrangi Band...",
-      imageOnRight: false,
-      largerImage: true,
-    },
-    {
-      name: "DJ Hemant Sahu",
-      role: "Music - DJ Hemant",
-      image: "/junoon/hemant.svg",
-      description:
-        "DJ Hemant brings a unique blend of talent and skill to any event, enhancing the atmosphere. He has great music selection, versatility, and creates memorable moments. He brings people together and has also collaborated with Atrangi Band...",
+      name: "Rishi Singh & Band",
+      role: "Music - rishi singh & band",
+      image: "/junoon/band.png",
+       description: `Rishi Singh is one of India’s most promising young vocalists, widely recognized as the winner of Indian Idol Season 13. Rooted deeply in classical music, his singing blends technical excellence with heartfelt emotion, creating performances that resonate across generations.
+Known for his romantic melodies, soulful expressions, and flawless sur control, Rishi Singh brings a calm yet captivating presence to the stage. His journey on Indian Idol was marked by consistency, discipline, and an ability to transform every song into an emotional experience. Whether it’s a soft romantic number or a powerful classical-based rendition, his voice connects instantly with the audience.
+At Junoon, Rishi Singh promises an evening filled with pure musical passion, timeless Bollywood classics, and soul-stirring performances, making the night truly unforgettable`,
       imageOnRight: true,
       largerImage: true,
     },
