@@ -34,18 +34,18 @@ export async function sendWelcomeEmail(
       <body>
           <div class="container">
               <div class="header">
-                  <h1>Welcome to Technorollix-2025!</h1>
+                  <h1>Welcome to Techno-aiMBiation 2026!</h1>
               </div>
               <p>Dear Participant,</p>
-              <p>We are thrilled to have you join us for the Technorollix-2025 event. To complete your registration, please use the following One-Time Password (OTP):</p>
+              <p>We are thrilled to have you join us for the Techno-aiMBiation 2026 event. To complete your registration, please use the following One-Time Password (OTP):</p>
               <h2>${otp}</h2>
               <p>Please enter this OTP on the registration page to verify your email address and complete your registration.</p>
               <p>If you have any questions or need assistance, feel free to contact our support team.</p>
               <p>We look forward to seeing you at the event!</p>
               <p>Best regards,</p>
-              <p>The Technorollix-2025 Team</p>
+              <p>The Techno-aiMBiation 2026 Team</p>
               <div class="footer">
-                  <p>&copy; 2025 Technorollix. All rights reserved.</p>
+                  <p>&copy; 2025 Techno-aiMBiAtion. All rights reserved.</p>
               </div>
           </div>
       </body>

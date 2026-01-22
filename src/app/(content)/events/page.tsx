@@ -91,7 +91,7 @@ const Page = () => {
   return (
     <div
       className="w-full min-h-screen pt-24 md:pt-32 bg-no-repeat bg-top bg-cover"
-      style={{ backgroundImage: "url('/testfile/eventsnewbg2.png')" }}
+      style={{ backgroundImage: "url('/testfile/events (3).svg')" }}
     >
       <div id="tech-event">
         <EventSection

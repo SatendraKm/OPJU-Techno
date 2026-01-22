@@ -56,8 +56,7 @@ export default function Home() {
 
         {/* ========== RIGHT REGISTER BUTTON (DESKTOP ONLY) ========== */}
         <div className="hidden md:block absolute right-6 md:right-16 bottom-[14%] z-[80]">
-          <Link href="/dashboard">
-            <button className="px-10 py-3 md:px-12 md:py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition shadow-xl">
+          <Link href="/dashboard"> <button className="px-10 py-3 md:px-12 md:py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition shadow-xl">
               Register
             </button>
           </Link>
