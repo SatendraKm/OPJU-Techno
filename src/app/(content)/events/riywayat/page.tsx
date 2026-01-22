@@ -40,6 +40,7 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
+      <a href="/dashboard">
       <EventIntro
         venue="Babuji Chowk & Football Ground Stage"
         time="11-19 Feb 2026"
@@ -47,7 +48,7 @@ const Page = () => {
         registrations={registrationCount}
         pricepool={18000}
         description="An inter-college fashion show hosted by OP Jindal University, designed to promote creativity, confidence, and personality through structured rounds, workshops, and inclusive participation."
-      />
+      /></a>
 
       {/* Event Category Section */}
       <section className="my-32 text-center">

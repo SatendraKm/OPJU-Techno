@@ -71,14 +71,14 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Introduction */}
-      <EventIntro
+      <a href="/dashboard"><EventIntro
         imageUrl="/testfile/rev.svg"
         registrations={registrationCount}
         pricepool={11000}
         description="Reverse Engineering – Decode the Hardware is a logic-oriented technical event designed to evaluate participants’ ability to analyze, interpret, and reason about unknown hardware systems. The event emphasizes observation, deduction, and conceptual understanding rather than physical assembly or complex instrumentation."
         time="19, 20 & 21 Feb | 1:00 PM – 5:30 PM"
         venue="TB 01 & TB 07"
-      />
+      /></a>
 
       <div className="flex flex-col items-center">
         <div className="bg-transparent text-white p-6 md:p-12 space-y-32 w-full">

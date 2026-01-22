@@ -41,6 +41,7 @@ const Roadies = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
+      <a href="/dashboard">
       <EventIntro
         venue="Bus Parking Area"
         time="19-02-26, 11:30 am" /* Event at 19-20-21 */
@@ -54,7 +55,7 @@ The event is designed to promote:
 · Teamwork and leadership qualities
 · Confidence, communication, and problem-solving skills
 "
-      />
+      /></a>
 
       {/* Theme Section */}
       <section className="text-center mx-auto max-w-4xl px-4">

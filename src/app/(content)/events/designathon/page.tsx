@@ -52,6 +52,7 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Introduction */}
+      <a href="/dashboard">
       <EventIntro
         imageUrl="/testfile/design.svg"
         registrations={0}
@@ -59,7 +60,7 @@ const Page = () => {
         description="Designathon – Creative Expression Challenge is a creative design event where participants respond to a given theme or problem statement through visual design. The event focuses on idea clarity, visual storytelling, and design thinking, rather than advanced software mastery."
         time="19th & 20th | 3:00 PM – 4:00 PM"
         venue="TB 07"
-      />
+      /></a>
 
       <div className="flex flex-col items-center">
         <div className="bg-transparent text-white p-6 md:p-12 space-y-32">

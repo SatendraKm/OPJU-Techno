@@ -45,6 +45,7 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro */}
+      <a href="/dashboard">
       <EventIntro
         imageUrl="/testfile/codigo.svg"
         registrations={registrationCount}
@@ -52,8 +53,10 @@ const Page = () => {
         description="Unlock your coding potential at our University’s premier Coding Event! Participate in challenges, network with peers, and enhance your skills. Whether you are a beginner or a pro, join us for an unforgettable experience of innovation and collaboration."
         time="19-02-2026, 11:00 AM"
         venue="TB-09"
+        
       />
 
+      </a>
       {/* Theme */}
       <section className="my-32 text-center">
         <h2 className="text-white text-4xl md:text-5xl font-medium mb-10">

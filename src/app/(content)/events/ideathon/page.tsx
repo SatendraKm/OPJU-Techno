@@ -78,7 +78,9 @@ and real-world challenges spark impactful, sustainable solutions.
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
-      {/* Event Intro with Theme */}
+
+      {/* Event Intro */}
+      <a href="/dashboard">
       <EventIntro
         imageUrl="/testfile/ideathon.svg"
         registrations={registrationCount}
@@ -94,7 +96,7 @@ and real-world challenges spark impactful, sustainable solutions.
 "
         time="19-02-2026, 11:30 AM"
         venue="EE Seminar Hall (FB-14)"
-      />
+      /></a>
 
       <div className="flex flex-col items-center text-white">
         <div className="bg-transparent p-6 md:p-12 space-y-32">

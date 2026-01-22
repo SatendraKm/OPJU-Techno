@@ -98,7 +98,7 @@ export default function Home() {
 
       {/* ================= REST OF SITE ================= */}
 
-      <section className="relative mt-20">
+      <section className="relative ">
         <EventSection />
       </section>
 

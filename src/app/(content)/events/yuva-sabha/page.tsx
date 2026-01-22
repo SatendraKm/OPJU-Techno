@@ -60,6 +60,7 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
+      <a href="/dashboard">
       <EventIntro
         imageUrl="/testfile/voice.svg"
         registrations={registrationCount}
@@ -67,7 +68,7 @@ const Page = () => {
         description="A fun flagship event where participants showcase talents like singing, dancing, comedy, or magic while also predicting their own score. An exact match with the judges' score wins instantly, making it a unique test of skill, confidence, and self-awareness. Entertain, guess, and win."
         time="19-02-26 , 12:00 pm"
         venue="MP HALL "
-      />
+      /></a>
 
       {/* About / How It Works */}
       <section className="flex flex-col items-center px-4 my-10">
