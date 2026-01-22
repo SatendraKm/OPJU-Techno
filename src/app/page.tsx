@@ -31,7 +31,7 @@ export default function Home() {
         <div className="absolute left-6 md:left-16 bottom-[14%] z-[80] flex flex-col items-start gap-6 max-w-[90%] md:max-w-md">
 
        <p className="text-white text-xs sm:text-sm md:text-xl font-light opacity-95 leading-snug max-w-[220px] sm:max-w-[300px] md:max-w-md">
-  Central India's Biggest Annual Techno-Cultural Management Fest
+  Central India&apos;s Biggest Annual Techno-Cultural Management Fest
 </p>
 
 

@@ -6,11 +6,11 @@ const cards = [
   { title: "Riwayat", desc: "Cultural Showcase", video: "/testfile/riwayat.mp4" },
   { title: "Antaragni", desc: "Dance & Performance", video: "/testfile/antaraginni.mp4" },
   { title: "Junoon", desc: "Music & Energy", video: "/testfile/event.mp4" },
-  { title: "Techlab", desc: "Innovation", video: "/testfile/event.mp4" },
-  { title: "Roadies", desc: "Adventure", video: "/testfile/event.mp4" },
-  { title: "Beat Battle", desc: "Music", video: "/testfile/event.mp4" },
-  { title: "Backtrace", desc: "Coding", video: "/testfile/event.mp4" },
-  { title: "Designathon", desc: "Creativity", video: "/testfile/event.mp4" },
+  { title: "Techlab", desc: "Innovation", video: "" },
+  { title: "Roadies", desc: "Adventure", video: "" },
+  { title: "Beat Battle", desc: "Music", video: "" },
+  { title: "Backtrace", desc: "Coding", video: "" },
+  { title: "Designathon", desc: "Creativity", video: "" },
 ];
 
 const EventsSection = () => {
