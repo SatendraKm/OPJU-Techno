@@ -1,16 +1,19 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import EventManagers from "@/components/sub-component/event-managers";
+import Image from "next/image";
 // import Link from "next/link";
 import { FaCode, FaPenNib } from "react-icons/fa6";
 import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
+  /* ===================== EVENT MANAGERS ===================== */
   const managers = [
     {
-      imageUrl: "/managers/codigo/divakar.jpg",
+      imageUrl: "",
       name: "Divakar Yadav",
       contact: 9691300315,
     },
@@ -21,11 +24,12 @@ const Page = () => {
     },
     {
       imageUrl: "/managers/codigo/aniruddha.jpg",
-      name: "Aniruddha Singh Gautam",
+      name: "AniruddhaSinghGautam",
       contact: 6260225774,
     },
   ];
 
+  /* ===================== STATE ===================== */
   const [registrationCount, setRegistrationCount] = useState(0);
 
   useEffect(() => {
@@ -34,9 +38,10 @@ const Page = () => {
     });
   }, []);
 
+  /* ===================== UI ===================== */
   return (
     <div className="relative w-full text-black">
-      {/* 🔥 FULL PAGE BACKGROUND (FIXED & SHARP) */}
+      {/* Background */}
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro */}
@@ -45,8 +50,8 @@ const Page = () => {
         imageUrl="/testfile/codigo.svg"
         registrations={registrationCount}
         pricepool={20000}
-        description="Unlock your coding potential at our University’s premier Coding Event!! Participate in challenges, network with peers, and enhance your skills."
-        time="19-02-2026,11:00 AM "
+        description="Unlock your coding potential at our University’s premier Coding Event! Participate in challenges, network with peers, and enhance your skills. Whether you are a beginner or a pro, join us for an unforgettable experience of innovation and collaboration."
+        time="19-02-2026, 11:00 AM"
         venue="TB-09"
         
       />
@@ -88,23 +93,23 @@ const Page = () => {
           Event 1: Coding Challenge
         </h2>
 
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-8 text-black">
-          <div>
-            <h3 className="text-2xl text-white font-semibold">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-10">
+          <div className="text-center">
+            <h3 className="text-2xl text-white font-semibold mb-4">
               Round 1: Coding Quiz
             </h3>
-            <ul className="list-disc pl-6 text-white text-lg">
+            <ul className="list-none text-white text-lg space-y-2">
               <li>Duration: 40 minutes</li>
               <li>30 MCQs</li>
               <li>Output-based & Error-finding questions</li>
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-2xl text-white font-semibold">
+          <div className="text-center">
+            <h3 className="text-2xl text-white font-semibold mb-4">
               Round 2: Real Coding Challenge
             </h3>
-            <ul className="list-disc pl-6 text-white text-lg">
+            <ul className="list-none text-white text-lg space-y-2">
               <li>Duration: 60–90 minutes</li>
               <li>5 Coding Problems (Easy → Hard)</li>
             </ul>
@@ -118,24 +123,23 @@ const Page = () => {
           Event 2: Design Master
         </h2>
 
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-8 text-black">
-          <div>
-            <h3 className="text-2xl text-white font-semibold">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-10">
+          <div className="text-center">
+            <h3 className="text-2xl text-white font-semibold mb-4">
               Round 1: UI/UX MCQ
             </h3>
-            <ul className="list-disc pl-6 text-white text-lg">
+            <ul className="list-none text-white text-lg space-y-2">
               <li>30 Questions</li>
               <li>Passing Criteria: 60%</li>
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-2xl text-white font-semibold">
-              Round 2: High-Fidelity UI/UX Design
+          <div className="text-center">
+            <h3 className="text-2xl text-white font-semibold mb-4">
+              Round 2: High-Fidelity UI/UX Design (Final Round)
             </h3>
             <p className="text-white text-lg">
-              Themes will be provided on the spot. Judges’ decision will be
-              final.
+              Themes will be provided on the spot. Judges’ decision will be final.
             </p>
           </div>
         </div>
@@ -147,8 +151,8 @@ const Page = () => {
           Judging Criteria
         </h2>
 
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white">
-          <ul className="list-disc pl-6 text-white text-lg space-y-2">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+          <ul className="list-none text-white text-lg space-y-2 text-center">
             <li>Correct Output</li>
             <li>Test Cases Passed</li>
             <li>Time & Efficiency</li>
@@ -158,11 +162,10 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Event Managers */}
+      {/* Event Managers (ONLY 3) */}
       <EventManagers managers={managers} />
     </div>
   );
 };
 
 export default Page;
-

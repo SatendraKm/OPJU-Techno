@@ -13,25 +13,20 @@ const Page = () => {
   /* ===================== MANAGERS ===================== */
   const managers = [
     {
-      imageUrl: "/managers/Robovation/Harsh tiwari.jpg",
-      name: "Harsh Tiwari",
-      contact: 8815612698,
+      imageUrl: "",
+      name: "Akash Sahu",
+      contact: 9131403772,
     },
     {
-      imageUrl: "/managers/Robovation/Nikhil Prasad.jpg",
-      name: "Nikhil Prasad",
-      contact: 7488057104,
+      imageUrl: "",
+      name: "Awni Gupta",
+      contact: 6260254140,
     },
     {
-      imageUrl: "/managers/Robovation/Kushal Kumar.jpg",
-      name: "Kushal Kumar Barsiwal",
-      contact: 7987829224,
-    },
-    {
-      imageUrl: "/managers/Robovation/udit vardhan.jpg",
-      name: "Udit Vardhan Singh",
-      contact: 8298558875,
-    },
+      imageUrl: "",
+      name: "Ayush Kumar",
+      contact: 81096983355,
+    }
   ];
 
   /* ===================== RULEBOOK ===================== */

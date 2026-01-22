@@ -76,7 +76,7 @@ const Page = () => {
       </section>
 
       {/* Rules Section */}
-      <RulesAndRegulation rules={rules} textClassName="text-white" />
+      <RulesAndRegulation rules={rules} />
 
       {/* Schedule Section */}
       <section className="mb-20">
@@ -107,17 +107,6 @@ const Page = () => {
 
       {/* Event Managers */}
       <EventManagers managers={managers} />
-
-      {/* Faculty Coordinators */}
-      <section className="mb-20">
-        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase text-center tracking-[3.75px] mb-8">
-          Faculty Coordinators
-        </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed">
-          <p>Dr. Himanshu Vaishnaw: +91 97138 63587</p>
-          <p>Dr. Saurabh Gupta: +91 97958 48506</p>
-        </div>
-      </section>
     </div>
   );
 };

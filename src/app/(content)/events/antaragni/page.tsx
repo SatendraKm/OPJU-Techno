@@ -22,8 +22,8 @@ const Antaragni = () => {
   ];
 
   const managers = [
-    { imageUrl: "/managers/Antaragini/Nikhil Singh.jpg", name: "Nikhil Singh Jatwar", contact: 9399907335 },
-    { imageUrl: "/managers/Antaragini/Pallavi.jpg", name: "Pallavi Singh", contact: 9201046402 },
+    { imageUrl: "", name: "Priya Singh", contact: 8709538215 },
+    { imageUrl: "", name: "Naina vaishnav", contact: 7067729943 },
     { imageUrl: "/managers/Antaragini/Vanshika.jpg", name: "Vanshika Gupta", contact: 9039896991 },
   ];
 
@@ -86,6 +86,87 @@ const Antaragni = () => {
 
       {/* Rounds Section */}
       <RoundSection rounds={rounds} />
+
+      {/* Evaluation Process */}
+<section className="mb-20">
+  <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
+    EVALUATION PROCESS
+  </h2>
+
+  <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-6xl mx-auto space-y-10">
+
+    {/* Judging Criteria */}
+    <div>
+      <h3 className="text-3xl sm:text-4xl font-semibold text-center mb-6 text-gray-100">
+        1. Judging Criteria
+      </h3>
+
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border-collapse text-gray-200 text-xl sm:text-2xl">
+          <thead>
+            <tr className="border-b border-gray-500">
+              <th className="py-3">Criteria</th>
+              <th className="py-3 text-right">Weightage</th>
+            </tr>
+          </thead>
+          <tbody className="space-y-2">
+            <tr className="border-b border-gray-700">
+              <td className="py-3">Performance & Talent (Singing / Dancing / Acting Skills)</td>
+              <td className="py-3 text-right">30 Marks</td>
+            </tr>
+            <tr className="border-b border-gray-700">
+              <td className="py-3">Expression & Creativity (Emotions, Originality, Stage Presence)</td>
+              <td className="py-3 text-right">20 Marks</td>
+            </tr>
+            <tr className="border-b border-gray-700">
+              <td className="py-3">Song / Act Selection (Appropriateness & Uniqueness)</td>
+              <td className="py-3 text-right">15 Marks</td>
+            </tr>
+            <tr className="border-b border-gray-700">
+              <td className="py-3">Costume & Presentation (Dress, Props, Overall Appearance)</td>
+              <td className="py-3 text-right">15 Marks</td>
+            </tr>
+            <tr className="border-b border-gray-700">
+              <td className="py-3">Discipline & Decorum (Punctuality, Behavior, Rule Compliance)</td>
+              <td className="py-3 text-right">10 Marks</td>
+            </tr>
+            <tr>
+              <td className="py-3">Audience Engagement (Confidence, Interaction, Energy)</td>
+              <td className="py-3 text-right">10 Marks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    {/* Evaluation Stages */}
+    <div>
+      <h3 className="text-3xl sm:text-4xl font-semibold text-center mb-4 text-gray-100">
+        2. Evaluation Stages
+      </h3>
+
+      <ul className="list-disc pl-6 text-2xl sm:text-3xl space-y-2 text-gray-200 text-center sm:text-left">
+        <li>Audition Round</li>
+        <li>Elimination Rounds</li>
+        <li>Final Round</li>
+      </ul>
+    </div>
+
+    {/* Decision Making */}
+    <div>
+      <h3 className="text-3xl sm:text-4xl font-semibold text-center mb-4 text-gray-100">
+        3. Decision Making & Results
+      </h3>
+
+      <p className="text-2xl sm:text-3xl text-gray-200 text-center leading-relaxed">
+        The judges’ decision will be final and binding. Results will be declared
+        based on cumulative scores across all evaluation stages.
+      </p>
+    </div>
+
+  </div>
+</section>
+
 
       {/* Rules & Managers */}
       <RulesAndRegulation rules={rules} />

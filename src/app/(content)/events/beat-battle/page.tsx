@@ -126,13 +126,28 @@ const Page = () => {
           Judgement Criteria
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
+          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
             {criterias.map((criteria, index) => (
               <li key={index}>{criteria}</li>
             ))}
           </ul>
         </div>
       </section>
+
+      {/* Prize */}
+<section className="mb-20">
+  <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
+    PRIZE
+  </h2>
+
+  <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-5xl mx-auto text-center">
+    <ul className="list-disc pl-5 inline-block text-left text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-gray-200">
+      <li>Winner</li>
+      <li>Runner Up</li>
+    </ul>
+  </div>
+</section>
+
 
       {/* Event Managers Section */}
       <EventManagers managers={managers} />

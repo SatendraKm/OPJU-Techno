@@ -18,11 +18,6 @@ const Page = () => {
       contact: 6264671771,
     },
     {
-      imageUrl: "/managers/Startup/Ankita.jpg",
-      name: "R. Ankita",
-      contact: 7024089882,
-    },
-    {
       imageUrl: "/managers/Startup/Manish.jpg",
       name: "Manish Yadav",
       contact: 9109892675,

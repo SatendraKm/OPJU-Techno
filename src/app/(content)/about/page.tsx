@@ -6,15 +6,6 @@ const About = () => {
   return (
     <div className="w-full relative">
       {/* BACKGROUND */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          width={500}
-          height={500}
-          src="/testfile/eventsnewbg2.png"
-          className="w-full h-auto opacity-150"
-          alt="Scrolling Background"
-        />
-      </div>
 
       <div className="text-black flex flex-col mt-36 text-center items-center min-h-screen px-4 md:px-0">
         <h2 className="text-7xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">

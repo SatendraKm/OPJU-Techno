@@ -7,27 +7,22 @@ import { getRegistrationCount } from "@/actions/event-actions";
 const Roadies = () => {
   const studentmanagers = [
     {
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      imageUrl: "",
       name: "Ritika Sahu",
       contact: 9078942095,
     },
     {
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
-      name: "Sumit Rana",
-      contact: 9078942095,
-    },
-    {
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      imageUrl: "",
       name: "Harpreet Singh",
       contact: 9078942095,
     },
     {
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      imageUrl: "",
       name: "Kumkum Kritika",
       contact: 9078942095,
     },
     {
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      imageUrl: "",
       name: "Parinita Bahera",
       contact: 9078942095,
     },
@@ -104,6 +99,28 @@ The event is designed to promote:
           </ul>
         </div>
       </section>
+
+      {/* Prize */}
+<section className="mb-20">
+  <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
+    PRIZE
+  </h2>
+
+  <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-5xl mx-auto text-center">
+    <ul className="list-disc pl-5 inline-block text-left text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-gray-200">
+      <li>1st Prize</li>
+      <li>2nd Prize</li>
+      <li>3rd Prize</li>
+    </ul>
+
+    <p className="mt-6 text-xl sm:text-2xl italic text-gray-300">
+      (Certificates will be awarded to all participants)
+    </p>
+  </div>
+</section>
+
+
+
 
       {/* Event Managers Section */}
       <section className="mx-auto max-w-5xl px-4">
