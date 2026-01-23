@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import RoundSection from "@/components/sub-component/RoundSection";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
 import WhyParticipate from "@/components/sub-component/why-participate";
-
+import { getRegistrationCount } from "@/actions/event-actions";
 const Page = () => {
   const studentManagers = [
     { imageUrl: "/managers/designathon/shruti.jpg", name: "Shruti Niwas", contact: 7024120039 },
@@ -36,7 +36,13 @@ const Page = () => {
     "Judging based on creativity, relevance, and clarity.",
     "Judges’ decision will be final.",
   ];
+  const [registrationCount, setRegistrationCount] = useState(0);
 
+    useEffect(() => {
+    getRegistrationCount("DESIGNATHON").then((count) => {
+      setRegistrationCount(count);
+    });
+  }, []);
   const reasons = [
     "Showcase your creativity and visual storytelling skills.",
     "Improve your design thinking and presentation ability.",
@@ -55,7 +61,7 @@ const Page = () => {
       <a href="/dashboard">
       <EventIntro
         imageUrl="/testfile/design.svg"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={10000}
         description="Designathon – Creative Expression Challenge is a creative design event where participants respond to a given theme or problem statement through visual design. The event focuses on idea clarity, visual storytelling, and design thinking, rather than advanced software mastery."
         time="19th & 20th | 3:00 PM – 4:00 PM"
