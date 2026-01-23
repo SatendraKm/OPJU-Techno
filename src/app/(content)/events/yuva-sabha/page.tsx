@@ -28,19 +28,19 @@ const Page = () => {
 
   const managers = [
     {
-      imageUrl: "/managers/common/user.png",
-      name: "Anushree Maity",
-      contact: 9685434119,
+      imageUrl: "/placeholder-pic.jpeg",
+      name: "Shakshyee Sharma",
+      contact: 6371965128,
     },
     {
-      imageUrl: "/managers/common/user.png",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Shivam Arora",
       contact: 9109245599,
     },
     {
-      imageUrl: "/managers/common/user.png",
-      name: "Shubham Sharma",
-      contact: 6207360156,
+      imageUrl: "/placeholder-pic.jpeg",
+      name: "Avinash Agarwal",
+      contact: 9691846192,
     },
    
     

@@ -4,11 +4,20 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="w-full relative">
+    <div className="relative w-full overflow-hidden">
+
       {/* BACKGROUND */}
+<<<<<<< HEAD
 {/* Background */}
       <div className="absolute inset-0 -z-10 bg-black" />
       <div className="text-black flex flex-col mt-36 text-center items-center min-h-screen px-4 md:px-0">
+=======
+      <div className="fixed inset-0 -z-10 bg-[#2A1414]" />
+
+      {/* CONTENT */}
+      <div className="relative z-0 text-black flex flex-col mt-36 text-center items-center min-h-screen px-4 md:px-0">
+
+>>>>>>> 97e12c8 (eventmanagerchange)
         <h2 className="text-7xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
           ABOUT
         </h2>
@@ -21,7 +30,7 @@ const About = () => {
           </p>
         </div>
 
-        {/* First Event */}
+        {/* First Section */}
         <div className="flex flex-col md:flex-row mt-20 items-center">
           <div className="mr-0 md:mr-20 mb-10 md:mb-0">
             <Image
@@ -38,31 +47,19 @@ const About = () => {
               OPJU
             </h5>
             <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              OPJU was founded by the Jindal Education and Welfare Society, OP
-              Jindal University (OPJU) was set up to bring high quality education
-              to its students based on a world class curriculum, the latest
-              teaching methodology and committed faculty members. The
-              multidisciplinary university aims to develop young professionals
-              and future leaders who will not only power growth and development
-              in the state, but also make a mark globally.
+              OPJU was founded by the Jindal Education and Welfare Society...
             </p>
           </div>
         </div>
 
-        {/* Second Event */}
+        {/* Second Section */}
         <div className="flex flex-col md:flex-row mt-36 items-center">
           <div className="glass-bg-dark p-6 rounded-xl max-w-[578px] text-left order-2 md:order-1">
             <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
               TECHNOAIMBIATION 2026
             </h5>
             <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              TechnoaiMBiAtion is Central India&apos;s biggest techno-cultural
-              extravaganza, bringing together innovation, creativity, and
-              entertainment on a grand scale. With a diverse mix of technical
-              competitions, cultural performances, and engaging workshops, it’s a
-              platform where technology meets artistry. Join us for an
-              electrifying experience that pushes boundaries and celebrates the
-              spirit of innovation!
+              TechnoaiMBiAtion is Central India&apos;s biggest techno-cultural extravaganza...
             </p>
           </div>
 
@@ -77,7 +74,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Third Event */}
+        {/* Third Section */}
         <div className="flex flex-col md:flex-row mt-36 items-center">
           <div className="mr-0 md:mr-20 mb-10 md:mb-0">
             <Image
@@ -94,23 +91,18 @@ const About = () => {
               JUNOON
             </h5>
             <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              OPJU Junoon is an annual cultural extravaganza hosted by the O.P.
-              Jindal University (OPJU) in Chhattisgarh, India. This vibrant event
-              showcases the diverse talents of people across various domains
-              including music and dance. In 2018, We had Shirley Setia. In 2020, we
-              had Jubin Nautiyal and Sunburn and in 2023, we had DJ Perisha.
+              OPJU Junoon is an annual cultural extravaganza...
             </p>
           </div>
         </div>
 
-        {/* Fourth Event */}
         <div className="h-[300px]" />
       </div>
 
-      {/* Dark Glassmorphism Style */}
+      {/* Glass Style */}
       <style jsx>{`
         .glass-bg-dark {
-          background: rgba(0, 0, 0, 0.4); /* Darker tint */
+          background: rgba(0, 0, 0, 0.45);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           border-radius: 1rem;

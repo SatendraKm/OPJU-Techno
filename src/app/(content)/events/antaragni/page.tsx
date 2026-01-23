@@ -22,9 +22,9 @@ const Antaragni = () => {
   ];
 
   const managers = [
-    { imageUrl: "", name: "Priya Singh", contact: 8709538215 },
-    { imageUrl: "", name: "Naina vaishnav", contact: 7067729943 },
-    { imageUrl: "/managers/Antaragini/Vanshika.jpg", name: "Vanshika Gupta", contact: 9039896991 },
+    { imageUrl: "/placeholder-pic.jpeg", name: "Priya Singh", contact: 8709538215 },
+    { imageUrl: "/placeholder-pic.jpeg", name: "Rudraksh Dubey", contact: 8827986525 },
+    { imageUrl: "/placeholder-pic.jpeg", name: "Vanshika Gupta", contact: 9039896991 },
   ];
 
   const rounds = [

@@ -7,23 +7,18 @@ import { getRegistrationCount } from "@/actions/event-actions";
 const Roadies = () => {
   const studentmanagers = [
     {
-      imageUrl: "",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Ritika Sahu",
       contact: 9078942095,
     },
     {
-      imageUrl: "",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Harpreet Singh",
       contact: 9078942095,
     },
     {
-      imageUrl: "",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Kumkum Kritika",
-      contact: 9078942095,
-    },
-    {
-      imageUrl: "",
-      name: "Parinita Bahera",
       contact: 9078942095,
     },
   ];

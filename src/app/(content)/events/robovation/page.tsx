@@ -13,17 +13,17 @@ const Page = () => {
   /* ===================== MANAGERS ===================== */
   const managers = [
     {
-      imageUrl: "",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Akash Sahu",
       contact: 9131403772,
     },
     {
-      imageUrl: "",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Awni Gupta",
       contact: 6260254140,
     },
     {
-      imageUrl: "",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Ayush Kumar",
       contact: 81096983355,
     }

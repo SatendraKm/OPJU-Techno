@@ -8,17 +8,17 @@ import { getRegistrationCount } from "@/actions/event-actions";
 const Page = () => {
   const managers = [
     {
-      imageUrl: "/managers/SMQ/Bhoomika.jpg",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Bhoomika Agrawal",
       contact: 7580827172,
     },
     {
-      imageUrl: "/managers/SMQ/Bhoomi.jpg",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Bhoomi Chandra",
       contact: 8103501661,
     },
     {
-      imageUrl: "/managers/SMQ/Rimjhim.jpg",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Rimjhim Sahu",
       contact: 9303394225,
     },

@@ -44,17 +44,17 @@ const Page = () => {
 
   const managers = [
     {
-      imageUrl: "",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Rinesh Mohanty",
       contact: 9907708949,
     },
     {
-      imageUrl: "",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Disha Nadam",
       contact: 9171320725,
     },
     {
-      imageUrl: "",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Disha Nadam",
       contact: 9171320725,
     },

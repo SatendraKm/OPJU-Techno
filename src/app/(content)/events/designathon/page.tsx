@@ -1,28 +1,34 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import RoundSection from "@/components/sub-component/RoundSection";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
 import WhyParticipate from "@/components/sub-component/why-participate";
-import { getRegistrationCount } from "@/actions/event-actions";
+
 const Page = () => {
+ const [registrationCount, setRegistrationCount] = useState<number>(0);
+
+useEffect(() => {
+  const fetchCount = async () => {
+    try {
+      const res = await fetch("/api/registrations?event=DESIGNATHON");
+      const data = await res.json();
+      setRegistrationCount(data.count || 0);
+    } catch (err) {
+      console.error("Failed to load registration count", err);
+    }
+  };
+
+  fetchCount();
+}, []);
+
+
   const studentManagers = [
-    {
-      imageUrl: "/managers/designathon/shruti.jpg",
-      name: "Shruti Niwas",
-      contact: 7024120039,
-    },
-    {
-      imageUrl: "/managers/designathon/aashta.jpg",
-      name: "Aashta Choudhary",
-      contact: 7898260105,
-    },
-    {
-      imageUrl: "/managers/designathon/pooja.jpg",
-      name: "Pooja Mahto",
-      contact: 9693397426,
-    },
+    { imageUrl: "/placeholder-pic.jpeg", name: "Shruti Niwas", contact: 7024120039 },
+    { imageUrl: "/placeholder-pic.jpeg", name: "Aashta Choudhary", contact: 7898260105 },
+    { imageUrl: "/placeholder-pic.jpeg", name: "Pooja Mahto", contact: 9693397426 },
   ];
 
   const rounds = [
@@ -48,13 +54,7 @@ const Page = () => {
     "Judging based on creativity, relevance, and clarity.",
     "Judges’ decision will be final.",
   ];
-  const [registrationCount, setRegistrationCount] = useState(0);
 
-  useEffect(() => {
-    getRegistrationCount("DESIGNATHON").then((count) => {
-      setRegistrationCount(count);
-    });
-  }, []);
   const reasons = [
     "Showcase your creativity and visual storytelling skills.",
     "Improve your design thinking and presentation ability.",
@@ -72,7 +72,7 @@ const Page = () => {
       {/* Event Introduction */}
       <a href="/dashboard">
         <EventIntro
-          imageUrl="/testfile/design.svg"
+          imageUrl="/testfile/Designathon3.svg"
           registrations={registrationCount}
           pricepool={10000}
           description="Designathon – Creative Expression Challenge is a creative design event where participants respond to a given theme or problem statement through visual design. The event focuses on idea clarity, visual storytelling, and design thinking, rather than advanced software mastery."
@@ -83,20 +83,16 @@ const Page = () => {
 
       <div className="flex flex-col items-center">
         <div className="bg-transparent text-white p-6 md:p-12 space-y-32">
-          {/* About */}
+
           <section className="text-center max-w-5xl mx-auto">
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
               ABOUT THE EVENT
             </h2>
             <p className="text-2xl text-gray-200">
-              Designathon encourages creative thinkers to translate ideas into
-              visuals. Participants showcase originality, storytelling, and
-              design rationale through posters, UI screens, illustrations, or
-              social creatives.
+              Designathon encourages creative thinkers to translate ideas into visuals.
             </p>
           </section>
 
-          {/* Team Structure */}
           <section className="text-center max-w-5xl mx-auto">
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
               TEAM STRUCTURE
@@ -106,34 +102,9 @@ const Page = () => {
             </p>
           </section>
 
-          {/* Rounds */}
-          <section className="px-4">
-            <RoundSection rounds={rounds} />
-          </section>
-
-          {/* Judging Criteria */}
-          <section>
-            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
-              JUDGING CRITERIA
-            </h2>
-            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2 text-gray-200">
-                <li>Originality of concept</li>
-                <li>Relevance to the theme</li>
-                <li>Visual aesthetics</li>
-                <li>Clarity of message</li>
-                <li>Ability to explain design decisions</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Why Participate */}
+          <RoundSection rounds={rounds} />
           <WhyParticipate reasons={reasons} />
-
-          {/* Rules */}
           <RulesAndRegulation rules={rules} />
-
-          {/* Student Coordinators */}
           <EventManagers managers={studentManagers} />
         </div>
       </div>

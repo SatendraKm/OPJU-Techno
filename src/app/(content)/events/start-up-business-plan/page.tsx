@@ -8,19 +8,19 @@ import { getRegistrationCount } from "@/actions/event-actions";
 const Page = () => {
   const managers = [
     {
-      imageUrl: "/managers/Startup/Sonali.jpg",
-      name: "Sonali Pradhan",
-      contact: 8260226364,
+      imageUrl: "/placeholder-pic.jpeg",
+      name: "Jay Malakar",
+      contact: 788026883,
     },
     {
-      imageUrl: "/managers/Startup/Palak.jpg",
-      name: "Palak Agrawal",
-      contact: 6264671771,
+      imageUrl: "/placeholder-pic.jpeg",
+      name: "R.Ankita",
+      contact: 7024089882,
     },
     {
-      imageUrl: "/managers/Startup/Manish.jpg",
-      name: "Manish Yadav",
-      contact: 9109892675,
+      imageUrl: "/placeholder-pic.jpeg",
+      name: "Raunak Rathore",
+      contact: 9777445832,
     },
   ];
 

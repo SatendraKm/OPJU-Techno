@@ -8,17 +8,17 @@ import { getRegistrationCount } from "@/actions/event-actions";
 const Page = () => {
   const managers = [
     {
-      imageUrl: "/managers/BeatBattle/Somya.jpg",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Somya Patel",
       contact: 9479218521,
     },
     {
-      imageUrl: "/managers/BeatBattle/Gaurav.jpg",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Gaurav Adhikari",
       contact: 8319915571,
     },
     {
-      imageUrl: "/managers/BeatBattle/Suraj.jpg",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Suraj Das",
       contact: 7974639663,
     },

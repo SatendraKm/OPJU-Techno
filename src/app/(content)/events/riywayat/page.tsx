@@ -7,9 +7,9 @@ import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
-    { imageUrl: "/managers/Riwayat/Karishma.jpg", name: "Karishma Mehra", contact: 8720845925 },
-    { imageUrl: "/managers/Riwayat/Ayush.jpg", name: "Ayush Raj Singh", contact: 9981065247 },
-    { imageUrl: "/managers/Riwayat/Prachi.jpg", name: "Prachi Sharma", contact: 8103179203 },
+    { imageUrl: "/placeholder-pic.jpeg", name: "Karishma Mehra", contact: 8720845925 },
+    { imageUrl: "/placeholder-pic.jpeg", name: "Sakshi Sinha", contact: 7846997617 },
+    { imageUrl: "/placeholder-pic.jpeg", name: "Vnshika Narwani", contact: 9755779621 },
   ];
 
   const rules = [

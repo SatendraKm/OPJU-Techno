@@ -69,17 +69,17 @@ const Page = () => {
 
   const managers = [
     {
-      imageUrl: "",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "",
       contact: 123,
     },
     {
-      imageUrl: "",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "",
       contact: 91657,
     },
     {
-      imageUrl: "",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "",
       contact: 88239,
     },
