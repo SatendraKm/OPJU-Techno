@@ -88,14 +88,19 @@ const Page = () => {
 >
 
       <div className="w-full">
+        <div id="tech-event">
         <EventSection
           title="TECHNICAL EVENTS"
           events={eventsData.technical}
         />
+        </div>
+        
+        <div id="non-tech-event">
         <EventSection
           title="NON-TECHNICAL EVENTS"
           events={eventsData.nonTechnical}
         />
+        </div>
       </div>
     </div>
   );
