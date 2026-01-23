@@ -120,6 +120,14 @@ export default function EventsSelection() {
     return acc;
   }, {});
 
+  /* ---------- PRIZE POOL PER SECTION ---------- */
+  const getPrizePoolForMainEvent = (mainEvent: string) => {
+    const events = groupedEvents[mainEvent];
+    if (!events || events.length === 0) return null;
+
+    return Math.max(...events.map((e) => e.prizeMoney));
+  };
+
   /* ---------- SELECTION LOGIC ---------- */
   const toggleEventSelection = (eventId: string, mainEvent: string) => {
     if (registeredEvents.includes(eventId)) return;
@@ -199,8 +207,14 @@ export default function EventsSelection() {
 
       {Object.keys(groupedEvents).map((mainEvent) => (
         <div key={mainEvent} className="mb-10">
-          <h2 className="text-xl font-semibold mb-4 border-b border-white/20 pb-1">
+          <h2 className="text-xl font-semibold mb-4 border-b border-white/20 pb-1 flex items-center gap-3">
             {mainEvent}
+
+            {getPrizePoolForMainEvent(mainEvent) && (
+  <span className="text-sm text-white font-medium">
+  (Prize Pool ₹{getPrizePoolForMainEvent(mainEvent)})
+</span>
+)}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -245,10 +259,6 @@ export default function EventsSelection() {
                       <span className="font-semibold">Team Size:</span>{" "}
                       {event.teamSize}
                     </p>
-                    <p>
-                      <span className="font-semibold">Prize Pool:</span>{" "}
-                      ₹{event.prizeMoney.toLocaleString()}
-                    </p>
                   </CardContent>
                 </Card>
               );
@@ -271,4 +281,3 @@ export default function EventsSelection() {
     </div>
   );
 }
-

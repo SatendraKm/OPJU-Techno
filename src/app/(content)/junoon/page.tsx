@@ -56,9 +56,7 @@ Accompanied by his talented band, the act delivers high-energy live arrangements
           priority
         />
         <div className="text-center w-full max-w-3xl mt-4">
-          <span className="text-[#a97ead] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal font-['Protest Revolution'] tracking-wide">
-            One stage, one night, endless vibes.
-          </span>
+          
         </div>
       </div>
 

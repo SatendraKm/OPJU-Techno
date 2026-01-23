@@ -145,7 +145,9 @@ export default function AdminDashboard() {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-8 text-center">Admin Dashboard</h1>
+     <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center text-white">
+  Admin Dashboard
+</h1>
 
       <div className="grid md:grid-cols-2 gap-6">
         {userFetchData && (

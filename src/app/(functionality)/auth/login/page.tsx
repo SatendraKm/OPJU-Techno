@@ -76,9 +76,14 @@ export default function LoginForm() {
   return (
     <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center px-4">
       <div className="w-full max-w-md rounded-2xl border border-white/15 bg-white/5 backdrop-blur-2xl shadow-2xl px-8 py-12">
-        <h1 className="text-4xl font-extrabold text-center text-white mb-10">
-          LOGIN
-        </h1>
+        <h1 className="text-4xl font-extrabold text-center text-white mb-2">
+  LOGIN
+</h1>
+
+<p className="text-center text-sm text-gray-300 mb-8">
+  All OPJU students must register using their college mail ID
+</p>
+
 
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7">

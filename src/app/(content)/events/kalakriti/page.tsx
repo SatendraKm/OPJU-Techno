@@ -50,7 +50,7 @@ const KalaKriti = () => {
 
   return (
     <div className="text-white">
-      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
+      <div className="absolute inset-0 -z-10 bg-black" />
 
       <section>
         <a href="/dashboard">
@@ -76,11 +76,12 @@ const KalaKriti = () => {
       <section className="px-4 mb-32">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <SubEventCard Icon={GiOverInfinity} title="Pradarshini" description="Art exhibition." />
-          <SubEventCard Icon={GiBowTieRibbon} title="Drishyam" description="Decoration event." />
-          <SubEventCard Icon={IoIosCamera} title="Photorollix" description="Photography contest." />
-          <SubEventCard Icon={PiFlowerBold} title="Rangoli" description="Rangoli art." />
-          <SubEventCard Icon={FaFlipboard} title="Colour Painting" description="Painting event." />
-          <SubEventCard Icon={TbBottleFilled} title="Bottle Painting" description="Bottle art." />
+          <SubEventCard Icon={GiBowTieRibbon} title="Darbar-e-Bharat" description="Decoration event." />
+          <SubEventCard Icon={IoIosCamera} title="Waste to wow" description="" />
+          <SubEventCard Icon={PiFlowerBold} title="Color Painting" description="Glimpses of India@2025." />
+          <SubEventCard Icon={PiFlowerBold} title="Rangoli" description="Vikashit Bharat/Cartoon Characters" />
+          <SubEventCard Icon={FaFlipboard} title="Alpana" description="Traditional Floor art" />
+          <SubEventCard Icon={TbBottleFilled} title="Faces that Speak" description="(Mythological Characters, Tribal Art Faces, Anime characters, bridal make up)" />
         </div>
       </section>
 

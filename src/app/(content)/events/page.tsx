@@ -21,7 +21,7 @@ const eventsData = {
     { imageUrl: "/testfile/beatbattle.svg", link: "/events/beat-battle" },
     { imageUrl: "/testfile/startup3.svg", link: "/events/start-up-business-plan" },
     { imageUrl: "/testfile/riwayat4.svg", link: "/events/riywayat" },
-    { imageUrl: "/testfile/aima3.svg", link: "/events/aima" },
+    { imageUrl: "/testfile/aima3.svg", link: "/events/AIMA" },
   ],
 };
 
