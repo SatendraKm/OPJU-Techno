@@ -43,10 +43,8 @@ export default function EventsSelection() {
 
   const { data: allEventsData, fn: fetchAllEventsFn } =
     useFetch(getAllEventsAction);
-
   const { data: registeredData, fn: fetchRegisteredEventsFn } =
     useFetch(getRegisteredEventsAction);
-
   const { data: invitesData, fn: fetchPendingInvitesFn } =
     useFetch(getPendingInvitesAction);
 
@@ -72,10 +70,7 @@ export default function EventsSelection() {
 
   useEffect(() => {
     if (submitData?.success) {
-      toast({
-        title: "Success",
-        description: "Successfully registered",
-      });
+      toast({ title: "Success", description: "Successfully registered" });
       setTimeout(() => router.push("/dashboard"), 500);
     }
 
@@ -132,7 +127,6 @@ export default function EventsSelection() {
     const alreadySelected = selectedEvents.includes(eventId);
 
     if (!alreadySelected) {
-      /* ---- SUB-EVENT LIMIT ---- */
       const totalSubEvents =
         registeredEvents.length + selectedEvents.length;
 
@@ -145,7 +139,6 @@ export default function EventsSelection() {
         return;
       }
 
-      /* ---- MAIN EVENT LIMIT (FIXED) ---- */
       const totalMainSections = getTotalMainSections();
 
       if (
@@ -190,23 +183,23 @@ export default function EventsSelection() {
 
   /* ---------- UI ---------- */
   return (
-    <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-2xl font-bold text-center mb-4">
+    <div className="max-w-6xl mx-auto p-6 text-white">
+      <h1 className="text-3xl font-bold text-center mb-4">
         Select Events
       </h1>
 
-      <p className="text-center text-sm text-gray-400 mb-2">
+      <p className="text-center text-sm text-gray-300 mb-2">
         Sections selected: {getTotalMainSections().length} / 4
       </p>
 
-      <p className="text-center text-sm text-gray-400 mb-6">
+      <p className="text-center text-sm text-gray-300 mb-6">
         Sub-events selected:{" "}
         {registeredEvents.length + selectedEvents.length} / 7
       </p>
 
       {Object.keys(groupedEvents).map((mainEvent) => (
         <div key={mainEvent} className="mb-10">
-          <h2 className="text-xl font-semibold mb-4 border-b pb-1">
+          <h2 className="text-xl font-semibold mb-4 border-b border-white/20 pb-1">
             {mainEvent}
           </h2>
 
@@ -217,43 +210,44 @@ export default function EventsSelection() {
               return (
                 <Card
                   key={event._id}
-                  className={`cursor-pointer transition-all
-                    ${
-                      status === "registered"
-                        ? "opacity-70 cursor-not-allowed"
-                        : status === "selected"
-                        ? "ring-2 ring-primary bg-primary/5"
-                        : "hover:bg-gray-50"
-                    }`}
                   onClick={() =>
                     toggleEventSelection(event._id, mainEvent)
                   }
+                  className={`cursor-pointer transition-all border-white/10
+                    ${
+                      status === "registered"
+                        ? "opacity-70 cursor-not-allowed bg-white/5 text-gray-300"
+                        : status === "selected"
+                        ? "ring-2 ring-red-500 bg-red-500/15 text-white"
+                        : "bg-white/5 text-gray-200 hover:bg-white/10"
+                    }`}
                 >
                   <CardHeader>
-                    <CardTitle className="text-base flex justify-between">
+                    <CardTitle className="text-base flex justify-between items-center">
                       {event.subName}
 
                       {status === "registered" && (
-                        <Badge className="bg-green-500">
+                        <Badge className="bg-green-600 text-white">
                           Registered
                         </Badge>
                       )}
 
                       {status === "selected" && (
-                        <Badge className="bg-red-400">
+                        <Badge className="bg-red-500 text-white">
                           Selected
                         </Badge>
                       )}
                     </CardTitle>
                   </CardHeader>
 
-                  <CardContent>
+                  <CardContent className="space-y-1">
                     <p>
-                      <strong>Team Size:</strong> {event.teamSize}
+                      <span className="font-semibold">Team Size:</span>{" "}
+                      {event.teamSize}
                     </p>
                     <p>
-                      <strong>Prize Pool:</strong> ₹
-                      {event.prizeMoney.toLocaleString()}
+                      <span className="font-semibold">Prize Pool:</span>{" "}
+                      ₹{event.prizeMoney.toLocaleString()}
                     </p>
                   </CardContent>
                 </Card>
@@ -263,11 +257,11 @@ export default function EventsSelection() {
         </div>
       ))}
 
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center mt-8">
         <Button
           onClick={handleSubmit}
           disabled={submitLoading || selectedEvents.length === 0}
-          className="w-full max-w-md"
+          className="w-full max-w-md bg-red-600 hover:bg-red-700 text-white font-semibold"
         >
           {submitLoading
             ? "Submitting..."
@@ -277,3 +271,4 @@ export default function EventsSelection() {
     </div>
   );
 }
+

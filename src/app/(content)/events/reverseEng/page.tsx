@@ -56,7 +56,7 @@ const Page = () => {
   const [registrationCount, setRegistrationCount] = useState(0);
 
   useEffect(() => {
-    getRegistrationCount("REVERSE_ENGINEERING")
+    getRegistrationCount("Backtrace")
       .then((count) => {
         setRegistrationCount(count);
       })

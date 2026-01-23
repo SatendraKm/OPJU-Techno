@@ -43,7 +43,7 @@ const Page = () => {
   const [registrationCount, setRegistrationCount] = useState(0);
 
   useEffect(() => {
-    getRegistrationCount("SMQ-2025-26").then((count) => {
+    getRegistrationCount("AIMA").then((count) => {
       setRegistrationCount(count);
     });
   }, []);
