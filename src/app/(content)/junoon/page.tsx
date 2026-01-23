@@ -4,23 +4,19 @@ import EventManagers from "@/components/sub-component/event-managers";
 export default function Junoon() {
   const managers = [
     {
-      imageUrl: "/managers/Junoon/atulsingh.jpg",
-      name: "Atul Singh",
+      imageUrl: "",
+      name: "Devendra",
       contact: 9755305060,
     },
-    {
-      imageUrl: "/managers/Junoon/harshdubey.jpg",
-      name: "Harsh Dubey",
-      contact: 9340427142,
-    },
+
     {
       imageUrl: "/managers/Junoon/sumitsingh.jpg",
       name: "Sumit Singh",
       contact: 7974944091,
     },
     {
-      imageUrl: "/managers/Junoon/soubhagyaranjanpanda.jpg",
-      name: "Soubhagya Panda",
+      imageUrl: "",
+      name: "Jeet Jain",
       contact: 9827177970,
     },
   ];
@@ -123,7 +119,7 @@ Accompanied by his talented band, the act delivers high-energy live arrangements
 
       {/* Bottom Padding */}
       <div className="pb-32">
-        <EventManagers managers={managers} />
+        <EventManagers managers={managers} showRegister={false} />
       </div>
     </div>
   );

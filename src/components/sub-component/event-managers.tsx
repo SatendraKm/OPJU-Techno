@@ -10,9 +10,13 @@ interface Manager {
 
 interface EventManagersProps {
   managers: Manager[];
+  showRegister?: boolean;
 }
 
-const EventManagers: React.FC<EventManagersProps> = ({ managers }) => {
+const EventManagers: React.FC<EventManagersProps> = ({
+  managers,
+  showRegister = true,
+}) => {
   return (
     <div className="flex flex-col items-center justify-center mb-20 px-4">
       {/* Header */}
@@ -22,8 +26,8 @@ const EventManagers: React.FC<EventManagersProps> = ({ managers }) => {
 
       {/* Description */}
       <div className="w-full max-w-4xl px-2 text-center text-white text-lg sm:text-2xl font-normal font-['Inter'] md:tracking-[3.75px] mt-4">
-        For any queries regarding the event, feel free to reach out to any of
-        the managers listed below. They are here to help and ensure a smooth
+        For any queries regarding the event, feel free to reach out to any
+        of the managers listed below. They are here to help and ensure a smooth
         experience for you!
       </div>
 
@@ -40,7 +44,9 @@ const EventManagers: React.FC<EventManagersProps> = ({ managers }) => {
       </div>
 
       {/* Register Button */}
-      <ButtonLanding label="Register Now" link="/dashboard" />
+      {showRegister && (
+        <ButtonLanding label="Register Now" link="/dashboard" />
+      )}
     </div>
   );
 };
