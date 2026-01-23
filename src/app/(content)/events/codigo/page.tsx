@@ -13,31 +13,18 @@ const Page = () => {
   /* ===================== EVENT MANAGERS ===================== */
   const managers = [
     {
-<<<<<<< HEAD
       imageUrl: "/managers/codigo/divakar.jpg",
-=======
-      imageUrl: "/placeholder-pic.jpeg",
->>>>>>> 97e12c8 (eventmanagerchange)
       name: "Divakar Yadav",
       contact: 9691300315,
     },
     {
-<<<<<<< HEAD
       imageUrl: "/managers/codigo/divakar.jpg",
-=======
-      imageUrl: "/placeholder-pic.jpeg",
->>>>>>> 97e12c8 (eventmanagerchange)
       name: "Swapnil Chatterjee",
       contact: 8085934908,
     },
     {
-<<<<<<< HEAD
       imageUrl: "/managers/codigo/divakar.jpg",
       name: "AniruddhaSinghGautam",
-=======
-      imageUrl: "/placeholder-pic.jpeg",
-      name: "Aniruddha Singh Gautam",
->>>>>>> 97e12c8 (eventmanagerchange)
       contact: 6260225774,
     },
   ];
