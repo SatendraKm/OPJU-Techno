@@ -62,7 +62,7 @@ const Page = () => {
       {/* Event Intro Section */}
       <a href="/dashboard">
       <EventIntro
-        imageUrl="/testfile/voice.svg"
+        imageUrl="/testfile/voiceofyouth.svg"
         registrations={registrationCount}
         pricepool={10000}
         description="A fun flagship event where participants showcase talents like singing, dancing, comedy, or magic while also predicting their own score. An exact match with the judges' score wins instantly, making it a unique test of skill, confidence, and self-awareness. Entertain, guess, and win."

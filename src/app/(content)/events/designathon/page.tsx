@@ -54,7 +54,7 @@ const Page = () => {
       {/* Event Introduction */}
       <a href="/dashboard">
       <EventIntro
-        imageUrl="/testfile/design.svg"
+        imageUrl="/testfile/Designathon3.svg"
         registrations={0}
         pricepool={10000}
         description="Designathon – Creative Expression Challenge is a creative design event where participants respond to a given theme or problem statement through visual design. The event focuses on idea clarity, visual storytelling, and design thinking, rather than advanced software mastery."

@@ -35,7 +35,6 @@ const Page = () => {
   ];
 
   const reasons = [
-    "Win prizes worth ₹18,000 across multiple categories.",
     "Enhance problem-solving, creativity, and design-thinking skills.",
     "Work on real-world sustainability challenges aligned with SDGs.",
     "Gain expert feedback to refine your idea.",
@@ -48,6 +47,11 @@ const Page = () => {
       imageUrl: "",
       name: "Rinesh Mohanty",
       contact: 9907708949,
+    },
+    {
+      imageUrl: "",
+      name: "Disha Nadam",
+      contact: 9171320725,
     },
     {
       imageUrl: "",
@@ -76,9 +80,9 @@ const Page = () => {
       {/* Event Intro */}
       <a href="/dashboard">
         <EventIntro
-          imageUrl="/testfile/ideathon.svg"
+          imageUrl="/testfile/ideathon3.svg"
           registrations={registrationCount}
-          pricepool={50000}
+          pricepool={18000}
           description={`“Building Solutions Through Innovation..”
 Welcome to IDEATHON—an inspiring platform where curiosity fuels creativity and real-world challenges spark innovative solutions. Be a part of a dynamic community of bold thinkers and change-makers who challenge conventions and create the remarkable.
 

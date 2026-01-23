@@ -55,7 +55,7 @@ const Page = () => {
       <EventIntro
         venue="Live Classroom"
         time="20-02-26, 10:30 am"
-        imageUrl="/testfile/startup.svg"
+        imageUrl="/testfile/startup3.svg"
         registrations={registrationCount}
         pricepool={18000}
         description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste."

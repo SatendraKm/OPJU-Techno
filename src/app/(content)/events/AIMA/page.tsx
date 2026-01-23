@@ -58,7 +58,7 @@ const Page = () => {
       <EventIntro
         venue="Multipurpose Hall, O.P. Jindal University, Raigarh"
         time="21 February, 2026 | 09:00 AM - 05:00 PM"
-        imageUrl="/testfile/aima.svg"
+        imageUrl="/testfile/aima3.svg"
         registrations={registrationCount}
         pricepool={10000}
         description="The Student Management Quiz (SMQ) offers an engaging and innovative platform to assess students’ understanding across diverse business domains, including branding, marketing, HR, finance, and prominent business leaders. Compete, learn, and win exciting rewards."

@@ -10,8 +10,8 @@ const teamSections = [
         image: "/teams/information-publicity-invitation/ajay.png",
       },
       {
-        name: "Priyanshu Dash",
-        contact: "+91 9078942095",
+        name: "Hussain Kapadia",
+        contact: "+91 82650 13186",
         image: "/placeholder-pic.jpeg",
       },
     ],
@@ -220,7 +220,7 @@ const TeamPage = () => {
       <div className="mx-auto max-w-6xl">
         {/* Main Heading */}
         <h1 className="text-7xl font-medium font-['Poppins'] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] mb-24 mt-24">
-          Team Behind Technorollix
+          Team Behind TechnoAiMBiAtion
         </h1>
 
         {/* Team Sections */}

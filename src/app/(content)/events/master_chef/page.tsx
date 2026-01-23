@@ -49,7 +49,7 @@ const Page = () => {
       <EventIntro
         venue="Cafeteria, Ground Floor"
         time="20-02-26, 10:00 am"
-        imageUrl="/testfile/master.svg"
+        imageUrl="/testfile/masterchef3.svg"
         registrations={registrationCount}
         pricepool={9000}
         description="MASTERCHEF 2026 is OPJU’s most exciting culinary showdown where talent meets taste and passion meets presentation. Participants transform simple ingredients into unforgettable stories, proving that great food isn’t just cooked — it’s created."

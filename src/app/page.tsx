@@ -5,6 +5,7 @@ import AboutSection from "@/components/aboutSection";
 import EventSection from "@/components/eventsSection";
 import Footer from "@/components/footer";
 import Link from "next/link";
+import FacultySection from "@/components/facultySection";
 
 export default function Home() {
   return (
@@ -83,6 +84,9 @@ export default function Home() {
 
       <section>
         <AboutSection />
+      </section>
+      <section>
+        <FacultySection />
       </section>
 
       <Footer />
