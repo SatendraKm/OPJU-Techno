@@ -6,23 +6,16 @@ import RoundSection from "@/components/sub-component/RoundSection";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
 import WhyParticipate from "@/components/sub-component/why-participate";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const [registrationCount, setRegistrationCount] = useState<number>(0);
 
-  useEffect(() => {
-    const fetchCount = async () => {
-      try {
-        const res = await fetch("/api/registrations?event=DESIGNATHON");
-        const data = await res.json();
-        setRegistrationCount(data.count || 0);
-      } catch (err) {
-        console.error("Failed to load registration count", err);
-      }
-    };
-
-    fetchCount();
-  }, []);
+    useEffect(() => {
+      getRegistrationCount("DESIGNATHON").then((count) => {
+        setRegistrationCount(count);
+      });
+    }, []);
 
   const studentManagers = [
     {

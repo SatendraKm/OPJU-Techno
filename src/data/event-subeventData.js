@@ -105,7 +105,7 @@ export const eventSubEventData = {
       //696e7207cd8b052c9846b6ca
     },
     {
-      eventName: "AIMA ",
+      eventName: "AIMA",
       event: "696e7207cd8b052c9846b6d1",
       subEvents: [],
     },

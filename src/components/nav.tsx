@@ -100,7 +100,7 @@ const Navbar = () => {
           <Link href="/about" onClick={closeAll}>About</Link>
           <Link href="/schedule" onClick={closeAll}>Schedule</Link>
           <Link href="/junoon" onClick={closeAll}>Junoon</Link>
-          <Link href="/team" onClick={closeAll}>Contact US</Link>
+          <Link href="/team" onClick={closeAll}>Our Team</Link>
         </div>
 
         <UserDropdown />
@@ -129,7 +129,7 @@ const Navbar = () => {
           <Link href="/about" onClick={closeAll} className="block py-2 text-lg">About</Link>
           <Link href="/schedule" onClick={closeAll} className="block py-2 text-lg">Schedule</Link>
           <Link href="/junoon" onClick={closeAll} className="block py-2 text-lg">Junoon</Link>
-          <Link href="/team" onClick={closeAll} className="block py-2 text-lg">Contact </Link>
+          <Link href="/team" onClick={closeAll} className="block py-2 text-lg">Our Team </Link>
 
           <div className="pt-4 border-t border-white/20">
             <UserDropdown />

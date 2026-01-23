@@ -187,13 +187,14 @@ const FacultySection = () => {
         largeCard
       />
 
+      
+
+      <Section title="Mentors" people={mentors} />
       <Section
         title="Chief Convener"
         people={chiefConvener}
         highlightSingle
       />
-
-      <Section title="Mentors" people={mentors} />
       <Section title="Techno-Ambition Conveners" people={technoConveners} />
       <Section title="Celebrity Night Conveners" people={celebrityConveners} />
     </section>
