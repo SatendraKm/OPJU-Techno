@@ -8,9 +8,21 @@ import WhyParticipate from "@/components/sub-component/why-participate";
 import { getRegistrationCount } from "@/actions/event-actions";
 const Page = () => {
   const studentManagers = [
-    { imageUrl: "/managers/designathon/shruti.jpg", name: "Shruti Niwas", contact: 7024120039 },
-    { imageUrl: "/managers/designathon/aashta.jpg", name: "Aashta Choudhary", contact: 7898260105 },
-    { imageUrl: "/managers/designathon/pooja.jpg", name: "Pooja Mahto", contact: 9693397426 },
+    {
+      imageUrl: "/managers/designathon/shruti.jpg",
+      name: "Shruti Niwas",
+      contact: 7024120039,
+    },
+    {
+      imageUrl: "/managers/designathon/aashta.jpg",
+      name: "Aashta Choudhary",
+      contact: 7898260105,
+    },
+    {
+      imageUrl: "/managers/designathon/pooja.jpg",
+      name: "Pooja Mahto",
+      contact: 9693397426,
+    },
   ];
 
   const rounds = [
@@ -38,7 +50,7 @@ const Page = () => {
   ];
   const [registrationCount, setRegistrationCount] = useState(0);
 
-    useEffect(() => {
+  useEffect(() => {
     getRegistrationCount("DESIGNATHON").then((count) => {
       setRegistrationCount(count);
     });
@@ -59,32 +71,28 @@ const Page = () => {
 
       {/* Event Introduction */}
       <a href="/dashboard">
-      <EventIntro
-<<<<<<< HEAD
-        imageUrl="/testfile/Designathon3.svg"
-        registrations={0}
-=======
-        imageUrl="/testfile/design.svg"
-        registrations={registrationCount}
->>>>>>> 340183b229ccf3f3dc3aa4f75e73c88db152d675
-        pricepool={10000}
-        description="Designathon – Creative Expression Challenge is a creative design event where participants respond to a given theme or problem statement through visual design. The event focuses on idea clarity, visual storytelling, and design thinking, rather than advanced software mastery."
-        time="19th & 20th | 3:00 PM – 4:00 PM"
-        venue="TB 07"
-      /></a>
+        <EventIntro
+          imageUrl="/testfile/design.svg"
+          registrations={registrationCount}
+          pricepool={10000}
+          description="Designathon – Creative Expression Challenge is a creative design event where participants respond to a given theme or problem statement through visual design. The event focuses on idea clarity, visual storytelling, and design thinking, rather than advanced software mastery."
+          time="19th & 20th | 3:00 PM – 4:00 PM"
+          venue="TB 07"
+        />
+      </a>
 
       <div className="flex flex-col items-center">
         <div className="bg-transparent text-white p-6 md:p-12 space-y-32">
-
           {/* About */}
           <section className="text-center max-w-5xl mx-auto">
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
               ABOUT THE EVENT
             </h2>
             <p className="text-2xl text-gray-200">
-              Designathon encourages creative thinkers to translate ideas into visuals.
-              Participants showcase originality, storytelling, and design rationale through
-              posters, UI screens, illustrations, or social creatives.
+              Designathon encourages creative thinkers to translate ideas into
+              visuals. Participants showcase originality, storytelling, and
+              design rationale through posters, UI screens, illustrations, or
+              social creatives.
             </p>
           </section>
 
@@ -125,11 +133,8 @@ const Page = () => {
           {/* Rules */}
           <RulesAndRegulation rules={rules} />
 
-          
-
           {/* Student Coordinators */}
           <EventManagers managers={studentManagers} />
-
         </div>
       </div>
     </>
