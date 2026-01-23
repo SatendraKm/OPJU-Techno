@@ -36,7 +36,7 @@ const Roadies = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
-      <a href="/dashboard">
+      {/* <a href="/dashboard"> */}
       <EventIntro
         venue="Bus Parking Area"
         time="19-02-26, 11:30 am" /* Event at 19-20-21 */
@@ -50,7 +50,8 @@ The event is designed to promote:
 · Teamwork and leadership qualities
 · Confidence, communication, and problem-solving skills
 "
-      /></a>
+      />
+      {/* </a> */}
 
       {/* Theme Section */}
       <section className="text-center mx-auto max-w-4xl px-4">
@@ -96,26 +97,23 @@ The event is designed to promote:
       </section>
 
       {/* Prize */}
-<section className="mb-20">
-  <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
-    PRIZE
-  </h2>
+      <section className="mb-20">
+        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
+          PRIZE
+        </h2>
 
-  <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-5xl mx-auto text-center">
-    <ul className="list-disc pl-5 inline-block text-left text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-gray-200">
-      <li>1st Prize</li>
-      <li>2nd Prize</li>
-      <li>3rd Prize</li>
-    </ul>
+        <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-5xl mx-auto text-center">
+          <ul className="list-disc pl-5 inline-block text-left text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-gray-200">
+            <li>1st Prize</li>
+            <li>2nd Prize</li>
+            <li>3rd Prize</li>
+          </ul>
 
-    <p className="mt-6 text-xl sm:text-2xl italic text-gray-300">
-      (Certificates will be awarded to all participants)
-    </p>
-  </div>
-</section>
-
-
-
+          <p className="mt-6 text-xl sm:text-2xl italic text-gray-300">
+            (Certificates will be awarded to all participants)
+          </p>
+        </div>
+      </section>
 
       {/* Event Managers Section */}
       <section className="mx-auto max-w-5xl px-4">

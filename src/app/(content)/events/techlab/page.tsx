@@ -99,7 +99,7 @@ const Page = () => {
 
       {/* Event Intro Section */}
       <section>
-        <a href="/dashboard">
+        {/* <a href="/dashboard"> */}
         <EventIntro
           imageUrl="/testfile/techlab3.svg"
           registrations={registrationCount}
@@ -107,7 +107,8 @@ const Page = () => {
           description="Tech lab is the flagship event of the biggest tech festival in central India, TECHNOaiMBiAtion. It’s a vibrant showcase of innovation and ingenuity, where the brightest minds from various universities unleash their creative potential through their self-developed models. Creating a technical model presentation involves effectively communicating the details, functionality, and significance of a technical model to a diverse audience, which may include technical and non-technical stakeholders. This platform also opens doors to better funding opportunities for these innovative minds, paving the way to a future breakthrough"
           time="19-02-26 ,10:00 am"
           venue="BABUJI CHOWK"
-        /></a>
+        />
+        {/* </a> */}
       </section>
 
       {/* Sub-Events Section */}
@@ -117,7 +118,10 @@ const Page = () => {
             sub-events
           </div>
           <div className="w-full max-w-4xl mt-4 text-center text-white text-base sm:text-2xl font-normal font-['Inter'] tracking-[3.75px]">
-            The following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don&apos;t miss your chance to participate and showcase your skills!
+            The following are the sub-events of this main event. Read the
+            details carefully and choose the ones that best match your interests
+            and expertise. Don&apos;t miss your chance to participate and
+            showcase your skills!
           </div>
         </div>
 
@@ -131,19 +135,16 @@ const Page = () => {
             Icon={GiRobotLeg}
             title="WORKING MODEL PRESENTATION"
             description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
-          
           />
           <SubEventCard
             Icon={PiPathBold}
             title="PROTOTYPE PRESENTATION"
             description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
-          
           />
           <SubEventCard
             Icon={FaAppStore}
             title=" App Making"
             description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
-          
           />
         </div>
       </section>

@@ -7,9 +7,21 @@ import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
-    { imageUrl: "/placeholder-pic.jpeg", name: "Karishma Mehra", contact: 8720845925 },
-    { imageUrl: "/placeholder-pic.jpeg", name: "Sakshi Sinha", contact: 7846997617 },
-    { imageUrl: "/placeholder-pic.jpeg", name: "Vnshika Narwani", contact: 9755779621 },
+    {
+      imageUrl: "/placeholder-pic.jpeg",
+      name: "Karishma Mehra",
+      contact: 8720845925,
+    },
+    {
+      imageUrl: "/placeholder-pic.jpeg",
+      name: "Sakshi Sinha",
+      contact: 7846997617,
+    },
+    {
+      imageUrl: "/placeholder-pic.jpeg",
+      name: "Vnshika Narwani",
+      contact: 9755779621,
+    },
   ];
 
   const rules = [
@@ -35,12 +47,11 @@ const Page = () => {
 
   return (
     <div className="relative space-y-10 px-4 py-8">
-
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
-      <a href="/dashboard">
+      {/* <a href="/dashboard"> */}
       <EventIntro
         venue="Babuji Chowk & Football Ground Stage"
         time="11-19 Feb 2026"
@@ -48,7 +59,8 @@ const Page = () => {
         registrations={registrationCount}
         pricepool={18000}
         description="An inter-college fashion show hosted by OP Jindal University, designed to promote creativity, confidence, and personality through structured rounds, workshops, and inclusive participation."
-      /></a>
+      />
+      {/* </a> */}
 
       {/* Event Category Section */}
       <section className="my-32 text-center">
@@ -99,19 +111,25 @@ const Page = () => {
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white text-2xl sm:text-3xl space-y-4 font-['Inter'] leading-relaxed">
           <div>
-            <h3 className="font-semibold text-3xl mb-2 text-[#FFD188]">1st Round</h3>
+            <h3 className="font-semibold text-3xl mb-2 text-[#FFD188]">
+              1st Round
+            </h3>
             <p>Venue: Babuji Chowk</p>
             <p>Date: 11th February (Wednesday)</p>
             <p>Time: 1 PM onwards</p>
           </div>
           <div>
-            <h3 className="font-semibold text-3xl mb-2 text-[#FFD188]">2nd Round</h3>
+            <h3 className="font-semibold text-3xl mb-2 text-[#FFD188]">
+              2nd Round
+            </h3>
             <p>Venue: Babuji Chowk</p>
             <p>Date: 16th February (Monday)</p>
             <p>Time: 1 PM onwards</p>
           </div>
           <div>
-            <h3 className="font-semibold text-3xl mb-2 text-[#FFD188]">3rd Round</h3>
+            <h3 className="font-semibold text-3xl mb-2 text-[#FFD188]">
+              3rd Round
+            </h3>
             <p>Venue: Football Ground Stage</p>
             <p>Date: 19th February (Thursday)</p>
             <p>Time: 6 PM onwards</p>
@@ -121,7 +139,6 @@ const Page = () => {
 
       {/* Event Managers Section */}
       <EventManagers managers={managers} />
-
     </div>
   );
 };

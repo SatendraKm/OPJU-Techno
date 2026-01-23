@@ -52,7 +52,7 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
-      <a href="/dashboard">
+      {/* <a href="/dashboard"> */}
       <EventIntro
         venue="Babuji Chowk, OPJU"
         time="20 Feb 2026, 2:00 PM - 5:30 PM"
@@ -60,7 +60,8 @@ const Page = () => {
         registrations={registrationCount}
         pricepool={10000}
         description="Step into a high-energy clash of rhythm, creativity, and raw talent at Beat Battle. Dancers face off in head-to-head rounds, trading explosive footwork, sharp musicality, and fearless improvisation. The crowd fuels the momentum, judges watch for originality and control, and every beat drop is a chance to shine."
-      /></a>
+      />
+      {/* </a> */}
 
       {/* Event Format Section */}
       <section className="my-32">
@@ -135,19 +136,18 @@ const Page = () => {
       </section>
 
       {/* Prize */}
-<section className="mb-20">
-  <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
-    PRIZE
-  </h2>
+      <section className="mb-20">
+        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
+          PRIZE
+        </h2>
 
-  <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-5xl mx-auto text-center">
-    <ul className="list-disc pl-5 inline-block text-left text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-gray-200">
-      <li>Winner</li>
-      <li>Runner Up</li>
-    </ul>
-  </div>
-</section>
-
+        <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-5xl mx-auto text-center">
+          <ul className="list-disc pl-5 inline-block text-left text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-gray-200">
+            <li>Winner</li>
+            <li>Runner Up</li>
+          </ul>
+        </div>
+      </section>
 
       {/* Event Managers Section */}
       <EventManagers managers={managers} />

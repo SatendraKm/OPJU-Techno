@@ -54,7 +54,7 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
-      <a href="/dashboard">
+      {/* <a href="/dashboard"> */}
       <EventIntro
         venue="Multipurpose Hall, O.P. Jindal University, Raigarh"
         time="21 February, 2026 | 09:00 AM - 05:00 PM"
@@ -63,7 +63,7 @@ const Page = () => {
         pricepool={10000}
         description="The Student Management Quiz (SMQ) offers an engaging and innovative platform to assess students’ understanding across diverse business domains, including branding, marketing, HR, finance, and prominent business leaders. Compete, learn, and win exciting rewards."
       />
-      </a>
+      {/* </a> */}
 
       {/* Event Category Section */}
       <section className="my-32 text-center">

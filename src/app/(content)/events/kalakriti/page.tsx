@@ -53,7 +53,7 @@ const KalaKriti = () => {
       <div className="absolute inset-0 -z-10 bg-black" />
 
       <section>
-        <a href="/dashboard">
+        {/* <a href="/dashboard"> */}
         <EventIntro
           imageUrl="/testfile/kalakriti3.svg"
           registrations={registrationCount}
@@ -61,7 +61,8 @@ const KalaKriti = () => {
           description="Craft is the vehicle for expressing your vision. Craft is the visible edge of Art..."
           time="21-03-25 , 11:00 am"
           venue="LIBRARY, LAWN, OPPOSITE TO CHEMISTRY LAB"
-        /></a>
+        />
+        {/* </a> */}
       </section>
 
       <section className="text-center mx-auto max-w-6xl mt-32 mb-16">
@@ -75,13 +76,41 @@ const KalaKriti = () => {
 
       <section className="px-4 mb-32">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <SubEventCard Icon={GiOverInfinity} title="Pradarshini" description="Art exhibition." />
-          <SubEventCard Icon={GiBowTieRibbon} title="Darbar-e-Bharat" description="Decoration event." />
-          <SubEventCard Icon={IoIosCamera} title="Waste to wow" description="" />
-          <SubEventCard Icon={PiFlowerBold} title="Color Painting" description="Glimpses of India@2025." />
-          <SubEventCard Icon={PiFlowerBold} title="Rangoli" description="Vikashit Bharat/Cartoon Characters" />
-          <SubEventCard Icon={FaFlipboard} title="Alpana" description="Traditional Floor art" />
-          <SubEventCard Icon={TbBottleFilled} title="Faces that Speak" description="(Mythological Characters, Tribal Art Faces, Anime characters, bridal make up)" />
+          <SubEventCard
+            Icon={GiOverInfinity}
+            title="Pradarshini"
+            description="Art exhibition."
+          />
+          <SubEventCard
+            Icon={GiBowTieRibbon}
+            title="Darbar-e-Bharat"
+            description="Decoration event."
+          />
+          <SubEventCard
+            Icon={IoIosCamera}
+            title="Waste to wow"
+            description=""
+          />
+          <SubEventCard
+            Icon={PiFlowerBold}
+            title="Color Painting"
+            description="Glimpses of India@2025."
+          />
+          <SubEventCard
+            Icon={PiFlowerBold}
+            title="Rangoli"
+            description="Vikashit Bharat/Cartoon Characters"
+          />
+          <SubEventCard
+            Icon={FaFlipboard}
+            title="Alpana"
+            description="Traditional Floor art"
+          />
+          <SubEventCard
+            Icon={TbBottleFilled}
+            title="Faces that Speak"
+            description="(Mythological Characters, Tribal Art Faces, Anime characters, bridal make up)"
+          />
         </div>
       </section>
 
