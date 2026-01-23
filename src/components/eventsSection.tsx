@@ -9,7 +9,7 @@ const technical = [
   { imageUrl: "/testfile/techlabnew.svg", link: "/events/techlab" },
   { imageUrl: "/testfile/robo.svg", link: "/events/robovation" },
   { imageUrl: "/testfile/ideathon.svg", link: "/events/ideathon" },
-  { imageUrl: "/testfile/rev.svg", link: "/events/reverseEng" },
+  { imageUrl: "/testfile/backtrace3.svg", link: "/events/reverseEng" },
   { imageUrl: "/testfile/design.svg", link: "/events/designathon" },
 ];
 
@@ -21,8 +21,8 @@ const nonTechnical = [
   { imageUrl: "/testfile/voice.svg", link: "/events/yuva-sabha" },
   { imageUrl: "/testfile/beat.svg", link: "/events/beat-battle" },
   { imageUrl: "/testfile/startup.svg", link: "/events/start-up-business-plan" },
-  { imageUrl: "/testfile/riwayat.svg", link: "/events/riywayat" },
-  { imageUrl: "/testfile/aima.svg", link: "/events/aima" },
+  { imageUrl: "/testfile/riwayat4.svg", link: "/events/riywayat" },
+  { imageUrl: "/testfile/aima3.svg", link: "/events/aima" },
 ];
 
 const cards = [...technical, ...nonTechnical];
@@ -42,7 +42,7 @@ const EventsSection = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen px-4 sm:px-8 lg:px-16 py-14 overflow-hidden">
+    <section className="relative w-full min-h-screen px-10 sm:px-10 lg:px-16 py-14 overflow-hidden">
       {/* BG */}
       <div className="absolute inset-0 -z-10 bg-[#376080]" />
 
@@ -55,7 +55,7 @@ const EventsSection = () => {
       </div>
 
       {/* SLIDER */}
-      <div className="relative mt-40 w-full h-[260px] sm:h-[300px] lg:h-[340px] flex items-center justify-center">
+      <div className="relative mt-40 w-full h-[260px] sm:h-[300px] lg:h-[340px] flex items-center justify-center mb-20">
         <button
           onClick={prev}
           className="absolute left-2 sm:left-6 z-50 bg-white/10 hover:bg-white/20 p-2 sm:p-3 rounded-full"

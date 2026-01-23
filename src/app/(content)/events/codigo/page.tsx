@@ -13,18 +13,18 @@ const Page = () => {
   /* ===================== EVENT MANAGERS ===================== */
   const managers = [
     {
-      imageUrl: "/managers/codigo/divakar.jpg",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Divakar Yadav",
       contact: 9691300315,
     },
     {
-      imageUrl: "/managers/codigo/divakar.jpg",
+      imageUrl: "/placeholder-pic.jpeg",
       name: "Swapnil Chatterjee",
       contact: 8085934908,
     },
     {
-      imageUrl: "/managers/codigo/divakar.jpg",
-      name: "AniruddhaSinghGautam",
+      imageUrl: "/placeholder-pic.jpeg",
+      name: "Aniruddha Singh Gautam",
       contact: 6260225774,
     },
   ];
@@ -45,16 +45,16 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro */}
-      <a href="/dashboard">
-        <EventIntro
-          imageUrl="/testfile/codigo3.svg"
-          registrations={registrationCount}
-          pricepool={20000}
-          description="Unlock your coding potential at our University’s premier Coding Event! Participate in challenges, network with peers, and enhance your skills. Whether you are a beginner or a pro, join us for an unforgettable experience of innovation and collaboration."
-          time="19-02-2026, 11:00 AM"
-          venue="TB-09"
-        />
-      </a>
+      {/* <a href="/dashboard"> */}
+      <EventIntro
+        imageUrl="/testfile/codigo3.svg"
+        registrations={registrationCount}
+        pricepool={20000}
+        description="Unlock your coding potential at our University’s premier Coding Event! Participate in challenges, network with peers, and enhance your skills. Whether you are a beginner or a pro, join us for an unforgettable experience of innovation and collaboration."
+        time="19-02-2026, 11:00 AM"
+        venue="TB-09"
+      />
+      {/* </a> */}
       {/* Theme */}
       <section className="my-32 text-center">
         <h2 className="text-white text-4xl md:text-5xl font-medium mb-10">

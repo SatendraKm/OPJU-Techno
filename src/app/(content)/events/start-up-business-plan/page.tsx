@@ -51,7 +51,7 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
-      <a href="/dashboard">
+      {/* <a href="/dashboard"> */}
       <EventIntro
         venue="Live Classroom"
         time="20-02-26, 10:30 am"
@@ -59,7 +59,8 @@ const Page = () => {
         registrations={registrationCount}
         pricepool={18000}
         description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste."
-      /></a>
+      />
+      {/* </a> */}
 
       {/* Event Category Section */}
       <section className="my-32 text-center">

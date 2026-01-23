@@ -56,7 +56,7 @@ const Page = () => {
       name: "Gaurav Tiwari",
       contact: 7898862970,
     },
-     {
+    {
       imageUrl: "/placeholder-pic.jpeg",
       name: "Gargi Gupta",
       contact: 9165007660,
@@ -66,7 +66,7 @@ const Page = () => {
   const [registrationCount, setRegistrationCount] = useState(0);
 
   useEffect(() => {
-    getRegistrationCount("Backtrace")
+    getRegistrationCount("BACKTRACE")
       .then((count) => {
         setRegistrationCount(count);
       })
@@ -81,18 +81,19 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Introduction */}
-      <a href="/dashboard"><EventIntro
+      {/* <a href="/dashboard"> */}
+      <EventIntro
         imageUrl="/testfile/backtrace3.svg"
         registrations={registrationCount}
         pricepool={11000}
         description="Reverse Engineering – Decode the Hardware is a logic-oriented technical event designed to evaluate participants’ ability to analyze, interpret, and reason about unknown hardware systems. The event emphasizes observation, deduction, and conceptual understanding rather than physical assembly or complex instrumentation."
         time="19, 20 & 21 Feb | 1:00 PM – 5:30 PM"
         venue="TB 01 & TB 07"
-      /></a>
+      />
+      {/* </a> */}
 
       <div className="flex flex-col items-center">
         <div className="bg-transparent text-white p-6 md:p-12 space-y-32 w-full">
-
           {/* Rounds Section */}
           <section className="px-4">
             <RoundSection rounds={rounds} />
@@ -119,7 +120,6 @@ const Page = () => {
           <WhyParticipate reasons={reasons} />
           <RulesAndRegulation rules={rules} />
           <EventManagers managers={managers} />
-
         </div>
       </div>
     </>

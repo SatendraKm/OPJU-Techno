@@ -22,9 +22,21 @@ const Antaragni = () => {
   ];
 
   const managers = [
-    { imageUrl: "/placeholder-pic.jpeg", name: "Priya Singh", contact: 8709538215 },
-    { imageUrl: "/placeholder-pic.jpeg", name: "Rudraksh Dubey", contact: 8827986525 },
-    { imageUrl: "/placeholder-pic.jpeg", name: "Vanshika Gupta", contact: 9039896991 },
+    {
+      imageUrl: "/placeholder-pic.jpeg",
+      name: "Priya Singh",
+      contact: 8709538215,
+    },
+    {
+      imageUrl: "/placeholder-pic.jpeg",
+      name: "Rudraksh Dubey",
+      contact: 8827986525,
+    },
+    {
+      imageUrl: "/placeholder-pic.jpeg",
+      name: "Vanshika Gupta",
+      contact: 9039896991,
+    },
   ];
 
   const rounds = [
@@ -49,7 +61,7 @@ const Antaragni = () => {
 
       {/* Event Intro Section */}
       <section>
-        <a href="/dashboard">
+        {/* <a href="/dashboard"> */}
         <EventIntro
           imageUrl="/testfile/Antragini3.svg"
           registrations={registrationCount}
@@ -58,7 +70,7 @@ const Antaragni = () => {
           time="19-02-26 , 7:30 pm"
           venue="UNIVERSITY PLAYGROUND"
         />
-        </a>
+        {/* </a> */}
       </section>
 
       <p className="mt-20 text-2xl md:text-4xl font-protest-revolution text-white tracking-[0.15em] text-center">
@@ -77,10 +89,26 @@ const Antaragni = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <SubEventCard Icon={FaRunning} title="Solo Dance / Group Dance" description="Unleash your passion for dance..." />
-          <SubEventCard Icon={FaMusic} title="Solo Singing" description="Sing your heart out..." />
-          <SubEventCard Icon={FaFilm} title="Short Film" description="Tell a compelling story..." />
-          <SubEventCard Icon={FaMicrophone} title="Rap / Beat-boxing" description="Battle it out with words and rhythm..." />
+          <SubEventCard
+            Icon={FaRunning}
+            title="Solo Dance / Group Dance"
+            description="Unleash your passion for dance..."
+          />
+          <SubEventCard
+            Icon={FaMusic}
+            title="Solo Singing"
+            description="Sing your heart out..."
+          />
+          <SubEventCard
+            Icon={FaFilm}
+            title="Short Film"
+            description="Tell a compelling story..."
+          />
+          <SubEventCard
+            Icon={FaMicrophone}
+            title="Rap / Beat-boxing"
+            description="Battle it out with words and rhythm..."
+          />
         </div>
       </section>
 
@@ -88,85 +116,96 @@ const Antaragni = () => {
       <RoundSection rounds={rounds} />
 
       {/* Evaluation Process */}
-<section className="mb-20">
-  <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
-    EVALUATION PROCESS
-  </h2>
+      <section className="mb-20">
+        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
+          EVALUATION PROCESS
+        </h2>
 
-  <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-6xl mx-auto space-y-10">
+        <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-6xl mx-auto space-y-10">
+          {/* Judging Criteria */}
+          <div>
+            <h3 className="text-3xl sm:text-4xl font-semibold text-center mb-6 text-gray-100">
+              1. Judging Criteria
+            </h3>
 
-    {/* Judging Criteria */}
-    <div>
-      <h3 className="text-3xl sm:text-4xl font-semibold text-center mb-6 text-gray-100">
-        1. Judging Criteria
-      </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse text-gray-200 text-xl sm:text-2xl">
+                <thead>
+                  <tr className="border-b border-gray-500">
+                    <th className="py-3">Criteria</th>
+                    <th className="py-3 text-right">Weightage</th>
+                  </tr>
+                </thead>
+                <tbody className="space-y-2">
+                  <tr className="border-b border-gray-700">
+                    <td className="py-3">
+                      Performance & Talent (Singing / Dancing / Acting Skills)
+                    </td>
+                    <td className="py-3 text-right">30 Marks</td>
+                  </tr>
+                  <tr className="border-b border-gray-700">
+                    <td className="py-3">
+                      Expression & Creativity (Emotions, Originality, Stage
+                      Presence)
+                    </td>
+                    <td className="py-3 text-right">20 Marks</td>
+                  </tr>
+                  <tr className="border-b border-gray-700">
+                    <td className="py-3">
+                      Song / Act Selection (Appropriateness & Uniqueness)
+                    </td>
+                    <td className="py-3 text-right">15 Marks</td>
+                  </tr>
+                  <tr className="border-b border-gray-700">
+                    <td className="py-3">
+                      Costume & Presentation (Dress, Props, Overall Appearance)
+                    </td>
+                    <td className="py-3 text-right">15 Marks</td>
+                  </tr>
+                  <tr className="border-b border-gray-700">
+                    <td className="py-3">
+                      Discipline & Decorum (Punctuality, Behavior, Rule
+                      Compliance)
+                    </td>
+                    <td className="py-3 text-right">10 Marks</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3">
+                      Audience Engagement (Confidence, Interaction, Energy)
+                    </td>
+                    <td className="py-3 text-right">10 Marks</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse text-gray-200 text-xl sm:text-2xl">
-          <thead>
-            <tr className="border-b border-gray-500">
-              <th className="py-3">Criteria</th>
-              <th className="py-3 text-right">Weightage</th>
-            </tr>
-          </thead>
-          <tbody className="space-y-2">
-            <tr className="border-b border-gray-700">
-              <td className="py-3">Performance & Talent (Singing / Dancing / Acting Skills)</td>
-              <td className="py-3 text-right">30 Marks</td>
-            </tr>
-            <tr className="border-b border-gray-700">
-              <td className="py-3">Expression & Creativity (Emotions, Originality, Stage Presence)</td>
-              <td className="py-3 text-right">20 Marks</td>
-            </tr>
-            <tr className="border-b border-gray-700">
-              <td className="py-3">Song / Act Selection (Appropriateness & Uniqueness)</td>
-              <td className="py-3 text-right">15 Marks</td>
-            </tr>
-            <tr className="border-b border-gray-700">
-              <td className="py-3">Costume & Presentation (Dress, Props, Overall Appearance)</td>
-              <td className="py-3 text-right">15 Marks</td>
-            </tr>
-            <tr className="border-b border-gray-700">
-              <td className="py-3">Discipline & Decorum (Punctuality, Behavior, Rule Compliance)</td>
-              <td className="py-3 text-right">10 Marks</td>
-            </tr>
-            <tr>
-              <td className="py-3">Audience Engagement (Confidence, Interaction, Energy)</td>
-              <td className="py-3 text-right">10 Marks</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+          {/* Evaluation Stages */}
+          <div>
+            <h3 className="text-3xl sm:text-4xl font-semibold text-center mb-4 text-gray-100">
+              2. Evaluation Stages
+            </h3>
 
-    {/* Evaluation Stages */}
-    <div>
-      <h3 className="text-3xl sm:text-4xl font-semibold text-center mb-4 text-gray-100">
-        2. Evaluation Stages
-      </h3>
+            <ul className="list-disc pl-6 text-2xl sm:text-3xl space-y-2 text-gray-200 text-center sm:text-left">
+              <li>Audition Round</li>
+              <li>Elimination Rounds</li>
+              <li>Final Round</li>
+            </ul>
+          </div>
 
-      <ul className="list-disc pl-6 text-2xl sm:text-3xl space-y-2 text-gray-200 text-center sm:text-left">
-        <li>Audition Round</li>
-        <li>Elimination Rounds</li>
-        <li>Final Round</li>
-      </ul>
-    </div>
+          {/* Decision Making */}
+          <div>
+            <h3 className="text-3xl sm:text-4xl font-semibold text-center mb-4 text-gray-100">
+              3. Decision Making & Results
+            </h3>
 
-    {/* Decision Making */}
-    <div>
-      <h3 className="text-3xl sm:text-4xl font-semibold text-center mb-4 text-gray-100">
-        3. Decision Making & Results
-      </h3>
-
-      <p className="text-2xl sm:text-3xl text-gray-200 text-center leading-relaxed">
-        The judges’ decision will be final and binding. Results will be declared
-        based on cumulative scores across all evaluation stages.
-      </p>
-    </div>
-
-  </div>
-</section>
-
+            <p className="text-2xl sm:text-3xl text-gray-200 text-center leading-relaxed">
+              The judges’ decision will be final and binding. Results will be
+              declared based on cumulative scores across all evaluation stages.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Rules & Managers */}
       <RulesAndRegulation rules={rules} />

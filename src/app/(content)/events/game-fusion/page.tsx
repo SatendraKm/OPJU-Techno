@@ -1,5 +1,5 @@
 "use client";
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import WhyParticipate from "@/components/sub-component/why-participate";
@@ -23,7 +23,7 @@ const Page = () => {
     "Match results will be shared on the WhatsApp group after each match.",
     "Overall Points Table will be shared after all matches.",
     "For Valorant, every participant must bring their own laptop.",
-    "For FIFA MOBILE only android and IOS devices are allowed."
+    "For FIFA MOBILE only android and IOS devices are allowed.",
   ];
 
   const reasons = [
@@ -37,18 +37,34 @@ const Page = () => {
   ];
 
   const managers = [
-    { imageUrl: "/managers/Game Fusion/Rohan.jpg", name: "Rohan Prasad", contact: 7903654631 },
-    { imageUrl: "/managers/Game Fusion/Saket.jpg", name: "Saket Bhagat", contact: 6203182795 },
-    { imageUrl: "/managers/Game Fusion/SARVESH.jpg", name: "Sarvesh Rathore", contact: 8349374721 },
-    { imageUrl: "/managers/Game Fusion/SHUBHAM.jpg", name: "Shubham Baghel", contact: 6296507314 },
+    {
+      imageUrl: "/managers/Game Fusion/Rohan.jpg",
+      name: "Rohan Prasad",
+      contact: 7903654631,
+    },
+    {
+      imageUrl: "/managers/Game Fusion/Saket.jpg",
+      name: "Saket Bhagat",
+      contact: 6203182795,
+    },
+    {
+      imageUrl: "/managers/Game Fusion/SARVESH.jpg",
+      name: "Sarvesh Rathore",
+      contact: 8349374721,
+    },
+    {
+      imageUrl: "/managers/Game Fusion/SHUBHAM.jpg",
+      name: "Shubham Baghel",
+      contact: 6296507314,
+    },
   ];
 
-  const [registrationCount, setRegistrationCount] = useState(0)
+  const [registrationCount, setRegistrationCount] = useState(0);
   useEffect(() => {
     getRegistrationCount("GAMEFUSION").then((count) => {
-      setRegistrationCount(count)
-    })
-  }, [])
+      setRegistrationCount(count);
+    });
+  }, []);
 
   return (
     <div className="">
@@ -65,7 +81,7 @@ const Page = () => {
 
       {/* Event Intro Section */}
       <section>
-        <a href="/dashboard">
+        {/* <a href="/dashboard"> */}
         <EventIntro
           imageUrl="/techno-events-logo/gamefusion.png"
           registrations={registrationCount}
@@ -74,7 +90,7 @@ const Page = () => {
           time="21-03-25 , 12:00 pm"
           venue="TB01, TB05, TB07"
         />
-        </a>
+        {/* </a> */}
       </section>
 
       {/* Theme Section */}
@@ -83,7 +99,10 @@ const Page = () => {
           THEME
         </h2>
         <div className="text-white text-base sm:text-lg md:text-2xl font-medium text-center tracking-[3.75px]">
-          <p>Unleash the Gaming Warriors: A Batt  le for Supremacy in the Virtual Realm of Gaming!</p>
+          <p>
+            Unleash the Gaming Warriors: A Batt le for Supremacy in the Virtual
+            Realm of Gaming!
+          </p>
         </div>
       </section>
 
@@ -94,7 +113,10 @@ const Page = () => {
             Sub-events
           </h2>
           <p className="text-lg sm:text-2xl text-white font-medium ">
-            Following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don&apos;t miss your chance to participate and showcase your skills!
+            Following are the sub-events of this main event. Read the details
+            carefully and choose the ones that best match your interests and
+            expertise. Don&apos;t miss your chance to participate and showcase
+            your skills!
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -136,7 +158,9 @@ const Page = () => {
                 <h2 className="text-lg lg:text-3xl font-medium font-['Poppins'] mb-2">
                   {round.title}
                 </h2>
-                <p className="text-sm lg:text-xl font-['Poppins']">{round.subtitle}</p>
+                <p className="text-sm lg:text-xl font-['Poppins']">
+                  {round.subtitle}
+                </p>
               </div>
             ))}
           </div>

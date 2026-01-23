@@ -40,9 +40,7 @@ export const eventSubEventData = {
     {
       eventName: "MASTERCHEF",
       event: "696e7207cd8b052c9846b6dc",
-      subEvents: [
-          
-      ],
+      subEvents: [],
     },
     {
       eventName: "KALAKRITI",
@@ -53,27 +51,38 @@ export const eventSubEventData = {
           subEventName: "wow to wow ",
           subEvent: "696e7207cd8b052c9846b6d5",
         },
-        { subEventName: "Faces That Speak", subEvent: "696e7207cd8b052c9846b6d9" },
+        {
+          subEventName: "Faces That Speak",
+          subEvent: "696e7207cd8b052c9846b6d9",
+        },
         {
           subEventName: "Rangoli",
           subEvent: "696e7207cd8b052c9846b6d7",
         },
-        { subEventName: "Colour Painting", subEvent: "696e7207cd8b052c9846b6d6" },
+        {
+          subEventName: "Colour Painting",
+          subEvent: "696e7207cd8b052c9846b6d6",
+        },
         { subEventName: "Alpana", subEvent: "696e7207cd8b052c9846b6d8" },
       ],
     },
-   
-   {
+
+    {
       eventName: "CODIGO",
       event: "",
       subEvents: [
-        { subEventName: "Codigo  Design Master (UI/UX)", subEvent: "696e7207cd8b052c9846b6c8" },
-        { subEventName: "Codigo  Coding Challenge", subEvent: "696e7207cd8b052c9846b6c7" },
+        {
+          subEventName: "Codigo  Design Master (UI/UX)",
+          subEvent: "696e7207cd8b052c9846b6c8",
+        },
+        {
+          subEventName: "Codigo  Coding Challenge",
+          subEvent: "696e7207cd8b052c9846b6c7",
+        },
       ],
     },
-   
-    
-   {
+
+    {
       eventName: "IDEATHON",
       event: "696e7207cd8b052c9846b6c1",
       subEvents: [],
@@ -96,7 +105,7 @@ export const eventSubEventData = {
       //696e7207cd8b052c9846b6ca
     },
     {
-      eventName: "AIMA ",
+      eventName: "AIMA",
       event: "696e7207cd8b052c9846b6d1",
       subEvents: [],
     },
@@ -105,15 +114,14 @@ export const eventSubEventData = {
       event: "696e7207cd8b052c9846b6cb",
       subEvents: [],
     },
-   //696e7207cd8b052c9846b6cb
-   //696e7207cd8b052c9846b6cb
+    //696e7207cd8b052c9846b6cb
+    //696e7207cd8b052c9846b6cb
     {
       eventName: "VOICE-OF-YOUTH",
       event: "696e7207cd8b052c9846b6cf",
       subEvents: [],
     },
-  
-    
+
     {
       eventName: "BEAT-BATTLE",
       event: "696e7207cd8b052c9846b6d2",

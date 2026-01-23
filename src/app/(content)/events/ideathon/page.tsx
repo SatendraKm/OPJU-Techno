@@ -78,12 +78,12 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro */}
-      <a href="/dashboard">
-        <EventIntro
-          imageUrl="/testfile/ideathon3.svg"
-          registrations={registrationCount}
-          pricepool={18000}
-          description={`“Building Solutions Through Innovation..”
+      {/* <a href="/dashboard"> */}
+      <EventIntro
+        imageUrl="/testfile/ideathon3.svg"
+        registrations={registrationCount}
+        pricepool={18000}
+        description={`“Building Solutions Through Innovation..”
 Welcome to IDEATHON—an inspiring platform where curiosity fuels creativity and real-world challenges spark innovative solutions. Be a part of a dynamic community of bold thinkers and change-makers who challenge conventions and create the remarkable.
 
 The Objective:
@@ -93,14 +93,13 @@ Ideathon is a collaborative, innovation-driven journey designed to empower creat
 • Connect & Collaborate: Engage with students and innovators from diverse backgrounds.
 • Refine & Elevate: Present your ideas to experts, gain valuable feedback.
 • Learn & Lead: Strengthen leadership and entrepreneurial mindset.`}
-          time="19-02-2026, 11:30 AM"
-          venue="EE Seminar Hall (FB-14)"
-        />
-      </a>
+        time="19-02-2026, 11:30 AM"
+        venue="EE Seminar Hall (FB-14)"
+      />
+      {/* </a> */}
 
       <div className="flex flex-col items-center text-white">
         <div className="bg-transparent p-6 md:p-12 space-y-32">
-
           {/* Theme */}
           <section className="px-4 flex flex-col items-center space-y-12">
             <div className="text-center max-w-2xl bg-[#33010140] p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">

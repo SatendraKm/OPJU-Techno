@@ -42,8 +42,6 @@ const Page = () => {
       name: "Avinash Agarwal",
       contact: 9691846192,
     },
-   
-    
   ];
 
   const [registrationCount, setRegistrationCount] = useState(0);
@@ -60,7 +58,7 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
-      <a href="/dashboard">
+      {/* <a href="/dashboard"> */}
       <EventIntro
         imageUrl="/testfile/voiceofyouth.svg"
         registrations={registrationCount}
@@ -68,7 +66,8 @@ const Page = () => {
         description="A fun flagship event where participants showcase talents like singing, dancing, comedy, or magic while also predicting their own score. An exact match with the judges' score wins instantly, making it a unique test of skill, confidence, and self-awareness. Entertain, guess, and win."
         time="19-02-26 , 12:00 pm"
         venue="MP HALL "
-      /></a>
+      />
+      {/* </a> */}
 
       {/* About / How It Works */}
       <section className="flex flex-col items-center px-4 my-10">
@@ -77,9 +76,17 @@ const Page = () => {
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl w-full">
           <p className="text-xl sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
-           Step into the intellectual battlefield of tarkash, where logic meets leadership, and arguments shape innovation. This high-energy debate competition is designed for aspiring managers, entrepreneurs, and business enthusiasts as well as others to challenge conventional wisdom and present ground breaking perspectives.
-Participants will engage in thought-provoking debates on current business trends, corporate ethics, financial strategies, and emerging market dynamics, Socio political matters and also current happening. Whether you&apos;re defending or opposing, your ability to think critically, articulate persuasively, and counter strategically will determine your victory.
-
+            Step into the intellectual battlefield of tarkash, where logic meets
+            leadership, and arguments shape innovation. This high-energy debate
+            competition is designed for aspiring managers, entrepreneurs, and
+            business enthusiasts as well as others to challenge conventional
+            wisdom and present ground breaking perspectives. Participants will
+            engage in thought-provoking debates on current business trends,
+            corporate ethics, financial strategies, and emerging market
+            dynamics, Socio political matters and also current happening.
+            Whether you&apos;re defending or opposing, your ability to think
+            critically, articulate persuasively, and counter strategically will
+            determine your victory.
           </p>
         </div>
       </section>
