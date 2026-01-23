@@ -199,7 +199,7 @@ const Payments = ({
 					<p>
 						Scan QR or{" "}
 						<a
-							href="https://smartpay.easebuzz.in/125084/Technorollix2025"
+							href="https://smartpay.easebuzz.in/125084/Technorollix-2026"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-blue-500 underline"
@@ -214,7 +214,7 @@ const Payments = ({
 					<div className="flex justify-center my-4">
 						{/* Replace with actual QR code or payment link */}
 						<Image
-							src="/payments/technoQR.png"
+							src="/payments/technoQR.jpeg"
 							alt="QR Code"
 							width={270}
 							height={270}
