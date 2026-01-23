@@ -5,219 +5,263 @@ import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 
 interface UserData {
-	email: string;
-	password: string;
-	fullName: string;
-	branch?: string;
-	enrollmentNumber?: string;
-	mobileNumber: string;
-	address?: string;
-	isOutsider: boolean;
+  email: string;
+  password: string;
+  fullName: string;
+  branch?: string;
+  enrollmentNumber?: string;
+  mobileNumber: string;
+  address?: string;
+  isOutsider: boolean;
 }
 
 // ===================== SIGNUP =====================
 export const userSignup = async (userData: UserData): Promise<IUser> => {
-	await connectToDatabase();
+  await connectToDatabase();
 
-	const {
-	email,
-	password,
-	fullName,
-	branch,
-	enrollmentNumber,
-	mobileNumber,
-	address,
-} = userData;
+  const {
+    email,
+    password,
+    fullName,
+    branch,
+    enrollmentNumber,
+    mobileNumber,
+    address,
+  } = userData;
 
-let { isOutsider } = userData;
+  let { isOutsider } = userData;
 
+  const normalizedEmail = email.toLowerCase().trim();
 
-	const normalizedEmail = email.toLowerCase().trim();
+  // 🔥 FREE REGISTRATION LOGIC
+  if (normalizedEmail.endsWith("@opju.ac.in")) {
+    isOutsider = false; // OPJU students = FREE
+  }
 
-	// 🔥 FREE REGISTRATION LOGIC
-	if (normalizedEmail.endsWith("@opju.ac.in")) {
-		isOutsider = false; // OPJU students = FREE
-	}
+  // Check if user already exists
+  const existingUser = await User.findOne({ email: normalizedEmail });
+  if (existingUser) {
+    throw new Error("User already exists with this email");
+  }
 
-	// Check if user already exists
-	const existingUser = await User.findOne({ email: normalizedEmail });
-	if (existingUser) {
-		throw new Error("User already exists with this email");
-	}
+  const newUser = new User({
+    email: normalizedEmail,
+    password,
+    fullName,
+    branch,
+    enrollmentNumber,
+    mobileNumber,
+    address,
+    isOutsider,
+  });
 
-	const newUser = new User({
-		email: normalizedEmail,
-		password,
-		fullName,
-		branch,
-		enrollmentNumber,
-		mobileNumber,
-		address,
-		isOutsider
-	});
+  await newUser.save();
 
-	await newUser.save();
-
-	return JSON.parse(JSON.stringify(newUser));
+  return JSON.parse(JSON.stringify(newUser));
 };
 
 // ===================== LOGIN =====================
 interface LoginData {
-	email: string;
-	password: string;
+  email: string;
+  password: string;
 }
 
 export const userLogin = async (
-	loginData: LoginData
+  loginData: LoginData,
 ): Promise<{ user: IUser; token: string }> => {
-	await connectToDatabase();
+  await connectToDatabase();
 
-	const normalizedEmail = loginData.email.toLowerCase().trim();
+  const normalizedEmail = loginData.email.toLowerCase().trim();
 
-	const existingUser = await User.findOne({ email: normalizedEmail });
-	if (!existingUser) {
-		throw new Error("User does not exist with this email");
-	}
+  const existingUser = await User.findOne({ email: normalizedEmail });
+  if (!existingUser) {
+    throw new Error("User does not exist with this email");
+  }
 
-	if (existingUser.password !== loginData.password) {
-		throw new Error("Invalid password");
-	}
+  if (existingUser.password !== loginData.password) {
+    throw new Error("Invalid password");
+  }
 
-	const token = jwt.sign(
-		{
-			userId: existingUser._id,
-			email: normalizedEmail,
-		},
-		process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret",
-		{ expiresIn: "1h" }
-	);
+  const token = jwt.sign(
+    {
+      userId: existingUser._id,
+      email: normalizedEmail,
+    },
+    process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret",
+    { expiresIn: "1h" },
+  );
 
-	return JSON.parse(
-		JSON.stringify({
-			user: existingUser,
-			token,
-		})
-	);
+  return JSON.parse(
+    JSON.stringify({
+      user: existingUser,
+      token,
+    }),
+  );
 };
 
 // ===================== RESET PASSWORD =====================
 export const resetPassword = async (email: string, newPassword: string) => {
-	try {
-		await connectToDatabase();
+  try {
+    await connectToDatabase();
 
-		const normalizedEmail = email.toLowerCase().trim();
+    const normalizedEmail = email.toLowerCase().trim();
 
-		const user = await User.findOne({ email: normalizedEmail });
+    const user = await User.findOne({ email: normalizedEmail });
 
-		if (!user) {
-			throw new Error("User not found");
-		}
+    if (!user) {
+      throw new Error("User not found");
+    }
 
-		user.password = newPassword;
-		await user.save();
+    user.password = newPassword;
+    await user.save();
 
-		return JSON.parse(JSON.stringify({ success: true }));
-	} catch (error) {
-		if (error instanceof Error) {
-			throw new Error(`Failed to reset password: ${error.message}`);
-		} else {
-			throw new Error("Failed to reset password");
-		}
-	}
+    return JSON.parse(JSON.stringify({ success: true }));
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(`Failed to reset password: ${error.message}`);
+    } else {
+      throw new Error("Failed to reset password");
+    }
+  }
 };
 
 // ===================== GET USER FROM TOKEN =====================
 export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
-	await connectToDatabase();
+  await connectToDatabase();
 
-	if (!token) {
-		throw new Error("No auth token provided");
-	}
+  if (!token) {
+    throw new Error("No auth token provided");
+  }
 
-	try {
-		const decoded = jwt.verify(
-			token,
-			process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret"
-		) as { userId: string; email: string };
+  try {
+    const decoded = jwt.verify(
+      token,
+      process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret",
+    ) as { userId: string; email: string };
 
-		const user = await User.findOne({
-			_id: decoded.userId,
-			email: decoded.email.toLowerCase(),
-		});
+    const user = await User.findOne({
+      _id: decoded.userId,
+      email: decoded.email.toLowerCase(),
+    });
 
-		if (!user) {
-			throw new Error("User not found");
-		}
+    if (!user) {
+      throw new Error("User not found");
+    }
 
-		return JSON.parse(JSON.stringify(user));
-	} catch (error) {
-		console.error("Error verifying token or finding user:", error);
-		throw new Error("Invalid or expired token");
-	}
+    return JSON.parse(JSON.stringify(user));
+  } catch (error) {
+    console.error("Error verifying token or finding user:", error);
+    throw new Error("Invalid or expired token");
+  }
 };
 
 // ===================== GET CURRENT USER =====================
 export async function getUser() {
-	await connectToDatabase();
+  await connectToDatabase();
 
-	const authToken = (await cookies()).get("auth-token")?.value;
-	if (!authToken) return null;
+  const authToken = (await cookies()).get("auth-token")?.value;
+  if (!authToken) return null;
 
-	try {
-		const decoded = jwt.verify(
-			authToken,
-			process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret"
-		) as { userId: string; email: string };
+  try {
+    const decoded = jwt.verify(
+      authToken,
+      process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret",
+    ) as { userId: string; email: string };
 
-		const user = await User.findOne({
-			_id: decoded.userId,
-			email: decoded.email.toLowerCase(),
-		});
+    const user = await User.findOne({
+      _id: decoded.userId,
+      email: decoded.email.toLowerCase(),
+    });
 
-		return JSON.parse(JSON.stringify(user));
-	} catch (error) {
-		console.error("Error verifying token or finding user:", error);
-		return null;
-	}
+    return JSON.parse(JSON.stringify(user));
+  } catch (error) {
+    console.error("Error verifying token or finding user:", error);
+    return null;
+  }
 }
 
 // ===================== GET USERS BY EMAILS =====================
 export async function getUsersByEmails(
-	emails: string[]
+  emails: string[],
 ): Promise<(IUser & { createdAt: Date })[]> {
-	try {
-		await connectToDatabase();
+  try {
+    await connectToDatabase();
 
-		const normalizedEmails = emails.map((e) =>
-			e.toLowerCase().trim()
-		);
+    const normalizedEmails = emails.map((e) => e.toLowerCase().trim());
 
-		const users = await User.find({
-			email: { $in: normalizedEmails },
-		}).lean();
+    const users = await User.find({
+      email: { $in: normalizedEmails },
+    }).lean();
 
-		return JSON.parse(JSON.stringify(users));
-	} catch (error) {
-		if (error instanceof Error) {
-			throw new Error(`Failed to fetch users: ${error.message}`);
-		} else {
-			throw new Error("Failed to fetch users");
-		}
-	}
+    return JSON.parse(JSON.stringify(users));
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(`Failed to fetch users: ${error.message}`);
+    } else {
+      throw new Error("Failed to fetch users");
+    }
+  }
 }
 
 // ===================== GET OUTSIDERS =====================
 export async function getOutsiderUsers(): Promise<IUser[]> {
-	await connectToDatabase();
+  await connectToDatabase();
 
-	try {
-		const outsiderUsers = await User.find({ isOutsider: true }).lean<IUser>();
-		return JSON.parse(JSON.stringify(outsiderUsers));
-	} catch (error) {
-		if (error instanceof Error) {
-			throw new Error(`Failed to fetch outsider users: ${error.message}`);
-		} else {
-			throw new Error("Failed to fetch outsider users");
-		}
-	}
+  try {
+    const outsiderUsers = await User.find({ isOutsider: true }).lean<IUser>();
+    return JSON.parse(JSON.stringify(outsiderUsers));
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(`Failed to fetch outsider users: ${error.message}`);
+    } else {
+      throw new Error("Failed to fetch outsider users");
+    }
+  }
+}
+
+// ===================== GET USERS BY EMAILS WITH PAGINATION =====================
+export async function getUsersByEmailsPaginated(
+  emails: string[],
+  page: number = 1,
+  limit: number = 10,
+): Promise<{
+  users: (IUser & { createdAt: Date })[];
+  totalUsers: number;
+  totalPages: number;
+  currentPage: number;
+}> {
+  try {
+    await connectToDatabase();
+
+    const normalizedEmails = emails.map((e) => e.toLowerCase().trim());
+    const uniqueEmails = [...new Set(normalizedEmails)];
+
+    const totalUsers = await User.countDocuments({
+      email: { $in: uniqueEmails },
+    });
+
+    const skip = (page - 1) * limit;
+
+    const users = await User.find({
+      email: { $in: uniqueEmails },
+    })
+      .skip(skip)
+      .limit(limit)
+      .lean();
+
+    return JSON.parse(
+      JSON.stringify({
+        users,
+        totalUsers,
+        totalPages: Math.ceil(totalUsers / limit),
+        currentPage: page,
+      }),
+    );
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(`Failed to fetch users: ${error.message}`);
+    } else {
+      throw new Error("Failed to fetch users");
+    }
+  }
 }

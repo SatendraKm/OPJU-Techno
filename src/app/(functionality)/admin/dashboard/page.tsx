@@ -43,31 +43,29 @@ export default function AdminDashboard() {
   } = useFetch(getManagedEventsAction);
 
   useEffect(() => {
-  const fetchData = async () => {
-    await userFetchFn();
-  };
+    const fetchData = async () => {
+      await userFetchFn();
+    };
 
-  fetchData();
-}, [userFetchFn]);
+    fetchData();
+  }, []);
 
-
- useEffect(() => {
-  if (userFetchData) {
-    if (userFetchData.permissions.isManager) {
-      managedEventsFetchFn(userFetchData.permissions.managedEvents);
-    } else {
-      eventsFetchFn();
+  useEffect(() => {
+    if (userFetchData) {
+      if (userFetchData.permissions.isManager) {
+        managedEventsFetchFn(userFetchData.permissions.managedEvents);
+      } else {
+        eventsFetchFn();
+      }
     }
-  }
-}, [userFetchData, managedEventsFetchFn, eventsFetchFn]);
-
+  }, [userFetchData]);
 
   useEffect(() => {
     if (eventsFetchData) {
       const sortedEventDetails = eventsFetchData.events.sort(
         (a: IEvent, b: IEvent) => {
           return eventOrder.indexOf(a.name) - eventOrder.indexOf(b.name);
-        }
+        },
       );
       setEventsData(sortedEventDetails);
       setFilteredEvents(sortedEventDetails);
@@ -78,7 +76,7 @@ export default function AdminDashboard() {
       const sortedManagedEvents = managedEventsFetchData.events.sort(
         (a: IEvent, b: IEvent) => {
           return eventOrder.indexOf(a.name) - eventOrder.indexOf(b.name);
-        }
+        },
       );
       setEventsData(sortedManagedEvents);
       setFilteredEvents(sortedManagedEvents);
@@ -100,7 +98,7 @@ export default function AdminDashboard() {
   // Filter events based on search query
   useEffect(() => {
     const filtered = eventsData.filter((event) =>
-      event.name.toLowerCase().includes(searchQuery.toLowerCase())
+      event.name.toLowerCase().includes(searchQuery.toLowerCase()),
     );
     setFilteredEvents(filtered);
   }, [searchQuery, eventsData]);

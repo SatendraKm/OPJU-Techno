@@ -13,17 +13,17 @@ const Page = () => {
   /* ===================== EVENT MANAGERS ===================== */
   const managers = [
     {
-      imageUrl: "",
+      imageUrl: "/managers/codigo/divakar.jpg",
       name: "Divakar Yadav",
       contact: 9691300315,
     },
     {
-      imageUrl: "/managers/codigo/swapnil.jpg",
+      imageUrl: "/managers/codigo/divakar.jpg",
       name: "Swapnil Chatterjee",
       contact: 8085934908,
     },
     {
-      imageUrl: "/managers/codigo/aniruddha.jpg",
+      imageUrl: "/managers/codigo/divakar.jpg",
       name: "AniruddhaSinghGautam",
       contact: 6260225774,
     },
@@ -46,16 +46,14 @@ const Page = () => {
 
       {/* Event Intro */}
       <a href="/dashboard">
-      <EventIntro
-        imageUrl="/testfile/codigo3.svg"
-        registrations={registrationCount}
-        pricepool={20000}
-        description="Unlock your coding potential at our University’s premier Coding Event! Participate in challenges, network with peers, and enhance your skills. Whether you are a beginner or a pro, join us for an unforgettable experience of innovation and collaboration."
-        time="19-02-2026, 11:00 AM"
-        venue="TB-09"
-        
-      />
-
+        <EventIntro
+          imageUrl="/testfile/codigo3.svg"
+          registrations={registrationCount}
+          pricepool={20000}
+          description="Unlock your coding potential at our University’s premier Coding Event! Participate in challenges, network with peers, and enhance your skills. Whether you are a beginner or a pro, join us for an unforgettable experience of innovation and collaboration."
+          time="19-02-2026, 11:00 AM"
+          venue="TB-09"
+        />
       </a>
       {/* Theme */}
       <section className="my-32 text-center">
@@ -139,7 +137,8 @@ const Page = () => {
               Round 2: High-Fidelity UI/UX Design (Final Round)
             </h3>
             <p className="text-white text-lg">
-              Themes will be provided on the spot. Judges’ decision will be final.
+              Themes will be provided on the spot. Judges’ decision will be
+              final.
             </p>
           </div>
         </div>
