@@ -41,7 +41,16 @@ const About = () => {
               OPJU
             </h5>
             <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              OPJU was founded by the Jindal Education and Welfare Society...
+            OPJU was founded by the Jindal Education and
+Welfare Society, OP Jindal University (OPJU)
+was set up to bring high quality education to
+its students based on a world class curriculum,
+the latest teaching methodology and committed
+faculty members. The multidisciplinary
+university aims to develop young professionals
+and future leaders who will not only power
+growth and development in the state, but also
+make a mark globally. 
             </p>
           </div>
         </div>
@@ -53,7 +62,16 @@ const About = () => {
               TECHNOAIMBIATION 2026
             </h5>
             <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              TechnoaiMBiAtion is Central India&apos;s biggest techno-cultural extravaganza...
+             Technorollix is Central OPJU&apos;s
+ biggest techno-
+cultural extravaganza, bringing together
+innovation, creativity, and entertainment on a
+grand scale. With a diverse mix of technical
+competitions, cultural performances, and
+engaging workshops, it’s a platform where
+technology meets artistry. Join us for an
+electrifying experience that pushes boundaries
+and celebrates the spirit of innovation!
             </p>
           </div>
 
@@ -85,7 +103,14 @@ const About = () => {
               JUNOON
             </h5>
             <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              OPJU Junoon is an annual cultural extravaganza...
+              OPJU Junoon is an annual cultural
+extravaganza hosted by the O.P. Jindal
+University (OPJU) in Chhattisgarh, India. This
+vibrant event showcases the diverse talents of
+people across various domains including music
+and dance. In 2018, We had Shirley Setia. In
+2020, we had Jubin Nautiyal and Sunburn and
+in 2023, we had DJ Perisha.
             </p>
           </div>
         </div>
