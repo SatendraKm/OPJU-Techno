@@ -3,14 +3,14 @@ export const eventSubEventData = {
     {
       eventName: "TECHLAB",
       event: "",
-      subEvents: [
+      subEvents: [//696e7207cd8b052c9846b6bd
         { subEventName: "Working", subEvent: "696e7207cd8b052c9846b6bd" },
         { subEventName: "Non-working", subEvent: "696e7207cd8b052c9846b6be" },
         {
           subEventName: "Poster Presentation",
           subEvent: "67c15d4de3c4c72ebbd459d5",
         },
-        { subEventName: "App Making", subEvent: "696e7207cd8b052c9846b6bf" },
+        { subEventName: "App Making", subEvent: "696e7207cd8b052c9846b6c0" },
       ],
     },
     {
@@ -51,77 +51,76 @@ export const eventSubEventData = {
           subEventName: "wow to wow ",
           subEvent: "696e7207cd8b052c9846b6d5",
         },
-        {
-          subEventName: "Faces That Speak",
-          subEvent: "696e7207cd8b052c9846b6d9",
-        },
+        { subEventName: "Faces That Speak", subEvent: "696e7207cd8b052c9846b6d9" },
         {
           subEventName: "Rangoli",
           subEvent: "696e7207cd8b052c9846b6d7",
         },
-        {
-          subEventName: "Colour Painting",
-          subEvent: "696e7207cd8b052c9846b6d6",
-        },
+        { subEventName: "Colour Painting", subEvent: "696e7207cd8b052c9846b6d6" },
         { subEventName: "Alpana", subEvent: "696e7207cd8b052c9846b6d8" },
       ],
     },
-
-    {
+   
+   {
       eventName: "CODIGO",
       event: "",
       subEvents: [
-        {
-          subEventName: "Codigo  Design Master (UI/UX)",
-          subEvent: "696e7207cd8b052c9846b6c8",
-        },
-        {
-          subEventName: "Codigo  Coding Challenge",
-          subEvent: "696e7207cd8b052c9846b6c7",
-        },
+        { subEventName: "Codigo  Design Master (UI/UX)", subEvent: "696e7207cd8b052c9846b6c8" },
+        { subEventName: "Codigo  Coding Challenge", subEvent: "696e7207cd8b052c9846b6c7" },
       ],
     },
-
-    {
+   
+    
+   {
       eventName: "IDEATHON",
-      event: "696e7207cd8b052c9846b6c1",
-      subEvents: [],
+      event: "",
+      subEvents: [
+        { subEventName: "Ideathon 1", subEvent: "696e7207cd8b052c9846b6c1" },
+        { subEventName: "Ideathon 2", subEvent: "696e7207cd8b052c9846b6c2" },
+      ],
     },
     {
       eventName: "RIWAYAT-(FASHION-SHOW)",
       event: "696e7207cd8b052c9846b6da",
       subEvents: [],
-    },
+    },//696e7207cd8b052c9846b6da
     {
       eventName: "ROADIES",
       event: "696e7207cd8b052c9846b6d0",
       subEvents: [],
+      //696e7207cd8b052c9846b6d0
     },
     {
       eventName: "DESIGNATHON",
-      event: "696e7207cd8b052c9846b6c9",
+      event: "696e7207cd8b052c9846b6ca",
       subEvents: [],
       //696e7207cd8b052c9846b6c9
+      //696e7207cd8b052c9846b6ca
       //696e7207cd8b052c9846b6ca
     },
     {
       eventName: "AIMA",
       event: "696e7207cd8b052c9846b6d1",
       subEvents: [],
-    },
+    },//696e7207cd8b052c9846b6d1
+    //696e7207cd8b052c9846b6d1
     {
       eventName: "BACKTRACE",
       event: "696e7207cd8b052c9846b6cb",
       subEvents: [],
+      //696e7207cd8b052c9846b6cb
+      //696e7207cd8b052c9846b6cb
     },
-    //696e7207cd8b052c9846b6cb
-    //696e7207cd8b052c9846b6cb
+   //696e7207cd8b052c9846b6cb
+   //696e7207cd8b052c9846b6cb
     {
       eventName: "VOICE-OF-YOUTH",
-      event: "696e7207cd8b052c9846b6cf",
+      event: "696e7207cd8b052c9846b6ce",
+      //696e7207cd8b052c9846b6ce
       subEvents: [],
     },
-
+  
+    
     {
       eventName: "BEAT-BATTLE",
       event: "696e7207cd8b052c9846b6d2",
@@ -129,7 +128,7 @@ export const eventSubEventData = {
     },
     {
       eventName: "STARTUP-BUSINESS-PLAN",
-      event: "67c16066e3c4c72ebbd45a0d",
+      event: "696e7207cd8b052c9846b6ce",
       subEvents: [],
     },
   ],

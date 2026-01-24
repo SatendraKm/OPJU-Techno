@@ -40,7 +40,7 @@ const Page = () => {
 
   const [registrationCount, setRegistrationCount] = useState(0);
   useEffect(() => {
-    getRegistrationCount("RIWAYAT-2.0").then((count) => {
+    getRegistrationCount("RIWAYAT-(FASHION-SHOW)").then((count) => {
       setRegistrationCount(count);
     });
   }, []);

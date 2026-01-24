@@ -36,7 +36,13 @@ const Page = () => {
   const [registrationCount, setRegistrationCount] = useState(0);
 
   useEffect(() => {
-    getRegistrationCount("ROBOVATION").then(setRegistrationCount);
+    getRegistrationCount("ROBOVATION")
+   .then((count) => {
+        setRegistrationCount(count);
+      })
+      .catch(() => {
+        setRegistrationCount(0);
+      });
   }, []);
 
   return (

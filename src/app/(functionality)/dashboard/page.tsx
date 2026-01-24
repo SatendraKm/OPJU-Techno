@@ -130,14 +130,9 @@ const DashboardPage = () => {
   const isOPJU = userData?.email?.endsWith("@opju.ac.in");
 
   return (
-   <div className="min-h-screen">
-  <div className="container mx-auto p-6 space-y-6">
+    <div className="container mx-auto p-6 space-y-6">
 
-
-      <h1 className="text-4xl md:text-5xl font-bold text-center text-white">
-  Dashboard
-</h1>
-
+      <h1 className="text-3xl font-bold text-center">Dashboard</h1>
 
       {/* USER PROFILE */}
       {userData && (
@@ -304,7 +299,7 @@ const DashboardPage = () => {
       )}
 
       {isOPJU && (
-        <p className="text-white text-center font-semibold">
+        <p className="text-green-500 text-center font-semibold">
           FREE registration for OPJU students
         </p>
       )}
@@ -343,7 +338,6 @@ const DashboardPage = () => {
           </div>
         </DialogContent>
       </Dialog>
-    </div>
     </div>
   );
 };
