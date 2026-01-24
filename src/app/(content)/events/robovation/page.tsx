@@ -30,7 +30,7 @@ const Page = () => {
   ];
 
   /* ===================== RULEBOOK ===================== */
-  const pdfPath = "/rulebookrobovation.pdf";
+  const pdfPath = "/rulebookrr.pdf";
 
   /* ===================== STATE ===================== */
   const [registrationCount, setRegistrationCount] = useState(0);
