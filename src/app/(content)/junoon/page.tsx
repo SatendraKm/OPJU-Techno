@@ -4,18 +4,18 @@ import EventManagers from "@/components/sub-component/event-managers";
 export default function Junoon() {
   const managers = [
     {
-      imageUrl: "",
+      imageUrl: "/managers/Junoon/devendra.jpeg",
       name: "Devendra",
       contact: 9755305060,
     },
 
     {
-      imageUrl: "/managers/Junoon/sumitsingh.jpg",
+      imageUrl: "/managers/Junoon/sumit.jpeg",
       name: "Sumit Singh",
       contact: 7974944091,
     },
     {
-      imageUrl: "",
+      imageUrl: "/managers/Junoon/jeet.jpeg",
       name: "Jeet Jain",
       contact: 9827177970,
     },

@@ -26,7 +26,7 @@ const KalakritiSubEvent: React.FC<KalakritiSubEventProps> = ({ events }) => {
       {events.map((event, index) => (
         <div key={index} className="mb-20">
           <h1
-            className={`text-3xl md:text-4xl text-center font-medium ${gradientTextStyle}`}
+            className={`text-3xl md:text-4xl text-center font-medium font-['Georgia'] ${gradientTextStyle}`}
           >
             {event.title}
           </h1>

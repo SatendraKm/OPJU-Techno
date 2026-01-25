@@ -85,7 +85,7 @@ const teamSections = [
         image: "/placeholder-pic.jpeg",
       },
       {
-        name: "Sushree Srutirupa Pradhan",
+        name: "Sushree Srutipriya Pradhan",
         contact: "+91 7847891954",
         image: "/placeholder-pic.jpeg",
       },

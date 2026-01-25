@@ -28,20 +28,20 @@ const Page = () => {
   ];
 
   const rounds = [
-    {
-      title: "ROUND 1: Component Logic",
-      description:
-        "Fundamentals round focused on identifying electronic components, understanding their functions, and predicting outputs using unlabeled circuit diagrams, component images, and input-output tables. Pen and paper based with quick elimination.",
+     {
+  title: "ROUND 1: Pattern Finder",
+  description:
+    "Fundamentals round focused on observing patterns and identifying hidden logic connecting inputs to outputs. Participants analyze multiple input-output examples to deduce the underlying rules. Pen and paper based with quick elimination.",
     },
     {
-      title: "ROUND 2: Black-Box Reasoning",
-      description:
-        "System thinking round where teams decode the internal logic of an unknown hardware system using observed input-output behavior, timing tables, and system descriptions. Focus on logical inference and pattern recognition.",
+  title: "ROUND 2: Black Box Breakdown",
+  description:
+    "System thinking round where teams reverse-engineer an unknown multi-step system using only observable input-output behavior. Using multiple test cases and timing tables, teams must decode the internal logic and explain how the system works.",
     },
     {
-      title: "ROUND 3: Design Interpretation",
-      description:
-        "Advanced reasoning round involving analysis of partially decoded systems and simplified circuit flows. Teams identify logical flaws, suggest improvements, and justify them using basic electronics principles.",
+  title: "ROUND 3: System Reconstruction",
+  description:
+    "Advanced reasoning round involving analysis of partial system diagrams and incomplete logical flows. Teams identify logical flaws, complete missing components, suggest improvements, and justify their solutions using systematic reasoning principles.",
     },
   ];
 

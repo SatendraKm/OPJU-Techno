@@ -45,7 +45,7 @@ const FooterSection = () => {
             </Link>
 
             <Link
-              href="https://www.instagrahttps://www.instagram.com/technoaimbiation?igsh=cmJuc29mcGxnOG1zm.com/technorollix?igsh=NTFybXp2bmVuOWFo"
+              href="https://www.instagram.com/technoaimbiation/"
               target="_blank"
             >
               <FaInstagram
