@@ -23,7 +23,7 @@ const Antaragni = () => {
 
   const managers = [
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/Bhupati ",
       name: "Priya Singh",
       contact: 8709538215,
     },
