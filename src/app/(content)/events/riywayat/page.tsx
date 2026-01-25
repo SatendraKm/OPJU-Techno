@@ -19,8 +19,8 @@ const Page = () => {
     },
     {
       imageUrl: "/placeholder-pic.jpeg",
-      name: "Vnshika Narwani",
-      contact: 9755779621,
+      name: "Vanshika  Narwani",
+      contact: 9201725099,
     },
   ];
 

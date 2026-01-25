@@ -17,11 +17,7 @@ const Page = () => {
       name: "Bhoomi Chandra",
       contact: 8103501661,
     },
-    {
-      imageUrl: "/placeholder-pic.jpeg",
-      name: "Rimjhim Sahu",
-      contact: 9303394225,
-    },
+    
   ];
 
   const rules = [
