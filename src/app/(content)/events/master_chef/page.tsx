@@ -8,9 +8,21 @@ import { getRegistrationCount } from "@/actions/event-actions";
 const Page = () => {
   const managers = [
     {
-      imageUrl: "/managers/MasterChef/NITIN.jpg",
-      name: "Nitin Goyal",
-      contact: 9669464118,
+      imageUrl: "/managers/MasterChef/MasterChef/2. Soubhagya Behra - 8144811027.jpg",
+      name: "Soubhagya Behra",
+      contact: 8144811027,
+    },
+
+        {
+      imageUrl: "/managers/MasterChef/MasterChef/3. Debashish Mahato - 9142551077.jpg",
+      name: "Devbashish Mahato",
+      contact: 9142551077,
+    },
+
+        {
+      imageUrl: "/managers/MasterChef/MasterChef/1. Naman Goyal - 9032669650.jpg",
+      name: "Naman Goyal",
+      contact: 9032669650,
     },
   ];
 

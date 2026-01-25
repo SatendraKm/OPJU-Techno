@@ -8,6 +8,7 @@ import { FaMusic, FaFilm, FaMicrophone, FaRunning } from "react-icons/fa";
 import RoundSection from "@/components/sub-component/RoundSection";
 import { getRegistrationCount } from "@/actions/event-actions";
 
+
 const Antaragni = () => {
   const rules = [
     "All participants must arrive at least 30 minutes before the event starts. Latecomers will not be allowed to perform",
@@ -23,17 +24,17 @@ const Antaragni = () => {
 
   const managers = [
     {
-      imageUrl: "/managers/Bhupati ",
-      name: "Priya Singh",
-      contact: 8709538215,
-    },
+    imageUrl: "/managers/Antaragni/Antaragni/priya.jpg",
+    name: "Priya Singh",
+    contact: 8709538215,
+  },
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/Antaragni/Antaragni/rudraksh.jpg",
       name: "Rudraksh Dubey",
       contact: 8827986525,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/Antaragni/Antaragni/vanshika.jpg",
       name: "Vanshika Gupta",
       contact: 9039896991,
     },

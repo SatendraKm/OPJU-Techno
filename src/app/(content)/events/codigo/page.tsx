@@ -18,7 +18,7 @@ const Page = () => {
       contact: 9691300315,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/CodiGo/CodiGo 2026/Swapnil Chatterjee 8085934908 Codigo Manager.jpeg",
       name: "Swapnil Chatterjee",
       contact: 8085934908,
     },

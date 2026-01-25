@@ -13,17 +13,17 @@ const Page = () => {
   /* ===================== MANAGERS ===================== */
   const managers = [
     {
-      imageUrl: "/placeholder-pic.jpeg",
-      name: "Akash Sahu",
-      contact: 9131403772,
+      imageUrl: "/managers/Robovation/Robovation 2026/Akash Kumar+91 86299 67117.jpg",
+      name: "Akash Kumar",
+      contact: 8629967117,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
-      name: "Awni Gupta",
-      contact: 6260254140,
+      imageUrl: "/managers/Robovation/Robovation 2026/Princy Patle (9770165316) Event Manager_.jpg",
+      name: "Princy Patle",
+      contact: 9770165316,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/Robovation/Robovation 2026/Ayush Kumar (+91 81096 98355).jpg",
       name: "Ayush Kumar",
       contact: 81096983355,
     },

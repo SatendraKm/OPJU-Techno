@@ -8,7 +8,7 @@ import { getRegistrationCount } from "@/actions/event-actions";
 const Page = () => {
   const managers = [
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/Aima/bhoomika.jpeg",
       name: "Bhoomika Agrawal",
       contact: 7580827172,
     },

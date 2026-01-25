@@ -8,7 +8,7 @@ import { getRegistrationCount } from "@/actions/event-actions";
 const Page = () => {
   const managers = [
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/Riwayat_2.0/Riwayat 2.0/Karishma Mehra (8720845925).jpg",
       name: "Karishma Mehra",
       contact: 8720845925,
     },
@@ -18,7 +18,7 @@ const Page = () => {
       contact: 7846997617,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/Riwayat_2.0/Riwayat 2.0/Vanshika Narwani ( 9201725099).jpg",
       name: "Vanshika  Narwani",
       contact: 9201725099,
     },

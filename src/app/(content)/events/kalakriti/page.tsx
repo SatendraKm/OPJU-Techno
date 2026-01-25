@@ -135,12 +135,12 @@ const KalaKriti = () => {
   const managers = [
     
     {
-      imageUrl: "/managers/Kalakriti/AnkitK.jpeg",
+      imageUrl: "/managers/kalakriti/poonam.jpeg",
       name: "Poonam Mahato",
       contact: 9630203650,
     },
     {
-      imageUrl: "/managers/Kalakriti/Bhavya.jpg",
+      imageUrl: "/managers/kalakriti/ritesh.jpeg",
       name: "Ritesh Yadav",
       contact: 8144603832,
     },

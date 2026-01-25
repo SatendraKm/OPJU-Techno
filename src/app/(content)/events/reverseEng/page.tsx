@@ -47,19 +47,19 @@ const Page = () => {
 
   const managers = [
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/RE/yuvi.jpeg",
       name: "Yuvraj Agarwal",
       contact: 9926324840,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/RE/gaurav.jpeg",
       name: "Gaurav Tiwari",
       contact: 7898862970,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
-      name: "Gargi Gupta",
-      contact: 9165007660,
+      imageUrl: "/managers/RE/arjun.jpeg",
+      name: "Arjun Tiwari",
+      contact: 7974650487,
     },
   ];
 
