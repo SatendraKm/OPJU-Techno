@@ -5,10 +5,12 @@ import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import { getRegistrationCount } from "@/actions/event-actions";
 
+
+
 const Page = () => {
   const managers = [
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/beat-battle/somya.jpg",
       name: "Somya Patel",
       contact: 9479218521,
     },
