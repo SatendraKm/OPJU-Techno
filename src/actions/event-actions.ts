@@ -7,7 +7,7 @@ import { ITeam, Team } from "@/models/team.model";
 import { Invitation } from "@/models/invitation.model";
 import { IUser, User } from "@/models/user.model";
 import { eventSubEventData } from "@/data/event-subeventData";
-import { eventOrder } from "@/data/eventOrder";
+// import { eventOrder } from "@/data/eventOrder";
 
 // Fetch all events
 export async function getAllEventsAction() {
@@ -420,6 +420,79 @@ export async function getParticipatingEventsCountAction(
 }
 
 // Add this new function for pagination
+// export async function getEventDetailsWithCountsPaginated(
+//   page: number = 1,
+//   limit: number = 10,
+// ) {
+//   try {
+//     await connectToDatabase();
+
+//     const events = await Event.find().lean<IEvent[]>();
+//     const users = await User.find().lean<IUser[]>();
+//     const userMap = new Map(users.map((user) => [user.email, user]));
+
+//     const eventDetailsWithCounts = [];
+
+//     for (const event of events) {
+//       const teams = await Team.find({ event: event._id }).lean<ITeam[]>();
+//       const teamCount = teams.length;
+
+//       let insiderCount = 0;
+//       let outsiderCount = 0;
+
+//       for (const team of teams) {
+//         for (const memberEmail of team.members) {
+//           const user = userMap.get(memberEmail);
+//           if (user) {
+//             if (user.isOutsider) {
+//               outsiderCount++;
+//             } else {
+//               insiderCount++;
+//             }
+//           }
+//         }
+//       }
+
+//       const userCount = insiderCount + outsiderCount;
+
+//       eventDetailsWithCounts.push({
+//         eventName: event.name,
+//         teamCount,
+//         userCount,
+//         insiderCount,
+//         outsiderCount,
+//       });
+//     }
+
+//     // Sort by eventOrder
+//     const sortedEventDetails = eventDetailsWithCounts.sort((a, b) => {
+//       return eventOrder.indexOf(a.eventName) - eventOrder.indexOf(b.eventName);
+//     });
+
+//     // Calculate pagination
+//     const startIndex = (page - 1) * limit;
+//     const endIndex = startIndex + limit;
+//     const paginatedData = sortedEventDetails.slice(startIndex, endIndex);
+
+//     return JSON.parse(
+//       JSON.stringify({
+//         events: paginatedData,
+//         totalEvents: sortedEventDetails.length,
+//         totalPages: Math.ceil(sortedEventDetails.length / limit),
+//         currentPage: page,
+//       }),
+//     );
+//   } catch (error) {
+//     if (error instanceof Error) {
+//       throw new Error(
+//         `Failed to fetch event details with counts: ${error.message}`,
+//       );
+//     } else {
+//       throw new Error("Failed to fetch event details with counts");
+//     }
+//   }
+// }
+
 export async function getEventDetailsWithCountsPaginated(
   page: number = 1,
   limit: number = 10,
@@ -456,6 +529,7 @@ export async function getEventDetailsWithCountsPaginated(
       const userCount = insiderCount + outsiderCount;
 
       eventDetailsWithCounts.push({
+        eventId: event._id.toString(),
         eventName: event.name,
         teamCount,
         userCount,
@@ -464,9 +538,28 @@ export async function getEventDetailsWithCountsPaginated(
       });
     }
 
-    // Sort by eventOrder
+    // Sort using eventSubEventData structure
     const sortedEventDetails = eventDetailsWithCounts.sort((a, b) => {
-      return eventOrder.indexOf(a.eventName) - eventOrder.indexOf(b.eventName);
+      // Create a flat list of all event IDs in order from eventSubEventData
+      const orderedEventIds: string[] = [];
+
+      for (const mainEvent of eventSubEventData.events) {
+        if (mainEvent.event) {
+          orderedEventIds.push(mainEvent.event);
+        }
+        for (const subEvent of mainEvent.subEvents) {
+          orderedEventIds.push(subEvent.subEvent);
+        }
+      }
+
+      const indexA = orderedEventIds.indexOf(a.eventId);
+      const indexB = orderedEventIds.indexOf(b.eventId);
+
+      // If event not found in order, put it at the end
+      if (indexA === -1) return 1;
+      if (indexB === -1) return -1;
+
+      return indexA - indexB;
     });
 
     // Calculate pagination
@@ -494,6 +587,91 @@ export async function getEventDetailsWithCountsPaginated(
 }
 
 // Add this new function for Excel generation
+// export async function generateEventCountExcel() {
+//   try {
+//     await connectToDatabase();
+
+//     const events = await Event.find().lean<IEvent[]>();
+//     const users = await User.find().lean<IUser[]>();
+//     const userMap = new Map(users.map((user) => [user.email, user]));
+
+//     const eventDetailsWithCounts = [];
+
+//     for (const event of events) {
+//       const teams = await Team.find({ event: event._id }).lean<ITeam[]>();
+//       const teamCount = teams.length;
+
+//       let insiderCount = 0;
+//       let outsiderCount = 0;
+
+//       for (const team of teams) {
+//         for (const memberEmail of team.members) {
+//           const user = userMap.get(memberEmail);
+//           if (user) {
+//             if (user.isOutsider) {
+//               outsiderCount++;
+//             } else {
+//               insiderCount++;
+//             }
+//           }
+//         }
+//       }
+
+//       const userCount = insiderCount + outsiderCount;
+
+//       eventDetailsWithCounts.push({
+//         eventName: event.name,
+//         teamCount,
+//         userCount,
+//         insiderCount,
+//         outsiderCount,
+//       });
+//     }
+
+//     // Sort by eventOrder
+//     const sortedEventDetails = eventDetailsWithCounts.sort((a, b) => {
+//       return eventOrder.indexOf(a.eventName) - eventOrder.indexOf(b.eventName);
+//     });
+
+//     // Calculate totals
+//     const totalUserCount = sortedEventDetails.reduce(
+//       (acc, event) => acc + event.userCount,
+//       0,
+//     );
+//     const totalInsiderCount = sortedEventDetails.reduce(
+//       (acc, event) => acc + event.insiderCount,
+//       0,
+//     );
+//     const totalOutsiderCount = sortedEventDetails.reduce(
+//       (acc, event) => acc + event.outsiderCount,
+//       0,
+//     );
+
+//     // Prepare data for Excel
+//     const excelData = sortedEventDetails.map((event) => ({
+//       EventName: event.eventName,
+//       UserCount: event.userCount,
+//       Insiders: event.insiderCount,
+//       Outsiders: event.outsiderCount,
+//     }));
+
+//     excelData.push({
+//       EventName: "Total Count",
+//       UserCount: totalUserCount,
+//       Insiders: totalInsiderCount,
+//       Outsiders: totalOutsiderCount,
+//     });
+
+//     return JSON.parse(JSON.stringify({ data: excelData }));
+//   } catch (error) {
+//     if (error instanceof Error) {
+//       throw new Error(`Failed to generate Excel data: ${error.message}`);
+//     } else {
+//       throw new Error("Failed to generate Excel data");
+//     }
+//   }
+// }
+
 export async function generateEventCountExcel() {
   try {
     await connectToDatabase();
@@ -527,6 +705,7 @@ export async function generateEventCountExcel() {
       const userCount = insiderCount + outsiderCount;
 
       eventDetailsWithCounts.push({
+        eventId: event._id.toString(),
         eventName: event.name,
         teamCount,
         userCount,
@@ -535,9 +714,26 @@ export async function generateEventCountExcel() {
       });
     }
 
-    // Sort by eventOrder
+    // Sort using eventSubEventData structure
+    const orderedEventIds: string[] = [];
+
+    for (const mainEvent of eventSubEventData.events) {
+      if (mainEvent.event) {
+        orderedEventIds.push(mainEvent.event);
+      }
+      for (const subEvent of mainEvent.subEvents) {
+        orderedEventIds.push(subEvent.subEvent);
+      }
+    }
+
     const sortedEventDetails = eventDetailsWithCounts.sort((a, b) => {
-      return eventOrder.indexOf(a.eventName) - eventOrder.indexOf(b.eventName);
+      const indexA = orderedEventIds.indexOf(a.eventId);
+      const indexB = orderedEventIds.indexOf(b.eventId);
+
+      if (indexA === -1) return 1;
+      if (indexB === -1) return -1;
+
+      return indexA - indexB;
     });
 
     // Calculate totals
