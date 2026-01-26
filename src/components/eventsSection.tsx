@@ -72,6 +72,7 @@ const EventsSection = () => {
 
         {/* IMAGES */}
         <div className="relative w-full h-full flex items-center justify-center mt-15">
+          
           {cards.map((card, i) => {
             const pos = getPosition(i);
 
