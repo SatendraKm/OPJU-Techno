@@ -11,7 +11,13 @@ const FacultySection = () => {
   const viceChancellor: FacultyPerson = {
     name: "Dr. R D Patidar Sir",
     role: "Vice Chancellor",
-    image: "/faculty/vc.jpg",
+   image: "/faculty/VCopju.jpg",
+  };
+
+  const registrar: FacultyPerson = {
+    name: "Dr. Anurag Vijaywargiya",
+    role: "Registrar",
+    image: "/faculty/registrar.jpg",
   };
 
   const chiefConvener: FacultyPerson = {
@@ -47,7 +53,7 @@ const FacultySection = () => {
     {
       name: "Prof. Sujata Panda",
       role: "Convener - Techno-Ambition",
-      image: "/faculty/sutata.jpg",
+      image: "/faculty/sujata.jpg",
     },
   ];
 
@@ -187,14 +193,21 @@ const FacultySection = () => {
         largeCard
       />
 
-      
+      {/* ✅ REGISTRAR ADDED HERE */}
+      <Section
+        title="Registrar"
+        people={registrar}
+        highlightSingle
+      />
 
       <Section title="Mentors" people={mentors} />
+
       <Section
         title="Chief Convener"
         people={chiefConvener}
         highlightSingle
       />
+
       <Section title="Techno-Ambition Conveners" people={technoConveners} />
       <Section title="Celebrity Night Conveners" people={celebrityConveners} />
     </section>

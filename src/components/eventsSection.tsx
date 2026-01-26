@@ -58,14 +58,14 @@ const EventsSection = () => {
       <div className="relative mt-40 w-full h-[260px] sm:h-[300px] lg:h-[340px] flex items-center justify-center mb-20">
         <button
           onClick={prev}
-          className="absolute left-2 sm:left-6 z-50 bg-white/10 hover:bg-white/20 p-2 sm:p-3 rounded-full"
+          className="absolute left-2 sm:left-6 z-50 bg-white  hover:bg-white p-2 sm:p-3 rounded-full"
         >
           <ChevronLeft size={22} />
         </button>
 
         <button
           onClick={next}
-          className="absolute right-2 sm:right-6 z-50 bg-white/10 hover:bg-white/20 p-2 sm:p-3 rounded-full"
+          className="absolute right-2 sm:right-6 z-50 bg-white hover:bg-white p-2 sm:p-3 rounded-full"
         >
           <ChevronRight size={22} />
         </button>

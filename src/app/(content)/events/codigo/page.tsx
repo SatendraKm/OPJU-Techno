@@ -24,7 +24,7 @@ const Page = () => {
     },
     {
       imageUrl: "/placeholder-pic.jpeg",
-      name: "Aniruddha Singh Gautam",
+      name: "Aniruddha Singh",
       contact: 6260225774,
     },
   ];

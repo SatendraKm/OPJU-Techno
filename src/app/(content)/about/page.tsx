@@ -7,7 +7,7 @@ const About = () => {
     <div className="relative w-full overflow-hidden">
 
       {/* BACKGROUND */}
-      <div className="fixed inset-0 -z-10 bg-[#2A1414]" />
+      <div className="fixed inset-0 -z-10 bg-black" />
 
       {/* CONTENT */}
       <div className="relative z-0 text-black flex flex-col mt-36 text-center items-center min-h-screen px-4 md:px-0">
