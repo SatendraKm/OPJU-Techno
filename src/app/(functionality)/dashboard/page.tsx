@@ -132,7 +132,10 @@ const DashboardPage = () => {
   return (
     <div className="container mx-auto p-6 space-y-6">
 
-      <h1 className="text-3xl font-bold text-center">Dashboard</h1>
+      <h1 className="text-3xl font-bold text-center text-white">
+  Dashboard
+</h1>
+
 
       {/* USER PROFILE */}
       {userData && (
@@ -213,7 +216,7 @@ const DashboardPage = () => {
                             {team.event.name}
                           </p>
                           <p className="text-sm text-muted-foreground">
-                            Leader: {team.leader.fullName}
+                            CLICK to add Teammate
                           </p>
                         </div>
                         <Badge>
@@ -299,9 +302,10 @@ const DashboardPage = () => {
       )}
 
       {isOPJU && (
-        <p className="text-green-500 text-center font-semibold">
-          FREE registration for OPJU students
-        </p>
+        <p className="text-white text-center font-semibold uppercase">
+  FREE registration for OPJU students
+</p>
+
       )}
 
       {/* INVITE MODAL */}
