@@ -70,18 +70,18 @@ const Page = () => {
   const managers = [
     {
       imageUrl: "/placeholder-pic.jpeg",
-      name: "",
-      contact: 123,
+      name: " Ayushi Prasad",
+      contact: 9755763575,
     },
     {
       imageUrl: "/placeholder-pic.jpeg",
-      name: "",
-      contact: 91657,
+      name: "Manish Jha",
+      contact: 9993278810,
     },
     {
       imageUrl: "/placeholder-pic.jpeg",
-      name: "",
-      contact: 88239,
+      name: "Shivanshu Mishra",
+      contact: 7024189251,
     },
   ];
 
