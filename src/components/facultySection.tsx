@@ -22,7 +22,7 @@ const FacultySection = () => {
 
   const chiefConvener: FacultyPerson = {
     name: "Dr. Rakesh Nayak",
-    role: "Chief Convener - Techno-Ambition",
+    role: "Chief Convener - Techno-aiMBiAtion",
     image: "/faculty/chief.jpg",
   };
 
@@ -42,17 +42,17 @@ const FacultySection = () => {
   const technoConveners: FacultyPerson[] = [
     {
       name: "Dr. Trinath Talapaneni",
-      role: "Convener - Techno-Ambition",
+      role: "Convener - Techno-aiMBiAtion",
       image: "/faculty/trinath.jpg",
     },
     {
       name: "Dr. Swati Verma",
-      role: "Convener - Techno-Ambition",
+      role: "Convener - Techno-aiMBiAtion",
       image: "/faculty/swati.jpg",
     },
     {
       name: "Prof. Sujata Panda",
-      role: "Convener - Techno-Ambition",
+      role: "Convener - Techno-aiMBiAtion",
       image: "/faculty/sujata.jpg",
     },
   ];
