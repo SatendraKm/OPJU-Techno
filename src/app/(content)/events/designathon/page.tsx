@@ -19,17 +19,17 @@ const Page = () => {
 
   const studentManagers = [
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/designathon/shruti.jpg",
       name: "Shruti Niwas",
       contact: 7024120039,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/designathon/aastha.jpg",
       name: "Aashta Choudhary",
       contact: 7898260105,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/designathon/pooja.jpg",
       name: "Pooja Mahto",
       contact: 9693397426,
     },

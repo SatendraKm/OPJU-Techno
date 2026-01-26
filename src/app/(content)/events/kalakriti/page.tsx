@@ -9,8 +9,10 @@ import { GiOverInfinity, GiBowTieRibbon } from "react-icons/gi";
 import { PiFlowerBold } from "react-icons/pi";
 import { FaFlipboard } from "react-icons/fa6";
 import { TbBottleFilled } from "react-icons/tb";
+import { GiFlowerStar } from "react-icons/gi";
 import KalakritiSubEvent from "./kalakritisubevent";
 import { getRegistrationCount } from "@/actions/event-actions";
+
 
 
 const KalaKriti = () => {
@@ -92,7 +94,7 @@ const KalaKriti = () => {
     judgementCriteria: ["Judges' marks"],
   },
   {
-    title: "Alpana",
+    title: "Rangoli",
     theme: "On the Spot",
     rules: [
       "Theme of the competition is restricted to 'On the Spot'.",
@@ -110,6 +112,29 @@ const KalaKriti = () => {
     venue: "In front of Chemistry Lab",
     rounds: ["1 Round"],
     judgementCriteria: ["Judges' marks"],
+  },
+
+  {
+    title: "Alpana (Floor Art)",
+    theme: "On the Spot",
+    rules: [
+      "The theme of the competition will be provided on the spot.",
+      "Each group must consist of a minimum of 4 and a maximum of 6 members.",
+      "Participation of boys in each group is mandatory.",
+      "There will be only one round of competition.",
+      "Participants must bring their own materials required for making Alpana.",
+      "A total of 2 hours will be given to complete the artwork. No extra time will be allotted.",
+      "Participants must strictly adhere to the given time limits.",
+      "Prizes will be awarded to First, Second, and Third position holders along with Certificates of Achievement.",
+      "All participants will receive a Certificate of Participation.",
+      "The decision of the jury will be final and binding.",
+      "Last-minute changes in the rules, if necessary, can be made.",
+    ],
+    about:
+      "Alpana is a vibrant floor art event at Techno Rollix where creativity meets tradition. Participants transform open spaces into stunning visual stories using rice, intricate patterns, and themes provided on the spot. The event celebrates cultural aesthetics, teamwork, imagination, and artistic expression under time-bound challenges.",
+    venue: "In front of Chemistry Lab",
+    rounds: ["1 Round"],
+    judgementCriteria: ["Judges Marks"],
   },
   {
     title: "Faces That Speak (Face Painting)",
@@ -215,6 +240,13 @@ const KalaKriti = () => {
             title="Faces that Speak"
             description="(Mythological Characters, Tribal Art Faces, Anime characters, bridal make up)"
           />
+
+          <SubEventCard
+            Icon={GiFlowerStar}
+            title="Rangoli"
+            description="Traditional Floor art"
+          />
+          
         </div>
       </section>
 
