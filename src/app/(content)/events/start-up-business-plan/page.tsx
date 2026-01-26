@@ -58,7 +58,13 @@ const Page = () => {
         imageUrl="/testfile/startup3.svg"
         registrations={registrationCount}
         pricepool={18000}
-        description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste."
+        description="The Startup Pitching Event is designed to provide early-stage
+innovators and entrepreneurs a platform to present their ideas to a panel of
+experts, investors, and industry leaders. Participants will showcase innovative
+solutions addressing real-world problems, demonstrate business viability, and
+receive constructive feedback to refine their concepts. The event aims to
+encourage innovation, entrepreneurship, and collaboration while identifying
+high-potential startups for mentorship, incubation, and further support."
       />
       {/* </a> */}
 
