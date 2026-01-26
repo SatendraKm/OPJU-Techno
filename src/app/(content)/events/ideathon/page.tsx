@@ -44,20 +44,15 @@ const Page = () => {
 
   const managers = [
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/Ideathon/Ideathon/RINESH MOHANTY (9907708949) EVENT MANAGER_.webp",
       name: "Rinesh Mohanty",
       contact: 9907708949,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/Ideathon/Ideathon/DISHA NADAM (9171320725) EVENT MANAGER_.jpg",
       name: "Disha Nadam",
       contact: 9171320725,
-    },
-    {
-      imageUrl: "/placeholder-pic.jpeg",
-      name: "Disha Nadam",
-      contact: 9171320725,
-    },
+    }
   ];
 
   /* ===================== STATE ===================== */

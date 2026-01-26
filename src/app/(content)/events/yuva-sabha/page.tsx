@@ -28,18 +28,18 @@ const Page = () => {
 
   const managers = [
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/Voice_Of_Youth/Voice Of Youth/shakshyee Sharma.jpg",
       name: "Shakshyee Sharma",
       contact: 6371965128,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/Voice_Of_Youth/Voice Of Youth/Shivam Arora.jpeg",
       name: "Shivam Arora",
       contact: 9109245599,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
-      name: "Avinash Agarwal",
+      imageUrl: "/managers/Voice_Of_Youth/Voice Of Youth/Avinash Agrawal.jpeg",
+      name: "Avinash Agrawal",
       contact: 9691846192,
     },
   ];
