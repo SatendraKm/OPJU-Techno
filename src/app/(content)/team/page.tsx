@@ -11,8 +11,8 @@ const teamSections = [
       },
       {
         name: "Hussain Kapadia",
-        contact: "+91 82650 13186",
-        image: "/placeholder-pic.jpeg",
+        contact: "+91 8265013186",
+        image: "/teams/information-publicity-invitation/hussain.jpeg",
       },
     ],
   },
@@ -26,8 +26,8 @@ const teamSections = [
       },
       {
         name: "Navya Tiwari",
-        contact: "+91 9430160416",
-        image: "/placeholder-pic.jpeg",
+        contact: "+91 8109216433",
+        image: "/teams/design-print-media/navya.jpeg",
       },
     ],
   },
@@ -142,7 +142,7 @@ const teamSections = [
       {
         name: "Satendra Kumar",
         contact: "+91 9301196473",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/website-maintenance/sattu.jpg",
       },
       {
         name: "Surya Prakash Sharma",
@@ -205,7 +205,7 @@ const teamSections = [
         image: "/placeholder-pic.jpeg",
       },
       {
-        name: "Swasti Behra",
+        name: "Naina Meghani",
         contact: "+91 9522893333",
         image: "/placeholder-pic.jpeg",
       },
@@ -252,13 +252,15 @@ export default function TeamPage() {
                   key={idx}
                   className="group bg-white/5 backdrop-blur-xl rounded-3xl p-5 border border-white/10 hover:border-yellow-400/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,200,80,0.15)]"
                 >
-                  <div className="relative w-full h-64 rounded-2xl overflow-hidden">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
+                  <div className="relative p-[6px] rounded-3xl bg-gradient-to-br from-[#FFD88A] via-[#B8860B] to-[#FFD88A] shadow-[0_0_25px_rgba(255,200,80,0.35)]">
+                    <div className="relative w-full h-64 rounded-2xl overflow-hidden bg-[#020617]">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
                   </div>
 
                   <h3 className="text-lg md:text-xl font-semibold text-center mt-4">

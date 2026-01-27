@@ -11,7 +11,7 @@ const FacultySection = () => {
   const viceChancellor: FacultyPerson = {
     name: "Dr. R D Patidar Sir",
     role: "Vice Chancellor",
-   image: "/faculty/VCopju.jpg",
+    image: "/faculty/VCopju.jpg",
   };
 
   const registrar: FacultyPerson = {
@@ -157,19 +157,19 @@ const FacultySection = () => {
             !isArray
               ? "grid-cols-1 place-items-center"
               : isTwoItems
-              ? "grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto"
-              : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+                ? "grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto"
+                : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
           }`}
         >
-          {isArray
-            ? people.map((p, i) => <Card key={i} person={p} />)
-            : (
-              <Card
-                person={people}
-                highlight={highlightSingle}
-                size={largeCard ? "large" : "normal"}
-              />
-            )}
+          {isArray ? (
+            people.map((p, i) => <Card key={i} person={p} />)
+          ) : (
+            <Card
+              person={people}
+              highlight={highlightSingle}
+              size={largeCard ? "large" : "normal"}
+            />
+          )}
         </div>
       </div>
     );
@@ -194,21 +194,13 @@ const FacultySection = () => {
       />
 
       {/* ✅ REGISTRAR ADDED HERE */}
-      <Section
-        title="Registrar"
-        people={registrar}
-        highlightSingle
-      />
+      <Section title="Registrar" people={registrar} highlightSingle />
 
       <Section title="Mentors" people={mentors} />
 
-      <Section
-        title="Chief Convenor"
-        people={chiefConvenor}
-        highlightSingle
-      />
+      <Section title="Chief Convenor" people={chiefConvenor} highlightSingle />
 
-      <Section title="Techno-Ambition Convenors" people={technoConvenors} />
+      <Section title="Techno-Aimbiation Convenors" people={technoConvenors} />
       <Section title="Celebrity Night Convenors" people={celebrityConvenors} />
     </section>
   );
