@@ -146,7 +146,8 @@ const Page = () => {
         <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-5xl mx-auto text-center">
           <ul className="list-disc pl-5 inline-block text-left text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-gray-200">
             <li>Winner</li>
-            <li>Runner Up</li>
+            <li>1st Runner Up</li>
+            <li>2nd Runner Up</li>
           </ul>
         </div>
       </section>
