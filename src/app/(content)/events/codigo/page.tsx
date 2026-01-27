@@ -13,7 +13,7 @@ const Page = () => {
   /* ===================== EVENT MANAGERS ===================== */
   const managers = [
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/CodiGo/CodiGo 2026/div.jpeg",
       name: "Divakar Yadav",
       contact: 9691300315,
     },
@@ -23,8 +23,8 @@ const Page = () => {
       contact: 8085934908,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
-      name: "Aniruddha Singh",
+      imageUrl: "/managers/CodiGo/CodiGo 2026/anj.jpeg",
+      name: "Aniruddha Singh Gautam",
       contact: 6260225774,
     },
   ];
