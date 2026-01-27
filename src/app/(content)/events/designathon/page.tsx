@@ -39,7 +39,7 @@ const Page = () => {
     {
       title: "ROUND 1: Concept to Canvas",
       description:
-        "Participants create one design output (poster, UI screen, illustration, or social creative) based on the theme 'New Age India' and submit a short written explanation describing the concept and intent.",
+        "Participants create one design output (poster, illustration, or social creative) based on the theme 'New Age India' and submit a short written explanation describing the concept and intent.",
     },
     {
       title: "ROUND 2: Design Rationale",
@@ -51,7 +51,7 @@ const Page = () => {
   const rules = [
     "Round 2 theme will be announced at the venue.",
     "Design must be completed within the given time.",
-    "Hand-drawn and digital designs are allowed.",
+    "Only Digital designs are allowed.",
     "Plagiarism is strictly prohibited.",
     "Internet allowed only for reference.",
     "Participants may be asked to explain their design.",

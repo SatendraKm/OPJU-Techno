@@ -13,9 +13,9 @@ const Page = () => {
   /* ===================== MANAGERS ===================== */
   const managers = [
     {
-      imageUrl: "/managers/Robovation/Robovation 2026/Akash Kumar+91 86299 67117.jpg",
-      name: "Akash Kumar",
-      contact: 8629967117,
+      imageUrl: "/managers/Robovation/Robovation 2026/aakah.jpg",
+      name: "Akash Sahu",
+      contact: 9131403772,
     },
     {
       imageUrl: "/managers/Robovation/Robovation 2026/Princy Patle (9770165316) Event Manager_.jpg",

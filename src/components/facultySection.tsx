@@ -11,12 +11,18 @@ const FacultySection = () => {
   const viceChancellor: FacultyPerson = {
     name: "Dr. R D Patidar Sir",
     role: "Vice Chancellor",
-    image: "/faculty/vc.jpg",
+   image: "/faculty/VCopju.jpg",
   };
 
-  const chiefConvener: FacultyPerson = {
+  const registrar: FacultyPerson = {
+    name: "Dr. Anurag Vijaywargiya",
+    role: "Registrar",
+    image: "/faculty/registrar.jpg",
+  };
+
+  const chiefConvenor: FacultyPerson = {
     name: "Dr. Rakesh Nayak",
-    role: "Chief Convener - Techno-Ambition",
+    role: "Chief Convenor - Techno-aiMBiAtion",
     image: "/faculty/chief.jpg",
   };
 
@@ -33,39 +39,39 @@ const FacultySection = () => {
     },
   ];
 
-  const technoConveners: FacultyPerson[] = [
+  const technoConvenors: FacultyPerson[] = [
     {
       name: "Dr. Trinath Talapaneni",
-      role: "Convener - Techno-Ambition",
+      role: "Convenor - Techno-aiMBiAtion",
       image: "/faculty/trinath.jpg",
     },
     {
       name: "Dr. Swati Verma",
-      role: "Convener - Techno-Ambition",
+      role: "Convenor - Techno-aiMBiAtion",
       image: "/faculty/swati.jpg",
     },
     {
       name: "Prof. Sujata Panda",
-      role: "Convener - Techno-Ambition",
-      image: "/faculty/sutata.jpg",
+      role: "Convenor - Techno-aiMBiAtion",
+      image: "/faculty/sujata.jpg",
     },
   ];
 
-  const celebrityConveners: FacultyPerson[] = [
+  const celebrityConvenors: FacultyPerson[] = [
     {
       name: "Dr. Vikash Kumar",
-      role: "Convener - Celebrity Night",
+      role: "Convenor - Celebrity Night",
       image: "/faculty/vikash.jpg",
     },
     {
       name: "Dr. Mithilesh Sahu",
-      role: "Convener - Celebrity Night",
+      role: "Convenor - Celebrity Night",
       image: "/faculty/mithilesh.jpg",
     },
     {
       name: "Mrs. Meenakshi Rao Gaba",
-      role: "Convener - Celebrity Night",
-      image: "/faculty/meenakshi.jpg",
+      role: "Convenor - Celebrity Night",
+      image: "/faculty/minakshi.jpg",
     },
   ];
 
@@ -177,7 +183,7 @@ const FacultySection = () => {
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-sky-500/20 rounded-full blur-[120px]" />
 
       <h2 className="relative text-4xl md:text-5xl font-semibold text-center mb-32 text-transparent bg-clip-text bg-gradient-to-r from-white to-sky-300 tracking-wider">
-        Faculty & Conveners
+        Faculty & Convenors
       </h2>
 
       <Section
@@ -187,16 +193,23 @@ const FacultySection = () => {
         largeCard
       />
 
-      
-
-      <Section title="Mentors" people={mentors} />
+      {/* ✅ REGISTRAR ADDED HERE */}
       <Section
-        title="Chief Convener"
-        people={chiefConvener}
+        title="Registrar"
+        people={registrar}
         highlightSingle
       />
-      <Section title="Techno-Ambition Conveners" people={technoConveners} />
-      <Section title="Celebrity Night Conveners" people={celebrityConveners} />
+
+      <Section title="Mentors" people={mentors} />
+
+      <Section
+        title="Chief Convenor"
+        people={chiefConvenor}
+        highlightSingle
+      />
+
+      <Section title="Techno-Ambition Convenors" people={technoConvenors} />
+      <Section title="Celebrity Night Convenors" people={celebrityConvenors} />
     </section>
   );
 };

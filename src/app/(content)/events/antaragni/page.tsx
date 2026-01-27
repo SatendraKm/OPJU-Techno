@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
-import SubEventCard from "@/components/sub-component/sub-event-card";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
-import { FaMusic, FaFilm, FaMicrophone, FaRunning } from "react-icons/fa";
+import { FaMusic, FaFilm, FaMicrophone, FaRunning, FaTheaterMasks, } from "react-icons/fa";
 import RoundSection from "@/components/sub-component/RoundSection";
 import { getRegistrationCount } from "@/actions/event-actions";
 
@@ -79,39 +78,131 @@ const Antaragni = () => {
       </p>
 
       {/* Sub-Events Section */}
-      <section className="mx-auto max-w-5xl px-4 mt-24">
-        <div className="flex flex-col items-center text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase tracking-wide mb-4">
-            Sub-events
-          </h2>
-          <p className="text-xl sm:text-2xl text-gray-200 font-normal tracking-wide">
-            Following are the sub-events of this main event...
-          </p>
-        </div>
+<section className="mx-auto max-w-6xl px-4 mt-24">
+  <div className="flex flex-col items-center text-center mb-12">
+    <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium uppercase tracking-wide mb-4">
+      Sub-events
+    </h2>
+    <p className="text-xl sm:text-2xl text-[#ffffff] font-normal tracking-wide">
+  Following are the sub-events of this main event...
+</p>
+  </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <SubEventCard
-            Icon={FaRunning}
-            title="Solo Dance / Group Dance"
-            description="Unleash your passion for dance..."
-          />
-          <SubEventCard
-            Icon={FaMusic}
-            title="Solo Singing"
-            description="Sing your heart out..."
-          />
-          <SubEventCard
-            Icon={FaFilm}
-            title="Short Film"
-            description="Tell a compelling story..."
-          />
-          <SubEventCard
-            Icon={FaMicrophone}
-            title="Rap / Beat-boxing"
-            description="Battle it out with words and rhythm..."
-          />
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {/* Solo Dance / Duet / Group Dance */}
+    <div className="bg-gradient-to-br from-[#3d1a1a] to-[#2A1414] rounded-xl p-6 border border-[#FFAE3D]/30 hover:border-[#FFAE3D] transition-all duration-300 hover:shadow-lg hover:shadow-[#FFAE3D]/20">
+      <div className="flex flex-col items-center text-center">
+        <div className="text-[#FFAE3D] text-5xl mb-4">
+          <FaRunning />
         </div>
-      </section>
+        <h3 className="text-2xl font-bold text-white mb-3">Solo Dance / Duet / Group Dance</h3>
+        <p className="text-gray-300 mb-4">Unleash your passion for dance in any form - Classical, Folk, Western, Contemporary, Hip-Hop, or Fusion.</p>
+        
+        <div className="w-full mb-4">
+          <h4 className="text-[#FFAE3D] font-semibold mb-2">Categories:</h4>
+          <ul className="list-disc list-inside text-gray-200 space-y-1 text-sm text-left">
+            <li>Solo Dance - Any dance form (Classical / Folk / Western / Contemporary / Hip-Hop / Fusion)</li>
+            <li>Duet - Synchronized performance by two dancers</li>
+            <li>Group Dance - Synchronized choreography with theme-based presentation (Fusion of classical and modern)</li>
+          </ul>
+        </div>
+        
+        <div className="bg-[#FFAE3D]/10 border border-[#FFAE3D]/30 rounded-lg px-4 py-2 w-full">
+          <span className="text-[#FFAE3D] font-semibold text-sm">⏱️ Solo: 3:00-3:30min | Duet: 3:30-4:00min | Group: 5:00-6:00min</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Solo Singing */}
+    <div className="bg-gradient-to-br from-[#3d1a1a] to-[#2A1414] rounded-xl p-6 border border-[#FFAE3D]/30 hover:border-[#FFAE3D] transition-all duration-300 hover:shadow-lg hover:shadow-[#FFAE3D]/20">
+      <div className="flex flex-col items-center text-center">
+        <div className="text-[#FFAE3D] text-5xl mb-4">
+          <FaMusic />
+        </div>
+        <h3 className="text-2xl font-bold text-white mb-3">Solo Singing</h3>
+        <p className="text-gray-300 mb-4">Sing your heart out in any genre - from classical melodies to western hits.</p>
+        
+        <div className="w-full mb-4">
+          <h4 className="text-[#FFAE3D] font-semibold mb-2">Categories:</h4>
+          <ul className="list-disc list-inside text-gray-200 space-y-1 text-sm text-left">
+            <li>Classical / Semi-classical / Folk / Bollywood / Western / Indian</li>
+          </ul>
+        </div>
+        
+        <div className="bg-[#FFAE3D]/10 border border-[#FFAE3D]/30 rounded-lg px-4 py-2 w-full">
+          <span className="text-[#FFAE3D] font-semibold text-sm">⏱️ 2:30-3:00min</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Rap / Beat-boxing */}
+    <div className="bg-gradient-to-br from-[#3d1a1a] to-[#2A1414] rounded-xl p-6 border border-[#FFAE3D]/30 hover:border-[#FFAE3D] transition-all duration-300 hover:shadow-lg hover:shadow-[#FFAE3D]/20">
+      <div className="flex flex-col items-center text-center">
+        <div className="text-[#FFAE3D] text-5xl mb-4">
+          <FaMicrophone />
+        </div>
+        <h3 className="text-2xl font-bold text-white mb-3">Rap / Beat-boxing</h3>
+        <p className="text-gray-300 mb-4">Battle it out with words and rhythm in original or adapted performances.</p>
+        
+        <div className="w-full mb-4">
+          <h4 className="text-[#FFAE3D] font-semibold mb-2">Categories:</h4>
+          <ul className="list-disc list-inside text-gray-200 space-y-1 text-sm text-left">
+            <li>Original or adapted rap performances with clean and appropriate lyrics</li>
+          </ul>
+        </div>
+        
+        <div className="bg-[#FFAE3D]/10 border border-[#FFAE3D]/30 rounded-lg px-4 py-2 w-full">
+          <span className="text-[#FFAE3D] font-semibold text-sm">⏱️ 2:30-3:00min</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Mime / Mimicry */}
+    <div className="bg-gradient-to-br from-[#3d1a1a] to-[#2A1414] rounded-xl p-6 border border-[#FFAE3D]/30 hover:border-[#FFAE3D] transition-all duration-300 hover:shadow-lg hover:shadow-[#FFAE3D]/20">
+      <div className="flex flex-col items-center text-center">
+        <div className="text-[#FFAE3D] text-5xl mb-4">
+          <FaTheaterMasks />
+        </div>
+        <h3 className="text-2xl font-bold text-white mb-3">Mime / Mimicry</h3>
+        <p className="text-gray-300 mb-4">Express powerful messages through silent acts and creative expressions.</p>
+        
+        <div className="w-full mb-4">
+          <h4 className="text-[#FFAE3D] font-semibold mb-2">Categories:</h4>
+          <ul className="list-disc list-inside text-gray-200 space-y-1 text-sm text-left">
+            <li>Expression-based performance conveying a message without dialogue</li>
+          </ul>
+        </div>
+        
+        <div className="bg-[#FFAE3D]/10 border border-[#FFAE3D]/30 rounded-lg px-4 py-2 w-full">
+          <span className="text-[#FFAE3D] font-semibold text-sm">⏱️ 3:00-4:00min</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Short Film / Reel Making */}
+    <div className="bg-gradient-to-br from-[#3d1a1a] to-[#2A1414] rounded-xl p-6 border border-[#FFAE3D]/30 hover:border-[#FFAE3D] transition-all duration-300 hover:shadow-lg hover:shadow-[#FFAE3D]/20">
+      <div className="flex flex-col items-center text-center">
+        <div className="text-[#FFAE3D] text-5xl mb-4">
+          <FaFilm />
+        </div>
+        <h3 className="text-2xl font-bold text-white mb-3">Short Film / Reel Making</h3>
+        <p className="text-gray-300 mb-4">Tell compelling stories through visual storytelling with the theme: Dream vs Reality.</p>
+        
+        <div className="w-full mb-4">
+          <h4 className="text-[#FFAE3D] font-semibold mb-2">Categories:</h4>
+          <ul className="list-disc list-inside text-gray-200 space-y-1 text-sm text-left">
+            <li>Short Film - Visual storytelling (Theme: Dream vs Reality)</li>
+            <li>Reel Making - Creative short-form content (Theme: Dream vs Reality)</li>
+          </ul>
+        </div>
+        
+        <div className="bg-[#FFAE3D]/10 border border-[#FFAE3D]/30 rounded-lg px-4 py-2 w-full">
+          <span className="text-[#FFAE3D] font-semibold text-sm">⏱️ Short Film: 6:00-7:00min | Reel: 30sec-1:00min</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Rounds Section */}
       <RoundSection rounds={rounds} />

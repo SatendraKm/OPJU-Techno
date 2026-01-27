@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,9 +29,35 @@ const cards = [...technical, ...nonTechnical];
 
 const EventsSection = () => {
   const [active, setActive] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   const prev = () => setActive((p) => (p - 1 + cards.length) % cards.length);
   const next = () => setActive((p) => (p + 1) % cards.length);
+
+  // 👇 Touch handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+
+    const diff = touchStartX.current - touchEndX.current;
+
+    if (diff > 50) {
+      next(); // swipe left
+    } else if (diff < -50) {
+      prev(); // swipe right
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
 
   const getPosition = (index: number) => {
     const total = cards.length;
@@ -42,7 +68,7 @@ const EventsSection = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen px-10 sm:px-10 lg:px-16 py-14 overflow-hidden">
+    <section className="relative w-full min-h-screen px-6 sm:px-10 lg:px-16 py-14 overflow-hidden">
       {/* BG */}
       <div className="absolute inset-0 -z-10 bg-[#376080]" />
 
@@ -55,23 +81,29 @@ const EventsSection = () => {
       </div>
 
       {/* SLIDER */}
-      <div className="relative mt-40 w-full h-[260px] sm:h-[300px] lg:h-[340px] flex items-center justify-center mb-20">
+      <div
+        className="relative mt-40 w-full h-[260px] sm:h-[300px] lg:h-[340px] flex items-center justify-center mb-20 touch-pan-y"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* 👇 Arrows hidden on mobile */}
         <button
           onClick={prev}
-          className="absolute left-2 sm:left-6 z-50 bg-white/10 hover:bg-white/20 p-2 sm:p-3 rounded-full"
+          className="hidden sm:flex absolute left-2 sm:left-6 z-50 bg-white/10 hover:bg-white/20 p-2 sm:p-3 rounded-full"
         >
           <ChevronLeft size={22} />
         </button>
 
         <button
           onClick={next}
-          className="absolute right-2 sm:right-6 z-50 bg-white/10 hover:bg-white/20 p-2 sm:p-3 rounded-full"
+          className="hidden sm:flex absolute right-2 sm:right-6 z-50 bg-white/10 hover:bg-white/20 p-2 sm:p-3 rounded-full"
         >
           <ChevronRight size={22} />
         </button>
 
         {/* IMAGES */}
-        <div className="relative w-full h-full flex items-center justify-center mt-15">
+        <div className="relative w-full h-full flex items-center justify-center">
           {cards.map((card, i) => {
             const pos = getPosition(i);
 
@@ -81,8 +113,8 @@ const EventsSection = () => {
                 className={`
                   absolute transition-all duration-700 ease-in-out
                   ${pos === "center" && "z-20 scale-110 sm:scale-125"}
-                  ${pos === "left" && "z-10 -translate-x-44 sm:-translate-x-72 scale-90 opacity-60"}
-                  ${pos === "right" && "z-10 translate-x-44 sm:translate-x-72 scale-90 opacity-60"}
+                  ${pos === "left" && "z-10 -translate-x-36 sm:-translate-x-72 scale-90 opacity-60"}
+                  ${pos === "right" && "z-10 translate-x-36 sm:translate-x-72 scale-90 opacity-60"}
                   ${pos === "hidden" && "opacity-0 pointer-events-none scale-75"}
                 `}
               >

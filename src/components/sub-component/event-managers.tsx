@@ -1,5 +1,6 @@
 import React from "react";
-import ButtonLanding from "./button-landing";
+import Image from "next/image";
+import Link from "next/link";
 import ManagerCard from "./manager-card";
 
 interface Manager {
@@ -43,9 +44,20 @@ const EventManagers: React.FC<EventManagersProps> = ({
         ))}
       </div>
 
-      {/* Register Button */}
+      {/* Register Button (SVG style) */}
       {showRegister && (
-        <ButtonLanding label="Register Now" link="/dashboard" />
+        <div className="flex justify-center mt-12">
+          <Link href="/dashboard">
+            <Image
+              src="/testfile/register2.svg"
+              alt="Register Button"
+              width={260}
+              height={70}
+              priority
+              className="hover:scale-105 transition-transform duration-300"
+            />
+          </Link>
+        </div>
       )}
     </div>
   );

@@ -59,7 +59,7 @@ const Page = () => {
         pricepool={10000}
         description="The Student Management Quiz (SMQ) offers an engaging and innovative platform to assess students’ understanding across diverse business domains, including branding, marketing, HR, finance, and prominent business leaders. Compete, learn, and win exciting rewards."
       />
-      {/* </a> */}
+       {/* </a> */}
 
       {/* Event Category Section */}
       <section className="my-32 text-center">
