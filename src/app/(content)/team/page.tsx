@@ -55,7 +55,7 @@ const teamSections = [
         image: "/placeholder-pic.jpeg",
       },
       {
-        name: "AAditya Prabhakar",
+        name: "Aditya Prabhakar",
         contact: "+91 7008254263",
         image: "/placeholder-pic.jpeg",
       },
@@ -185,7 +185,7 @@ const teamSections = [
     title: "Stationery & Logistics",
     members: [
       {
-        name: "RShyam Sahu",
+        name: "R Shyam Sahu",
         contact: "+91 7501758622",
         image: "/placeholder-pic.jpeg",
       },

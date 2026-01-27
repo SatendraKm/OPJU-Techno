@@ -89,13 +89,13 @@ export async function sendResetPasswordEmail(
                   <h1>Reset Your Password</h1>
               </div>
               <p>Dear User,</p>
-              <p>We received a request to reset your password for your Technorollix-2025 account. To proceed, please use the following One-Time Password (OTP):</p>
+              <p>We received a request to reset your password for your Techno-aiMBiAtion  2026 account. To proceed, please use the following One-Time Password (OTP):</p>
               <h2>${otp}</h2>
               <p>Please enter this OTP on the password reset page to verify your identity. If you did not request a password reset, please ignore this email or contact support.</p>
               <p>Best regards,</p>
-              <p>The Technorollix-2025 Team</p>
+              <p>The Techno-aiMBiAtion 2026 Team</p>
               <div class="footer">
-                  <p>&copy; 2025 Technorollix. All rights reserved.</p>
+                  <p>&copy; 2026 Techno-aiMBiAtion. All rights reserved.</p>
               </div>
           </div>
       </body>

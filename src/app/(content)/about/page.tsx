@@ -62,7 +62,7 @@ make a mark globally.
               TECHNOAIMBIATION 2026
             </h5>
             <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-             Technorollix is Central OPJU&apos;s
+             TECHNOAIMBIATION is Central OPJU&apos;s
  biggest techno-
 cultural extravaganza, bringing together
 innovation, creativity, and entertainment on a
