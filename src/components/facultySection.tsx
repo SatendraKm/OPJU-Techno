@@ -22,7 +22,7 @@ const FacultySection = () => {
 
   const chiefConvenor: FacultyPerson = {
     name: "Dr. Rakesh Nayak",
-    role: "Chief Convener - Techno-aiMBiAtion",
+    role: "Chief Convenor - Techno-aiMBiAtion",
     image: "/faculty/chief.jpg",
   };
 
@@ -42,17 +42,17 @@ const FacultySection = () => {
   const technoConvenors: FacultyPerson[] = [
     {
       name: "Dr. Trinath Talapaneni",
-      role: "Convener - Techno-Ambition",
+      role: "Convenor - Techno-aiMBiAtion",
       image: "/faculty/trinath.jpg",
     },
     {
       name: "Dr. Swati Verma",
-      role: "Convener - Techno-Ambition",
+      role: "Convenor - Techno-aiMBiAtion",
       image: "/faculty/swati.jpg",
     },
     {
       name: "Prof. Sujata Panda",
-      role: "Convener - Techno-Ambition",
+      role: "Convenor - Techno-aiMBiAtion",
       image: "/faculty/sujata.jpg",
     },
   ];
@@ -71,7 +71,7 @@ const FacultySection = () => {
     {
       name: "Mrs. Meenakshi Rao Gaba",
       role: "Convenor - Celebrity Night",
-      image: "/faculty/meenakshi.jpg",
+      image: "/faculty/minakshi.jpg",
     },
   ];
 
