@@ -27,9 +27,8 @@ export default function AccommodationDataPage() {
   } = useFetch(getAllAccommodationsWithUsers);
 
   useEffect(() => {
-  accommodationsFetchFn();
-}, [accommodationsFetchFn]);
-
+    accommodationsFetchFn();
+  }, []);
 
   useEffect(() => {
     if (accommodationsFetchError) {
@@ -42,21 +41,21 @@ export default function AccommodationDataPage() {
   }, [accommodationsFetchError]);
 
   const handleDownloadExcel = () => {
-    const data = accommodationsFetchData?.map(
-      ({ user, accommodation, leaders }) => ({
+    const data = accommodationsFetchData
+      ?.filter((item) => item.user)
+      .map(({ user, accommodation, leaders }) => ({
         "User Full Name": user.fullName,
         "User Email": user.email,
         "User Mobile Number": user.mobileNumber,
         Leaders: leaders.join(", "),
         "Arrival Time": new Date(accommodation.arrivalTime).toLocaleString(),
         "Departure Time": new Date(
-          accommodation.departureTime
+          accommodation.departureTime,
         ).toLocaleString(),
         "Additional Details": accommodation.additionalDetails,
         "University Name": accommodation.universityName,
         Gender: accommodation.gender,
-      })
-    );
+      }));
 
     if (data) {
       const worksheet = XLSX.utils.json_to_sheet(data);
@@ -101,33 +100,25 @@ export default function AccommodationDataPage() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {accommodationsFetchData?.map(
-                ({ user, accommodation, leaders }) => (
+              {accommodationsFetchData
+                ?.filter((item) => item.user) // ⬅️ important
+                .map(({ user, accommodation, leaders }) => (
                   <TableRow key={accommodation._id.toString()}>
-                    <TableCell className="w-1/6">{user.fullName}</TableCell>
-                    <TableCell className="w-1/6">{user.email}</TableCell>
-                    <TableCell className="w-1/6">{user.mobileNumber}</TableCell>
-                    <TableCell className="w-1/6">
-                      {leaders.join(", ")}
-                    </TableCell>
-                    <TableCell className="w-1/6">
-                      {accommodation.universityName}
-                    </TableCell>
-                    <TableCell className="w-1/6">
-                      {accommodation.gender}
-                    </TableCell>
-                    <TableCell className="w-1/6">
+                    <TableCell>{user.fullName}</TableCell>
+                    <TableCell>{user.email}</TableCell>
+                    <TableCell>{user.mobileNumber}</TableCell>
+                    <TableCell>{leaders.join(", ")}</TableCell>
+                    <TableCell>{accommodation.universityName}</TableCell>
+                    <TableCell>{accommodation.gender}</TableCell>
+                    <TableCell>
                       {new Date(accommodation.arrivalTime).toLocaleString()}
                     </TableCell>
-                    <TableCell className="w-1/6">
+                    <TableCell>
                       {new Date(accommodation.departureTime).toLocaleString()}
                     </TableCell>
-                    <TableCell className="w-1/6">
-                      {accommodation.additionalDetails}
-                    </TableCell>
+                    <TableCell>{accommodation.additionalDetails}</TableCell>
                   </TableRow>
-                )
-              )}
+                ))}
             </TableBody>
           </Table>
         </CardContent>

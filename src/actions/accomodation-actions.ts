@@ -21,7 +21,7 @@ export async function getAccommodationDetailsAction(): Promise<IAccommodation | 
   } catch (error) {
     if (error instanceof Error) {
       throw new Error(
-        `Failed to fetch accommodation details: ${error.message}`
+        `Failed to fetch accommodation details: ${error.message}`,
       );
     } else {
       throw new Error("Failed to fetch accommodation details");
@@ -39,7 +39,7 @@ interface AccommodationDetails {
 }
 
 export async function setAccommodationDetailsAction(
-  details: AccommodationDetails
+  details: AccommodationDetails,
 ): Promise<IAccommodation> {
   try {
     await connectToDatabase();
@@ -83,40 +83,41 @@ export async function getAllAccommodationsWithUsers(): Promise<
 > {
   try {
     await connectToDatabase();
+
     const accommodations = await Accommodation.find().lean<IAccommodation[]>();
-    const userIds = accommodations.map((accommodation) => accommodation.userId);
+    const userIds = accommodations.map((a) => a.userId);
+
     const users = await User.find({ _id: { $in: userIds } }).lean<IUser[]>();
 
-    const accommodationsWithUsers = await Promise.all(
+    const results = await Promise.all(
       accommodations.map(async (accommodation) => {
-        const user = users.find((user) =>
-          user._id.equals(accommodation.userId)
+        const user = users.find((u) => u._id.equals(accommodation.userId));
+
+        if (!user) return null; // ⬅️ key change
+
+        const teams = await Team.find({
+          members: user.email,
+        }).lean<ITeam[]>();
+
+        const leaders = Array.from(
+          new Set(teams.map((team) => team.leader).filter(Boolean)),
         );
-
-        if (!user) {
-          return { user: null, accommodation, leaders: [] };
-        }
-
-        // Fetch teams where the user is a member
-        const teams = await Team.find({ members: user.email }).lean<ITeam[]>();
-
-        // Get all leaders of those teams
-        const leaders = Array.from(new Set(teams.map((team) => team.leader)));
 
         return {
           user,
           accommodation,
-          leaders: leaders.filter((email) => email),
+          leaders,
         };
-      })
+      }),
     );
 
-    return JSON.parse(JSON.stringify(accommodationsWithUsers));
+    return JSON.parse(
+      JSON.stringify(results.filter(Boolean)), // ⬅️ remove nulls
+    );
   } catch (error) {
     if (error instanceof Error) {
       throw new Error(`Failed to fetch accommodations: ${error.message}`);
-    } else {
-      throw new Error("Failed to fetch accommodations");
     }
+    throw new Error("Failed to fetch accommodations");
   }
 }
