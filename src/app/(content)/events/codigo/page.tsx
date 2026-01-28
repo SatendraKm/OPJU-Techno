@@ -24,7 +24,7 @@ const Page = () => {
     },
     {
       imageUrl: "/managers/CodiGo/CodiGo 2026/anj.jpeg",
-      name: "Aniruddha Singh Gautam",
+      name: "Aniruddha Singh",
       contact: 6260225774,
     },
   ];
