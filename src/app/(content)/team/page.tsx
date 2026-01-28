@@ -7,22 +7,23 @@ const teamSections = [
       {
         name: "Ajay Patel",
         contact: "+91 8839171099",
-        image: "/teams/information-publicity-invitation/ajay.png",
+        image: "/teams/information-publicity-invitation/ajay.jpeg",
       },
       {
         name: "Hussain Kapadia",
         contact: "+91 8265013186",
         image: "/teams/information-publicity-invitation/hussain.jpeg",
       },
+      
     ],
   },
   {
     title: "Design, Print & Media",
     members: [
       {
-        name: "Ritul Raj Bhagat",
-        contact: "+91 9432875971",
-        image: "/placeholder-pic.jpeg",
+        name: "Rishabh Tiwari",
+        contact: "+91 8989162333",
+        image: "/teams/design-print-media/rishab.jpeg",
       },
       {
         name: "Navya Tiwari",
@@ -37,7 +38,7 @@ const teamSections = [
       {
         name: "Saniya Thakur",
         contact: "+919343489230",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/registration-reception/9230.jpeg",
       },
       {
         name: "Megha Sahu",
@@ -55,9 +56,9 @@ const teamSections = [
         image: "/placeholder-pic.jpeg",
       },
       {
-        name: "Aditya Prabhakar",
+        name: "Aaditya Prabhakar",
         contact: "+91 7008254263",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/accommodation/aditya.jpeg",
       },
     ],
   },
@@ -82,12 +83,12 @@ const teamSections = [
       {
         name: "Ankit Kumar",
         contact: "+91 9039046503",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/catering/ankit.jpeg",
       },
       {
         name: "Sushree Srutipriya Pradhan",
         contact: "+91 7847891954",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/catering/shruti2.jpeg",
       },
     ],
   },
@@ -112,12 +113,12 @@ const teamSections = [
       {
         name: "Preeti Behera",
         contact: "+91 8984329966",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/transportation/9966.jpg",
       },
       {
         name: "Mayank Sharma",
         contact: "+91 7024189586",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/transportation/mayank.jpeg",
       },
     ],
   },
@@ -130,9 +131,9 @@ const teamSections = [
         image: "/placeholder-pic.jpeg",
       },
       {
-        name: "Garima Vastarkar",
+        name: "Garima Vastrakar",
         contact: "+91 9981285475",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/hospitality/5475.jpeg",
       },
     ],
   },
@@ -142,12 +143,12 @@ const teamSections = [
       {
         name: "Satendra Kumar",
         contact: "+91 9301196473",
-        image: "/teams/website-maintenance/sattu.jpg",
+        image: "/teams/website-maintenance/sattu.jpeg",
       },
       {
         name: "Surya Prakash Sharma",
         contact: "+91 8602577270",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/website-maintenance/surya.jpeg",
       },
     ],
   },
@@ -162,7 +163,7 @@ const teamSections = [
       {
         name: "Pratham Panchal",
         contact: "+91 8109771525",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/certificate-prize/pratham.jpeg",
       },
     ],
   },
@@ -172,7 +173,7 @@ const teamSections = [
       {
         name: "Ashutosh Sahu",
         contact: "+91 9776565942",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/discipline/ashuu.jpeg",
       },
       {
         name: "Charulata Chouhan",
@@ -185,14 +186,14 @@ const teamSections = [
     title: "Stationery & Logistics",
     members: [
       {
-        name: "R Shyam Sahu",
+        name: "Shyam Sahu",
         contact: "+91 7501758622",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/stationery-logistics/8622.jpg",
       },
       {
         name: "Vivek Sharma",
         contact: "+91 9031714978",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/stationery-logistics/vivek.jpeg",
       },
     ],
   },
@@ -202,12 +203,12 @@ const teamSections = [
       {
         name: "Vishnu Kumar Gupta",
         contact: "+91 754000243",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/health/vishnu.jpeg",
       },
       {
         name: "Naina Meghani",
         contact: "+91 9522893333",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/health/33333.jpeg",
       },
     ],
   },
