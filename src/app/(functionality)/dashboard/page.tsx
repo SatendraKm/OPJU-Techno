@@ -367,6 +367,7 @@ import {
   DialogTitle,
   // DialogFooter,
 } from "@/components/ui/dialog";
+import AccommodationModal from "@/components/accomodation-modal";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -412,6 +413,10 @@ const DashboardPage = () => {
     loading: invitedTeamsLoading,
     fn: invitedTeamsFn,
   } = useFetch(getInvitedTeams);
+
+  const [showAccommodationModal, setShowAccommodationModal] = useState(false);
+  const [accommodationData] = useState(null);
+
 
   const { error: acceptInvitationError, fn: acceptInvitationFn } =
     useFetch(acceptInviteAction);
@@ -568,6 +573,16 @@ const DashboardPage = () => {
         >
           Register for Events
         </Button>
+        <div className="text-center mt-3">
+          <Button
+            className="text-white bg-black/70"
+            variant="secondary"
+            onClick={() => setShowAccommodationModal(true)}
+          >
+            Fill Accommodation Form
+          </Button>
+
+        </div>
 
         {getSubEventCount() >= MAX_SUBEVENTS && (
           <p className="text-red-400 text-sm mt-2">Sub-event limit reached</p>
@@ -756,6 +771,13 @@ const DashboardPage = () => {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+      <AccommodationModal
+  isOpen={showAccommodationModal}
+  onClose={() => setShowAccommodationModal(false)}
+  initialData={accommodationData}
+/>
+
+
     </div>
   );
 };

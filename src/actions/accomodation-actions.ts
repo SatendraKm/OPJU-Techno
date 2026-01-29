@@ -5,6 +5,7 @@ import { getUser } from "./user-actions";
 import { IUser, User } from "@/models/user.model";
 import { ITeam, Team } from "@/models/team.model";
 
+/* ===================== GET OWN ACCOMMODATION ===================== */
 export async function getAccommodationDetailsAction(): Promise<IAccommodation | null> {
   try {
     await connectToDatabase();
@@ -15,8 +16,9 @@ export async function getAccommodationDetailsAction(): Promise<IAccommodation | 
     }
 
     const accommodation = await Accommodation.findOne({
-      userId: user?._id,
+      userId: user._id,
     }).lean<IAccommodation>();
+
     return JSON.parse(JSON.stringify(accommodation));
   } catch (error) {
     if (error instanceof Error) {
@@ -29,36 +31,45 @@ export async function getAccommodationDetailsAction(): Promise<IAccommodation | 
   }
 }
 
+/* ===================== TYPES ===================== */
 interface AccommodationDetails {
-  userId: string;
   arrivalTime: Date;
   departureTime: Date;
   additionalDetails?: string;
-  universityName: string; // New required field
-  gender: "Male" | "Female" | "Other"; // New required field with restricted values
+  universityName: string;
+  gender: "Male" | "Female" | "Other";
 }
 
+/* ===================== SET / UPDATE ACCOMMODATION ===================== */
 export async function setAccommodationDetailsAction(
   details: AccommodationDetails,
 ): Promise<IAccommodation> {
   try {
     await connectToDatabase();
+
+    const user = await getUser();
+    if (!user) {
+      throw new Error("User not found");
+    }
+
     let accommodation = await Accommodation.findOne({
-      userId: details.userId,
+      userId: user._id,
     });
 
     if (accommodation) {
-      // Update existing accommodation
+      // Update existing
       accommodation.arrivalTime = details.arrivalTime;
       accommodation.departureTime = details.departureTime;
-      accommodation.additionalDetails =
-        details.additionalDetails || accommodation.additionalDetails;
+      accommodation.additionalDetails = details.additionalDetails;
       accommodation.universityName = details.universityName;
       accommodation.gender = details.gender;
       await accommodation.save();
     } else {
-      // Create new accommodation with all required fields
-      accommodation = new Accommodation(details);
+      // Create new
+      accommodation = new Accommodation({
+        ...details,
+        userId: user._id,
+      });
       await accommodation.save();
     }
 
@@ -72,6 +83,7 @@ export async function setAccommodationDetailsAction(
   }
 }
 
+/* ===================== ADMIN: GET ALL ===================== */
 interface AccommodationWithUser {
   user: IUser;
   accommodation: IAccommodation;
@@ -91,9 +103,11 @@ export async function getAllAccommodationsWithUsers(): Promise<
 
     const results = await Promise.all(
       accommodations.map(async (accommodation) => {
-        const user = users.find((u) => u._id.equals(accommodation.userId));
+        const user = users.find((u) =>
+          u._id.toString() === accommodation.userId.toString()
+        );
 
-        if (!user) return null; // ⬅️ key change
+        if (!user) return null;
 
         const teams = await Team.find({
           members: user.email,
@@ -111,9 +125,7 @@ export async function getAllAccommodationsWithUsers(): Promise<
       }),
     );
 
-    return JSON.parse(
-      JSON.stringify(results.filter(Boolean)), // ⬅️ remove nulls
-    );
+    return JSON.parse(JSON.stringify(results.filter(Boolean)));
   } catch (error) {
     if (error instanceof Error) {
       throw new Error(`Failed to fetch accommodations: ${error.message}`);
