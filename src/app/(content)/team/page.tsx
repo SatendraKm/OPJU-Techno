@@ -51,9 +51,9 @@ const teamSections = [
     title: "Accommodation",
     members: [
       {
-        name: "Aprajita Pandey",
+        name: "Aparajita Pandey",
         contact: "+91 9907401010",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/accommodation/aparajita.jpeg",
       },
       {
         name: "Aaditya Prabhakar",
@@ -62,6 +62,7 @@ const teamSections = [
       },
     ],
   },
+  
   {
     title: "Stage, Light, Sound & Stall",
     members: [
@@ -73,7 +74,7 @@ const teamSections = [
       {
         name: "Ayush Gupta",
         contact: "+91 7869108678",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/stage-light-sound-stall/ayushgupta.jpeg",
       },
     ],
   },
@@ -98,7 +99,7 @@ const teamSections = [
       {
         name: "Aryan Mishra",
         contact: "+91 7205993715",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/venue-preparation/aryanmishra.jpeg",
       },
       {
         name: "Garima Mishra",
@@ -128,7 +129,7 @@ const teamSections = [
       {
         name: "Saliha Ahmed",
         contact: "+91 8085592679",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/hospitality/saliha.jpeg",
       },
       {
         name: "Garima Vastrakar",
@@ -149,6 +150,21 @@ const teamSections = [
         name: "Surya Prakash Sharma",
         contact: "+91 8602577270",
         image: "/teams/website-maintenance/surya.jpeg",
+      },
+    ],
+  },
+  {
+    title: "Sponsorship",
+    members: [
+      {
+        name: "Archit Dubey",
+        contact: "+91 9770338556",
+        image: "/teams/sponsorship/architdubey.jpeg",
+      },
+      {
+        name: "Ansh Sharma",
+        contact: "+91 9343044641",
+        image: "/teams/sponsorship/anshsharma.jpeg",
       },
     ],
   },
@@ -178,7 +194,7 @@ const teamSections = [
       {
         name: "Charulata Chouhan",
         contact: "+91 7987399785",
-        image: "/placeholder-pic.jpeg",
+        image:  "/teams/discipline/charulata.jpeg",
       },
     ],
   },
