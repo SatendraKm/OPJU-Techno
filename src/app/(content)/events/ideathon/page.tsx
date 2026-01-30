@@ -73,9 +73,8 @@ const Page = () => {
       <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro */}
-      {/* <a href="/dashboard"> */}
       <EventIntro
-        imageUrl="/testfile/ideathon3.svg"
+        imageUrl="/eventslogo/ideathonevents.svg"
         registrations={registrationCount}
         pricepool={18000}
         description={`“Building Solutions Through Innovation..”

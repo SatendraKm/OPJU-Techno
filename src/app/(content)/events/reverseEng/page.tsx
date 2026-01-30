@@ -83,7 +83,7 @@ const Page = () => {
       {/* Event Introduction */}
       {/* <a href="/dashboard"> */}
       <EventIntro
-        imageUrl="/testfile/backtrace3.svg"
+        imageUrl="/eventslogo/backtraceevents.svg"
         registrations={registrationCount}
         pricepool={11000}
         description="Reverse Engineering – Decode the Hardware is a logic-oriented technical event designed to evaluate participants’ ability to analyze, interpret, and reason about unknown hardware systems. The event emphasizes observation, deduction, and conceptual understanding rather than physical assembly or complex instrumentation."

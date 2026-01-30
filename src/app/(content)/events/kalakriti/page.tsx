@@ -189,7 +189,7 @@ const KalaKriti = () => {
       <section>
         {/* <a href="/dashboard"> */}
         <EventIntro
-          imageUrl="/testfile/kalakriti3.svg"
+          imageUrl="/eventslogo/kalakritievents.svg"
           registrations={registrationCount}
           pricepool={25500}
           description="Craft is the vehicle for expressing your vision. Craft is the visible edge of Art..."

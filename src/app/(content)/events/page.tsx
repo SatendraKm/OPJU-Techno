@@ -5,24 +5,24 @@ import Link from "next/link";
 
 const eventsData = {
   technical: [
-    { imageUrl: "/testfile/codigo3.svg", link: "/events/codigo" },
-    { imageUrl: "/testfile/techlab3.svg", link: "/events/techlab" },
-    { imageUrl: "/testfile/robovation3.svg", link: "/events/robovation" },
-    { imageUrl: "/testfile/ideathon.svg", link: "/events/ideathon" },
-    { imageUrl: "/testfile/backtrace3.svg", link: "/events/reverseEng" },
-    { imageUrl: "/testfile/Designathon3.svg", link: "/events/designathon" },
+    { imageUrl: "/eventpagelogo/codigologo.svg", link: "/events/codigo" },
+    { imageUrl: "/eventpagelogo/techlablogo.svg", link: "/events/techlab" },
+    { imageUrl: "/eventpagelogo/robovationlogo.svg", link: "/events/robovation" },
+    { imageUrl: "/eventpagelogo/ideathonlogo.svg", link: "/events/ideathon" },
+    { imageUrl: "/eventpagelogo/backtracelogo.svg", link: "/events/reverseEng" },
+    { imageUrl: "/eventpagelogo/designathonlogo.svg", link: "/events/designathon" },
   ],
 
   nonTechnical: [
-    { imageUrl: "/testfile/kalakriti3.svg", link: "/events/kalakriti" },
-    { imageUrl: "/testfile/masterchef3.svg", link: "/events/master_chef" },
-    { imageUrl: "/testfile/rodies3.svg", link: "/events/roadies" },
-    { imageUrl: "/testfile/Antragini3.svg", link: "/events/antaragni" },
-    { imageUrl: "/testfile/voiceofyouth.svg", link: "/events/yuva-sabha" },
-    { imageUrl: "/testfile/beatbattle.svg", link: "/events/beat-battle" },
-    { imageUrl: "/testfile/startup3.svg", link: "/events/start-up-business-plan" },
-    { imageUrl: "/testfile/riwayat4.svg", link: "/events/riywayat" },
-    { imageUrl: "/testfile/aima3.svg", link: "/events/aima" },
+    { imageUrl: "/eventpagelogo/kalakritilogo.svg", link: "/events/kalakriti" },
+    { imageUrl: "/eventpagelogo/mastercheflogoevents.svg", link: "/events/master_chef" },
+    { imageUrl: "/eventpagelogo/roadieslogo.svg", link: "/events/roadies" },
+    { imageUrl: "/eventpagelogo/antaragnilogo.svg", link: "/events/antaragni" },
+    { imageUrl: "/eventpagelogo/yuvasabhalogo.svg", link: "/events/yuva-sabha" },
+    { imageUrl: "/eventpagelogo/beatbattlelogoevents.svg", link: "/events/beat-battle" },
+    { imageUrl: "/eventpagelogo/startuplogo.svg", link: "/events/start-up-business-plan" },
+    { imageUrl: "/eventpagelogo/riwayat.svg", link: "/events/riywayat" },
+    { imageUrl: "/eventpagelogo/aimalogo.svg", link: "/events/aima" },
   ],
 };
 

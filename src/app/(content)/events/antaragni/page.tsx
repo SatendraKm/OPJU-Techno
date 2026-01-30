@@ -63,7 +63,7 @@ const Antaragni = () => {
       <section>
         {/* <a href="/dashboard"> */}
         <EventIntro
-          imageUrl="/testfile/Antragini3.svg"
+          imageUrl="/eventslogo/antaragnievents.svg"
           registrations={registrationCount}
           pricepool={21500}
           description="ANTARAGNI is a vibrant platform for students to showcase their creative talents..."
