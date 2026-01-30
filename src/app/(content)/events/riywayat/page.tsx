@@ -55,7 +55,7 @@ const Page = () => {
       <EventIntro
         venue="Babuji Chowk & Football Ground Stage"
         time="11-19 Feb 2026"
-        imageUrl="/testfile/riwayat4.svg"
+        imageUrl="/eventslogo/riwayatevents.svg"
         registrations={registrationCount}
         pricepool={18000}
         description="An inter-college fashion show hosted by OP Jindal University, designed to promote creativity, confidence, and personality through structured rounds, workshops, and inclusive participation."

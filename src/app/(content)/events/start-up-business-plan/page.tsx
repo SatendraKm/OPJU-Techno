@@ -55,7 +55,7 @@ const Page = () => {
       <EventIntro
         venue="Live Classroom"
         time="20-02-26, 10:30 am"
-        imageUrl="/testfile/startup3.svg"
+        imageUrl="/eventslogo/startupevents.svg"
         registrations={registrationCount}
         pricepool={18000}
         description="The Startup Pitching Event is designed to provide early-stage
