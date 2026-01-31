@@ -43,7 +43,7 @@ const teamSections = [
       {
         name: "Megha Sahu",
         contact: "+91 9348561048",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/registration-reception/megha.jpeg",
       },
     ],
   },
@@ -104,7 +104,7 @@ const teamSections = [
       {
         name: "Garima Mishra",
         contact: "+91 7047039028",
-        image: "/teams/hospitality/garima.png",
+        image: "/teams/venue-preparation/garimam.jpeg",
       },
     ],
   },
