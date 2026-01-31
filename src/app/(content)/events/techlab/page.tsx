@@ -126,28 +126,31 @@ const Page = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 py-8">
-          <SubEventCard
-            Icon={GiTargetPoster}
-            title="POSTER PRESENTATION"
-            description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
-          />
-          <SubEventCard
-            Icon={GiRobotLeg}
-            title="WORKING MODEL PRESENTATION"
-            description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
-          />
-          <SubEventCard
-            Icon={PiPathBold}
-            title="PROTOTYPE PRESENTATION"
-            description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
-          />
-          <SubEventCard
-            Icon={FaAppStore}
-            title=" App Making"
-            description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
-          />
-        </div>
-      </section>
+        <SubEventCard
+          Icon={GiTargetPoster}
+          title="POSTER PRESENTATION"
+          description="A visual representation of research, concepts, or innovative ideas using posters. Participants must clearly explain the problem statement, methodology, and expected outcomes within a limited time."
+        />
+
+        <SubEventCard
+          Icon={GiRobotLeg}
+          title="WORKING MODEL PRESENTATION"
+          description="Participants present a fully functional prototype demonstrating a real-world problem and its practical solution. The model should clearly show innovation, usability, and technical implementation."
+        />
+
+        <SubEventCard
+          Icon={PiPathBold}
+          title="NON-WORKING MODEL PRESENTATION"
+          description="Conceptual or partially built models that explain an idea, system, or process. Emphasis is on creativity, design thinking, feasibility, and clarity of explanation rather than functionality."
+        />
+
+        <SubEventCard
+          Icon={FaAppStore}
+          title="APP MAKING & WEB DEVELOPMENT"
+          description="Design and develop a mobile or web application that addresses a real-life problem. Evaluation is based on functionality, UI/UX, innovation, and relevance of the solution."
+        />
+      </div>
+            </section>
 
       {/* Additional Sections */}
       <section>
