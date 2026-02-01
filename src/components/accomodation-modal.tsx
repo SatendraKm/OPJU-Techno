@@ -379,7 +379,23 @@ export default function AccommodationModal({
                 </FormItem>
               )}
             />
-
+                {/* ADD THIS SECTION HERE FOR BOTTOM PLACEMENT */}
+                <div className="bg-blue-50 border border-blue-200 rounded-md p-3">
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-2">
+                      <span className="text-blue-600">ℹ️</span>
+                      <p className="text-sm text-blue-800 font-semibold">
+                        Free accommodation provided for outstation students (limited seats available)
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-blue-600">⚠️</span>
+                      <p className="text-sm text-blue-800 font-semibold">
+                        All team members must fill out this form separately to request accommodation.
+                      </p>
+                    </div>
+                  </div>
+</div>
             <DialogFooter>
               <Button type="button" variant="outline" onClick={onClose}>
                 Cancel
