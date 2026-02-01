@@ -390,6 +390,8 @@ import {
 import { toast } from "@/hooks/use-toast";
 import Payments from "@/components/payments";
 import { getMergedEvents } from "@/lib/utils";
+import { HoverCard, HoverCardContent } from "@/components/ui/hover-card";
+import { HoverCardTrigger } from "@radix-ui/react-hover-card";
 
 const MAX_SUBEVENTS = 7;
 
@@ -697,11 +699,57 @@ const DashboardPage = () => {
         </Card>
       </div>
 
-      {/* PAYMENT */}
+     {/* PAYMENT */}
       {!isOPJU && payAmount > 0 && (
         <Card>
           <CardHeader>
-            <CardTitle>Payment Section</CardTitle>
+            <CardTitle className="flex justify-between items-center">
+              Payment Section
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <button 
+                    className="text-gray-600 underline font-thin text-sm hover:text-gray-800 transition-colors"
+                    aria-label="View fee structure details"
+                  >
+                    View Fee Structure
+                  </button>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-80 p-4 bg-white shadow-lg rounded-lg">
+                  <div className="text-sm text-gray-700 space-y-3">
+                    <div>
+                      <p className="font-semibold mb-2">Registration Fee Structure:</p>
+                      
+                      <div className="mb-3">
+                        <p className="font-medium">Individual Registration:</p>
+                        <ul className="list-disc pl-5 mt-1 space-y-1">
+                          <li>1 event: ₹99</li>
+                          <li>2-3 events: ₹199</li>
+                          <li>4-7 events: ₹499</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="font-medium">Team Registration:</p>
+                        <ul className="list-disc pl-5 mt-1 space-y-1">
+                          <li>Per event: ₹299</li>
+                          <li>4-7 events: ₹499</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="pt-2 border-t border-gray-200 space-y-1">
+                      <p className="text-xs">
+                        • Payment required if your team includes non-members
+                      </p>
+                      <p className="text-xs">
+                        • Events with team size of 1 are individual events
+                      </p>
+                      <p className="text-xs font-medium">
+                        • Only team leaders need to pay the registration fee
+                      </p>
+                    </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <p className="mb-2">Amount to pay: ₹{payAmount}</p>

@@ -77,7 +77,7 @@ const Page = () => {
         imageUrl="/eventslogo/ideathonevents.svg"
         registrations={registrationCount}
         pricepool={18000}
-        description={`“Building Solutions Through Innovation..”
+        description={`“Building Solutions Through Innovation.."
 Welcome to IDEATHON—an inspiring platform where curiosity fuels creativity and real-world challenges spark innovative solutions. Be a part of a dynamic community of bold thinkers and change-makers who challenge conventions and create the remarkable.
 
 The Objective:
