@@ -18,14 +18,14 @@ const Page = () => {
       contact: 9131403772,
     },
     {
-      imageUrl: "/managers/Robovation/Robovation 2026/Princy Patle (9770165316) Event Manager_.jpg",
+      imageUrl: "/managers/Robovation/Robovation 2026/princy.jpg",
       name: "Princy Patle",
       contact: 9770165316,
     },
     {
-      imageUrl: "/managers/Robovation/Robovation 2026/Ayush Kumar (+91 81096 98355).jpg",
+      imageUrl: "/managers/Robovation/Robovation 2026/ayush.jpg",
       name: "Ayush Kumar",
-      contact: 81096983355,
+      contact: 8109698355,
     },
   ];
 
