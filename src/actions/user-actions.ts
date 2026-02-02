@@ -91,6 +91,16 @@ export const userLogin = async (
     { expiresIn: "1h" },
   );
 
+  // SET COOKIE SERVER-SIDE
+  const cookieStore = await cookies();
+  cookieStore.set("auth-token", token, {
+    httpOnly: false, // Allow client-side access
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    maxAge: 60 * 60, // 1 hour
+    path: "/",
+  });
+
   return JSON.parse(
     JSON.stringify({
       user: existingUser,
