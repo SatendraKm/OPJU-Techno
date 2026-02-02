@@ -28,7 +28,7 @@ const Page = () => {
 
   const managers = [
     {
-      imageUrl: "/managers/Voice_Of_Youth/Voice Of Youth/shakshyee Sharma.jpg",
+      imageUrl: "/managers/Voice_Of_Youth/Voice Of Youth/shakshyee.jpg",
       name: "Shakshyee Sharma",
       contact: 6371965128,
     },
