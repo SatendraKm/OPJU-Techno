@@ -13,7 +13,7 @@ const Page = () => {
       contact: 7580827172,
     },
     {
-      imageUrl: "/placeholder-pic.jpeg",
+      imageUrl: "/managers/Aima/bhoomi.jpeg",
       name: "Bhoomi Chandra",
       contact: 8103501661,
     },
