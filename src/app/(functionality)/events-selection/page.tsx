@@ -1,7 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 import useFetch from "@/hooks/use-fetch";
@@ -33,8 +38,9 @@ type GroupedEvents = {
 const MAX_SECTIONS = 4;
 const MAX_SUBEVENTS = 7;
 
-/* ---------- KALAKRITI RULE ---------- */
-const RESTRICTED_MAIN_EVENT = "kalakriti"; // normalized
+/* ---------- RESTRICTIONS ---------- */
+const RESTRICTED_KALAKRITI = "kalakriti";
+const RESTRICTED_VOICE = "voice of youth";
 
 export default function EventsSelection() {
   const [selectedEvents, setSelectedEvents] = useState<string[]>([]);
@@ -73,7 +79,10 @@ export default function EventsSelection() {
 
   useEffect(() => {
     if (submitData?.success) {
-      toast({ title: "Success", description: "Successfully registered" });
+      toast({
+        title: "Success",
+        description: "Successfully registered",
+      });
       setTimeout(() => router.push("/dashboard"), 500);
     }
 
@@ -128,7 +137,7 @@ export default function EventsSelection() {
   /* ---------- PRIZE POOL ---------- */
   const getPrizePoolForMainEvent = (mainEvent: string) => {
     const events = groupedEvents[mainEvent];
-    if (!events || events.length === 0) return null;
+    if (!events?.length) return null;
     return Math.max(...events.map((e) => e.prizeMoney));
   };
 
@@ -137,14 +146,28 @@ export default function EventsSelection() {
     const event = allEvents.find((e) => e._id === eventId);
     if (!event) return;
 
-    const isKalakriti = normalize(mainEvent) === RESTRICTED_MAIN_EVENT;
+    const normalizedMain = normalize(mainEvent);
+
+    const isKalakriti = normalizedMain === RESTRICTED_KALAKRITI;
+    const isVoiceOfYouth = normalizedMain === RESTRICTED_VOICE;
     const isPradarshini = normalize(event.name).includes("pradarshini");
 
+    // ❌ Kalakriti restriction
     if (isKalakriti && !isPradarshini) {
       toast({
         title: "Registration Closed",
         description:
           "Only Pradarshini is open for registration under Kalakriti.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // ❌ Voice of Youth fully closed
+    if (isVoiceOfYouth) {
+      toast({
+        title: "Registration Closed",
+        description: "Voice of Youth registrations are currently closed.",
         variant: "destructive",
       });
       return;
@@ -241,13 +264,15 @@ export default function EventsSelection() {
               const status = getStatus(event._id);
 
               const isKalakriti =
-                normalize(event.mainEvent) === RESTRICTED_MAIN_EVENT;
-
+                normalize(event.mainEvent) === RESTRICTED_KALAKRITI;
+              const isVoiceOfYouth =
+                normalize(event.mainEvent) === RESTRICTED_VOICE;
               const isPradarshini = normalize(event.name).includes(
                 "pradarshini"
               );
 
-              const isBlocked = isKalakriti && !isPradarshini;
+              const isBlocked =
+                (isKalakriti && !isPradarshini) || isVoiceOfYouth;
 
               return (
                 <Card
