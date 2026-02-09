@@ -59,10 +59,10 @@ const EventIntro: React.FC<EventIntroProps> = ({
 
           <div className="text-center mt-5 mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-3xl sm:text-4xl mx-2 font-normal font-['Inder']">
-              Prize Pool
+              Prize Pool:
             </span>
             <span className="text-white text-3xl sm:text-4xl font-normal font-['Inder']">
-              Rs.{pricepool}
+              Worth Rs.{pricepool}
             </span>
           </div>
         </div>
