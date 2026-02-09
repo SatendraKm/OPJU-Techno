@@ -33,6 +33,9 @@ type GroupedEvents = {
 const MAX_SECTIONS = 4;
 const MAX_SUBEVENTS = 7;
 
+/* ---------- KALAKRITI RULE ---------- */
+const RESTRICTED_MAIN_EVENT = "kalakriti"; // normalized
+
 export default function EventsSelection() {
   const [selectedEvents, setSelectedEvents] = useState<string[]>([]);
   const [registeredEvents, setRegisteredEvents] = useState<string[]>([]);
@@ -84,6 +87,8 @@ export default function EventsSelection() {
   }, [submitData, submitError, router]);
 
   /* ---------- HELPERS ---------- */
+  const normalize = (v: string) => v.toLowerCase().trim();
+
   const getMainEventName = (eventId: string) => {
     const ev = allEvents.find((e) => e._id === eventId);
     return ev ? ev.name.split(" – ")[0] : null;
@@ -120,16 +125,31 @@ export default function EventsSelection() {
     return acc;
   }, {});
 
-  /* ---------- PRIZE POOL PER SECTION ---------- */
+  /* ---------- PRIZE POOL ---------- */
   const getPrizePoolForMainEvent = (mainEvent: string) => {
     const events = groupedEvents[mainEvent];
     if (!events || events.length === 0) return null;
-
     return Math.max(...events.map((e) => e.prizeMoney));
   };
 
   /* ---------- SELECTION LOGIC ---------- */
   const toggleEventSelection = (eventId: string, mainEvent: string) => {
+    const event = allEvents.find((e) => e._id === eventId);
+    if (!event) return;
+
+    const isKalakriti = normalize(mainEvent) === RESTRICTED_MAIN_EVENT;
+    const isPradarshini = normalize(event.name).includes("pradarshini");
+
+    if (isKalakriti && !isPradarshini) {
+      toast({
+        title: "Registration Closed",
+        description:
+          "Only Pradarshini is open for registration under Kalakriti.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     if (registeredEvents.includes(eventId)) return;
 
     const alreadySelected = selectedEvents.includes(eventId);
@@ -209,36 +229,53 @@ export default function EventsSelection() {
         <div key={mainEvent} className="mb-10">
           <h2 className="text-xl font-semibold mb-4 border-b border-white/20 pb-1 flex items-center gap-3">
             {mainEvent}
-
             {getPrizePoolForMainEvent(mainEvent) && (
-  <span className="text-sm text-white font-medium">
-  (Prize Pool ₹{getPrizePoolForMainEvent(mainEvent)})
-</span>
-)}
+              <span className="text-sm text-white font-medium">
+                (Prize Pool ₹{getPrizePoolForMainEvent(mainEvent)})
+              </span>
+            )}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {groupedEvents[mainEvent].map((event) => {
               const status = getStatus(event._id);
 
+              const isKalakriti =
+                normalize(event.mainEvent) === RESTRICTED_MAIN_EVENT;
+
+              const isPradarshini = normalize(event.name).includes(
+                "pradarshini"
+              );
+
+              const isBlocked = isKalakriti && !isPradarshini;
+
               return (
                 <Card
                   key={event._id}
                   onClick={() =>
+                    !isBlocked &&
                     toggleEventSelection(event._id, mainEvent)
                   }
-                  className={`cursor-pointer transition-all border-white/10
+                  className={`transition-all border-white/10
                     ${
-                      status === "registered"
+                      isBlocked
+                        ? "opacity-40 cursor-not-allowed bg-gray-500/10 text-gray-400"
+                        : status === "registered"
                         ? "opacity-70 cursor-not-allowed bg-white/5 text-gray-300"
                         : status === "selected"
-                        ? "ring-2 ring-red-500 bg-red-500/15 text-white"
-                        : "bg-white/5 text-gray-200 hover:bg-white/10"
+                        ? "ring-2 ring-red-500 bg-red-500/15 text-white cursor-pointer"
+                        : "bg-white/5 text-gray-200 hover:bg-white/10 cursor-pointer"
                     }`}
                 >
                   <CardHeader>
                     <CardTitle className="text-base flex justify-between items-center">
                       {event.subName}
+
+                      {isBlocked && (
+                        <Badge className="bg-gray-600 text-white">
+                          Closed
+                        </Badge>
+                      )}
 
                       {status === "registered" && (
                         <Badge className="bg-green-600 text-white">
@@ -254,7 +291,7 @@ export default function EventsSelection() {
                     </CardTitle>
                   </CardHeader>
 
-                  <CardContent className="space-y-1">
+                  <CardContent>
                     <p>
                       <span className="font-semibold">Team Size:</span>{" "}
                       {event.teamSize}

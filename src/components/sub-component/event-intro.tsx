@@ -62,7 +62,7 @@ const EventIntro: React.FC<EventIntroProps> = ({
               Prize Pool:
             </span>
             <span className="text-white text-3xl sm:text-4xl font-normal font-['Inder']">
-              Worth Rs.{pricepool}
+              Rs.{pricepool}
             </span>
           </div>
         </div>
