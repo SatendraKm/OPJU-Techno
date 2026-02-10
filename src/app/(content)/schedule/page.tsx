@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Schedule = () => (
   <Image 
-    src="/testfile/schedulenew.png" 
+    src="/backgrounds/schedulex2.png" 
     width={500} 
     height={500} 
     alt="schedule" 

@@ -3,23 +3,24 @@ import React, { useState, useEffect } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
-import Image from "next/image";
 import { getRegistrationCount } from "@/actions/event-actions";
+
+
 
 const Page = () => {
   const managers = [
     {
-      imageUrl: "/managers/BeatBattle/Somya.jpg",
+      imageUrl: "/managers/Beat_Battle/Beat Battle/Somya Patel.jpg",
       name: "Somya Patel",
       contact: 9479218521,
     },
     {
-      imageUrl: "/managers/BeatBattle/Gaurav.jpg",
+      imageUrl: "/managers/Beat_Battle/Beat Battle/Gaurav Adhikari.jpg",
       name: "Gaurav Adhikari",
       contact: 8319915571,
     },
     {
-      imageUrl: "/managers/BeatBattle/Suraj.jpg",
+      imageUrl: "/managers/Beat_Battle/Beat Battle/Suraj Das.jpg",
       name: "Suraj Das",
       contact: 7974639663,
     },
@@ -50,32 +51,26 @@ const Page = () => {
   return (
     <div className="relative space-y-10 px-4 py-8">
       {/* Background */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          src="/testfile/singleeventbg.svg"
-          alt="Scrolling Background"
-          width={500}
-          height={500}
-          className="w-full h-auto opacity-150"
-        />
-      </div>
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
+      {/* <a href="/dashboard"> */}
       <EventIntro
         venue="Babuji Chowk, OPJU"
         time="20 Feb 2026, 2:00 PM - 5:30 PM"
-        imageUrl="/testfile/beat.svg"
+        imageUrl="/eventslogo/beatbattlelogo.svg"
         registrations={registrationCount}
         pricepool={10000}
         description="Step into a high-energy clash of rhythm, creativity, and raw talent at Beat Battle. Dancers face off in head-to-head rounds, trading explosive footwork, sharp musicality, and fearless improvisation. The crowd fuels the momentum, judges watch for originality and control, and every beat drop is a chance to shine."
       />
+      {/* </a> */}
 
       {/* Event Format Section */}
       <section className="my-32">
         <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
           EVENT CATEGORIES
         </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-6 text-black text-xl sm:text-2xl">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto space-y-6 text-white text-xl sm:text-2xl">
           <div>
             <h3 className="font-bold mb-2">Prelims Round</h3>
             <ul className="list-disc pl-5 space-y-1">
@@ -134,10 +129,25 @@ const Page = () => {
           Judgement Criteria
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
+          <ul className="list-decimal pl-5 text-2xl sm:text-3xl font-normal space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
             {criterias.map((criteria, index) => (
               <li key={index}>{criteria}</li>
             ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Prize */}
+      <section className="mb-20">
+        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
+          PRIZE
+        </h2>
+
+        <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-5xl mx-auto text-center">
+          <ul className="list-disc pl-5 inline-block text-left text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-gray-200">
+            <li>Winner</li>
+            <li>1st Runner Up</li>
+            <li>2nd Runner Up</li>
           </ul>
         </div>
       </section>

@@ -7,27 +7,28 @@ const teamSections = [
       {
         name: "Ajay Patel",
         contact: "+91 8839171099",
-        image: "/teams/information-publicity-invitation/ajay.png",
+        image: "/teams/information-publicity-invitation/ajay.jpeg",
       },
       {
-        name: "Shikhar Pandey",
-        contact: "+91 7765996678",
-        image: "/placeholder-pic.jpeg",
+        name: "Hussain Kapadia",
+        contact: "+91 8265013186",
+        image: "/teams/information-publicity-invitation/hussain.jpeg",
       },
+      
     ],
   },
   {
     title: "Design, Print & Media",
     members: [
       {
-        name: "Ritul Raj Bhagat",
-        contact: "+91 9432875971",
-        image: "/placeholder-pic.jpeg",
+        name: "Rishabh Tiwari",
+        contact: "+91 8989162333",
+        image: "/teams/design-print-media/rishab.jpeg",
       },
       {
-        name: "Naresh Mourya",
-        contact: "+91 9430160416",
-        image: "/teams/design-print-media/naresh.png",
+        name: "Navya Tiwari",
+        contact: "+91 8109216433",
+        image: "/teams/design-print-media/navya.jpeg",
       },
     ],
   },
@@ -35,14 +36,14 @@ const teamSections = [
     title: "Registration & Reception",
     members: [
       {
-        name: "Vishal Singh",
-        contact: "+91 7488041613",
-        image: "/teams/registration-reception/vishal.png",
+        name: "Saniya Thakur",
+        contact: "+919343489230",
+        image: "/teams/registration-reception/9230.jpeg",
       },
       {
         name: "Megha Sahu",
         contact: "+91 9348561048",
-        image: "/placeholder-pic.jpeg",
+        image: "/teams/registration-reception/megha.jpeg",
       },
     ],
   },
@@ -50,17 +51,18 @@ const teamSections = [
     title: "Accommodation",
     members: [
       {
-        name: "Vishal Pandey",
-        contact: "+91 6207005596",
-        image: "/teams/accommodation/vishal.png",
+        name: "Aparajita Pandey",
+        contact: "+91 9907401010",
+        image: "/teams/accommodation/aparajita.jpeg",
       },
       {
-        name: "Anjali Sidar",
-        contact: "+91 7647041265",
-        image: "/teams/accommodation/anjali.png",
+        name: "Aaditya Prabhakar",
+        contact: "+91 7008254263",
+        image: "/teams/accommodation/aditya.jpeg",
       },
     ],
   },
+  
   {
     title: "Stage, Light, Sound & Stall",
     members: [
@@ -70,9 +72,9 @@ const teamSections = [
         image: "/teams/stage-light-sound-stall/parth.png",
       },
       {
-        name: "Pranjal Sharma",
-        contact: "+91 9343667806",
-        image: "/teams/stage-light-sound-stall/pranjal.png",
+        name: "Ayush Gupta",
+        contact: "+91 7869108678",
+        image: "/teams/stage-light-sound-stall/ayushgupta.jpeg",
       },
     ],
   },
@@ -80,14 +82,14 @@ const teamSections = [
     title: "Catering",
     members: [
       {
-        name: "Jayant Shekhar Singh",
-        contact: "+91 9123147552",
-        image: "/teams/catering/jayant.png",
+        name: "Ankit Kumar",
+        contact: "+91 9039046503",
+        image: "/teams/catering/ankit.jpeg",
       },
       {
-        name: "Jagriti Singh",
-        contact: "+91 8603889959",
-        image: "/teams/catering/jagriti.png",
+        name: "Sushree Srutipriya Pradhan",
+        contact: "+91 7847891954",
+        image: "/teams/catering/shruti2.jpeg",
       },
     ],
   },
@@ -95,14 +97,14 @@ const teamSections = [
     title: "Venue Preparation",
     members: [
       {
-        name: "Atul Singh",
-        contact: "+91 9755305060",
-        image: "/teams/venue-preparation/atul.png",
+        name: "Aryan Mishra",
+        contact: "+91 7205993715",
+        image: "/teams/venue-preparation/aryanmishra.jpeg",
       },
       {
-        name: "Barkha Singh",
-        contact: "+91 8871694247",
-        image: "/teams/venue-preparation/barkha.png",
+        name: "Garima Mishra",
+        contact: "+91 7047039028",
+        image: "/teams/venue-preparation/garimam.jpeg",
       },
     ],
   },
@@ -110,14 +112,14 @@ const teamSections = [
     title: "Transportation",
     members: [
       {
-        name: "Vaibhav Singh",
-        contact: "+91 9109016426",
-        image: "/teams/transportation/vaibhav.png",
+        name: "Preeti Behera",
+        contact: "+91 8984329966",
+        image: "/teams/transportation/9966.jpg",
       },
       {
-        name: "Udit Shukla",
-        contact: "+91 7415885039",
-        image: "/teams/transportation/udit.png",
+        name: "Mayank Sharma",
+        contact: "+91 7024189586",
+        image: "/teams/transportation/mayank.jpeg",
       },
     ],
   },
@@ -125,14 +127,14 @@ const teamSections = [
     title: "Hospitality",
     members: [
       {
-        name: "Navneet Tripathi",
-        contact: "+91 7489462029",
-        image: "/teams/hospitality/navneet.png",
+        name: "Saliha Ahmed",
+        contact: "+91 8085592679",
+        image: "/teams/hospitality/saliha.jpeg",
       },
       {
-        name: "Garima Mishra",
-        contact: "+91 7047039028",
-        image: "/teams/hospitality/garima.png",
+        name: "Garima Vastrakar",
+        contact: "+91 9981285475",
+        image: "/teams/hospitality/5475.jpeg",
       },
     ],
   },
@@ -140,14 +142,29 @@ const teamSections = [
     title: "Website Maintenance",
     members: [
       {
-        name: "Nikhil Patel",
-        contact: "+91 8305216569",
-        image: "/teams/website-maintenance/nikhil.png",
+        name: "Satendra Kumar",
+        contact: "+91 9301196473",
+        image: "/teams/website-maintenance/sattu.jpeg",
       },
       {
-        name: "Vanmayie Singh",
-        contact: "+91 9016087977",
-        image: "/teams/website-maintenance/vanmayie.png",
+        name: "Surya Prakash Sharma",
+        contact: "+91 8602577270",
+        image: "/teams/website-maintenance/surya.jpeg",
+      },
+    ],
+  },
+  {
+    title: "Sponsorship",
+    members: [
+      {
+        name: "Archit Dubey",
+        contact: "+91 9770338556",
+        image: "/teams/sponsorship/architdubey.jpeg",
+      },
+      {
+        name: "Ansh Sharma",
+        contact: "+91 9343044641",
+        image: "/teams/sponsorship/anshsharma.jpeg",
       },
     ],
   },
@@ -160,9 +177,9 @@ const teamSections = [
         image: "/teams/certificate-prize/shivam.png",
       },
       {
-        name: "Vishnu Gupta",
-        contact: "+91 7544000243",
-        image: "/teams/certificate-prize/vishnu.png",
+        name: "Pratham Panchal",
+        contact: "+91 8109771525",
+        image: "/teams/certificate-prize/pratham.jpeg",
       },
     ],
   },
@@ -170,14 +187,14 @@ const teamSections = [
     title: "Discipline",
     members: [
       {
-        name: "Saubhagya Ranjan Panda",
-        contact: "+91 8839171099",
-        image: "/teams/discipline/saubhagya.png",
+        name: "Ashutosh Sahu",
+        contact: "+91 9776565942",
+        image: "/teams/discipline/ashuu.jpeg",
       },
       {
-        name: "Madhav Jha",
-        contact: "+91 8839171099",
-        image: "/teams/discipline/madhav.png",
+        name: "Charulata Chouhan",
+        contact: "+91 7987399785",
+        image:  "/teams/discipline/charulata.jpeg",
       },
     ],
   },
@@ -185,14 +202,14 @@ const teamSections = [
     title: "Stationery & Logistics",
     members: [
       {
-        name: "Ranveer Singh",
-        contact: "+91 6200858567",
-        image: "/teams/stationery-logistics/ranveer.png",
+        name: "Shyam Sahu",
+        contact: "+91 7501758622",
+        image: "/teams/stationery-logistics/8622.jpg",
       },
       {
-        name: "Shubham Thakur",
-        contact: "+91 9304749918",
-        image: "/teams/stationery-logistics/shubham.png",
+        name: "Vivek Sharma",
+        contact: "+91 9031714978",
+        image: "/teams/stationery-logistics/vivek.jpeg",
       },
     ],
   },
@@ -200,59 +217,75 @@ const teamSections = [
     title: "Health & First Aid",
     members: [
       {
-        name: "Durgesh Kumar",
-        contact: "+91 9201437384",
-        image: "/placeholder-pic.jpeg",
+        name: "Vishnu Kumar Gupta",
+        contact: "+91 754000243",
+        image: "/teams/health/vishnu.jpeg",
       },
       {
-        name: "Swasti Behra",
-        contact: "+91 9755275427",
-        image: "/placeholder-pic.jpeg",
+        name: "Naina Meghani",
+        contact: "+91 9522893333",
+        image: "/teams/health/33333.jpeg",
       },
     ],
   },
 ];
 
-const TeamPage = () => {
+export default function TeamPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 text-white p-8">
-      {/* Centered Content with Left & Right Margin */}
-      <div className="mx-auto max-w-6xl">
-        {/* Main Heading */}
-        <h1 className="text-7xl font-medium font-['Poppins'] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] mb-24 mt-24">
-          Team Behind Technorollix
+    <div className="relative min-h-screen text-white overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#050B1A] via-[#081833] to-[#020617]" />
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-yellow-500/10 rounded-full blur-[120px]" />
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-20">
+        {/* ✅ FIXED HERO TITLE */}
+        <h1 className="font-semibold text-center mb-24 text-transparent bg-clip-text bg-gradient-to-b from-[#FFD88A] to-[#B8860B] leading-tight">
+          <span className="block text-3xl sm:text-4xl md:text-5xl">
+            Team Behind
+          </span>
+          <span className="block text-4xl sm:text-5xl md:text-7xl tracking-wide">
+            TechnoAiMBiAtion
+          </span>
         </h1>
 
-        {/* Team Sections */}
+        {/* Sections */}
         {teamSections.map((section, index) => (
           <div
             key={index}
-            className={`flex font-['Poppins'] flex-col md:flex-row items-center md:items-start mb-48 gap-12 ${
-              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+            className={`flex flex-col md:flex-row items-center gap-12 md:gap-16 mb-32 ${
+              index % 2 === 0 ? "" : "md:flex-row-reverse"
             }`}
           >
-            {/* Section Title - Positioned to Align with Cards */}
-            <h2 className="text-4xl mt-6 md:text-5xl uppercase font-medium text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] md:w-1/2 w-full text-center md:text-left flex items-center justify-center md:justify-start md:pl-8 break-words whitespace-normal">
+            {/* Section Title */}
+            <h2 className="md:w-1/3 text-2xl md:text-4xl font-semibold uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#FFD88A] to-[#B8860B] text-center md:text-left">
               {section.title}
             </h2>
 
-            {/* Profile Cards - Positioned to Align with Next Section Title */}
-            <div className="grid md:grid-cols-2 gap-10 md:w-2/3 md:pr-8">
+            {/* Cards */}
+            <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
               {section.members.map((member, idx) => (
                 <div
                   key={idx}
-                  className="bg-gray-800 rounded-3xl shadow-xl border-4 border-yellow-500 w-72 h-96 flex flex-col"
+                  className="group bg-white/5 backdrop-blur-xl rounded-3xl p-5 border border-white/10 hover:border-yellow-400/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,200,80,0.15)]"
                 >
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={350}
-                    height={350}
-                    className="rounded-2xl mb-1"
-                  />
-                  <h3 className="text-2xl font-medium text-center">{member.name}</h3>
-                  <p className="text-md text-gray-400 mt-2 pl-4">
-                    Contact: <br/>{member.contact}
+                  <div className="relative p-[6px] rounded-3xl bg-gradient-to-br from-[#FFD88A] via-[#B8860B] to-[#FFD88A] shadow-[0_0_25px_rgba(255,200,80,0.35)]">
+                    <div className="relative w-full h-64 rounded-2xl overflow-hidden bg-[#020617]">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                  </div>
+
+                  <h3 className="text-lg md:text-xl font-semibold text-center mt-4">
+                    {member.name}
+                  </h3>
+
+                  <p className="text-sm text-gray-400 text-center mt-2">
+                    Contact <br /> {member.contact}
                   </p>
                 </div>
               ))}
@@ -262,6 +295,4 @@ const TeamPage = () => {
       </div>
     </div>
   );
-};
-
-export default TeamPage;
+}

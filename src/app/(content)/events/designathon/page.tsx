@@ -1,25 +1,45 @@
 "use client";
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import RoundSection from "@/components/sub-component/RoundSection";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
 import WhyParticipate from "@/components/sub-component/why-participate";
-import Image from "next/image";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
+  const [registrationCount, setRegistrationCount] = useState<number>(0);
+
+    useEffect(() => {
+      getRegistrationCount("DESIGNATHON").then((count) => {
+        setRegistrationCount(count);
+      });
+    }, []);
+
   const studentManagers = [
-    { imageUrl: "/managers/designathon/priya.jpg", name: "Priya Kumari", contact: 9234531358 },
-    { imageUrl: "/managers/designathon/shruti.jpg", name: "Shruti Niwas", contact: 7024120039 },
-    { imageUrl: "/managers/designathon/aashta.jpg", name: "Aashta Choudhary", contact: 7898260105 },
-    { imageUrl: "/managers/designathon/pooja.jpg", name: "Pooja Mahto", contact: 9693397426 },
+    {
+      imageUrl: "/managers/designathon/shruti.jpg",
+      name: "Shruti Niwas",
+      contact: 7024120039,
+    },
+    {
+      imageUrl: "/managers/designathon/aastha.jpg",
+      name: "Aashta Choudhary",
+      contact: 7898260105,
+    },
+    {
+      imageUrl: "/managers/designathon/pooja.jpg",
+      name: "Pooja Mahto",
+      contact: 9693397426,
+    },
   ];
 
   const rounds = [
     {
       title: "ROUND 1: Concept to Canvas",
       description:
-        "Participants create one design output (poster, UI screen, illustration, or social creative) based on the theme 'New Age India' and submit a short written explanation describing the concept and intent.",
+        "Participants create one design output (poster, illustration, or social creative) based on the theme 'New Age India' and submit a short written explanation describing the concept and intent.",
     },
     {
       title: "ROUND 2: Design Rationale",
@@ -31,7 +51,7 @@ const Page = () => {
   const rules = [
     "Round 2 theme will be announced at the venue.",
     "Design must be completed within the given time.",
-    "Hand-drawn and digital designs are allowed.",
+    "Only Digital designs are allowed.",
     "Plagiarism is strictly prohibited.",
     "Internet allowed only for reference.",
     "Participants may be asked to explain their design.",
@@ -50,97 +70,46 @@ const Page = () => {
 
   return (
     <>
-      {/* Background Image */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          width={500}
-          height={500}
-          src="/testfile/singleeventbg2.svg"
-          className="w-full h-auto opacity-150"
-          alt="Background"
-        />
-      </div>
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Introduction */}
+      {/* <a href="/dashboard"> */}
       <EventIntro
-        imageUrl="/testfile/design.svg"
-        registrations={0}
+        imageUrl="/eventslogo/designathonevents.svg"
+        registrations={registrationCount}
         pricepool={10000}
-        description="Designathon – Creative Expression Challenge is a design-focused event where participants respond to a theme using visual storytelling and design thinking. The emphasis is on clarity of ideas, originality, and communication rather than software mastery."
+        description="Designathon – Creative Expression Challenge is a creative design event where participants respond to a given theme or problem statement through visual design. The event focuses on idea clarity, visual storytelling, and design thinking, rather than advanced software mastery."
         time="19th & 20th | 3:00 PM – 4:00 PM"
         venue="TB 07"
       />
+      {/* </a> */}
 
       <div className="flex flex-col items-center">
-        <div className="bg-transparent text-black p-6 md:p-12 space-y-32">
-
-          {/* About */}
+        <div className="bg-transparent text-white p-6 md:p-12 space-y-32">
           <section className="text-center max-w-5xl mx-auto">
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
               ABOUT THE EVENT
             </h2>
-            <p className="text-2xl text-black/90">
-              Designathon encourages creative thinkers to translate ideas into visuals.
-              Participants showcase originality, storytelling, and design rationale through
-              posters, UI screens, illustrations, or social creatives.
+            <p className="text-2xl text-gray-200">
+              Designathon encourages creative thinkers to translate ideas into
+              visuals.
             </p>
           </section>
 
-          {/* Team Structure */}
           <section className="text-center max-w-5xl mx-auto">
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-8">
               TEAM STRUCTURE
             </h2>
-            <p className="text-2xl text-black/90">
+            <p className="text-2xl text-gray-200">
               Individual participation or teams of up to 2 members.
             </p>
           </section>
 
-          {/* Rounds */}
-          <section className="px-4">
-            <RoundSection rounds={rounds} />
-          </section>
-
-          {/* Judging Criteria */}
-          <section>
-            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
-              JUDGING CRITERIA
-            </h2>
-            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2">
-                <li>Originality of concept</li>
-                <li>Relevance to the theme</li>
-                <li>Visual aesthetics</li>
-                <li>Clarity of message</li>
-                <li>Ability to explain design decisions</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Why Participate */}
+          <RoundSection rounds={rounds} />
           <WhyParticipate reasons={reasons} />
-
-          {/* Rules */}
           <RulesAndRegulation rules={rules} />
-
-          {/* Faculty Coordinators */}
-          <section>
-            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
-              FACULTY COORDINATORS
-            </h2>
-            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2">
-                <li>Dr. Pradeep Kumar Shriwas – CSE (9770112039)</li>
-                <li>Dr. Deepankar Sharma – SOS (7084519954)</li>
-                <li>Dr. Bharat Verma – META (7383918079)</li>
-                <li>Dr. Anand Kumar Shrivastava – SOM (9302239922)</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Student Coordinators */}
           <EventManagers managers={studentManagers} />
-
         </div>
       </div>
     </>

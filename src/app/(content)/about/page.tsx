@@ -4,19 +4,14 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="w-full relative">
-      {/* BACKGROUND */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          width={500}
-          height={500}
-          src="/testfile/singleeventbg.svg"
-          className="w-full h-auto opacity-150"
-          alt="Scrolling Background"
-        />
-      </div>
+    <div className="relative w-full overflow-hidden">
 
-      <div className="text-black flex flex-col mt-36 text-center items-center min-h-screen px-4 md:px-0">
+      {/* BACKGROUND */}
+      <div className="fixed inset-0 -z-10 bg-black" />
+
+      {/* CONTENT */}
+      <div className="relative z-0 text-black flex flex-col mt-36 text-center items-center min-h-screen px-4 md:px-0">
+
         <h2 className="text-7xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
           ABOUT
         </h2>
@@ -29,7 +24,7 @@ const About = () => {
           </p>
         </div>
 
-        {/* First Event */}
+        {/* First Section */}
         <div className="flex flex-col md:flex-row mt-20 items-center">
           <div className="mr-0 md:mr-20 mb-10 md:mb-0">
             <Image
@@ -46,31 +41,37 @@ const About = () => {
               OPJU
             </h5>
             <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              OPJU was founded by the Jindal Education and Welfare Society, OP
-              Jindal University (OPJU) was set up to bring high quality education
-              to its students based on a world class curriculum, the latest
-              teaching methodology and committed faculty members. The
-              multidisciplinary university aims to develop young professionals
-              and future leaders who will not only power growth and development
-              in the state, but also make a mark globally.
+            OPJU was founded by the Jindal Education and
+Welfare Society, OP Jindal University (OPJU)
+was set up to bring high quality education to
+its students based on a world class curriculum,
+the latest teaching methodology and committed
+faculty members. The multidisciplinary
+university aims to develop young professionals
+and future leaders who will not only power
+growth and development in the state, but also
+make a mark globally. 
             </p>
           </div>
         </div>
 
-        {/* Second Event */}
+        {/* Second Section */}
         <div className="flex flex-col md:flex-row mt-36 items-center">
           <div className="glass-bg-dark p-6 rounded-xl max-w-[578px] text-left order-2 md:order-1">
             <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
               TECHNOAIMBIATION 2026
             </h5>
             <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              Technorollix is Central India&apos;s biggest techno-cultural
-              extravaganza, bringing together innovation, creativity, and
-              entertainment on a grand scale. With a diverse mix of technical
-              competitions, cultural performances, and engaging workshops, it’s a
-              platform where technology meets artistry. Join us for an
-              electrifying experience that pushes boundaries and celebrates the
-              spirit of innovation!
+             TECHNOAIMBIATION is Central OPJU&apos;s
+ biggest techno-
+cultural extravaganza, bringing together
+innovation, creativity, and entertainment on a
+grand scale. With a diverse mix of technical
+competitions, cultural performances, and
+engaging workshops, it’s a platform where
+technology meets artistry. Join us for an
+electrifying experience that pushes boundaries
+and celebrates the spirit of innovation!
             </p>
           </div>
 
@@ -85,7 +86,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Third Event */}
+        {/* Third Section */}
         <div className="flex flex-col md:flex-row mt-36 items-center">
           <div className="mr-0 md:mr-20 mb-10 md:mb-0">
             <Image
@@ -102,53 +103,25 @@ const About = () => {
               JUNOON
             </h5>
             <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              OPJU Junoon is an annual cultural extravaganza hosted by the O.P.
-              Jindal University (OPJU) in Chhattisgarh, India. This vibrant event
-              showcases the diverse talents of people across various domains
-              including music and dance. In 2018, We had Shirley Setia. In 2020, we
-              had Jubin Nautiyal and Sunburn and in 2023, we had DJ Perisha.
+              OPJU Junoon is an annual cultural
+extravaganza hosted by the O.P. Jindal
+University (OPJU) in Chhattisgarh, India. This
+vibrant event showcases the diverse talents of
+people across various domains including music
+and dance. In 2018, We had Shirley Setia. In
+2020, we had Jubin Nautiyal and Sunburn and
+in 2023, we had DJ Perisha.
             </p>
-          </div>
-        </div>
-
-        {/* Fourth Event */}
-        <div className="flex flex-col md:flex-row mt-36 items-center">
-          <div className="glass-bg-dark p-6 rounded-xl max-w-[578px] text-left order-2 md:order-1">
-            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
-              aiMBiAtion
-            </h5>
-            <p className="text-xl font-medium text-white mt-6 tracking-[3.4px]">
-              aiMBiAtion 2025, hosted by OP Jindal University, is more than a
-              management fest—it&apos;s a hub of innovation, creativity, and
-              competition. It brings together dreamers and doers to test their
-              skills in business, marketing, and debate while also celebrating
-              culture with fashion, music, and drama. From startup challenges to
-              trading battles, ad campaigns to treasure hunts, every event pushes
-              participants to think, act, and innovate. With a perfect blend of
-              strategy and spontaneity, aiMBiAtion promises an unforgettable
-              experience where talents shine, stories unfold, and memories are
-              made. Compete. Create. Celebrate.
-            </p>
-          </div>
-
-          <div className="ml-0 md:ml-20 mb-10 md:mb-0 order-1 md:order-2">
-            <Image
-              width={500}
-              height={500}
-              src="/ambiation.svg"
-              alt="aimbiation logo"
-              className="w-full max-w-[600px] h-auto rounded-xl"
-            />
           </div>
         </div>
 
         <div className="h-[300px]" />
       </div>
 
-      {/* Dark Glassmorphism Style */}
+      {/* Glass Style */}
       <style jsx>{`
         .glass-bg-dark {
-          background: rgba(0, 0, 0, 0.4); /* Darker tint */
+          background: rgba(0, 0, 0, 0.45);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           border-radius: 1rem;

@@ -65,7 +65,7 @@ export default function AdminDashboard() {
       const sortedEventDetails = eventsFetchData.events.sort(
         (a: IEvent, b: IEvent) => {
           return eventOrder.indexOf(a.name) - eventOrder.indexOf(b.name);
-        }
+        },
       );
       setEventsData(sortedEventDetails);
       setFilteredEvents(sortedEventDetails);
@@ -76,7 +76,7 @@ export default function AdminDashboard() {
       const sortedManagedEvents = managedEventsFetchData.events.sort(
         (a: IEvent, b: IEvent) => {
           return eventOrder.indexOf(a.name) - eventOrder.indexOf(b.name);
-        }
+        },
       );
       setEventsData(sortedManagedEvents);
       setFilteredEvents(sortedManagedEvents);
@@ -98,7 +98,7 @@ export default function AdminDashboard() {
   // Filter events based on search query
   useEffect(() => {
     const filtered = eventsData.filter((event) =>
-      event.name.toLowerCase().includes(searchQuery.toLowerCase())
+      event.name.toLowerCase().includes(searchQuery.toLowerCase()),
     );
     setFilteredEvents(filtered);
   }, [searchQuery, eventsData]);
@@ -143,7 +143,9 @@ export default function AdminDashboard() {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-8 text-center">Admin Dashboard</h1>
+     <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center text-white">
+  Admin Dashboard
+</h1>
 
       <div className="grid md:grid-cols-2 gap-6">
         {userFetchData && (

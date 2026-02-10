@@ -1,10 +1,363 @@
+// /* eslint-disable @typescript-eslint/no-explicit-any */
+// "use client";
+// import React, { useEffect, useState } from "react";
+// import { useRouter } from "next/navigation";
+// import useFetch from "@/hooks/use-fetch";
+// import { getUser } from "@/actions/user-actions";
+// import { getParticipatingTeams, getInvitedTeams } from "@/actions/team-actions";
+// import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+// import {
+//   Dialog,
+//   DialogContent,
+//   DialogDescription,
+//   DialogHeader,
+//   DialogTitle,
+// } from "@/components/ui/dialog";
+// import { Button } from "@/components/ui/button";
+// import { Badge } from "@/components/ui/badge";
+// import { ScrollArea } from "@/components/ui/scroll-area";
+// import { Separator } from "@/components/ui/separator";
+// import { User, Calendar, Users } from "lucide-react";
+// import {
+//   acceptInviteAction,
+//   rejectInviteAction,
+// } from "@/actions/invite-actions";
+// import { toast } from "@/hooks/use-toast";
+// import Payments from "@/components/payments";
+// import { getMergedEvents } from "@/lib/utils";
+
+// const MAX_SUBEVENTS = 7;
+
+// const DashboardPage = () => {
+//   const router = useRouter();
+
+//   const [selectedInvite, setSelectedInvite] = useState<any>(null);
+//   const { data: userData, fn: userFn } = useFetch(getUser);
+
+//   const {
+//     data: participatingTeamsData,
+//     loading: participatingTeamsLoading,
+//     fn: participatingTeamsFn,
+//   } = useFetch(getParticipatingTeams);
+
+//   const {
+//     data: invitedTeamsData,
+//     loading: invitedTeamsLoading,
+//     fn: invitedTeamsFn,
+//   } = useFetch(getInvitedTeams);
+
+//   const { error: acceptInvitationError, fn: acceptInvitationFn } =
+//     useFetch(acceptInviteAction);
+
+//   const { fn: rejectInvitationFn } = useFetch(rejectInviteAction);
+
+//   const [payAmount, setPayAmount] = useState(0);
+
+//   // ---------- SUB EVENT COUNT ----------
+//   const getSubEventCount = () =>
+//     participatingTeamsData?.length || 0;
+
+//   // ---------- PAYMENT LOGIC ----------
+//   function calculatePayAmount(ind: number, team: number) {
+//     const total = ind + team;
+//     if (total >= 4) return 499;
+
+//     let amt = 0;
+//     if (ind === 1) amt += 99;
+//     else if (ind === 2 || ind === 3) amt += 199;
+
+//     if (team === 1) amt += 299;
+//     else if (team === 2) amt += 598;
+//     else if (team === 3) amt += 897;
+
+//     return amt;
+//   }
+
+//   useEffect(() => {
+//     if (participatingTeamsData && userData) {
+//       const merged = getMergedEvents(
+//         participatingTeamsData,
+//         userData.email
+//       );
+
+//       const ind = merged.filter((e: any) => e.individualSchema).length;
+//       const team = merged.filter((e: any) => !e.individualSchema).length;
+
+//       setPayAmount(calculatePayAmount(ind, team));
+
+//     }
+//   }, [participatingTeamsData, userData]);
+
+//   useEffect(() => {
+//     if (acceptInvitationError) {
+//       toast({
+//         title: "Error",
+//         description: acceptInvitationError.message,
+//         variant: "destructive",
+//       });
+//     }
+//   }, [acceptInvitationError]);
+
+//   useEffect(() => {
+//     userFn();
+//     participatingTeamsFn();
+//     invitedTeamsFn();
+//   }, []);
+
+//   // ---------- INVITE ACCEPT LIMIT ----------
+//   const handleInviteAccept = async (id: string) => {
+//     if (getSubEventCount() >= MAX_SUBEVENTS) {
+//       toast({
+//         title: "Limit reached",
+//         description: "Maximum 7 sub-events allowed",
+//         variant: "destructive",
+//       });
+//       return;
+//     }
+
+//     acceptInvitationFn(id);
+//     setSelectedInvite(null);
+//     participatingTeamsFn();
+//     invitedTeamsFn();
+//   };
+
+//   const handleInviteReject = async (id: string) => {
+//     rejectInvitationFn(id);
+//     setSelectedInvite(null);
+//     invitedTeamsFn();
+//   };
+
+//   const isOPJU = userData?.email?.endsWith("@opju.ac.in");
+
+//   return (
+//     <div className="container mx-auto p-6 space-y-6">
+
+//       <h1 className="text-3xl font-bold text-center text-white">
+//   Dashboard
+// </h1>
+
+//       {/* USER PROFILE */}
+//       {userData && (
+//         <Card>
+//           <CardHeader>
+//             <CardTitle className="flex items-center gap-2">
+//               <User className="w-5 h-5" /> Profile
+//             </CardTitle>
+//           </CardHeader>
+//           <CardContent className="grid grid-cols-2 gap-4">
+//             <div>
+//               <p className="text-sm text-muted-foreground">Name</p>
+//               <p>{userData.fullName}</p>
+//             </div>
+//             <div>
+//               <p className="text-sm text-muted-foreground">Email</p>
+//               <p>{userData.email}</p>
+//             </div>
+//             <div>
+//               <p className="text-sm text-muted-foreground">Branch</p>
+//               <p>{userData.branch}</p>
+//             </div>
+//             <div>
+//               <p className="text-sm text-muted-foreground">Enrollment</p>
+//               <p>{userData.enrollmentNumber}</p>
+//             </div>
+//           </CardContent>
+//         </Card>
+//       )}
+
+//       {/* REGISTER BUTTON */}
+//       <div className="text-center">
+//         <Button
+//           onClick={() => router.push("/events-selection")}
+//           disabled={getSubEventCount() >= MAX_SUBEVENTS}
+//         >
+//           Register for Events
+//         </Button>
+
+//         {getSubEventCount() >= MAX_SUBEVENTS && (
+//           <p className="text-red-400 text-sm mt-2">
+//             Sub-event limit reached
+//           </p>
+//         )}
+//       </div>
+
+//       <p className="text-center text-sm text-gray-400">
+//         Joined: {getSubEventCount()} / 7
+//       </p>
+
+//       {/* TEAMS + INVITES */}
+//       <div className="grid md:grid-cols-2 gap-6">
+
+//         {/* PARTICIPATING TEAMS */}
+//         <Card>
+//           <CardHeader>
+//             <CardTitle className="flex items-center gap-2">
+//               <Users className="w-5 h-5" /> Participating Teams
+//             </CardTitle>
+//           </CardHeader>
+//           <CardContent>
+//             <ScrollArea className="h-[350px] pr-3">
+//               {participatingTeamsLoading ? (
+//                 <p className="text-center">Loading...</p>
+//               ) : participatingTeamsData?.length ? (
+//                 participatingTeamsData.map((team: any) => (
+//                   <Card
+//                     key={team._id}
+//                     className="mb-2 cursor-pointer hover:bg-accent"
+//                     onClick={() =>
+//                       router.push(`/team-details/${team._id}`)
+//                     }
+//                   >
+//                     <CardContent className="pt-4">
+//                       <div className="flex justify-between">
+//                         <div>
+//                           <p className="font-medium">
+//                             {team.event.name}
+//                           </p>
+//                           <p className="text-sm text-muted-foreground">
+//                             CLICK to add Teammate
+//                           </p>
+//                         </div>
+//                         <Badge>
+//                           {team.leader.email === userData?.email
+//                             ? "Leader"
+//                             : "Member"}
+//                         </Badge>
+//                       </div>
+//                     </CardContent>
+//                   </Card>
+//                 ))
+//               ) : (
+//                 <p className="text-center text-muted-foreground">
+//                   No teams found
+//                 </p>
+//               )}
+//             </ScrollArea>
+//           </CardContent>
+//         </Card>
+
+//         {/* INVITES */}
+//         <Card>
+//           <CardHeader>
+//             <CardTitle className="flex items-center gap-2">
+//               <Calendar className="w-5 h-5" /> Team Invitations
+//             </CardTitle>
+//           </CardHeader>
+//           <CardContent>
+//             <ScrollArea className="h-[350px] pr-3">
+//               {invitedTeamsLoading ? (
+//                 <p className="text-center">Loading...</p>
+//               ) : invitedTeamsData?.length ? (
+//                 invitedTeamsData.map((invite: any) => (
+//                   <Card
+//                     key={invite._id}
+//                     className="mb-2 cursor-pointer hover:bg-accent"
+//                     onClick={() =>
+//                       invite.status === "PENDING" &&
+//                       setSelectedInvite(invite)
+//                     }
+//                   >
+//                     <CardContent className="pt-4">
+//                       <div className="flex justify-between">
+//                         <div>
+//                           <p className="font-medium">
+//                             {invite.team.event.name}
+//                           </p>
+//                           <p className="text-sm text-muted-foreground">
+//                             Leader: {invite.team.leader.fullName}
+//                           </p>
+//                         </div>
+//                         <Badge>{invite.status}</Badge>
+//                       </div>
+//                     </CardContent>
+//                   </Card>
+//                 ))
+//               ) : (
+//                 <p className="text-center text-muted-foreground">
+//                   No invitations
+//                 </p>
+//               )}
+//             </ScrollArea>
+//           </CardContent>
+//         </Card>
+//       </div>
+
+//       {/* PAYMENT */}
+//       {!isOPJU && payAmount > 0 && (
+//         <Card>
+//           <CardHeader>
+//             <CardTitle>Payment Section</CardTitle>
+//           </CardHeader>
+//           <CardContent>
+//             <p className="mb-2">
+//               Amount to pay: ₹{payAmount}
+//             </p>
+//             <Payments
+//               payAmount={payAmount}
+//               userEmail={userData?.email}
+//             />
+//           </CardContent>
+//         </Card>
+//       )}
+
+//       {isOPJU && (
+//         <p className="text-white text-center font-semibold uppercase">
+//   FREE registration for OPJU students
+// </p>
+
+//       )}
+
+//       {/* INVITE MODAL */}
+//       <Dialog
+//         open={!!selectedInvite}
+//         onOpenChange={() => setSelectedInvite(null)}
+//       >
+//         <DialogContent>
+//           <DialogHeader>
+//             <DialogTitle>Team Invitation</DialogTitle>
+//             <DialogDescription>
+//               Join {selectedInvite?.team?.event?.name}
+//             </DialogDescription>
+//           </DialogHeader>
+
+//           <Separator />
+
+//           <div className="flex justify-end gap-3">
+//             <Button
+//               variant="outline"
+//               onClick={() =>
+//                 handleInviteReject(selectedInvite._id)
+//               }
+//             >
+//               Reject
+//             </Button>
+//             <Button
+//               onClick={() =>
+//                 handleInviteAccept(selectedInvite._id)
+//               }
+//             >
+//               Accept
+//             </Button>
+//           </div>
+//         </DialogContent>
+//       </Dialog>
+//     </div>
+//   );
+// };
+
+// export default DashboardPage;
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import useFetch from "@/hooks/use-fetch";
 import { getUser } from "@/actions/user-actions";
-import { getParticipatingTeams, getInvitedTeams } from "@/actions/team-actions";
+import {
+  getParticipatingTeams,
+  getInvitedTeams,
+  deleteTeamAction,
+} from "@/actions/team-actions";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Dialog,
@@ -12,159 +365,100 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
+  // DialogFooter,
 } from "@/components/ui/dialog";
+import AccommodationModal from "@/components/accomodation-modal";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { User, Calendar, Users } from "lucide-react";
+import { User, Calendar, Users, Trash2 } from "lucide-react";
 import {
   acceptInviteAction,
   rejectInviteAction,
 } from "@/actions/invite-actions";
-import AccommodationModal from "@/components/accomodation-modal";
-import { getAccommodationDetailsAction } from "@/actions/accomodation-actions";
 import { toast } from "@/hooks/use-toast";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import Payments from "@/components/payments";
 import { getMergedEvents } from "@/lib/utils";
-import {
-  HoverCard,
-  HoverCardTrigger,
-  HoverCardContent,
-} from "@/components/ui/hover-card";
+import { HoverCard, HoverCardContent } from "@/components/ui/hover-card";
+import { HoverCardTrigger } from "@radix-ui/react-hover-card";
+
+const MAX_SUBEVENTS = 7;
 
 const DashboardPage = () => {
   const router = useRouter();
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  interface SelectedInvite {
-    _id: string;
-    status: string;
-    team: {
-      event: {
-        name: string;
-        prizeMoney: string;
-        teamSize: number;
-      };
-      leader: {
-        _id: string;
-        fullName: string;
-      };
-      members: {
-        _id: string;
-        fullName: string;
-      }[];
-    };
-  }
+  const [selectedInvite, setSelectedInvite] = useState<any>(null);
+  const [teamToDelete, setTeamToDelete] = useState<any>(null);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
-  const [selectedInvite, setSelectedInvite] = useState<SelectedInvite | null>(
-    null
-  );
   const { data: userData, fn: userFn } = useFetch(getUser);
+
   const {
     data: participatingTeamsData,
     loading: participatingTeamsLoading,
     fn: participatingTeamsFn,
   } = useFetch(getParticipatingTeams);
+
   const {
     data: invitedTeamsData,
     loading: invitedTeamsLoading,
     fn: invitedTeamsFn,
   } = useFetch(getInvitedTeams);
 
+  const [showAccommodationModal, setShowAccommodationModal] = useState(false);
+  const [accommodationData] = useState(null);
+
+
   const { error: acceptInvitationError, fn: acceptInvitationFn } =
     useFetch(acceptInviteAction);
 
   const { fn: rejectInvitationFn } = useFetch(rejectInviteAction);
 
-  const {
-    data: accommodationFetchData,
-    loading: accommodationFetchLoading,
-    fn: accommodationFetchFn,
-  } = useFetch(getAccommodationDetailsAction);
+  const { loading: deletingTeam, fn: deleteTeamFn } =
+    useFetch(deleteTeamAction);
 
-  // Create a function to calculate the payAmount.
-  // This will input number of teams with individualSchema and number of teamSchema
-  // if sum of both teams >= 4 : 499
-  // for individualSchema :
-  // if number of individualSchema teams == 1 : 99
-  // if number of individualSchema teams == (2 or 3) : 199
-  // for teamSchema :
-  // if number of teamSchema teams == 1 : 299
-  // if number of teamSchema teams == 2 : 299 * 2
-  // if number of teamSchema teams == 3 : 299 * 3
-
-  function calculatePayAmount(
-    individualSchemaCount: number,
-    teamSchemaCount: number
-  ): number {
-    const totalTeams = individualSchemaCount + teamSchemaCount;
-
-    // If the sum of both teams is >= 4, return 499
-    if (totalTeams >= 4) {
-      return 499;
-    }
-
-    let payAmount = 0;
-
-    // Calculate pay amount for individualSchema teams
-    if (individualSchemaCount === 1) {
-      payAmount += 99;
-    } else if (individualSchemaCount === 2 || individualSchemaCount === 3) {
-      payAmount += 199;
-    }
-
-    // Calculate pay amount for teamSchema teams
-    if (teamSchemaCount === 1) {
-      payAmount += 299;
-    } else if (teamSchemaCount === 2) {
-      payAmount += 299 * 2;
-    } else if (teamSchemaCount === 3) {
-      payAmount += 299 * 3;
-    }
-
-    return payAmount;
-  }
-
-  const [MergedleadingEvents, setMergedLeadingEvents] = useState<any[]>([]);
   const [payAmount, setPayAmount] = useState(0);
 
-  useEffect(() => {
-  if (participatingTeamsData) {
-    const mergedTeamsArray = getMergedEvents(
-      participatingTeamsData,
-      userData.email
-    );
+  // ---------- SUB EVENT COUNT ----------
+  const getSubEventCount = () => participatingTeamsData?.length || 0;
 
-    const individualCount =
-      mergedTeamsArray?.filter((event: any) => event.individualSchema).length;
+  // ---------- PAYMENT LOGIC ----------
+  function calculatePayAmount(ind: number, team: number) {
+    const total = ind + team;
+    if (total >= 4) return 499;
 
-    const teamCount =
-      mergedTeamsArray?.filter((event: any) => !event.individualSchema).length;
+    let amt = 0;
+    if (ind === 1) amt += 99;
+    else if (ind === 2 || ind === 3) amt += 199;
 
-    console.log("==== PAYMENT DEBUG ====");
-    console.log("Merged Events:", mergedTeamsArray);
-    console.log("Individual Count:", individualCount);
-    console.log("Team Count:", teamCount);
-    console.log("ALL TEAMS:", participatingTeamsData);
+    if (team === 1) amt += 299;
+    else if (team === 2) amt += 598;
+    else if (team === 3) amt += 897;
 
-
-    const amount = calculatePayAmount(individualCount, teamCount);
-    console.log("Calculated Pay Amount:", amount);
-
-    setPayAmount(amount);
-    setMergedLeadingEvents(mergedTeamsArray);
+    return amt;
   }
-}, [participatingTeamsData]);
 
+  useEffect(() => {
+    if (participatingTeamsData && userData) {
+      const merged = getMergedEvents(participatingTeamsData, userData.email);
+
+      const ind = merged.filter((e: any) => e.individualSchema).length;
+      const team = merged.filter((e: any) => !e.individualSchema).length;
+
+      setPayAmount(calculatePayAmount(ind, team));
+    }
+  }, [participatingTeamsData, userData]);
 
   useEffect(() => {
     if (acceptInvitationError) {
@@ -180,266 +474,224 @@ const DashboardPage = () => {
     userFn();
     participatingTeamsFn();
     invitedTeamsFn();
-    accommodationFetchFn();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleTeamClick = (teamId: string) => {
-    router.push(`/team-details/${teamId}`);
-  };
+  // ---------- INVITE ACCEPT LIMIT ----------
+  const handleInviteAccept = async (id: string) => {
+    if (getSubEventCount() >= MAX_SUBEVENTS) {
+      toast({
+        title: "Limit reached",
+        description: "Maximum 7 sub-events allowed",
+        variant: "destructive",
+      });
+      return;
+    }
 
-  const handleInviteAccept = async (inviteId: string) => {
-    // Implement accept logic here
-    acceptInvitationFn(inviteId);
+    acceptInvitationFn(id);
     setSelectedInvite(null);
     participatingTeamsFn();
     invitedTeamsFn();
   };
 
-  const handleInviteReject = async (inviteId: string) => {
-    // Implement reject logic here
-    rejectInvitationFn(inviteId);
+  const handleInviteReject = async (id: string) => {
+    rejectInvitationFn(id);
     setSelectedInvite(null);
     invitedTeamsFn();
   };
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
+  // ---------- NEW: DELETE TEAM HANDLERS ----------
+  const handleDeleteClick = (team: any, e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent navigation to team details
+    setTeamToDelete(team);
+    setShowDeleteDialog(true);
   };
 
-  const handleCloseModal = () => {
-    accommodationFetchFn();
-    setIsModalOpen(false);
+  const handleDeleteConfirm = async () => {
+    if (!teamToDelete) return;
+
+    try {
+      await deleteTeamFn(teamToDelete._id);
+
+      toast({
+        title: "Team Deleted",
+        description: "Team has been successfully deleted",
+      });
+
+      // Refresh team lists
+      participatingTeamsFn();
+      invitedTeamsFn();
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to delete team",
+        variant: "destructive",
+      });
+    } finally {
+      setShowDeleteDialog(false);
+      setTeamToDelete(null);
+    }
   };
+
+  const isOPJU = userData?.email?.endsWith("@opju.ac.in");
 
   return (
     <div className="container mx-auto p-6 space-y-6">
-      <h1 className="text-3xl font-bold text-center mb-8">Dashboard</h1>
+      <h1 className="text-3xl font-bold text-center text-white">Dashboard</h1>
 
+      {/* USER PROFILE */}
       {userData && (
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <User className="w-5 h-5" />
-              User Profile
+              <User className="w-5 h-5" /> Profile
             </CardTitle>
           </CardHeader>
           <CardContent className="grid grid-cols-2 gap-4">
             <div>
-              <p className="text-sm text-muted-foreground">Full Name</p>
-              <p className="font-medium">{userData.fullName}</p>
+              <p className="text-sm text-muted-foreground">Name</p>
+              <p>{userData.fullName}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Email</p>
-              <p className="font-medium">{userData.email}</p>
+              <p>{userData.email}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Branch</p>
-              <p className="font-medium">{userData.branch}</p>
+              <p>{userData.branch}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Enrollment</p>
-              <p className="font-medium">{userData.enrollmentNumber}</p>
+              <p>{userData.enrollmentNumber}</p>
             </div>
           </CardContent>
         </Card>
       )}
 
-      {userData?.isOutsider && (
-        <Card className="mb-6">
-          <CardHeader>
-            <CardTitle>Accommodation Details</CardTitle>
-          </CardHeader>
-          <CardContent>
-            {!accommodationFetchLoading ? (
-              accommodationFetchData ? (
-                <div>
-                  <p>
-                    Arrival Time:{" "}
-                    {new Date(
-                      accommodationFetchData.arrivalTime
-                    ).toLocaleString()}
-                  </p>
-                  <p>
-                    Departure Time:{" "}
-                    {new Date(
-                      accommodationFetchData.departureTime
-                    ).toLocaleString()}
-                  </p>
-                  <p>
-                    Additional Details:{" "}
-                    {accommodationFetchData.additionalDetails}
-                  </p>
-                  {/* New Fields */}
-                  <p>
-                    University Name: {accommodationFetchData.universityName}
-                  </p>
-                  <p>Gender: {accommodationFetchData.gender}</p>
-                  <Button
-                    className="mt-4"
-                    disabled={!userData?.isOutsider}
-                    onClick={handleOpenModal}
-                  >
-                    Edit Accommodation
-                  </Button>
-                </div>
-              ) : (
-                <div>
-                  {/* <p>Accommodation not availed.</p> */}
-                  <p>
-                    {/* Note: Avail if you are an outsider participant. */}
-                    Note: Availing of accommodation is closed.
-                  </p>
-                  <Button
-                    className="mt-4"
-                    disabled={!userData?.isOutsider}
-                    onClick={handleOpenModal}
-                  >
-                    Add Accommodation
-                  </Button>
-                </div>
-              )
-            ) : (
-              <div>Loading Accommodation details...</div>
-            )}
-          </CardContent>
-        </Card>
-      )}
-      {userData && (
-        <AccommodationModal
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          initialData={
-            accommodationFetchData
-              ? {
-                  ...accommodationFetchData,
-                  arrivalTime: new Date(
-                    accommodationFetchData.arrivalTime
-                  ).toISOString(),
-                  departureTime: new Date(
-                    accommodationFetchData.departureTime
-                  ).toISOString(),
-                  userId: userData?._id,
-                }
-              : { userId: userData?._id }
-          }
-        />
-      )}
-
-      {/* Register on More Events */}
-      <div className="text-center mt-8">
-        <Button onClick={() => router.push("/events-selection")}>
-          Register for Events as leader
+      {/* REGISTER BUTTON */}
+      <div className="text-center">
+        <Button
+          onClick={() => router.push("/events-selection")}
+          disabled={getSubEventCount() >= MAX_SUBEVENTS}
+        >
+          Register for Events
         </Button>
+        <div className="text-center mt-3">
+          <Button
+            className="text-white bg-black/70"
+            variant="secondary"
+            onClick={() => setShowAccommodationModal(true)}
+          >
+            Fill Accommodation Form
+          </Button>
+
+        </div>
+
+        {getSubEventCount() >= MAX_SUBEVENTS && (
+          <p className="text-red-400 text-sm mt-2">Sub-event limit reached</p>
+        )}
       </div>
 
+      <p className="text-center text-sm text-gray-400">
+        Joined: {getSubEventCount()} / 7
+      </p>
+
+      {/* TEAMS + INVITES */}
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Participating Teams Section */}
-        <Card className="h-full">
+        {/* PARTICIPATING TEAMS */}
+        <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Users className="w-5 h-5" />
-              Participating Teams
+              <Users className="w-5 h-5" /> Participating Teams
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <ScrollArea className="h-[400px] pr-4">
+            <ScrollArea className="h-[350px] pr-3">
               {participatingTeamsLoading ? (
-                <p className="text-center text-muted-foreground">
-                  Loading Participating Teams...
-                </p>
-              ) : participatingTeamsData?.length > 0 ? (
-                <div className="space-y-4">
-                  {participatingTeamsData.map((team: any) => (
-                    <Card
-                      key={team._id}
-                      className="cursor-pointer hover:bg-accent transition-colors"
-                      onClick={() => handleTeamClick(team._id)}
-                    >
-                      <CardContent className="pt-6">
-                        <div className="flex justify-between items-start mb-2">
-                          <div>
-                            <p className="font-medium">{team.event.name}</p>
-                            <p className="text-sm text-muted-foreground">
-                              Led by {team.leader.fullName}
-                            </p>
-                          </div>
+                <p className="text-center">Loading...</p>
+              ) : participatingTeamsData?.length ? (
+                participatingTeamsData.map((team: any) => (
+                  <Card
+                    key={team._id}
+                    className="mb-2 cursor-pointer hover:bg-accent"
+                    onClick={() => router.push(`/team-details/${team._id}`)}
+                  >
+                    <CardContent className="pt-4">
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1">
+                          <p className="font-medium">{team.event.name}</p>
+                          <p className="text-sm text-muted-foreground">
+                            CLICK to add Teammate
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-2">
                           <Badge>
                             {team.leader.email === userData?.email
                               ? "Leader"
                               : "Member"}
                           </Badge>
+                          {team.leader.email === userData?.email && (
+                            <Button
+                              variant="destructive"
+                              size="icon"
+                              className="h-8 w-8"
+                              onClick={(e) => handleDeleteClick(team, e)}
+                              disabled={deletingTeam ?? false}
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          )}
                         </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))
               ) : (
                 <p className="text-center text-muted-foreground">
-                  No participating teams found
+                  No teams found
                 </p>
               )}
             </ScrollArea>
           </CardContent>
         </Card>
 
-        {/* Invited Teams Section */}
-        <Card className="h-full">
+        {/* INVITES */}
+        <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Calendar className="w-5 h-5" />
-              Team Invitations
+              <Calendar className="w-5 h-5" /> Team Invitations
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <ScrollArea className="h-[400px] pr-4">
+            <ScrollArea className="h-[350px] pr-3">
               {invitedTeamsLoading ? (
-                <p className="text-center text-muted-foreground">
-                  Loading Invitations...
-                </p>
-              ) : invitedTeamsData?.length > 0 ? (
-                <div className="space-y-4">
-                  {invitedTeamsData.map((invite: any) => (
-                    <Card
-                      key={invite._id}
-                      className={
-                        invite.status === "PENDING"
-                          ? "cursor-pointer hover:bg-accent transition-colors"
-                          : ""
-                      }
-                      onClick={() =>
-                        invite.status === "PENDING" && setSelectedInvite(invite)
-                      }
-                    >
-                      <CardContent className="pt-6">
-                        <div className="flex justify-between items-start mb-2">
-                          <div>
-                            <p className="font-medium">
-                              {invite.team.event.name}
-                            </p>
-                            <p className="text-sm text-muted-foreground">
-                              Led by {invite.team.leader.fullName}
-                            </p>
-                          </div>
-                          <Badge
-                            variant={
-                              invite.status === "PENDING"
-                                ? "secondary"
-                                : invite.status === "ACCEPTED"
-                                ? "default"
-                                : "destructive"
-                            }
-                          >
-                            {invite.status}
-                          </Badge>
+                <p className="text-center">Loading...</p>
+              ) : invitedTeamsData?.length ? (
+                invitedTeamsData.map((invite: any) => (
+                  <Card
+                    key={invite._id}
+                    className="mb-2 cursor-pointer hover:bg-accent"
+                    onClick={() =>
+                      invite.status === "PENDING" && setSelectedInvite(invite)
+                    }
+                  >
+                    <CardContent className="pt-4">
+                      <div className="flex justify-between">
+                        <div>
+                          <p className="font-medium">
+                            {invite.team.event.name}
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            Leader: {invite.team.leader.fullName}
+                          </p>
                         </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+                        <Badge>{invite.status}</Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))
               ) : (
                 <p className="text-center text-muted-foreground">
-                  No invitations found
+                  No invitations
                 </p>
               )}
             </ScrollArea>
@@ -447,182 +699,134 @@ const DashboardPage = () => {
         </Card>
       </div>
 
-      {/* Payments section */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle className="flex justify-between">
-            Payments Section
-            <HoverCard>
-              <HoverCardTrigger>
-                <button className="text-gray-600 underline font-thin text-sm">
-                  View Fee Structure
-                </button>
-              </HoverCardTrigger>
-              <HoverCardContent className="w-72 p-4 bg-white shadow-lg rounded-lg">
-                <div className="text-sm text-gray-700">
-                  <p>Registration Fee structure:</p>
-                  <ul className="list-disc pl-4">
-                    <li>For Individual Registration:</li>
-                    <ul className="list-disc pl-8">
-                      <li>1 event: Rs. 99</li>
-                      <li>2 or 3 events: Rs. 199</li>
-                      <li>4 to 7 events: Rs. 499</li>
-                    </ul>
-                    <li>For Team Registration:</li>
-                    <ul className="list-disc pl-8">
-                      <li>per event: Rs. 299</li>
-                      <li>4 to 7 events: Rs. 499</li>
-                    </ul>
-                  </ul>
-                  <p>
-                    If your team have any outsiders, then payment is required.
-                  </p>
-                  <p>
-                    If the event&apos;s team size is 1, then it is considered an
-                    individual event. Otherwise, it is considered a team event.
-                  </p>
-                  <br />
-                  <p>Note: Only leaders are needed to pay the fee.</p>
-                </div>
-              </HoverCardContent>
-            </HoverCard>
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          {participatingTeamsLoading ? (
-            <p className="text-center text-muted-foreground">
-              Loading Participating Events...
-            </p>
-          ) : MergedleadingEvents.length > 0 ? (
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Event Name</TableHead>
-                  <TableHead>Participating subevents</TableHead>
-                  <TableHead>Type of pay scheme</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {MergedleadingEvents.map((event, k) => {
-                  return (
-                    <TableRow key={k}>
-                      <TableCell>{event.eventName}</TableCell>
-                      <TableCell>{event.teams.length}</TableCell>
-                      <TableCell>
-                        {event.individualSchema ? "Individual" : "Team"}
-                      </TableCell>
-                    </TableRow>
-                  );
-                })}
-              </TableBody>
-            </Table>
-          ) : (
-            <p>No payment is required</p>
-          )}
-          <br />
-          {payAmount > 0 && (
-            <>
-              <div className=" flex justify-between">
-                <div>
-                  <p>
-                    Total Individual schema:{" "}
-                    {
-                      MergedleadingEvents?.filter(
-                        (event) => event.individualSchema
-                      ).length
-                    }
-                  </p>
-                  <p>
-                    Total Team schema:{" "}
-                    {
-                      MergedleadingEvents?.filter(
-                        (event) => !event.individualSchema
-                      ).length
-                    }
-                  </p>
-                  <p>Amount to be paid: {payAmount}</p>
-                </div>
-                <div></div>
-              </div>
-              <Payments payAmount={payAmount} userEmail={userData?.email} />
-            </>
-          )}
-          <p className="text-sm text-center text-muted-foreground mt-4">
-            Note: Payments are non-refundable. Try to do payment after
-            completing all the team buildings. <br />
-            For any doubts or queries related to payments, please contact this
-            number: +91 79-70834551
-          </p>
-        </CardContent>
-      </Card>
+     {/* PAYMENT */}
+      {!isOPJU && payAmount > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex justify-between items-center">
+              Payment Section
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <button 
+                    className="text-gray-600 underline font-thin text-sm hover:text-gray-800 transition-colors"
+                    aria-label="View fee structure details"
+                  >
+                    View Fee Structure
+                  </button>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-80 p-4 bg-white shadow-lg rounded-lg">
+                  <div className="text-sm text-gray-700 space-y-3">
+                    <div>
+                      <p className="font-semibold mb-2">Registration Fee Structure:</p>
+                      
+                      <div className="mb-3">
+                        <p className="font-medium">Individual Registration:</p>
+                        <ul className="list-disc pl-5 mt-1 space-y-1">
+                          <li>1 event: ₹99</li>
+                          <li>2-3 events: ₹199</li>
+                          <li>4-7 events: ₹499</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="font-medium">Team Registration:</p>
+                        <ul className="list-disc pl-5 mt-1 space-y-1">
+                          <li>Per event: ₹299</li>
+                          <li>4-7 events: ₹499</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="pt-2 border-t border-gray-200 space-y-1">
+                      <p className="text-xs">
+                        • Payment required if your team includes non-members
+                      </p>
+                      <p className="text-xs">
+                        • Events with team size of 1 are individual events
+                      </p>
+                      <p className="text-xs font-medium">
+                        • Only team leaders need to pay the registration fee
+                      </p>
+                    </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="mb-2">Amount to pay: ₹{payAmount}</p>
+            <Payments payAmount={payAmount} userEmail={userData?.email} />
+          </CardContent>
+        </Card>
+      )}
 
-      {/* Invitation Modal */}
+      {isOPJU && (
+        <p className="text-white text-center font-semibold uppercase">
+          FREE registration for OPJU students
+        </p>
+      )}
+
+      {/* INVITE MODAL */}
       <Dialog
-        open={selectedInvite !== null}
+        open={!!selectedInvite}
         onOpenChange={() => setSelectedInvite(null)}
       >
-        <DialogContent className="sm:max-w-md">
+        <DialogContent>
           <DialogHeader>
             <DialogTitle>Team Invitation</DialogTitle>
             <DialogDescription>
-              You have been invited to join {selectedInvite?.team?.event.name}
+              Join {selectedInvite?.team?.event?.name}
             </DialogDescription>
           </DialogHeader>
 
-          <div className="space-y-4">
-            <div>
-              <h4 className="font-medium mb-2">Event Details</h4>
-              <p className="text-sm text-muted-foreground">
-                PrizeMoney: {selectedInvite?.team.event.prizeMoney}
-              </p>
-              <p className="text-sm text-muted-foreground">
-                TeamSize: {selectedInvite?.team.event.teamSize}
-              </p>
-            </div>
+          <Separator />
 
-            <div>
-              <h4 className="font-medium mb-2">Team Members</h4>
-              <div className="space-y-2">
-                {selectedInvite?.team.members.map((member) => (
-                  <div
-                    key={member._id}
-                    className="flex justify-between items-center"
-                  >
-                    <p className="text-sm">{member.fullName}</p>
-                    <Badge variant="outline">
-                      {member._id === selectedInvite.team.leader._id
-                        ? "Leader"
-                        : "Member"}
-                    </Badge>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <Separator />
-
-            <div className="flex justify-end gap-4">
-              <Button
-                variant="outline"
-                onClick={() =>
-                  selectedInvite && handleInviteReject(selectedInvite._id)
-                }
-              >
-                Reject
-              </Button>
-              <Button
-                onClick={() =>
-                  selectedInvite && handleInviteAccept(selectedInvite._id)
-                }
-              >
-                Accept
-              </Button>
-            </div>
+          <div className="flex justify-end gap-3">
+            <Button
+              variant="outline"
+              onClick={() => handleInviteReject(selectedInvite._id)}
+            >
+              Reject
+            </Button>
+            <Button onClick={() => handleInviteAccept(selectedInvite._id)}>
+              Accept
+            </Button>
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* DELETE CONFIRMATION DIALOG */}
+      <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Delete Team</AlertDialogTitle>
+            <AlertDialogDescription>
+              Are you sure you want to delete this team for{" "}
+              <strong>{teamToDelete?.event?.name}</strong>? This action cannot
+              be undone. All team members will be removed and pending
+              invitations will be canceled.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={deletingTeam ?? false}>
+              Cancel
+            </AlertDialogCancel>
+            <AlertDialogAction
+              onClick={handleDeleteConfirm}
+              disabled={deletingTeam ?? false}
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+            >
+              {deletingTeam ? "Deleting..." : "Delete Team"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+      <AccommodationModal
+  isOpen={showAccommodationModal}
+  onClose={() => setShowAccommodationModal(false)}
+  initialData={accommodationData}
+/>
+
+
     </div>
-    
   );
 };
 

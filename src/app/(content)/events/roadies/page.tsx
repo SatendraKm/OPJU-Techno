@@ -2,35 +2,24 @@
 import React, { useEffect, useState } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
-import Image from "next/image";
 import { getRegistrationCount } from "@/actions/event-actions";
 
 const Roadies = () => {
   const studentmanagers = [
     {
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      imageUrl: "/managers/Roadies/Roadies/Ritika Sahu 7879258649.jpg",
       name: "Ritika Sahu",
       contact: 9078942095,
     },
     {
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
-      name: "Sumit Rana",
-      contact: 9078942095,
-    },
-    {
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      imageUrl: "/managers/Roadies/Roadies/Harpreet singh 9109478251.jpg",
       name: "Harpreet Singh",
-      contact: 9078942095,
+      contact: 9109478251,
     },
     {
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
-      name: "Kumkum Kritika",
-      contact: 9078942095,
-    },
-    {
-      imageUrl: "/managers/Roadies/Pranjal.jpg",
-      name: "Parinita Bahera",
-      contact: 9078942095,
+      imageUrl: "/managers/Roadies/Roadies/Sumit Rana 8964989984.jpg",
+      name: "Sumit Rana",
+      contact: 8964989984,
     },
   ];
 
@@ -44,21 +33,14 @@ const Roadies = () => {
   return (
     <div className="relative space-y-10 px-4 py-8">
       {/* Background */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          src="/testfile/singleeventbg.svg"
-          alt="Scrolling Background"
-          width={500}
-          height={500}
-          className="w-full h-auto opacity-150"
-        />
-      </div>
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
+      {/* <a href="/dashboard"> */}
       <EventIntro
         venue="Bus Parking Area"
         time="19-02-26, 11:30 am" /* Event at 19-20-21 */
-        imageUrl="/testfile/roadies.svg"
+        imageUrl="/eventslogo/roadies.svg"
         registrations={registrationCount}
         pricepool={12000}
         description="Roadies is a flagship talent, innovation, and personality-based competition inspired by real-world problem solving, creativity, teamwork, and leadership. The event provides a platform for students to showcase their technical skills, innovative thinking, presentation ability, and competitive spirit through multiple engaging categories.
@@ -69,13 +51,14 @@ The event is designed to promote:
 · Confidence, communication, and problem-solving skills
 "
       />
+      {/* </a> */}
 
       {/* Theme Section */}
       <section className="text-center mx-auto max-w-4xl px-4">
         <h1 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-[poppins] mb-8">
           THEME
         </h1>
-        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
+        <p className="text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
           Adventure / Survival
         </p>
       </section>
@@ -86,7 +69,7 @@ The event is designed to promote:
           RULES:
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
+          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
             <li>1. Participants may participate individually</li>
             <li>2. Each member must register before the deadline.</li>
             <li>
@@ -107,9 +90,28 @@ The event is designed to promote:
           JUDGEMENT CRITERIA:
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg">
-          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
+          <ul className="list-disc pl-5 text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
             <li>There is no judgement criteria</li>
           </ul>
+        </div>
+      </section>
+
+      {/* Prize */}
+      <section className="mb-20">
+        <h2 className="text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8">
+          PRIZE
+        </h2>
+
+        <div className="bg-[#33010140] p-6 sm:p-8 rounded-lg shadow-lg max-w-5xl mx-auto text-center">
+          <ul className="list-disc pl-5 inline-block text-left text-2xl sm:text-3xl space-y-2 font-['Inter'] leading-relaxed tracking-[3.75px] text-gray-200">
+            <li>1st Prize</li>
+            <li>2nd Prize</li>
+            <li>3rd Prize</li>
+          </ul>
+
+          <p className="mt-6 text-xl sm:text-2xl italic text-gray-300">
+            (Certificates will be awarded to all participants)
+          </p>
         </div>
       </section>
 

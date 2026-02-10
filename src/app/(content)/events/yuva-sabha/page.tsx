@@ -4,7 +4,6 @@ import EventIntro from "@/components/sub-component/event-intro";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import EventManagers from "@/components/sub-component/event-managers";
-import Image from "next/image";
 import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
@@ -29,55 +28,19 @@ const Page = () => {
 
   const managers = [
     {
-      imageUrl: "/managers/common/user.png",
-      name: "Anushree Maity",
-      contact: 9685434119,
-    },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Shivam Arora",
-      contact: 9109245599,
-    },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Shubham Sharma",
-      contact: 6207360156,
-    },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Avinash Agrawal",
-      contact: 9691846192,
-    },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Navin Giri",
-      contact: 8889183669,
-    },
-    { imageUrl: "/managers/common/user.png", name: "Aniket Dash", contact: 0 },
-    {
-      imageUrl: "/managers/common/user.png",
+      imageUrl: "/managers/Voice_Of_Youth/Voice Of Youth/shakshyee.jpg",
       name: "Shakshyee Sharma",
       contact: 6371965128,
     },
     {
-      imageUrl: "/managers/common/user.png",
-      name: "Shivani Rathore",
-      contact: 9343973942,
+      imageUrl: "/managers/Voice_Of_Youth/Voice Of Youth/Shivam Arora.jpeg",
+      name: "Shivam Arora",
+      contact: 9109245599,
     },
     {
-      imageUrl: "/managers/common/user.png",
-      name: "Madhurima Sidar",
-      contact: 9752941333,
-    },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Kirti Upadhyay",
-      contact: 9752072299,
-    },
-    {
-      imageUrl: "/managers/common/user.png",
-      name: "Sushma Yadav",
-      contact: 8319946166,
+      imageUrl: "/managers/Voice_Of_Youth/Voice Of Youth/Avinash Agrawal.jpeg",
+      name: "Avinash Agrawal",
+      contact: 9691846192,
     },
   ];
 
@@ -92,25 +55,19 @@ const Page = () => {
   return (
     <div className="relative space-y-10 px-4 py-8">
       {/* Background Image */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <Image
-          src="/testfile/singleeventbg2.svg"
-          alt="Scrolling Background"
-          width={500}
-          height={500}
-          className="w-full h-auto opacity-150"
-        />
-      </div>
+      <div className="absolute inset-0 -z-10 bg-[#2A1414]" />
 
       {/* Event Intro Section */}
+      {/* <a href="/dashboard"> */}
       <EventIntro
-        imageUrl="/testfile/voice.svg"
+        imageUrl="/eventslogo/yuvasabhaevents.svg"
         registrations={registrationCount}
         pricepool={10000}
         description="A fun flagship event where participants showcase talents like singing, dancing, comedy, or magic while also predicting their own score. An exact match with the judges' score wins instantly, making it a unique test of skill, confidence, and self-awareness. Entertain, guess, and win."
         time="19-02-26 , 12:00 pm"
         venue="MP HALL "
       />
+      {/* </a> */}
 
       {/* About / How It Works */}
       <section className="flex flex-col items-center px-4 my-10">
@@ -118,12 +75,18 @@ const Page = () => {
           ABOUT THE EVENT
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl w-full">
-          <p className="text-xl sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-black">
-            Step into the intellectual battlefield where arguments shape
-            innovation. Voice of Youth challenges aspiring managers,
-            entrepreneurs, and thinkers to present bold perspectives, defend
-            ideas, and counter opponents through structured debates on
-            real-world issues.
+          <p className="text-xl sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white">
+            Step into the intellectual battlefield of tarkash, where logic meets
+            leadership, and arguments shape innovation. This high-energy debate
+            competition is designed for aspiring managers, entrepreneurs, and
+            business enthusiasts as well as others to challenge conventional
+            wisdom and present ground breaking perspectives. Participants will
+            engage in thought-provoking debates on current business trends,
+            corporate ethics, financial strategies, and emerging market
+            dynamics, Socio political matters and also current happening.
+            Whether you&apos;re defending or opposing, your ability to think
+            critically, articulate persuasively, and counter strategically will
+            determine your victory.
           </p>
         </div>
       </section>
@@ -134,7 +97,7 @@ const Page = () => {
           JUDGING CRITERIA
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl w-full">
-          <ul className="list-disc pl-5 text-xl sm:text-2xl space-y-3 font-['Inter'] tracking-[3.75px] text-black">
+          <ul className="list-disc pl-5 text-xl sm:text-2xl space-y-3 font-['Inter'] tracking-[3.75px] text-white">
             <li>Content quality & relevance</li>
             <li>Delivery & articulation</li>
             <li>Rebuttal effectiveness</li>

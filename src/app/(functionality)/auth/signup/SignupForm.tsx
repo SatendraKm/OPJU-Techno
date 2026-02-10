@@ -1,4 +1,5 @@
 "use client";
+
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -20,21 +21,15 @@ import { userSignup } from "@/actions/user-actions";
 
 const formSchema = z
   .object({
-    fullName: z
-      .string()
-      .min(2, { message: "Full name must be at least 2 characters." }),
-    email: z.string().email({ message: "Please enter a valid email address." }),
-    mobileNumber: z
-      .string()
-      .regex(/^\d{10}$/, {
-        message: "Please enter a valid 10-digit mobile number.",
-      }),
-    password: z
-      .string()
-      .min(6, { message: "Password must be at least 6 characters." }),
-    confirmPassword: z
-      .string()
-      .min(6, { message: "Password must be at least 6 characters." }),
+    fullName: z.string().min(2, {
+      message: "Full name must be at least 2 characters.",
+    }),
+    email: z.string().email(),
+    mobileNumber: z.string().regex(/^\d{10}$/, {
+      message: "Please enter a valid 10-digit mobile number.",
+    }),
+    password: z.string().min(6),
+    confirmPassword: z.string().min(6),
     branch: z.string().optional(),
     enrollmentNumber: z.string().optional(),
     address: z.string().optional(),
@@ -46,9 +41,13 @@ const formSchema = z
 
 export default function SignupForm() {
   const router = useRouter();
-  const isOutsider = JSON.parse(sessionStorage.getItem("isOutsider") || "true");
+  const isOutsider = JSON.parse(
+    sessionStorage.getItem("isOutsider") || "true"
+  );
+
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] =
+    useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -81,9 +80,12 @@ export default function SignupForm() {
       ...values,
       isOutsider,
       branch: isOutsider ? "NA" : values.branch,
-      enrollmentNumber: isOutsider ? "NA" : values.enrollmentNumber,
+      enrollmentNumber: isOutsider
+        ? "NA"
+        : values.enrollmentNumber,
       address: isOutsider ? values.address : "OPJU",
     };
+
     await userSignupFn(userData);
   };
 
@@ -91,10 +93,11 @@ export default function SignupForm() {
     if (userSignupError) {
       toast({
         title: "Error",
-        description: "user not found",
+        description: "User not found",
         variant: "destructive",
       });
     }
+
     if (userSignupData) {
       toast({
         title: "Success",
@@ -102,67 +105,93 @@ export default function SignupForm() {
       });
       router.push("/auth/login");
     }
-  }, [userSignupError, userSignupData, userSignupLoading, router]);
+  }, [userSignupError, userSignupData, router]);
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h1 className="text-2xl font-bold mb-6 text-center">Sign Up</h1>
+    <div className="space-y-7 text-white">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-6"
+        >
+          {/* FULL NAME */}
           <FormField
             control={form.control}
             name="fullName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Full Name</FormLabel>
-                <FormControl>
-                  <Input placeholder="Enter your name" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="text-white">
+                  Full Name
+                </FormLabel>
                 <FormControl>
                   <Input
-                    type="email"
-                    placeholder="john@example.com"
-                    className="font-semibold disabled:opacity-70"
+                    placeholder="Enter your name"
+                    className="h-11 bg-white/5 border-white/20 text-white placeholder:text-gray-400"
                     {...field}
-                    disabled
                   />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+
+          {/* EMAIL */}
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-white">
+                  Email
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    disabled
+                    className="h-11 bg-white/5 border-white/20 text-white opacity-70"
+                    {...field}
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+
+          {/* MOBILE */}
           <FormField
             control={form.control}
             name="mobileNumber"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Mobile Number</FormLabel>
+                <FormLabel className="text-white">
+                  Mobile Number
+                </FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your number" {...field} />
+                  <Input
+                    placeholder="Enter your number"
+                    className="h-11 bg-white/5 border-white/20 text-white placeholder:text-gray-400"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+
+          {/* OUTSIDER / INSIDER */}
           {isOutsider ? (
             <FormField
               control={form.control}
               name="address"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Address</FormLabel>
+                  <FormLabel className="text-white">
+                    Address
+                  </FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter your address" {...field} />
+                    <Input
+                      placeholder="Enter your address"
+                      className="h-11 bg-white/5 border-white/20 text-white placeholder:text-gray-400"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -175,22 +204,35 @@ export default function SignupForm() {
                 name="branch"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Branch</FormLabel>
+                    <FormLabel className="text-white">
+                      Branch
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your Branch" {...field} />
+                      <Input
+                        placeholder="Enter your branch"
+                        className="h-11 bg-white/5 border-white/20 text-white placeholder:text-gray-400"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
+
               <FormField
                 control={form.control}
                 name="enrollmentNumber"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Enrollment Number</FormLabel>
+                    <FormLabel className="text-white">
+                      Enrollment Number
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your Enrolment number" {...field} />
+                      <Input
+                        placeholder="Enter enrollment number"
+                        className="h-11 bg-white/5 border-white/20 text-white placeholder:text-gray-400"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -198,23 +240,29 @@ export default function SignupForm() {
               />
             </>
           )}
+
+          {/* PASSWORD */}
           <FormField
             control={form.control}
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Password</FormLabel>
+                <FormLabel className="text-white">
+                  Password
+                </FormLabel>
                 <FormControl>
                   <div className="relative">
                     <Input
                       type={showPassword ? "text" : "password"}
-                      placeholder="Enter your password"
+                      className="h-11 bg-white/5 border-white/20 text-white pr-16"
                       {...field}
                     />
                     <button
                       type="button"
-                      onClick={() => setShowPassword((prev) => !prev)}
-                      className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm text-gray-600"
+                      onClick={() =>
+                        setShowPassword((p) => !p)
+                      }
+                      className="absolute right-3 top-3 text-sm text-white"
                     >
                       {showPassword ? "Hide" : "Show"}
                     </button>
@@ -224,23 +272,31 @@ export default function SignupForm() {
               </FormItem>
             )}
           />
+
+          {/* CONFIRM PASSWORD */}
           <FormField
             control={form.control}
             name="confirmPassword"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Confirm Password</FormLabel>
+                <FormLabel className="text-white">
+                  Confirm Password
+                </FormLabel>
                 <FormControl>
                   <div className="relative">
                     <Input
-                      type={showConfirmPassword ? "text" : "password"}
-                      placeholder="Confirm your password"
+                      type={
+                        showConfirmPassword ? "text" : "password"
+                      }
+                      className="h-11 bg-white/5 border-white/20 text-white pr-16"
                       {...field}
                     />
                     <button
                       type="button"
-                      onClick={() => setShowConfirmPassword((prev) => !prev)}
-                      className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm text-gray-600"
+                      onClick={() =>
+                        setShowConfirmPassword((p) => !p)
+                      }
+                      className="absolute right-3 top-3 text-sm text-white"
                     >
                       {showConfirmPassword ? "Hide" : "Show"}
                     </button>
@@ -250,8 +306,14 @@ export default function SignupForm() {
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full">
-            Submit
+
+          {/* SUBMIT */}
+          <Button
+            type="submit"
+            disabled={!!userSignupLoading}
+            className="w-full h-11 bg-sky-500 hover:bg-sky-600 text-white font-semibold"
+          >
+            {userSignupLoading ? "Submitting..." : "Create Account"}
           </Button>
         </form>
       </Form>

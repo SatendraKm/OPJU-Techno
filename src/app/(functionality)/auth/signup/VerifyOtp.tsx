@@ -73,7 +73,7 @@ export default function VerifyOtp({ onNext }: { onNext: () => void }) {
     };
 
     return (
-        <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+        <div className="max-w-md mx-auto p-6 bg-transparent rounded-lg shadow-md">
             <h1 className="text-2xl font-bold mb-6 text-center">Verify OTP</h1>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
