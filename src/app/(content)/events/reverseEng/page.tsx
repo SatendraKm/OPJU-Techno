@@ -29,19 +29,19 @@ const Page = () => {
 
   const rounds = [
      {
-  title: "ROUND 1: Pattern Finder",
+  title: "Round 1 :- Component Detective",
   description:
-    "Fundamentals round focused on observing patterns and identifying hidden logic connecting inputs to outputs. Participants analyze multiple input-output examples to deduce the underlying rules. Pen and paper based with quick elimination.",
+    "Test participants analytical thinking and understanding of system behavior. This round focuses on breaking down real-world or software-based systems into their fundamental components and understanding how these components interact to achieve a specific output.",
     },
     {
-  title: "ROUND 2: Black Box Breakdown",
+  title: "Round 2: System Detective",
   description:
-    "System thinking round where teams reverse-engineer an unknown multi-step system using only observable input-output behavior. Using multiple test cases and timing tables, teams must decode the internal logic and explain how the system works.",
+    "Participants analyze images of real-life systems such as ATMs or food delivery setups. They identify key components, possible failure points, and understand how the system works. This round tests observation skills, logical thinking, and practical understanding",
     },
     {
-  title: "ROUND 3: System Reconstruction",
+  title: "Round 3: Innovation Challenge",
   description:
-    "Advanced reasoning round involving analysis of partial system diagrams and incomplete logical flows. Teams identify logical flaws, complete missing components, suggest improvements, and justify their solutions using systematic reasoning principles.",
+    "Teams improve a given real-life system by suggesting practical, simple, and cost-effective solutions. Each team presents their ideas in a short pitch. This round evaluates creativity, feasibility, problem-solving ability, and communication skills",
     },
   ];
 
