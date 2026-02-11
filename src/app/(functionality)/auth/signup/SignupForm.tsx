@@ -93,7 +93,7 @@ export default function SignupForm() {
     if (userSignupError) {
       toast({
         title: "Error",
-        description: "User not found",
+        description: userSignupError.message,
         variant: "destructive",
       });
     }

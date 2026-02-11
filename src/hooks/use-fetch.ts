@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState } from "react";
-// import { toast } from "./use-toast";
+ import { toast } from "./use-toast";
 
 type FetchCallback<T> = (...args: any[]) => Promise<T>;
 
@@ -18,11 +18,11 @@ const useFetch = <T>(cb: FetchCallback<T>) => {
 			setData(res);
 		} catch (error: any) {
 			setError(error);
-			// toast({
-			// 	title: "Error",
-			// 	description: error.message,
-			// 	variant: "destructive",
-			// });
+			 toast({
+				title: "Error",
+				description: error.message,
+				variant: "destructive",
+			 });
 		} finally {
 			setLoading(false);
 		}
