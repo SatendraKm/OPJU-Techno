@@ -8,17 +8,17 @@ import { getRegistrationCount } from "@/actions/event-actions";
 const Page = () => {
   const managers = [
     {
-      imageUrl: "/managers/Start-up_Business_plan/Start-up Business Plan/Name_ Jay Malakar, Contact_ +91 7880266883.jpeg",
+      imageUrl: "/managers/Start-up_Business_plan/Start-up Business Plan/jay.jpeg",
       name: "Jay Malakar",
       contact: 788026883,
     },
     {
-      imageUrl: "/managers/Start-up_Business_plan/Start-up Business Plan/Name_ ,Rupesh Sao, B-Tech(cse), Contact_ +91 8269175987.jpeg",
+      imageUrl: "/managers/Start-up_Business_plan/Start-up Business Plan/rupesh.jpeg",
       name: "Rupesh Sao",
       contact: 8269175987,
     },
     {
-      imageUrl: "/managers/Start-up_Business_plan/Start-up Business Plan/Name_ Rounak Rathore, Contact_ +91 9777445832 .jpeg",
+      imageUrl: "/managers/Start-up_Business_plan/Start-up Business Plan/rounak.jpeg",
       name: "Raunak Rathore",
       contact: 9777445832,
     },
