@@ -39,8 +39,8 @@ const MAX_SECTIONS = 4;
 const MAX_SUBEVENTS = 7;
 
 /* ---------- RESTRICTIONS ---------- */
-const RESTRICTED_KALAKRITI = "kalakriti";
 const RESTRICTED_VOICE = "voice of youth";
+const RESTRICTED_TECHLAB = "tech";
 
 export default function EventsSelection() {
   const [selectedEvents, setSelectedEvents] = useState<string[]>([]);
@@ -148,16 +148,14 @@ export default function EventsSelection() {
 
     const normalizedMain = normalize(mainEvent);
 
-    const isKalakriti = normalizedMain === RESTRICTED_KALAKRITI;
     const isVoiceOfYouth = normalizedMain === RESTRICTED_VOICE;
-    const isPradarshini = normalize(event.name).includes("pradarshini");
+    const isTechlab = normalizedMain.includes(RESTRICTED_TECHLAB);
 
-    // ❌ Kalakriti restriction
-    if (isKalakriti && !isPradarshini) {
+    // ❌ Techlab fully closed
+    if (isTechlab) {
       toast({
         title: "Registration Closed",
-        description:
-          "Only Pradarshini is open for registration under Kalakriti.",
+        description: "Techlab registrations are currently closed.",
         variant: "destructive",
       });
       return;
@@ -263,16 +261,12 @@ export default function EventsSelection() {
             {groupedEvents[mainEvent].map((event) => {
               const status = getStatus(event._id);
 
-              const isKalakriti =
-                normalize(event.mainEvent) === RESTRICTED_KALAKRITI;
               const isVoiceOfYouth =
                 normalize(event.mainEvent) === RESTRICTED_VOICE;
-              const isPradarshini = normalize(event.name).includes(
-                "pradarshini"
-              );
+              const isTechlab =
+                normalize(event.mainEvent).includes(RESTRICTED_TECHLAB);
 
-              const isBlocked =
-                (isKalakriti && !isPradarshini) || isVoiceOfYouth;
+              const isBlocked = isVoiceOfYouth || isTechlab;
 
               return (
                 <Card
