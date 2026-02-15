@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import {
   Card,
   CardHeader,
@@ -41,6 +41,19 @@ const MAX_SUBEVENTS = 7;
 /* ---------- RESTRICTIONS ---------- */
 const RESTRICTED_VOICE = "voice of youth";
 const RESTRICTED_TECHLAB = "tech";
+const RESTRICTED_FASHION = "fashion show"; // ✅ Fashion Show / Riwayat closed
+
+/* ---------- helpers (defined outside component to avoid re-creation) ---------- */
+const normalize = (v: string) => v.toLowerCase().trim();
+
+const isEventBlocked = (mainEvent: string) => {
+  const n = normalize(mainEvent);
+  return (
+    n === RESTRICTED_VOICE ||
+    n.includes(RESTRICTED_TECHLAB) ||
+    n.includes(RESTRICTED_FASHION)
+  );
+};
 
 export default function EventsSelection() {
   const [selectedEvents, setSelectedEvents] = useState<string[]>([]);
@@ -64,12 +77,17 @@ export default function EventsSelection() {
     fn: submitEventsFn,
   } = useFetch(submitEventsAction);
 
+  /* stable refs so useEffect deps are satisfied without infinite loops */
+  const stableFetchAll = useCallback(() => fetchAllEventsFn(), []);
+  const stableFetchRegistered = useCallback(() => fetchRegisteredEventsFn(), []);
+  const stableFetchInvites = useCallback(() => fetchPendingInvitesFn(), []);
+
   /* ---------- FETCH DATA ---------- */
   useEffect(() => {
-    fetchAllEventsFn();
-    fetchRegisteredEventsFn();
-    fetchPendingInvitesFn();
-  }, []);
+    stableFetchAll();
+    stableFetchRegistered();
+    stableFetchInvites();
+  }, [stableFetchAll, stableFetchRegistered, stableFetchInvites]);
 
   useEffect(() => {
     if (allEventsData) setAllEvents(allEventsData.events);
@@ -96,8 +114,6 @@ export default function EventsSelection() {
   }, [submitData, submitError, router]);
 
   /* ---------- HELPERS ---------- */
-  const normalize = (v: string) => v.toLowerCase().trim();
-
   const getMainEventName = (eventId: string) => {
     const ev = allEvents.find((e) => e._id === eventId);
     return ev ? ev.name.split(" – ")[0] : null;
@@ -146,26 +162,17 @@ export default function EventsSelection() {
     const event = allEvents.find((e) => e._id === eventId);
     if (!event) return;
 
-    const normalizedMain = normalize(mainEvent);
+    if (isEventBlocked(mainEvent)) {
+      const n = normalize(mainEvent);
+      const label = n.includes(RESTRICTED_TECHLAB)
+        ? "Techlab"
+        : n.includes(RESTRICTED_FASHION)
+        ? "Fashion Show (Riwayat)"
+        : "Voice of Youth";
 
-    const isVoiceOfYouth = normalizedMain === RESTRICTED_VOICE;
-    const isTechlab = normalizedMain.includes(RESTRICTED_TECHLAB);
-
-    // ❌ Techlab fully closed
-    if (isTechlab) {
       toast({
         title: "Registration Closed",
-        description: "Techlab registrations are currently closed.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    // ❌ Voice of Youth fully closed
-    if (isVoiceOfYouth) {
-      toast({
-        title: "Registration Closed",
-        description: "Voice of Youth registrations are currently closed.",
+        description: `${label} registrations are currently closed.`,
         variant: "destructive",
       });
       return;
@@ -230,6 +237,18 @@ export default function EventsSelection() {
     return "available";
   };
 
+  /* ---------- LOADING STATE ---------- */
+  const isLoading = !allEventsData && allEvents.length === 0;
+
+  if (isLoading) {
+    return (
+      <div className="max-w-6xl mx-auto p-6 text-white flex flex-col items-center justify-center min-h-[40vh] gap-4">
+        <div className="w-8 h-8 border-4 border-white/20 border-t-white rounded-full animate-spin" />
+        <p className="text-gray-400 text-sm">Loading events...</p>
+      </div>
+    );
+  }
+
   /* ---------- UI ---------- */
   return (
     <div className="max-w-6xl mx-auto p-6 text-white">
@@ -246,82 +265,89 @@ export default function EventsSelection() {
         {registeredEvents.length + selectedEvents.length} / 7
       </p>
 
-      {Object.keys(groupedEvents).map((mainEvent) => (
-        <div key={mainEvent} className="mb-10">
-          <h2 className="text-xl font-semibold mb-4 border-b border-white/20 pb-1 flex items-center gap-3">
-            {mainEvent}
-            {getPrizePoolForMainEvent(mainEvent) && (
-              <span className="text-sm text-white font-medium">
-                (Prize Pool ₹{getPrizePoolForMainEvent(mainEvent)})
-              </span>
-            )}
-          </h2>
+      {Object.keys(groupedEvents).map((mainEvent) => {
+        /* computed once per section, not per card */
+        const blocked = isEventBlocked(mainEvent);
+        const prize = getPrizePoolForMainEvent(mainEvent);
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {groupedEvents[mainEvent].map((event) => {
-              const status = getStatus(event._id);
+        return (
+          <div key={mainEvent} className="mb-10">
+            <h2 className="text-xl font-semibold mb-4 border-b border-white/20 pb-1 flex items-center gap-3">
+              {mainEvent}
+              {prize && (
+                <span className="text-sm text-white font-medium">
+                  (Prize Pool ₹{prize})
+                </span>
+              )}
+            </h2>
 
-              const isVoiceOfYouth =
-                normalize(event.mainEvent) === RESTRICTED_VOICE;
-              const isTechlab =
-                normalize(event.mainEvent).includes(RESTRICTED_TECHLAB);
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {groupedEvents[mainEvent].map((event) => {
+                const status = getStatus(event._id);
 
-              const isBlocked = isVoiceOfYouth || isTechlab;
+                return (
+                  <Card
+                    key={event._id}
+                    onClick={() =>
+                      !blocked &&
+                      toggleEventSelection(event._id, mainEvent)
+                    }
+                    className={`transition-all border-white/10
+                      ${
+                        blocked
+                          ? "opacity-40 cursor-not-allowed bg-gray-500/10 text-gray-400"
+                          : status === "registered"
+                          ? "opacity-70 cursor-not-allowed bg-white/5 text-gray-300"
+                          : status === "selected"
+                          ? "ring-2 ring-red-500 bg-red-500/15 text-white cursor-pointer"
+                          : status === "invited"
+                          ? "ring-2 ring-yellow-400 bg-yellow-400/10 text-white cursor-pointer"
+                          : "bg-white/5 text-gray-200 hover:bg-white/10 cursor-pointer"
+                      }`}
+                  >
+                    <CardHeader>
+                      <CardTitle className="text-base flex justify-between items-center">
+                        {event.subName}
 
-              return (
-                <Card
-                  key={event._id}
-                  onClick={() =>
-                    !isBlocked &&
-                    toggleEventSelection(event._id, mainEvent)
-                  }
-                  className={`transition-all border-white/10
-                    ${
-                      isBlocked
-                        ? "opacity-40 cursor-not-allowed bg-gray-500/10 text-gray-400"
-                        : status === "registered"
-                        ? "opacity-70 cursor-not-allowed bg-white/5 text-gray-300"
-                        : status === "selected"
-                        ? "ring-2 ring-red-500 bg-red-500/15 text-white cursor-pointer"
-                        : "bg-white/5 text-gray-200 hover:bg-white/10 cursor-pointer"
-                    }`}
-                >
-                  <CardHeader>
-                    <CardTitle className="text-base flex justify-between items-center">
-                      {event.subName}
+                        {blocked && (
+                          <Badge className="bg-gray-600 text-white">
+                            Closed
+                          </Badge>
+                        )}
 
-                      {isBlocked && (
-                        <Badge className="bg-gray-600 text-white">
-                          Closed
-                        </Badge>
-                      )}
+                        {!blocked && status === "registered" && (
+                          <Badge className="bg-green-600 text-white">
+                            Registered
+                          </Badge>
+                        )}
 
-                      {status === "registered" && (
-                        <Badge className="bg-green-600 text-white">
-                          Registered
-                        </Badge>
-                      )}
+                        {!blocked && status === "selected" && (
+                          <Badge className="bg-red-500 text-white">
+                            Selected
+                          </Badge>
+                        )}
 
-                      {status === "selected" && (
-                        <Badge className="bg-red-500 text-white">
-                          Selected
-                        </Badge>
-                      )}
-                    </CardTitle>
-                  </CardHeader>
+                        {!blocked && status === "invited" && (
+                          <Badge className="bg-yellow-500 text-white">
+                            Invited
+                          </Badge>
+                        )}
+                      </CardTitle>
+                    </CardHeader>
 
-                  <CardContent>
-                    <p>
-                      <span className="font-semibold">Team Size:</span>{" "}
-                      {event.teamSize}
-                    </p>
-                  </CardContent>
-                </Card>
-              );
-            })}
+                    <CardContent>
+                      <p>
+                        <span className="font-semibold">Team Size:</span>{" "}
+                        {event.teamSize}
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
 
       <div className="flex justify-center mt-8">
         <Button
