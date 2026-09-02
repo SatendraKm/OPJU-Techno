@@ -100,6 +100,12 @@ export default function LoginForm() {
           All OPJU students must register using their college mail ID
         </p>
 
+        <div className="mb-8 rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-sm text-gray-300">
+          <p className="mb-2 font-semibold text-white">Demo credentials</p>
+          <p>Admin: admin@example.com / 1234</p>
+          <p>User: user@example.com / 1234</p>
+        </div>
+
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7">
             <FormField
