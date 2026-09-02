@@ -1,12 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 import useFetch from "@/hooks/use-fetch";
@@ -35,7 +30,7 @@ type EventDTO = {
 type GroupedEvents = {
   [mainEvent: string]: (EventDTO & {
     mainEvent: string; // e.g. "Robovation"
-    subName: string;   // e.g. "Robo Soccer"
+    subName: string; // e.g. "Robo Soccer"
   })[];
 };
 
@@ -54,23 +49,7 @@ const MAX_SUBEVENTS = 7;
    — Matching is case-insensitive and uses "includes",
      so "back trace" will match "Back Trace (Reverse Engineering)".
    ================================================================ */
-const CLOSED_EVENTS: string[] = [
-  "tech-lab",               // Tech-Lab
-  "ideathon",               // Ideathon
-  "robovation",             // Robovation
-  "codigo",                 // Codigo
-  "designathon",            // Designathon
-  "back trace",             // Back Trace (Reverse Engineering)
-  "start-up business plan", // Start-up Business Plan
-  "voice of youth",         // Voice of Youth
-  "roadies",                // Roadies
-  "aima",                   // AIMA
-  "kalakriti",              // Kalakriti
-  "fashion show",           // Fashion Show (Riwayat)
-  "master chef",            // Master Chef
-  "antaragni",              // Antaragni
-  "beat battle",            // Beat Battle
-];
+const CLOSED_EVENTS: string[] = [];
 
 /* ================================================================
    HELPERS
@@ -91,7 +70,6 @@ const isEventBlocked = (mainEvent: string): boolean => {
    — Lets users select sub-events and submit for registration
    ================================================================ */
 export default function EventsSelection() {
-
   /* ---------- STATE ----------
      selectedEvents   — IDs the user has clicked to select in this session
      registeredEvents — IDs already registered (fetched from server)
@@ -115,11 +93,13 @@ export default function EventsSelection() {
   const { data: allEventsData, fn: fetchAllEventsFn } =
     useFetch(getAllEventsAction);
 
-  const { data: registeredData, fn: fetchRegisteredEventsFn } =
-    useFetch(getRegisteredEventsAction);
+  const { data: registeredData, fn: fetchRegisteredEventsFn } = useFetch(
+    getRegisteredEventsAction,
+  );
 
-  const { data: invitesData, fn: fetchPendingInvitesFn } =
-    useFetch(getPendingInvitesAction);
+  const { data: invitesData, fn: fetchPendingInvitesFn } = useFetch(
+    getPendingInvitesAction,
+  );
 
   const {
     data: submitData,
@@ -134,7 +114,10 @@ export default function EventsSelection() {
      infinite re-render loops.
   */
   const stableFetchAll = useCallback(() => fetchAllEventsFn(), []);
-  const stableFetchRegistered = useCallback(() => fetchRegisteredEventsFn(), []);
+  const stableFetchRegistered = useCallback(
+    () => fetchRegisteredEventsFn(),
+    [],
+  );
   const stableFetchInvites = useCallback(() => fetchPendingInvitesFn(), []);
 
   /* ---------- EFFECT: initial data load ----------
@@ -302,7 +285,7 @@ export default function EventsSelection() {
     setSelectedEvents((prev) =>
       alreadySelected
         ? prev.filter((id) => id !== eventId)
-        : [...prev, eventId]
+        : [...prev, eventId],
     );
   };
 
@@ -360,17 +343,15 @@ export default function EventsSelection() {
      ================================================================ */
   return (
     <div className="max-w-6xl mx-auto p-6 text-white">
-      <h1 className="text-3xl font-bold text-center mb-4">
-        Select Events
-      </h1>
+      <h1 className="text-3xl font-bold text-center mb-4">Select Events</h1>
 
       {/* Live counters shown to the user */}
       <p className="text-center text-sm text-gray-300 mb-2">
         Sections selected: {getTotalMainSections().length} / 4
       </p>
       <p className="text-center text-sm text-gray-300 mb-6">
-        Sub-events selected:{" "}
-        {registeredEvents.length + selectedEvents.length} / 7
+        Sub-events selected: {registeredEvents.length + selectedEvents.length} /
+        7
       </p>
 
       {/* Render each main event section */}
@@ -381,7 +362,6 @@ export default function EventsSelection() {
 
         return (
           <div key={mainEvent} className="mb-10">
-
             {/* Section heading with optional prize pool */}
             <h2 className="text-xl font-semibold mb-4 border-b border-white/20 pb-1 flex items-center gap-3">
               {mainEvent}
@@ -401,20 +381,19 @@ export default function EventsSelection() {
                   <Card
                     key={event._id}
                     onClick={() =>
-                      !blocked &&
-                      toggleEventSelection(event._id, mainEvent)
+                      !blocked && toggleEventSelection(event._id, mainEvent)
                     }
                     className={`transition-all border-white/10
                       ${
                         blocked
-                          ? "opacity-40 cursor-not-allowed bg-gray-500/10 text-gray-400"  // closed
+                          ? "opacity-40 cursor-not-allowed bg-gray-500/10 text-gray-400" // closed
                           : status === "registered"
-                          ? "opacity-70 cursor-not-allowed bg-white/5 text-gray-300"       // already registered
-                          : status === "selected"
-                          ? "ring-2 ring-red-500 bg-red-500/15 text-white cursor-pointer"  // selected this session
-                          : status === "invited"
-                          ? "ring-2 ring-yellow-400 bg-yellow-400/10 text-white cursor-pointer" // pending invite
-                          : "bg-white/5 text-gray-200 hover:bg-white/10 cursor-pointer"    // available
+                            ? "opacity-70 cursor-not-allowed bg-white/5 text-gray-300" // already registered
+                            : status === "selected"
+                              ? "ring-2 ring-red-500 bg-red-500/15 text-white cursor-pointer" // selected this session
+                              : status === "invited"
+                                ? "ring-2 ring-yellow-400 bg-yellow-400/10 text-white cursor-pointer" // pending invite
+                                : "bg-white/5 text-gray-200 hover:bg-white/10 cursor-pointer" // available
                       }`}
                   >
                     <CardHeader>
@@ -423,16 +402,24 @@ export default function EventsSelection() {
 
                         {/* Badge: only one badge shows at a time, priority: blocked > registered > selected > invited */}
                         {blocked && (
-                          <Badge className="bg-gray-600 text-white">Closed</Badge>
+                          <Badge className="bg-gray-600 text-white">
+                            Closed
+                          </Badge>
                         )}
                         {!blocked && status === "registered" && (
-                          <Badge className="bg-green-600 text-white">Registered</Badge>
+                          <Badge className="bg-green-600 text-white">
+                            Registered
+                          </Badge>
                         )}
                         {!blocked && status === "selected" && (
-                          <Badge className="bg-red-500 text-white">Selected</Badge>
+                          <Badge className="bg-red-500 text-white">
+                            Selected
+                          </Badge>
                         )}
                         {!blocked && status === "invited" && (
-                          <Badge className="bg-yellow-500 text-white">Invited</Badge>
+                          <Badge className="bg-yellow-500 text-white">
+                            Invited
+                          </Badge>
                         )}
                       </CardTitle>
                     </CardHeader>
