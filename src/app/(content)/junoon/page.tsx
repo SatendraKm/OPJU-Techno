@@ -64,7 +64,7 @@ Accompanied by his talented band, the act delivers high-energy live arrangements
       <div className="flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 py-16">
         <div className="w-full lg:w-1/2">
           <Image
-            src="/junoon/aboutjunoon.png"
+            src="/junoon/aboutjunoon.webp"
             alt="Junoon Event"
             width={600}
             height={400}
