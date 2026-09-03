@@ -1,19 +1,444 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OPJU-Techno
 
-## Getting Started
+A modern, full-stack web application built with **Next.js 15** and **TypeScript**, featuring authentication, user management, and data export capabilities. The project is designed for handling event management and user registration with a professional, responsive UI.
 
-First, run the development server:
+**Live Demo**: [https://opju-techno.vercel.app](https://opju-techno.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 📋 Table of Contents
+
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Environment Setup](#environment-setup)
+  - [Running the Application](#running-the-application)
+- [Available Scripts](#available-scripts)
+- [Key Dependencies](#key-dependencies)
+- [Project Architecture](#project-architecture)
+- [Contributing](#contributing)
+- [Roadmap](#roadmap)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
+
+---
+
+## 🎯 Overview
+
+**OPJU-Techno** is a comprehensive web platform for managing technical events and user registrations. It provides secure authentication, user profile management, and tools for exporting participant data in multiple formats (CSV, Excel).
+
+The application combines modern web technologies with best practices in security, performance, and user experience to deliver a scalable solution.
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- **Next.js 15** - React framework with App Router
+- **React 18** - UI library
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **Radix UI** - Accessible UI component library
+- **Framer Motion** - Animation library
+- **React Hook Form** - Form management
+- **Zod** - Schema validation
+
+### Backend
+- **Next.js API Routes** - Serverless backend
+- **MongoDB** - NoSQL database
+- **Mongoose** - MongoDB ODM
+- **JWT** - Authentication
+- **Nodemailer** - Email notifications
+
+### Development Tools
+- **ESLint** - Code linting
+- **TypeScript** - Type checking
+- **PostCSS** - CSS processing
+
+---
+
+## ✨ Features
+
+### Authentication & Authorization
+- ✅ User sign-up with email validation
+- ✅ Secure login/logout functionality
+- ✅ JWT-based session management
+- ✅ Protected routes and API endpoints
+- ✅ User dropdown with authenticated/guest views
+
+### User Management
+- ✅ User profile management
+- ✅ Secure password handling
+- ✅ Welcome email notifications (via Nodemailer)
+- ✅ User data persistence
+
+### Data Export
+- ✅ Export user data to CSV format
+- ✅ Export user data to Excel format
+- ✅ Filter and export outsider registrations
+
+### UI/UX
+- ✅ Responsive design for all devices
+- ✅ Smooth animations with Framer Motion
+- ✅ Accessible components (Radix UI)
+- ✅ Toast notifications
+- ✅ Loading states and error handling
+
+---
+
+## 📁 Project Structure
+
+```
+OPJU-Techno/
+├── src/                          # Source code directory
+│   ├── app/                       # Next.js app directory
+│   │   ├── auth/                  # Authentication pages
+│   │   │   ├── login/             # Login page
+│   │   │   ├── signup/            # Sign-up page
+│   │   │   └── layout.tsx
+│   │   ├── api/                   # API routes
+│   │   ├── page.tsx               # Home page
+│   │   └── layout.tsx             # Root layout
+│   ├── components/                # Reusable React components
+│   │   ├── ui/                    # UI components (Radix UI based)
+│   │   └── [Feature Components]
+│   ├── lib/                       # Utility functions
+│   ├── models/                    # Mongoose models
+│   ├── schemas/                   # Validation schemas
+│   ├── scripts/                   # Utility scripts
+│   │   └── exportOutsiders.js     # Export outsider data
+│   └── middleware.ts              # Next.js middleware (protected routes)
+├── public/                        # Static assets
+├── components.json                # shadcn/ui configuration
+├── tailwind.config.ts             # Tailwind CSS configuration
+├── tsconfig.json                  # TypeScript configuration
+├── next.config.ts                 # Next.js configuration
+├── postcss.config.mjs             # PostCSS configuration
+├── eslint.config.mjs              # ESLint configuration
+├── package.json                   # Project dependencies
+└── README.md                       # This file
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+- **Node.js** (v18 or higher)
+- **npm** or **yarn** package manager
+- **MongoDB** cluster (local or cloud-based)
+- **Git**
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/SatendraKm/OPJU-Techno.git
+   cd OPJU-Techno
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+### Environment Setup
+
+Create a `.env.local` file in the root directory and add the following variables:
+
+```env
+# Database
+MONGODB_URI=your_mongodb_connection_string
+
+# JWT
+JWT_SECRET=your_jwt_secret_key
+
+# Email (Nodemailer)
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASSWORD=your_email_password
+
+# Application
+NEXT_PUBLIC_API_URL=http://localhost:3000
+```
+
+**Note**: 
+- Replace `your_mongodb_connection_string` with your actual MongoDB URI
+- For Gmail, use an [App Password](https://support.google.com/accounts/answer/185833) instead of your regular password
+- The `JWT_SECRET` should be a strong, random string
+
+### Running the Application
+
+1. **Development mode**
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:3000`
+
+2. **Production build**
+   ```bash
+   npm run build
+   npm start
+   ```
+
+3. **Port specification** (Custom port)
+   ```bash
+   npm start -p 8080
+   ```
+
+---
+
+## 📝 Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start development server with hot reload |
+| `npm run build` | Build application for production |
+| `npm start` | Start production server (port 8080 by default) |
+| `npm run lint` | Run ESLint to check code quality |
+| `npm run export:outsiders` | Export outsider registrations to file |
+| `npm run build-no-checks` | Build without TypeScript and ESLint checks |
+
+---
+
+## 📦 Key Dependencies
+
+### UI & Components
+- `@radix-ui/*` - Accessible component primitives
+- `lucide-react` - Icon library
+- `framer-motion` - Advanced animations
+- `embla-carousel-react` - Carousel component
+- `react-day-picker` - Date picker
+
+### Form & Validation
+- `react-hook-form` - Form state management
+- `zod` - Schema validation
+- `@hookform/resolvers` - Resolvers for react-hook-form
+
+### Data & Storage
+- `mongoose` - MongoDB object modeling
+- `dotenv` - Environment variable management
+- `js-cookie` - Cookie management
+- `jose` - JWT handling
+
+### Utilities
+- `date-fns` - Date utilities
+- `csv-writer` - CSV export
+- `exceljs` - Excel file generation
+- `xlsx` - Excel file reading/writing
+- `nodemailer` - Email sending
+- `clsx` & `tailwind-merge` - Utility styling
+- `class-variance-authority` - Component variant management
+
+---
+
+## 🏗 Project Architecture
+
+### Authentication Flow
+```
+User Input → Sign Up/Login Page
+    ↓
+API Route (/api/auth/*)
+    ↓
+Validation (Zod Schema)
+    ↓
+MongoDB Query
+    ↓
+JWT Token Generation
+    ↓
+Store in Cookie/SessionStorage
+    ↓
+Protected Routes Middleware
+```
+
+### Database Schema
+The application uses MongoDB with Mongoose for data persistence. Key models include:
+- **User Model**: Stores user account information, email, hashed passwords
+- **Registration Model**: Tracks event registrations and participant data
+
+### Middleware
+Protected routes are managed through `middleware.ts` which:
+- Verifies JWT tokens
+- Redirects unauthenticated users
+- Protects API endpoints
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these guidelines:
+
+### Branch Naming
+- Create new branches from the `development` branch
+- Use descriptive names: `feature/new-feature`, `bugfix/issue-123`, `docs/update-readme`
+
+### Commit Messages
+- Write clear, concise commit messages
+- Examples: "Add user profile page", "Fix login validation bug"
+
+### Pull Requests
+1. Create a PR targeting the `development` branch
+2. Provide a detailed description of changes
+3. Ensure code passes linting and tests
+4. Respond to review feedback promptly
+
+### Contributing Guidelines Details
+
+1. **Create a New Branch**:
+   - Always create a new branch from the `development` branch.
+   - Use a descriptive name for your branch (e.g., `feature/new-feature`, `bugfix/issue-123`).
+
+2. **Commit Changes**:
+   - Make sure your commits are clear and concise.
+   - Follow the commit message guidelines (e.g., `Add new feature`, `Fix issue with X`).
+
+3. **Create a Pull Request**:
+   - Once your changes are ready, create a pull request (PR) targeting the `development` branch.
+   - Provide a detailed description of your changes in the PR.
+
+4. **Code Review**:
+   - Be responsive to feedback and make necessary changes.
+   - Ensure your code passes all tests and adheres to the project's coding standards.
+
+Thank you for your contributions!
+
+---
+
+## 🗓 Roadmap
+
+### Current Tasks (In Progress)
+
+#### 0. MongoDB Setup
+- [ ] Initialize a MongoDB cluster
+- [ ] Share cluster connection details
+- [ ] Add connection string to `.env.local`
+- [ ] Manually test signup and login/logout functionality
+
+#### 1. Initialize Other Pages and Actions
+- [ ] Create additional pages
+- [ ] Set up API actions for features
+
+#### 2. Refactor Auth Pages for Better Modularity
+The following pages need to be refactored:
+- `/auth/signup` - Move schemas to `validators.ts`, Extract components to `@/components`
+- `/auth/login` - Move schemas to `validators.ts`, Extract components to `@/components`
+
+#### 3. User Dropdown Enhancement
+- [ ] If authenticated → Show logout option
+- [ ] If not authenticated → Show signup and login options
+- [ ] Create the middleware for protected routes
+
+#### 4. Nodemailer Integration (P1 Priority)
+**Issue**: Nodemailer has a filesystem-related error
+- [ ] Debug and fix the nodemailer error (fs module related)
+- [ ] Implement `sendWelcomeEmail` function
+- [ ] Integrate email sending at signup page
+- [ ] Test email delivery
+
+### Planned Features (Future)
+- [ ] User profile customization
+- [ ] Event analytics dashboard
+- [ ] Advanced filtering and search
+- [ ] Email verification workflow
+- [ ] Password reset functionality
+- [ ] Role-based access control (RBAC)
+
+---
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### 1. MongoDB Connection Error
+**Problem**: `Cannot connect to MongoDB`
+
+**Solution**:
+- Verify MongoDB URI in `.env.local`
+- Ensure MongoDB cluster is running and accessible
+- Check firewall/network settings
+- Verify IP whitelist in MongoDB Atlas
+
+#### 2. Nodemailer Email Sending Fails
+**Problem**: `Error: Invalid login: 535 5.7.8 Error: authentication failed`
+
+**Solution**:
+- Use [Gmail App Password](https://support.google.com/accounts/answer/185833) instead of regular password
+- Enable "Less secure app access" (if using regular password)
+- Verify email credentials in `.env.local`
+
+#### 3. Nodemailer Filesystem Error (fs related)
+**Problem**: `Error: ENOENT: no such file or directory`
+
+**Solution**:
+- Check that Nodemailer is properly configured for Next.js
+- Ensure environment variables are correctly set
+- Verify email template paths if using file-based templates
+- Consider using inline HTML instead of file-based templates in serverless environment
+
+#### 4. JWT Token Not Being Set
+**Problem**: User cannot login or session is not persisted
+
+**Solution**:
+- Check JWT_SECRET in `.env.local`
+- Verify cookie settings in browser
+- Check middleware configuration
+- Ensure API route returns token correctly
+
+#### 5. Port Already in Use
+**Problem**: `Error: listen EADDRINUSE: address already in use :::3000`
+
+**Solution**:
+```bash
+# Kill process using the port (Unix/Linux/Mac)
+lsof -i :3000 | grep LISTEN | awk '{print $2}' | xargs kill -9
+
+# Or use a different port
+npm start -p 8080
+```
+
+#### 6. Type Errors in Build
+**Problem**: TypeScript compilation errors
+
+**Solution**:
+```bash
+# Build without type checks (development only)
+npm run build-no-checks
+
+# For production, fix errors and rebuild
+npm run build
+```
+
+---
+
+## 📄 License
+
+This project is open source and available under the MIT License. Feel free to use, modify, and distribute as per the license terms.
+
+---
+
+## 📞 Support & Contact
+
+For issues, questions, or suggestions:
+- Open an [Issue](https://github.com/SatendraKm/OPJU-Techno/issues)
+- Contact the maintainer: [SatendraKm](https://github.com/SatendraKm)
+
+---
+
+## 🙌 Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- UI components from [Radix UI](https://www.radix-ui.com/)
+- Styling with [Tailwind CSS](https://tailwindcss.com/)
+- Icons from [Lucide React](https://lucide.dev/)
+
+---
+
+**Last Updated**: September 2026  
+**Repository**: [SatendraKm/OPJU-Techno](https://github.com/SatendraKm/OPJU-Techno)
